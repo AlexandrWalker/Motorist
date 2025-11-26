@@ -1,0 +1,34 @@
+@use './../mixins' as *;
+
+/* Стили для иконок */
+[class^="icon-"],
+[class*=" icon-"] {
+  --font-size: 2.4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: var(--font-size);
+  height: var(--font-size);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+
+  font-size: var(--font-size);
+  color: inherit;
+
+  position: relative;
+  z-index: 1;
+}
+
+/* Уникальные иконки */
+.icon {
+
+  &-telegram {
+    color: #2097C9;
+  }
+
+  &-whatsapp {
+    color: #25D366;
+  }
+}

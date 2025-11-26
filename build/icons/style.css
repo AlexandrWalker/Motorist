@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'MotoristIconFonts';
+  src:  url('fonts/MotoristIconFonts.eot?vzat9q');
+  src:  url('fonts/MotoristIconFonts.eot?vzat9q#iefix') format('embedded-opentype'),
+    url('fonts/MotoristIconFonts.ttf?vzat9q') format('truetype'),
+    url('fonts/MotoristIconFonts.woff?vzat9q') format('woff'),
+    url('fonts/MotoristIconFonts.svg?vzat9q#MotoristIconFonts') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'MotoristIconFonts' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bento:before {
+  content: "\e900";
+}
+.icon-cart:before {
+  content: "\e901";
+}
+.icon-doc:before {
+  content: "\e902";
+}
+.icon-download:before {
+  content: "\e903";
+}
+.icon-headphone:before {
+  content: "\e904";
+}
+.icon-izbrannyi:before {
+  content: "\e905";
+}
+.icon-plane:before {
+  content: "\e906";
+}
+.icon-search:before {
+  content: "\e907";
+}
+.icon-telegram:before {
+  content: "\e908";
+}
+.icon-whatsapp:before {
+  content: "\e909";
+}

@@ -1,0 +1,39 @@
+@use './../mixins' as *;
+
+/* Главный заголовок страницы */
+h1 {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 6rem;
+  line-height: 100%;
+}
+
+/* Заголовок 1 */
+h2 {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 100%;
+}
+
+/* Заголовок 2 */
+h3 {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 100%;
+}
+
+h4 {}
+
+h5 {}
+
+h6 {}
+
+/* Текст */
+p {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 120%;
+}

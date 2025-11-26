@@ -1,0 +1,9 @@
+@use './../mixins' as *;
+
+.logo {
+  display: block;
+  width: 13.4rem;
+  margin-right: 1.8rem;
+  
+  flex-shrink: 0;
+}

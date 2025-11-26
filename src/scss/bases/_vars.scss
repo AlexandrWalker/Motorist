@@ -1,0 +1,35 @@
+@use './../mixins' as *;
+
+:root {
+  --font-family: "TeXGyreHeros", sans-serif;
+  --second-family: "HelveticaNeue", sans-serif;
+  --third-family: "Montserrat", sans-serif;
+
+  --container-padding: 10rem;
+  --container-width: 172rem;
+
+  --bg: #F5F5F5;
+  --white: #ffffff;
+  --white-60: rgba(255, 255, 255, 0.6);
+  --black: #041D2C;
+  --black-30: rgba(4, 29, 44, 0.3);
+  --black-50: rgba(4, 29, 44, 0.5);
+  --second-black: #1E2327;
+  --blue: #35AFDA;
+  --green: #52BB79;
+  --red: #EE5956;
+  --orange: #FF6421;
+  --gray: #718595;
+  --gray-10: rgba(113, 133, 149, 0.1);
+  --gray-15: rgba(113, 133, 149, 0.15);
+  --gray-50: rgba(113, 133, 149, 0.5);
+  --white-gray: #D9D9D9;
+
+  @include md {
+    --container-padding: 4rem;
+  }
+
+  @include sm {
+    --container-padding: 2rem;
+  }
+}
