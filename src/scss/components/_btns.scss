@@ -8,7 +8,6 @@
   --btn-color: var(--black);
   --btn-background: var(--white);
   --btn-border-radius: 0.8rem;
-  --btn-border-color: var(--white);
 
   display: flex;
   justify-content: center;
@@ -40,13 +39,28 @@
 
   &:hover {
 
-    @include dosm {}
+    @include dosm {
+      --btn-color: var(--white);
+      --btn-background: var(--black);
+    }
   }
 
   &--orange {
     --btn-color: var(--white);
     --btn-background: var(--orange);
 
-    box-shadow: 0px 10px 19.4px rgba(255, 100, 33, 0.31);
+    // box-shadow: 0px 10px 19.4px rgba(255, 100, 33, 0.31);
+
+    &:hover {
+
+      @include dosm {
+        --btn-background: var(--black);
+      }
+    }
+  }
+
+  &--blue {
+    --btn-color: var(--white);
+    --btn-background: var(--blue);
   }
 }

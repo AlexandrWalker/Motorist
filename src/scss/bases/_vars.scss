@@ -7,13 +7,17 @@
 
   --container-padding: 10rem;
   --container-width: 172rem;
+  --header-height: 17.6rem;
 
   --bg: #F5F5F5;
   --white: #ffffff;
+  --white-50: rgba(255, 255, 255, 0.5);
   --white-60: rgba(255, 255, 255, 0.6);
   --black: #041D2C;
+  --black-10: rgba(4, 29, 44, 0.1);
   --black-30: rgba(4, 29, 44, 0.3);
   --black-50: rgba(4, 29, 44, 0.5);
+  --black-70: rgba(4, 29, 44, 0.7);
   --second-black: #1E2327;
   --blue: #35AFDA;
   --green: #52BB79;
@@ -22,7 +26,10 @@
   --gray: #718595;
   --gray-10: rgba(113, 133, 149, 0.1);
   --gray-15: rgba(113, 133, 149, 0.15);
+  --gray-21: rgba(113, 133, 149, 0.21);
+  --gray-25: rgba(113, 133, 149, 0.25);
   --gray-50: rgba(113, 133, 149, 0.5);
+  --gray-60: rgba(113, 133, 149, 0.6);
   --white-gray: #D9D9D9;
 
   @include md {

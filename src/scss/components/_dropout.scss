@@ -1,0 +1,57 @@
+@use './../mixins' as *;
+
+.dropout {
+  padding-top: 2rem;
+  opacity: 0;
+  pointer-events: none;
+
+  position: absolute;
+  top: calc(100% - 0.5rem);
+  right: -1rem;
+  z-index: 10;
+
+  &-parent {
+    position: relative;
+  }
+
+  &-show {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &::before {
+    content: "";
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjkiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAyOSAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0xNC4yODkxIDBMMjguNTc4NSAyNC43NUgtMC4wMDAzNTY2NzRMMTQuMjg5MSAwWiIgZmlsbD0iIzA0MUQyQyIvPg0KPC9zdmc+DQo=);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    display: block;
+    width: 3.3rem;
+    height: 3.3rem;
+
+    position: absolute;
+    top: 0;
+    right: 3rem;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem;
+    border-radius: 1.5rem;
+    background-color: var(--black);
+
+    color: var(--white);
+    text-align: left;
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: row;
+    gap: 0.7rem;
+  }
+
+  .btn {
+    --btn-height: 4rem;
+  }
+}

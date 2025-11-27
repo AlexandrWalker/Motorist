@@ -29,7 +29,7 @@ body {
   flex-direction: column;
   min-height: 100%;
 
-  padding-top: 1.5rem;
+  padding-top: var(--header-height);
 }
 
 .main {
@@ -41,6 +41,7 @@ body {
 }
 
 section {
+  height: 100vh;
   overflow-x: hidden;
   overflow-y: hidden;
 }

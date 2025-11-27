@@ -1,13 +1,33 @@
-<header class="header">
+<header id="header" class="header">
   <div class="container">
     <div class="header__inner">
 
-      <div class="header__top">
-        <div class="header__geo">
+      <div class="header__top border">
+        <div class="header__geo dropout-parent">
           <i class="icon-plane"></i>
           <span>
             Петропавловск-Камчатский
           </span>
+
+          <div class="dropout">
+            <div class="dropout__inner">
+              <div class="dropout__head">
+                <h3>
+                  Ваш город Новосибирск?
+                </h3>
+              </div>
+              <div class="dropout__body">
+                <div class="dropout__btns">
+                  <a class="btn btn--blue" href="/">
+                    Да
+                  </a>
+                  <a class="btn" href="/">
+                    Выбрать
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <nav class="header__nav">
           <ul>
@@ -61,41 +81,130 @@
         <a class="logo" href="/">
           <img src="./../../images/logo/logo.svg" alt="Motorist">
         </a>
-        <button class="header__btn">
+        <button id="headerCatalog" class="header__btn btn">
           <i class="icon-bento"></i>
           Каталог
         </button>
         <div class="header__search">
-          <input class="header__search-input" type="text" placeholder="Артикул, толщина, название">
+          <input class="header__search-input" name="header-search" type="text" placeholder="Артикул, толщина, название">
           <button class="header__search-btn">
             <i class="icon-search"></i>
           </button>
         </div>
-        <div class="header__items">
-          <button class="header__item">
+        <div class="header__navbar">
+          <button class="header__navbar-item">
             <i class="icon-headphone"></i>
             <span>
               Связаться
             </span>
           </button>
-          <button class="header__item">
-            <i class="icon-izbrannyi"></i>
+          <button class="header__navbar-item">
+            <i class="icon-favorite"></i>
             <span>
               Избранное
             </span>
           </button>
-          <button class="header__item">
+          <button class="header__navbar-item">
             <i class="icon-cart"></i>
             <span>
               Корзина
             </span>
           </button>
         </div>
-        <a class="header__btn header__login" href="/">
+        <a class="header__login btn dropout-parent" href="/">
           Войти
+
+          <div class="dropout">
+            <div class="dropout__inner">
+              <div class="dropout__head">
+                <h3>
+                  Будем знакомы?
+                </h3>
+              </div>
+              <div class="dropout__body">
+                <p>
+                  Цены станут выгоднее, а работа с заказами – удобнее
+                </p>
+              </div>
+            </div>
+          </div>
         </a>
       </div>
     </div>
 
   </div>
 </header>
+
+<div class="header__catalog">
+  <div class="container">
+    <div class="header__items">
+      <div class="header__item header__item-active border">
+        <div class="header__item-img">
+          <img src="./../../images/temp/header-items-1.png" alt="">
+        </div>
+        <div class="header__item-title">
+          Патрубки силиконовые
+        </div>
+        <i class="icon-arrow"></i>
+      </div>
+      <div class="header__item border">
+        <div class="header__item-img">
+          <img src="./../../images/temp/header-items-2.png" alt="">
+        </div>
+        <div class="header__item-title">
+          Патрубки алюминиевые
+        </div>
+        <i class="icon-arrow"></i>
+      </div>
+      <div class="header__item border">
+        <div class="header__item-img">
+          <img src="./../../images/temp/header-items-3.png" alt="">
+        </div>
+        <div class="header__item-title">
+          Патрубки алюминиевые
+        </div>
+        <i class="icon-arrow"></i>
+      </div>
+      <div class="header__item border">
+        <div class="header__item-img">
+          <img src="./../../images/temp/header-items-4.png" alt="">
+        </div>
+        <div class="header__item-title">
+          Хомуты
+        </div>
+        <i class="icon-arrow"></i>
+      </div>
+      <div class="header__item border">
+        <div class="header__item-img">
+          <img src="./../../images/temp/header-items-5.png" alt="">
+        </div>
+        <div class="header__item-title">
+          Силиконовая резиносмесь
+        </div>
+        <i class="icon-arrow"></i>
+      </div>
+    </div>
+    <div class="header__content">
+      <div class="header__content-item">
+        <div class="header__content-head">
+          <p>
+            Рукав силиконовый
+          </p>
+        </div>
+        <div class="header__content-body">
+          <ul>
+            <li>
+              Вакуумный
+            </li>
+            <li>
+              Армированный
+            </li>
+            <li>
+              Маслобензостойкий
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
