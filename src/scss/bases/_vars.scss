@@ -6,7 +6,7 @@
   --third-family: "Montserrat", sans-serif;
 
   --container-padding: 10rem;
-  --container-width: 172rem;
+  --container-width: 124rem;
   --header-height: 17.6rem;
 
   --bg: #F5F5F5;
@@ -31,6 +31,7 @@
   --gray-50: rgba(113, 133, 149, 0.5);
   --gray-60: rgba(113, 133, 149, 0.6);
   --white-gray: #D9D9D9;
+  --white-gray-50: rgba(217, 217, 217, 0.5);
 
   @include md {
     --container-padding: 4rem;

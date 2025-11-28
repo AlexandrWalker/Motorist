@@ -10,6 +10,10 @@
   left: 0;
   z-index: 100;
 
+  @include md {
+    --header-inner-height: 4rem;
+  }
+
   & * {
     transition: all 0.3s ease;
   }
@@ -34,9 +38,14 @@
     gap: 0 4rem;
     align-items: center;
     // height: 5rem;
+    backdrop-filter: blur(2px);
     padding: 1rem 1rem 1rem 2rem;
     border-radius: 1.5rem;
     background-color: var(--gray-15);
+
+    @include md {
+      display: none;
+    }
 
     .header-fixed & {
       padding: 0.6rem 1rem 0.6rem 2rem;
@@ -238,6 +247,10 @@
     backdrop-filter: blur(2px);
     border-radius: 1.5rem;
 
+    @include md {
+      padding: 1rem;
+    }
+
     .header-catalog-open & {
       background-color: var(--gray-21);
       box-shadow: none;
@@ -249,6 +262,11 @@
     gap: 1rem;
     height: var(--header-inner-height);
     padding: 0 2rem 0 1.5rem;
+
+    @include md {
+      gap: 0.7rem;
+      padding: 1rem;
+    }
 
     .header-catalog-open & {
       background-color: var(--blue);
@@ -269,6 +287,10 @@
     i {
       color: var(--orange);
 
+      @include md {
+        --font-size: 2rem;
+      }
+
       .header-catalog-open & {
         color: var(--white);
       }
@@ -279,6 +301,10 @@
     --btn-height: var(--header-inner-height);
 
     padding: 1rem 1.3rem 1rem 1.4rem;
+
+    @include md {
+      display: none;
+    }
   }
 
   &__search {
@@ -288,6 +314,10 @@
 
     position: relative;
     z-index: 1;
+
+    @include md {
+      display: none;
+    }
 
     &:hover {
 
@@ -364,6 +394,10 @@
     border-radius: 0.8rem;
     background-color: var(--white-60);
 
+    @include md {
+      display: none;
+    }
+
     .header-fixed & {
       padding: 0.2rem 1.5rem 0.2rem 2.3rem;
     }
@@ -411,88 +445,5 @@
         }
       }
     }
-  }
-
-  &__catalog {
-    width: 100%;
-    height: 100%;
-    background: rgba(4, 29, 44, 0.8);
-    backdrop-filter: blur(37.65px);
-    height: 0;
-    overflow: hidden;
-    transition: all 0.3s ease;
-
-    color: var(--white);
-
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 50;
-
-    .header-catalog-open & {
-      height: 100%;
-    }
-  }
-
-  &__items {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 2rem;
-    padding-top: 17.3rem;
-  }
-
-  &__item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0;
-    padding: 0.5rem 1rem;
-    border-radius: 1.5rem;
-    background-color: var(--gray-25);
-
-    i {
-      --font-size: 2.2rem;
-
-      background-color: var(--white);
-      transform: rotate(90deg);
-
-      color: var(--black);
-
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-    }
-
-    &-active {
-      background-color: var(--gray);
-
-      i {
-        transform: rotate(-90deg);
-      }
-    }
-
-    &-img {
-      width: 6.6rem;
-      height: 6.6rem;
-
-      img {
-        height: 100%;
-        object-fit: contain;
-      }
-    }
-
-    &-title {
-      width: min-content;
-      height: fit-content;
-
-      font-weight: 700;
-      font-size: 1.4rem;
-      line-height: 120%;
-      letter-spacing: 0.02em;
-    }
-  }
-
-  &__content {
-    display: none;
   }
 }

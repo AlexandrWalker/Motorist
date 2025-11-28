@@ -79,7 +79,11 @@
 
       <div class="header__block">
         <a class="logo" href="/">
-          <img src="./../../images/logo/logo.svg" alt="Motorist">
+          <picture>
+            <source media="(min-width: 835px)" srcset="./../../images/logo/logo.svg">
+            <source media="(max-width: 834px)" srcset="./../../images/logo/logo-mob.svg">
+            <img src="./../../images/logo/logo.svg" alt="Motorist">
+          </picture>
         </a>
         <button id="headerCatalog" class="header__btn btn">
           <i class="icon-bento"></i>
@@ -134,77 +138,3 @@
 
   </div>
 </header>
-
-<div class="header__catalog">
-  <div class="container">
-    <div class="header__items">
-      <div class="header__item header__item-active border">
-        <div class="header__item-img">
-          <img src="./../../images/temp/header-items-1.png" alt="">
-        </div>
-        <div class="header__item-title">
-          Патрубки силиконовые
-        </div>
-        <i class="icon-arrow"></i>
-      </div>
-      <div class="header__item border">
-        <div class="header__item-img">
-          <img src="./../../images/temp/header-items-2.png" alt="">
-        </div>
-        <div class="header__item-title">
-          Патрубки алюминиевые
-        </div>
-        <i class="icon-arrow"></i>
-      </div>
-      <div class="header__item border">
-        <div class="header__item-img">
-          <img src="./../../images/temp/header-items-3.png" alt="">
-        </div>
-        <div class="header__item-title">
-          Патрубки алюминиевые
-        </div>
-        <i class="icon-arrow"></i>
-      </div>
-      <div class="header__item border">
-        <div class="header__item-img">
-          <img src="./../../images/temp/header-items-4.png" alt="">
-        </div>
-        <div class="header__item-title">
-          Хомуты
-        </div>
-        <i class="icon-arrow"></i>
-      </div>
-      <div class="header__item border">
-        <div class="header__item-img">
-          <img src="./../../images/temp/header-items-5.png" alt="">
-        </div>
-        <div class="header__item-title">
-          Силиконовая резиносмесь
-        </div>
-        <i class="icon-arrow"></i>
-      </div>
-    </div>
-    <div class="header__content">
-      <div class="header__content-item">
-        <div class="header__content-head">
-          <p>
-            Рукав силиконовый
-          </p>
-        </div>
-        <div class="header__content-body">
-          <ul>
-            <li>
-              Вакуумный
-            </li>
-            <li>
-              Армированный
-            </li>
-            <li>
-              Маслобензостойкий
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>

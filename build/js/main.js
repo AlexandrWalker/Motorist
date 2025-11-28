@@ -84,4 +84,32 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   });
 
+const megamenuItems = document.querySelectorAll('.megamenu__item');
+
+megamenuItems.forEach(item => {
+  item.addEventListener('click', function () {
+
+    const isMobile = window.innerWidth < 834;
+    const isActive = item.classList.contains('megamenu__item-active');
+
+    if (isMobile) {
+      // Мобильная логика
+      if (isActive) {
+        // Повторный клик — снять активный класс
+        item.classList.remove('megamenu__item-active');
+      } else {
+        // Назначить активный, снять у остальных
+        megamenuItems.forEach(el => el.classList.remove('megamenu__item-active'));
+        item.classList.add('megamenu__item-active');
+      }
+    } else {
+      // Десктопная логика (всегда только один активный)
+      megamenuItems.forEach(el => el.classList.remove('megamenu__item-active'));
+      item.classList.add('megamenu__item-active');
+    }
+
+  });
+});
+
+
 });

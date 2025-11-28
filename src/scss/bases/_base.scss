@@ -13,6 +13,13 @@ html {
   }
 }
 
+@media (min-width: 1441px) {
+  html {
+    $ratio: 0;
+    font-size: calc(10px + ($ratio * 10) * ((100vw - var(--refRes) * 1px) / var(--refRes)));
+  }
+}
+
 body {
   min-width: 320px;
   background-color: var(--bg);

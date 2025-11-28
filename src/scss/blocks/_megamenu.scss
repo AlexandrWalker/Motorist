@@ -1,0 +1,277 @@
+@use './../mixins' as *;
+
+.megamenu {
+  --megamenu-padding-top: 17.3rem;
+
+  width: 100%;
+  height: 100vh;
+  background: rgba(4, 29, 44, 0.8);
+  backdrop-filter: blur(37.65px);
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  overflow: auto;
+
+  color: var(--white);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+
+  @include md {
+    --megamenu-padding-top: 10.7rem;
+  }
+
+  .header-catalog-open & {
+    height: 100vh;
+  }
+
+  .container {}
+
+  &__inner {
+    padding: var(--megamenu-padding-top) 0 0 0;
+
+    @include md {
+      padding: var(--megamenu-padding-top) 0 2.4rem 0;
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+
+    position: relative;
+
+    @include md {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 3.7rem;
+    transition: all 0.5s ease;
+
+    @include md {
+      gap: 0;
+    }
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+    background-color: var(--gray-25);
+    transition: all 0.5s ease;
+
+    @include md {
+      justify-content: space-between;
+      padding: 0 1.5rem 0 1.5rem;
+      min-height: 5rem;
+    }
+
+    .megamenu__item-active & {
+      background-color: var(--gray);
+
+      i {
+        transform: rotate(-90deg);
+      }
+    }
+
+    i {
+      --font-size: 2.2rem;
+
+      background-color: var(--white);
+      transform: rotate(90deg);
+
+      color: var(--black);
+
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+
+      @include md {
+        position: static;
+      }
+    }
+
+    &-img {
+      width: 6.6rem;
+      height: 6.6rem;
+
+      @include md {
+        display: none;
+      }
+
+      img {
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    &-title {
+      width: min-content;
+      height: fit-content;
+
+      font-weight: 700;
+      font-size: 1.4rem;
+      line-height: 120%;
+      letter-spacing: 0.02em;
+
+      @include md {
+        width: auto;
+      }
+    }
+  }
+
+  &__body {
+    display: grid;
+    transition: all 0.5s ease;
+
+    width: var(--container-width);
+
+    position: absolute;
+    top: calc(100% + 4rem);
+    left: 0;
+
+    clip-path: inset(0 0 100% 0);
+
+    @include md {
+      grid-template-rows: 0fr;
+      clip-path: none;
+      overflow: hidden;
+      width: 100%;
+
+      position: static;
+    }
+
+    .megamenu__item-active & {
+      transition-delay: 0.5s;
+
+      clip-path: inset(0 0 0 0);
+
+      @include md {
+        grid-template-rows: 1fr;
+        clip-path: none;
+        transition-delay: 0s;
+      }
+    }
+  }
+
+  &__content {
+    display: inline;
+    column-count: 4;
+    column-gap: 4rem;
+    padding: 0.7rem 0 6rem 0;
+    transition: all 0.5s ease;
+
+    @include md {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      column-count: unset;
+      column-gap: unset;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .megamenu__item-active & {
+
+      @include md {
+        padding: 2rem 0 1rem;
+      }
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      margin-bottom: 4rem;
+      break-inside: avoid;
+
+      @include md {
+        margin: 0;
+      }
+    }
+
+    &-head {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+      padding-left: 4.2rem;
+
+      position: relative;
+    }
+
+    &-img {
+      width: 3.2rem;
+      height: 3rem;
+
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+
+      img {}
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 1.6rem;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+    }
+
+    &-body {
+      padding-left: 4.2rem;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      li {
+        padding-left: 1.3rem;
+        position: relative;
+
+        &::before {
+          content: "";
+          display: block;
+          width: 0.3rem;
+          height: 0.3rem;
+          border-radius: 50%;
+          background-color: var(--white-gray-50);
+
+          position: absolute;
+          top: 0.9rem;
+          left: 0;
+        }
+      }
+
+      a {
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 100%;
+        letter-spacing: 0.02em;
+        text-decoration-line: underline;
+        color: var(--white);
+        opacity: 0.5;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

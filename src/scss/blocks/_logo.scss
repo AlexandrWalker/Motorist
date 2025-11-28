@@ -4,6 +4,11 @@
   display: block;
   width: 13.4rem;
   margin-right: 1.8rem;
-  
+
   flex-shrink: 0;
+
+  @include md {
+    width: 8.3rem;
+    margin-right: 0;
+  }
 }
