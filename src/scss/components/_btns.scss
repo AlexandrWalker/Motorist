@@ -62,5 +62,9 @@
   &--blue {
     --btn-color: var(--white);
     --btn-background: var(--blue);
+
+    &:hover {
+      --btn-background: var(--second-black);
+    }
   }
 }

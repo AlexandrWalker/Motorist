@@ -12,6 +12,8 @@
 
   @include md {
     --header-inner-height: 4rem;
+
+    top: 1rem;
   }
 
   & * {
@@ -316,7 +318,9 @@
     z-index: 1;
 
     @include md {
-      display: none;
+      // display: none;
+      width: 4rem;
+      margin-left: auto;
     }
 
     &:hover {
@@ -347,6 +351,10 @@
         background: var(--gray);
         border-color: var(--white-60);
       }
+
+      @include md {
+        display: none;
+      }
     }
 
     &-input {
@@ -362,6 +370,10 @@
       &::placeholder {
         color: var(--white);
       }
+
+      @include md {
+        display: none;
+      }
     }
 
     &-btn {
@@ -373,6 +385,14 @@
       top: 50%;
       right: 2rem;
       transform: translateY(-50%);
+
+      @include md {
+        opacity: 1;
+
+        right: unset;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
 
       .header__search:hover & {
         opacity: 1;

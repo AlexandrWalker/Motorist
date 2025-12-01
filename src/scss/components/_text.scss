@@ -6,6 +6,10 @@ h1 {
   font-weight: 700;
   font-size: 6rem;
   line-height: 100%;
+
+  @include md {
+    font-size: 3rem;
+  }
 }
 
 /* Заголовок 1 */
@@ -14,6 +18,10 @@ h2 {
   font-weight: 700;
   font-size: 3.5rem;
   line-height: 100%;
+
+  @include md {
+    font-size: 2.5rem;
+  }
 }
 
 /* Заголовок 2 */

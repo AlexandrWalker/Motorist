@@ -13,7 +13,7 @@
       <section class="hero">
         <div class="container">
           <div class="hero__inner">
-            <div class="hero__Content">
+            <div class="hero__content">
               <h1>
                 Добро пожаловать в магазин
               </h1>
@@ -22,8 +22,20 @@
                 технологии и собственное сырье
               </p>
               <button class="btn btn--orange">
-                Кнопка
+                <i class="icon-doc"></i>
+                Коммерческое предложение
               </button>
+            </div>
+            <div class="hero__cover">
+              <div class="hero__cover-img">
+                <img src="./../images/temp/hero-cover-1.png" alt="">
+              </div>
+              <div class="hero__cover-img">
+                <img src="./../images/temp/hero-cover-2.png" alt="">
+              </div>
+              <div class="hero__cover-img">
+                <img src="./../images/temp/hero-cover-3.png" alt="">
+              </div>
             </div>
           </div>
         </div>
@@ -32,9 +44,135 @@
       <section class="category">
         <div class="container">
           <div class="category__inner">
-            <h3>
-              Категории товаров
-            </h3>
+
+            <div class="general__head">
+              <div class="general__head-title">
+                <h3>
+                  Категории товаров
+
+                </h3>
+              </div>
+            </div>
+
+            <div class="category__body">
+              <div class="swiper category__slider">
+                <div class="swiper-wrapper">
+                  @@loop('./elements/category-item.html', './data/category-items.json')
+                </div>
+              </div>
+              <div class="swiper-button-next category-button-next">
+                <i class="icon-slider-arrow"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="guarantees">
+        <div class="container">
+          <div class="guarantees__inner">
+
+            <div class="general__head">
+              <div class="general__head-title">
+                <h2>
+                  Гарантии стабильного развития
+                </h2>
+              </div>
+            </div>
+
+            <div class="guarantees__body">
+              <div class="guarantees__items">
+                <div class="guarantees__item">
+                  <div class="guarantees__item-img">
+                    <img src="./../images/temp/guarantees-item-1.png" alt="">
+                  </div>
+                  <div class="guarantees__item-title">
+                    <p>
+                      Собственное производство
+                    </p>
+                  </div>
+                </div>
+                <div class="guarantees__item">
+                  <div class="guarantees__item-img">
+                    <img src="./../images/temp/guarantees-item-2.png" alt="">
+                  </div>
+                  <div class="guarantees__item-title">
+                    <p>
+                      Цена без посредников
+                    </p>
+                  </div>
+                </div>
+                <div class="guarantees__item">
+                  <div class="guarantees__item-img">
+                    <img src="./../images/temp/guarantees-item-3.png" alt="">
+                  </div>
+                  <div class="guarantees__item-title">
+                    <p>
+                      Гарантия качества
+                    </p>
+                  </div>
+                </div>
+                <div class="guarantees__item">
+                  <div class="guarantees__item-img">
+                    <img src="./../images/temp/guarantees-item-4.png" alt="">
+                  </div>
+                  <div class="guarantees__item-title">
+                    <p>
+                      Изготовление по <br> индивидуальным чертежам
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="popular">
+        <div class="container">
+          <div class="popular__inner">
+
+            <div class="general__head">
+              <div class="general__head-title">
+                <h2>
+                  Популярные товары
+                </h2>
+              </div>
+            </div>
+
+            <div class="popular__items">
+              <div class="popular__item">
+                <div class="popular__item-img">
+                  <img src="./../images/temp/popular-item-1.png" alt="">
+                </div>
+                <div class="popular__item-content">
+                  <div class="popular__item-wrap">
+                    <div class="popular__item-name">
+                      <p>
+                        Трубка соединительная прямая L 300 мм
+                      </p>
+                    </div>
+                    <div class="popular__item-art">
+                      Артикул <span>2321421412414</span>
+                    </div>
+                  </div>
+                  <div class="popular__item-wrap">
+                    <div class="popular__item-price">
+                      250 ₽
+                      <span>
+                        350 ₽
+                      </span>
+                    </div>
+                    <a class="popular__item-btn btn btn--blue" href="/">
+                      В корзину
+                      <span>
+                        <i class="icon-cart-min"></i>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

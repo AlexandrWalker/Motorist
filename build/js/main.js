@@ -84,32 +84,149 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   });
 
-const megamenuItems = document.querySelectorAll('.megamenu__item');
+  const megamenuItems = document.querySelectorAll('.megamenu__item');
 
-megamenuItems.forEach(item => {
-  item.addEventListener('click', function () {
+  megamenuItems.forEach(item => {
+    item.addEventListener('click', function () {
 
-    const isMobile = window.innerWidth < 834;
-    const isActive = item.classList.contains('megamenu__item-active');
+      const isMobile = window.innerWidth < 834;
+      const isActive = item.classList.contains('megamenu__item-active');
 
-    if (isMobile) {
-      // Мобильная логика
-      if (isActive) {
-        // Повторный клик — снять активный класс
-        item.classList.remove('megamenu__item-active');
+      if (isMobile) {
+        // Мобильная логика
+        if (isActive) {
+          // Повторный клик — снять активный класс
+          item.classList.remove('megamenu__item-active');
+        } else {
+          // Назначить активный, снять у остальных
+          megamenuItems.forEach(el => el.classList.remove('megamenu__item-active'));
+          item.classList.add('megamenu__item-active');
+        }
       } else {
-        // Назначить активный, снять у остальных
+        // Десктопная логика (всегда только один активный)
         megamenuItems.forEach(el => el.classList.remove('megamenu__item-active'));
         item.classList.add('megamenu__item-active');
       }
-    } else {
-      // Десктопная логика (всегда только один активный)
-      megamenuItems.forEach(el => el.classList.remove('megamenu__item-active'));
-      item.classList.add('megamenu__item-active');
-    }
 
+    });
   });
-});
 
+  /**
+ * Аккордеон
+ */
+  function accordionFunc() {
+    var accordionParents = document.querySelectorAll('.accordion-parent');
+    if (!accordionParents.length) return;
+
+    // Закрытие при клике вне активного блока
+    document.addEventListener('click', function (e) {
+      var active = document.querySelector('.accordion.accordion-active');
+      if (!active) return;
+
+      var body = active.querySelector('.accordion-body');
+      if (!body) return;
+
+      if (!body.contains(e.target) && !active.querySelector('.accordion-head').contains(e.target)) {
+        active.classList.remove('accordion-active');
+      }
+    });
+
+    // Закрытие по Esc
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' || e.keyCode === 27) {
+        var active = document.querySelector('.accordion.accordion-active');
+        if (active) active.classList.remove('accordion-active');
+      }
+    });
+
+    // Перебор всех аккордеонов
+    for (var i = 0; i < accordionParents.length; i++) {
+      (function (accordionContainer) {
+        var accordions = accordionContainer.querySelectorAll('.accordion');
+
+        for (var j = 0; j < accordions.length; j++) {
+          (function (accordion) {
+            var head = accordion.querySelector('.accordion-head');
+            if (!head) return;
+
+            head.addEventListener('click', function (e) {
+              e.stopPropagation();
+
+              var active = accordionContainer.querySelector('.accordion.accordion-active');
+              if (active && active !== accordion) {
+                active.classList.remove('accordion-active');
+              }
+
+              accordion.classList.toggle('accordion-active');
+            });
+          })(accordions[j]);
+        }
+      })(accordionParents[i]);
+    }
+  }
+  accordionFunc();
+
+  /**
+ * Управляет поведением меню-бургера.
+ */
+  function burgerNav() {
+    const burgerBtn = document.getElementById('burger-btn');
+
+    const openMenu = () => {
+      burgerBtn.classList.add('burger--open');
+      document.documentElement.classList.add('menu--open');
+      lenis.stop();
+    };
+
+    const closeMenu = () => {
+      burgerBtn.classList.remove('burger--open');
+      document.documentElement.classList.remove('menu--open');
+      lenis.start();
+    };
+
+    const toggleMenu = (e) => {
+      e.preventDefault();
+      const isOpen = document.documentElement.classList.contains('menu--open');
+      isOpen ? closeMenu() : openMenu();
+    };
+
+    burgerBtn.addEventListener('click', toggleMenu);
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === "Escape" && document.documentElement.classList.contains('menu--open')) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener('click', (event) => {
+      const isMenuOpen = document.documentElement.classList.contains('menu--open');
+      const clickOnButton = burgerBtn.contains(event.target);
+
+      if (isMenuOpen && !clickOnButton) {
+        closeMenu();
+      }
+    });
+  }
+  burgerNav();
+
+  const categorySlider = new Swiper('.category__slider', {
+    slidesPerGroup: 1,
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    loop: true,
+    speed: 500,
+    simulateTouch: true,
+    watchOverflow: true,
+    watchSlidesProgress: true,
+    mousewheel: {
+      forceToAxis: true,
+      sensitivity: 1,
+      releaseOnEdges: true
+    },
+    breakpoints: {
+      835: { slidesPerView: 6, spaceBetween: 20 }
+    },
+    navigation: { nextEl: ".category-button-next" },
+  });
 
 });

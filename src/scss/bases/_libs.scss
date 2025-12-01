@@ -1,5 +1,14 @@
 @use './../mixins' as *;
 
+.swiper {
+
+  @include md {
+    width: calc(100% + (var(--container-padding) * 2));
+    margin-left: calc(var(--container-padding) * -1);
+    padding: 0 var(--container-padding);
+  }
+}
+
 .swiper-slide {
   height: auto;
 }
@@ -15,7 +24,23 @@
 
 /* Кнопка слайдера */
 [class^="swiper-button-"],
-[class*=" swiper-button-"] {}
+[class*=" swiper-button-"] {
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--white);
+  border-radius: 50%;
+  margin: 0;
+
+  i {
+    --font-size: 4rem;
+
+    color: var(--black);
+  }
+
+  &::after {
+    display: none;
+  }
+}
 
 .swiper-button-prev {}
 

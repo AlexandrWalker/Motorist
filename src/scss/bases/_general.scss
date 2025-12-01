@@ -1,7 +1,12 @@
 @use './../mixins' as *;
 
 /* Главный общий блок */
-.general {}
+.general {
+
+  &__head {
+    margin-bottom: 4rem;
+  }
+}
 
 .border {
   position: relative;

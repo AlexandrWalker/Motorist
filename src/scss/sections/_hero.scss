@@ -1,11 +1,105 @@
 @use './../mixins' as *;
 
 .hero {
-  padding: 5rem 0;
+  padding-bottom: 0;
+  overflow: visible;
 
   &__inner {
+    padding: 7rem 0 8.6rem;
+
+    position: relative;
+
+    @include md {
+      padding: 3rem 0 2.2rem;
+    }
+  }
+
+  &__content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
+
+    max-width: 59.7rem;
+
+    @include md {
+      gap: 2rem;
+    }
+
+    .btn {
+
+      i {
+        --font-size: 2rem;
+      }
+    }
+  }
+
+  &__cover {
+    width: 57.8rem;
+    height: 44rem;
+
+    position: absolute;
+    top: 2rem;
+    right: 0;
+
+    @include md {
+      width: calc(100vw/(440/400));
+      height: calc(100vw/(440/304.5));
+      margin: 0 1rem;
+
+      position: relative;
+      top: unset;
+    }
+
+    &-img {
+      position: absolute;
+
+      &:nth-child(1) {
+        width: 45.5rem;
+        height: 44rem;
+
+        top: 0;
+        right: 0;
+        bottom: 0;
+
+        @include md {
+          width: calc(100vw/(440/315));
+          height: calc(100vw/(440/304.5));
+        }
+      }
+
+      &:nth-child(2) {
+        width: 17.1rem;
+        height: 17.9rem;
+        filter: blur(5.9px);
+
+        bottom: 3rem;
+        left: 0;
+
+        @include md {
+          width: calc(100vw/(440/118));
+          height: calc(100vw/(440/124));
+
+          bottom: 2.1rem;
+          left: 1rem;
+        }
+      }
+
+      &:nth-child(3) {
+        width: 12.2rem;
+        height: 11.7rem;
+        filter: blur(5.9px);
+
+        top: 4.7rem;
+        left: 1.9rem;
+
+        @include md {
+          width: calc(100vw/(440/84));
+          height: calc(100vw/(440/81));
+
+          top: 3.25rem;
+          left: 1.3rem;
+        }
+      }
+    }
   }
 }
