@@ -1,0 +1,244 @@
+@use './../mixins' as *;
+
+.product-card {
+
+  &__slide {
+
+    @include md {
+      max-width: 20.5rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: var(--white);
+    box-shadow: 5px 12px 23px rgba(113, 133, 149, 0.1);
+    border-radius: 1.5rem;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.5s ease;
+
+    @include md {
+      gap: 0.5rem;
+      padding: 1rem;
+    }
+
+    &:hover {
+      box-shadow: 0px 6px 19.5px rgba(53, 175, 218, 0.22);
+    }
+
+    &-tags {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+    }
+
+    &-tag {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+      height: 2.5rem;
+      border-radius: 10rem;
+      padding: 0 1rem;
+
+      font-weight: 400;
+      font-size: 0.8rem;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      color: var(--white);
+      white-space: nowrap;
+
+      &.new {
+        background-color: var(--blue);
+      }
+
+      &.hit {
+        background-color: var(--green);
+      }
+
+      &.sale {
+        background-color: var(--red);
+      }
+    }
+
+    &-favorite {
+      width: 2.4rem;
+      height: 2.4rem;
+
+      color: var(--gray);
+
+      position: absolute;
+      top: 2.3rem;
+      right: 2rem;
+      z-index: 2;
+
+      @include md {
+        top: 1.4rem;
+        right: 0.9rem;
+      }
+
+      &.favorite-active {
+
+        i::before {
+          content: "\e90d";
+        }
+      }
+
+      i {
+        --font-size: 2.4rem;
+
+        font-weight: 700;
+      }
+    }
+
+    &-img {
+      width: 100%;
+      height: auto;
+
+      img {
+        max-width: unset;
+        height: 18rem;
+        object-fit: contain;
+
+        @include md {
+          height: 11.5rem;
+        }
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 3rem;
+
+      @include md {
+        gap: 1rem;
+      }
+    }
+
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      @include md {
+        gap: 1rem;
+      }
+    }
+
+    &-name {
+      padding-right: 1.8rem;
+
+      &:hover {
+        color: var(--blue);
+      }
+
+      p {
+        font-weight: 700;
+
+        @include md {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    &-art {
+      font-size: 1rem;
+      color: var(--gray);
+
+      span {
+        color: var(--blue);
+      }
+    }
+
+    &-price {
+      font-size: 3.4rem;
+      color: var(--black);
+
+      @include md {
+        font-size: 2.5rem;
+      }
+
+      span {
+        font-size: 1.6rem;
+        color: var(--gray);
+        text-decoration-line: line-through;
+
+        @include md {
+          font-size: 1.4rem;
+        }
+      }
+    }
+
+    &-btn {
+      --btn-width: 100%;
+      --btn-height: fit-content;
+      --btn-color: var(--white);
+
+      justify-content: space-between;
+      border-radius: 5rem;
+      padding: 0.4rem 0.4rem 0.4rem 2rem;
+
+      font-weight: 400;
+      font-size: 1.2rem;
+      line-height: 140%;
+
+      @include md {
+        --btn-width: calc(100% + 2rem);
+        --btn-height: 4rem;
+
+        flex-direction: row-reverse;
+        justify-content: center;
+        gap: 0.7rem;
+        padding: 0.5rem;
+        margin: 0.5rem -1rem -1rem -1rem;
+        border-radius: 0;
+      }
+
+      &:hover {
+
+        span {
+          background-color: var(--blue);
+        }
+
+        i {
+          color: var(--white);
+        }
+      }
+
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3.2rem;
+        height: 3.2rem;
+        background-color: var(--white);
+        border-radius: 50%;
+
+        @include md {
+          width: 2.4rem;
+          height: 2.4rem;
+        }
+      }
+
+      i {
+        --font-size: 1.6rem;
+
+        color: var(--black);
+
+        @include md {
+          --font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}

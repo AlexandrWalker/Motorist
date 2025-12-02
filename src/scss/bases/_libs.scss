@@ -1,24 +1,64 @@
 @use './../mixins' as *;
 
 .swiper {
+  overflow: visible;
 
   @include md {
     width: calc(100% + (var(--container-padding) * 2));
     margin-left: calc(var(--container-padding) * -1);
     padding: 0 var(--container-padding);
   }
-}
 
-.swiper-slide {
-  height: auto;
+  &-slide {
+    height: auto;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+
+    &-visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &-button {
+
+    &-prev {
+      left: -6rem;
+
+      i {
+        transform: scale(-1, -1);
+      }
+    }
+
+    &-next {
+      right: -6rem;
+    }
+
+    &-disabled {
+      opacity: 0 !important;
+    }
+  }
 }
 
 /* Пагинация слайдера */
 .swiper-pagination {
+  top: calc(100% + 1rem) !important;
+  bottom: unset !important;
+
+  @include domd {
+    display: none;
+  }
 
   &-bullet {
+    width: 0.5rem;
+    height: 0.5rem;
+    margin: 0 0.25rem !important;
+    background-color: var(--gray);
 
-    &-active {}
+    &-active {
+      background-color: var(--black);
+    }
   }
 }
 
@@ -31,6 +71,14 @@
   border-radius: 50%;
   margin: 0;
 
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @include md {
+    display: none;
+  }
+
   i {
     --font-size: 4rem;
 
@@ -41,7 +89,3 @@
     display: none;
   }
 }
-
-.swiper-button-prev {}
-
-.swiper-button-next {}

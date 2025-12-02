@@ -17,7 +17,7 @@
   }
 
   & * {
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
   }
 
   .header-fixed & {
@@ -44,6 +44,7 @@
     padding: 1rem 1rem 1rem 2rem;
     border-radius: 1.5rem;
     background-color: var(--gray-15);
+    z-index: 2;
 
     @include md {
       display: none;
@@ -248,6 +249,8 @@
     box-shadow: 0px 12px 33.8px rgba(53, 175, 218, 0.42);
     backdrop-filter: blur(2px);
     border-radius: 1.5rem;
+
+    z-index: 1;
 
     @include md {
       padding: 1rem;

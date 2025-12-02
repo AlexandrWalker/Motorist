@@ -209,7 +209,34 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   burgerNav();
 
+  const productCardFavorites = document.querySelectorAll('.product-card__item-favorite');
+
+  productCardFavorites.forEach(productCardFavorite => {
+    productCardFavorite.addEventListener('click', function () {
+      productCardFavorite.classList.toggle('favorite-active');
+    })
+  });
+
   const categorySlider = new Swiper('.category__slider', {
+    slidesPerGroup: 1,
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    speed: 500,
+    simulateTouch: true,
+    watchOverflow: true,
+    watchSlidesProgress: true,
+    mousewheel: {
+      forceToAxis: true,
+      sensitivity: 1,
+      releaseOnEdges: true
+    },
+    breakpoints: {
+      835: { slidesPerView: 6, spaceBetween: 20 }
+    },
+    navigation: { prevEl: ".category-button-prev", nextEl: ".category-button-next" },
+  });
+
+  const popularSlider = new Swiper('.popular__slider', {
     slidesPerGroup: 1,
     slidesPerView: 'auto',
     spaceBetween: 10,
@@ -224,9 +251,120 @@ document.addEventListener('DOMContentLoaded', () => {
       releaseOnEdges: true
     },
     breakpoints: {
-      835: { slidesPerView: 6, spaceBetween: 20 }
+      835: { slidesPerView: 4, spaceBetween: 20 }
     },
-    navigation: { nextEl: ".category-button-next" },
+    navigation: { prevEl: ".popular-button-prev", nextEl: ".popular-button-next" },
+    pagination: { el: ".swiper-pagination", clickable: true },
+  });
+
+  const pressCenterSlider = new Swiper('.press-center__slider', {
+    slidesPerGroup: 1,
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    loop: true,
+    speed: 500,
+    simulateTouch: true,
+    watchOverflow: true,
+    watchSlidesProgress: true,
+    mousewheel: {
+      forceToAxis: true,
+      sensitivity: 1,
+      releaseOnEdges: true
+    },
+    breakpoints: {
+      835: { slidesPerView: 4, spaceBetween: 20 }
+    },
+    navigation: { prevEl: ".press-center-button-prev", nextEl: ".press-center-button-next" },
+    pagination: { el: ".swiper-pagination", clickable: true },
+  });
+
+  const reviewsSlider = new Swiper('.reviews__slider', {
+    slidesPerGroup: 1,
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    loop: true,
+    speed: 500,
+    simulateTouch: true,
+    watchOverflow: true,
+    watchSlidesProgress: true,
+    mousewheel: {
+      forceToAxis: true,
+      sensitivity: 1,
+      releaseOnEdges: true
+    },
+    breakpoints: {
+      835: { slidesPerView: 3, spaceBetween: 20 }
+    },
+    navigation: { prevEl: ".reviews-button-prev", nextEl: ".reviews-button-next" },
+    pagination: { el: ".swiper-pagination", clickable: true },
+  });
+
+  document.querySelectorAll('[data-animation="parallax-img-1"]').forEach(container => {
+    const img = container.querySelector('img');
+    if (img) gsap.fromTo(img,
+      {
+        y: '15%',
+      },
+      {
+        y: '-20%',
+        scrollTrigger: {
+          trigger: container,
+          start: 'top 90%',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+  });
+
+  document.querySelectorAll('[data-animation="parallax-img-2"]').forEach(container => {
+    const img = container.querySelector('img');
+    if (img) gsap.fromTo(img,
+      {
+        y: '-30%',
+      },
+      {
+        y: '30%',
+        scrollTrigger: {
+          trigger: container,
+          start: 'top 90%',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+  });
+
+  document.querySelectorAll('[data-animation="parallax-img-3"]').forEach(container => {
+    const img = container.querySelector('img');
+    if (img) gsap.fromTo(img,
+      {
+        y: '-10%',
+      },
+      {
+        y: '10%',
+        scrollTrigger: {
+          trigger: container,
+          start: 'top 90%',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+  });
+
+  document.querySelectorAll('[data-animation="parallax-img-4"]').forEach(container => {
+    const img = container.querySelector('img');
+    if (img) gsap.fromTo(img,
+      {
+        y: '10%',
+      },
+      {
+        y: '-10%',
+        scrollTrigger: {
+          trigger: container,
+          start: 'top 90%',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
   });
 
 });

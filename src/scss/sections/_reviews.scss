@@ -1,0 +1,153 @@
+@use './../mixins' as *;
+
+.reviews {
+
+  @include md {
+    padding-bottom: 5rem;
+  }
+
+  &__slide {
+
+    @include md {
+      max-width: 20.5rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: 100%;
+    min-height: 34.5rem;
+    padding: 3rem 2rem;
+    border-radius: 1.5rem;
+    background-color: var(--white);
+
+    @include md {
+      gap: 1rem;
+      padding: 1rem 1rem 2rem 1rem;
+      background-color: var(--white-50);
+      border: 0.1rem solid var(--white);
+    }
+
+    &-head {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+
+      @include md {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+    }
+
+    &-avatar {
+      width: 6rem;
+      height: 6rem;
+      border-radius: 50%;
+      overflow: hidden;
+
+      @include md {
+        width: 4rem;
+        height: 4rem;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-date {
+      font-weight: 400;
+      font-size: 1.2rem;
+      line-height: 100%;
+      color: var(--gray);
+
+      margin-bottom: 1.5rem;
+
+      @include md {
+        font-size: 1rem;
+
+        margin-bottom: 1rem;
+      }
+    }
+
+    &-name {
+      font-weight: 700;
+
+      margin-bottom: 1rem;
+
+      @include md {
+        font-size: 1.2rem;
+
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    &-rating {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      i {
+        --font-size: 1.6rem;
+
+        color: var(--yellow);
+
+        @include md {
+          --font-size: 1.2rem;
+        }
+      }
+    }
+
+    &-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    &-text {
+      max-width: 33rem;
+      width: 100%;
+
+      p {
+        font-size: 1.4rem;
+      }
+    }
+
+    &-gallery {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+
+      @include md {
+        gap: 0.5rem;
+      }
+    }
+
+    &-img {
+      height: 5.7rem;
+      border-radius: 0.8rem;
+      overflow: hidden;
+
+      @include md {
+        height: 3.1rem;
+        border-radius: 0.4rem;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

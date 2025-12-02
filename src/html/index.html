@@ -49,7 +49,6 @@
               <div class="general__head-title">
                 <h3>
                   Категории товаров
-
                 </h3>
               </div>
             </div>
@@ -59,9 +58,12 @@
                 <div class="swiper-wrapper">
                   @@loop('./elements/category-item.html', './data/category-items.json')
                 </div>
-              </div>
-              <div class="swiper-button-next category-button-next">
-                <i class="icon-slider-arrow"></i>
+                <div class="swiper-button-prev category-button-prev">
+                  <i class="icon-slider-arrow"></i>
+                </div>
+                <div class="swiper-button-next category-button-next">
+                  <i class="icon-slider-arrow"></i>
+                </div>
               </div>
             </div>
           </div>
@@ -140,39 +142,149 @@
               </div>
             </div>
 
-            <div class="popular__items">
-              <div class="popular__item">
-                <div class="popular__item-img">
-                  <img src="./../images/temp/popular-item-1.png" alt="">
+            <div class="popular__body">
+              <div class="swiper popular__slider">
+                <div class="swiper-wrapper">
+                  @@loop('./elements/product-card-slide-item.html', './data/product-card-items.json')
                 </div>
-                <div class="popular__item-content">
-                  <div class="popular__item-wrap">
-                    <div class="popular__item-name">
-                      <p>
-                        Трубка соединительная прямая L 300 мм
-                      </p>
-                    </div>
-                    <div class="popular__item-art">
-                      Артикул <span>2321421412414</span>
-                    </div>
-                  </div>
-                  <div class="popular__item-wrap">
-                    <div class="popular__item-price">
-                      250 ₽
-                      <span>
-                        350 ₽
-                      </span>
-                    </div>
-                    <a class="popular__item-btn btn btn--blue" href="/">
-                      В корзину
-                      <span>
-                        <i class="icon-cart-min"></i>
-                      </span>
-                    </a>
-                  </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev popular-button-prev">
+                  <i class="icon-slider-arrow"></i>
+                </div>
+                <div class="swiper-button-next popular-button-next">
+                  <i class="icon-slider-arrow"></i>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="banners">
+        <div class="container">
+          <div class="banners__inner">
+            <div class="banners__items">
+              <div class="banners__item">
+                <div class="banners__content">
+                  <div class="banners__content-suptitle">
+                    <p>
+                      Бесплатная доставка
+                    </p>
+                  </div>
+                  <div class="banners__content-sale">
+                    Скидка 20%
+                  </div>
+                  <a class="banners__content-btn btn btn--orange" href="/">
+                    Получить скидку
+                  </a>
+                </div>
+                <div class="banners__item-bg">
+                  <img src="./../images/temp/banners-item-1-bg.png" alt="">
+                </div>
+                <div class="banners__item-cover banners__item-cover--1" data-animation="parallax-img-1">
+                  <img src="./../images/temp/banners-item-1-cover-2.png" alt="">
+                </div>
+                <div class="banners__item-cover banners__item-cover--2" data-animation="parallax-img-2">
+                  <img src="./../images/temp/banners-item-1-cover-1.png" alt="">
+                </div>
+              </div>
+              <div class="banners__item">
+                <div class="banners__content">
+                  <div class="banners__content-title">
+                    <h3>
+                      Бесплатная доставка
+                    </h3>
+                  </div>
+                  <div class="banners__content-text">
+                    <p>
+                      Осуществляем бесплатную доставку при заказе от 5000 рублей для наших постоянных клиентов
+                    </p>
+                  </div>
+                </div>
+                <div class="banners__item-cover banners__item-cover--3" data-animation="parallax-img-3">
+                  <img src="./../images/temp/banners-item-2-cover-1.png" alt="">
+                </div>
+                <div class="banners__item-cover banners__item-cover--4" data-animation="parallax-img-4">
+                  <img src="./../images/temp/banners-item-2-cover-2.png" alt="">
+                </div>
+              </div>
+              <div class="banners__item"></div>
+              <div class="banners__item"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="press-center">
+        <div class="container">
+          <div class="press-center__inner">
+
+            <div class="general__head">
+              <div class="general__head-title">
+                <h2>
+                  Пресс-центр
+                </h2>
+              </div>
+              <div class="general__head-btns">
+                <a class="btn" href="/">
+                  Все новости
+                  <i class="icon-arrow"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="press-center__body">
+              <div class="swiper press-center__slider">
+                <div class="swiper-wrapper">
+                  @@loop('./elements/press-center-slide-item.html', './data/press-center-items.json')
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev press-center-button-prev">
+                  <i class="icon-slider-arrow"></i>
+                </div>
+                <div class="swiper-button-next press-center-button-next">
+                  <i class="icon-slider-arrow"></i>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews">
+        <div class="container">
+          <div class="reviews__inner">
+
+            <div class="general__head">
+              <div class="general__head-title">
+                <h2>
+                  Отзывы
+                </h2>
+              </div>
+              <div class="general__head-btns">
+                <a class="btn" href="/">
+                  Все отзывы
+                  <i class="icon-arrow"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="reviews__body">
+              <div class="swiper reviews__slider">
+                <div class="swiper-wrapper">
+                  @@loop('./elements/reviews-slide-item.html', './data/reviews-items.json')
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev reviews-button-prev">
+                  <i class="icon-slider-arrow"></i>
+                </div>
+                <div class="swiper-button-next reviews-button-next">
+                  <i class="icon-slider-arrow"></i>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

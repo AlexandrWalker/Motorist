@@ -4,7 +4,41 @@
 .general {
 
   &__head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
     margin-bottom: 4rem;
+
+    @include md {
+      margin-bottom: 2.5rem;
+    }
+
+    &-btns {
+
+      .btn {
+        --btn-height: 4rem;
+        --btn-color: var(--blue);
+
+        border-radius: 5rem;
+        gap: 1.5rem;
+        padding: 0 0.9rem 0 2rem;
+
+        font-size: 1.2rem;
+
+        &:hover {
+          --btn-color: var(--white);
+        }
+
+        i {
+          --font-size: 2.2rem;
+
+          background-color: var(--blue);
+          color: var(--white);
+        }
+      }
+    }
   }
 }
 

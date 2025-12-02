@@ -29,6 +29,7 @@ body {
   font-size: 1.6rem;
   line-height: 120%;
   color: var(--black);
+  cursor: default;
 }
 
 .wrapper {
@@ -60,7 +61,7 @@ section {
 
 a {
   color: inherit;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 img {

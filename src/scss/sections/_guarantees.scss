@@ -57,21 +57,30 @@
     &:nth-child(1) {
 
       img {
-        filter: drop-shadow(0px 22px 17.9px rgba(53, 175, 218, 0.55));
+
+        @include md {
+          filter: drop-shadow(0px 22px 17.9px rgba(53, 175, 218, 0.55));
+        }
       }
     }
 
     &:nth-child(2) {
 
       img {
-        filter: drop-shadow(0px 22px 17.9px rgba(53, 175, 218, 0.85));
+
+        @include md {
+          filter: drop-shadow(0px 22px 17.9px rgba(53, 175, 218, 0.85));
+        }
       }
     }
 
     &:nth-child(3) {
 
       img {
-        filter: drop-shadow(0px 22px 17.9px rgba(53, 175, 218, 0.55));
+
+        @include md {
+          filter: drop-shadow(0px 22px 17.9px rgba(53, 175, 218, 0.55));
+        }
 
       }
     }
@@ -79,7 +88,10 @@
     &:nth-child(4) {
 
       img {
-        filter: drop-shadow(0px 22px 17.9px rgba(53, 175, 218, 0.75));
+
+        @include md {
+          filter: drop-shadow(0px 22px 17.9px rgba(53, 175, 218, 0.75));
+        }
       }
     }
   }
