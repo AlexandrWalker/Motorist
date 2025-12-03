@@ -23,9 +23,12 @@
     box-shadow: 5px 12px 23px rgba(113, 133, 149, 0.1);
 
     &:hover {
-      color: var(--white);
-      background-color: var(--blue);
-      box-shadow: 0px 22px 53.3px rgba(53, 175, 218, 0.35);
+
+      @include domd {
+        color: var(--white);
+        background-color: var(--blue);
+        box-shadow: 0px 22px 53.3px rgba(53, 175, 218, 0.35);
+      }
     }
 
     &-img {
@@ -72,8 +75,12 @@
         }
 
         .press-center__item:hover & {
-          background-color: var(--white);
-          color: var(--black);
+
+          @include domd {
+            background-color: var(--white);
+            color: var(--black);
+            transform: translateX(1rem);
+          }
         }
       }
     }

@@ -36,6 +36,17 @@
       text-align: left;
     }
 
+    &-img {
+      transition: all 0.5s ease-in-out;
+
+      .guarantees__item:hover & {
+
+        @include domd {
+          transform: translateY(-1rem);
+        }
+      }
+    }
+
     img {
       width: auto;
       height: 13.9rem;

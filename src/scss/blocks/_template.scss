@@ -1,3 +1,47 @@
 @use './../mixins' as *;
 
-.template {}
+.template {
+
+  &__body {}
+
+  &__content {}
+
+  p {
+    font-size: 1.2rem;
+
+    margin-bottom: 2rem;
+
+    @include md {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  li {
+    font-size: 1.2rem;
+
+    margin-bottom: 2rem;
+    padding-left: 1.8rem;
+
+    position: relative;
+
+    @include md {
+      margin-bottom: 1.5rem;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 0.3rem;
+      height: 0.3rem;
+      border-radius: 50%;
+      background-color: var(--second-black);
+      flex-shrink: 0;
+
+      position: absolute;
+      top: 0.8rem;
+      left: 0.75rem;
+    }
+  }
+
+
+}

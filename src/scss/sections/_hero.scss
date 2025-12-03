@@ -52,6 +52,7 @@
 
     &-img {
       position: absolute;
+      will-change: transform;
 
       &:nth-child(1) {
         width: 45.5rem;
