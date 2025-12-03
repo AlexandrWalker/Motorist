@@ -367,4 +367,37 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 
+  $(window).on('resize load', function () {
+    if (window.innerWidth > 834) {
+      const imgs = [
+        { el: document.getElementById("img1"), power: 10 },
+        { el: document.getElementById("img2"), power: 40 },
+        { el: document.getElementById("img3"), power: 40 }
+      ];
+
+
+      document.addEventListener("mousemove", (e) => {
+        const x = e.clientX;
+        const y = e.clientY;
+
+
+        imgs.forEach(({ el, power }) => {
+          const rect = el.getBoundingClientRect();
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+
+          const dx = (centerX - x) / power;
+          const dy = (centerY - y) / power;
+
+          gsap.to(el, {
+            x: dx,
+            y: dy,
+            duration: 0.4,
+            ease: "power2.out"
+          });
+        });
+      });
+    }
+  });
+
 });
