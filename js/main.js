@@ -400,4 +400,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  const social = document.querySelector('.social');
+  const btn = document.querySelector('.social__item-btn');
+
+  btn.addEventListener('click', () => {
+    social.classList.toggle('active');
+  });
+
+  /**
+   * Инициализация Fabcybox
+   */
+  Fancybox.bind('[data-fancybox]', {
+    Html: {
+      autoSize: false,
+    },
+    on: {
+      'Carousel.ready': () => {
+        lenis.stop();
+      },
+      destroy: () => {
+        lenis.start();
+      }
+    }
+  });
+
 });
