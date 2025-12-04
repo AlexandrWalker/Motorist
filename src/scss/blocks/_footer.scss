@@ -17,6 +17,10 @@
     flex-direction: column;
     gap: 3rem;
     padding: 3rem 0;
+
+    @include sm {
+      padding: 3rem 0 9rem;
+    }
   }
 
   &__contact {

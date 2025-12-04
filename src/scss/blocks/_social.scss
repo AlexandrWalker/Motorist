@@ -1,0 +1,93 @@
+@use './../mixins' as *;
+
+.social {
+  display: none;
+  position: fixed;
+  top: 26.2rem;
+  right: 2rem;
+  z-index: 20;
+
+  @include dosm {
+    display: block;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: linear-gradient(0deg, #718595, #718595), #718595;
+    border: 0.1rem solid rgba(113, 133, 149, 0.1);
+    border-radius: 50%;
+
+    text-align: center;
+    color: var(--white);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: 0.3s ease;
+
+    &:hover {
+
+      i {
+        transform: scale(1.1);
+      }
+    }
+
+    i {
+      --font-size: 5rem;
+    }
+
+    &-btn {
+      background: linear-gradient(180deg, rgba(48, 255, 126, 0.7) 0%, rgba(39, 183, 93, 0.7) 100%), #27B75D;
+      border: 0.1rem solid #25D366;
+      transition: all 0.5s ease;
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+      cursor: pointer;
+
+      position: absolute;
+      top: 0;
+    }
+  }
+}
+
+/* Активное состояние */
+.social.active {
+
+  .social__item-btn {
+    top: 22rem;
+  }
+
+  .social__item:not(.social__item-btn) {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  /* Эффект "лесенки" */
+  .social__item:nth-child(1) {
+    transition-delay: 0.05s;
+  }
+
+  .social__item:nth-child(2) {
+    transition-delay: 0.1s;
+  }
+
+  .social__item:nth-child(3) {
+    transition-delay: 0.15s;
+  }
+
+  .social__item:nth-child(4) {
+    transition-delay: 0.2s;
+  }
+}
