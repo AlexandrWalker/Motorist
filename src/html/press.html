@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru" class="page__inner">
+@@include('blocks/head.html', {"title": "Motorist"})
+
+<body>
+  <div class="wrapper">
+    <!-- Шапка -->
+    @@include('./blocks/header.html')
+    <!-- Мега меню каталога -->
+    @@include('./blocks/megamenu.html')
+    <main class="main">
+
+      <section class="template">
+        <div class="container">
+          <div class="template__inner">
+
+            <div class="breadcrumbs">
+              <ul>
+                <li>
+                  <a href="/">
+                    Главная
+                  </a>
+                </li>
+                <li>
+                  Пресс-центр
+                </li>
+              </ul>
+            </div>
+
+            <div class="general__head">
+              <div class="general__head-title">
+                <h2>
+                  Пресс-центр
+                </h2>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="press">
+        <div class="container">
+          <div class="press__inner">
+            <div class="press__items">
+              @@loop('./elements/press-center-item.html', './data/press-center-items.json')
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <!-- Плашка -->
+    @@include('blocks/plate.html')
+    <!-- Попап -->
+    @@include('blocks/popup.html')
+    <!-- Подвал -->
+    @@include('blocks/footer.html')

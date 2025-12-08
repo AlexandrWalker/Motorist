@@ -16,7 +16,7 @@
     display: none;
   }
 
-  &--open {
+  .burger--active & {
     gap: 0;
 
     .burger-line:nth-child(1) {
@@ -70,5 +70,50 @@
   100% {
     width: 100%;
     transform: rotate(-45deg) translate(0.2rem, -0.1rem);
+  }
+}
+
+.burger-menu {
+
+  &__inner {
+    --megamenu-padding-top: 17.3rem;
+
+    pointer-events: none;
+    overflow: hidden;
+    padding: var(--megamenu-padding-top) 0 0 0;
+    transition: 0s;
+    width: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include md {
+      --megamenu-padding-top: 10.7rem;
+
+      padding: var(--megamenu-padding-top) 0 2.4rem 0;
+    }
+
+    .megamenu--active & {
+      transform: translateX(100vw);
+      pointer-events: none;
+
+    }
+
+    .burger--active & {
+      transform: translateX(0);
+      pointer-events: all;
+    }
+
+    .menu--switching & {
+      transition: all 0.5s ease;
+    }
+  }
+
+  &__list {
+
+    li {
+      margin-bottom: 2rem;
+    }
   }
 }

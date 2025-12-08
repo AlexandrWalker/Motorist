@@ -14,13 +14,17 @@
         <div class="container">
           <div class="hero__inner">
             <div class="hero__content">
-              <h1>
-                Добро пожаловать в магазин
-              </h1>
-              <p>
-                Компания «Моторист» изготавливает патрубки и иную продукцию высочайшего качества, используя передовые
-                технологии и собственное сырье
-              </p>
+              <div class="hero__title" data-split="lines">
+                <h1>
+                  Добро пожаловать в магазин
+                </h1>
+              </div>
+              <div class="hero__text" data-split="text">
+                <p>
+                  Компания «Моторист» изготавливает патрубки и иную продукцию высочайшего качества, используя передовые
+                  технологии и собственное сырье
+                </p>
+              </div>
               <button class="btn btn--orange">
                 <i class="icon-doc"></i>
                 Коммерческое предложение
@@ -46,14 +50,14 @@
           <div class="category__inner">
 
             <div class="general__head">
-              <div class="general__head-title">
+              <div class="general__head-title" data-split="lines">
                 <h3>
                   Категории товаров
                 </h3>
               </div>
             </div>
 
-            <div class="category__body">
+            <div class="category__body" data-transform="fade">
               <div class="swiper category__slider">
                 <div class="swiper-wrapper">
                   @@loop('./elements/category-item.html', './data/category-items.json')
@@ -75,14 +79,14 @@
           <div class="guarantees__inner">
 
             <div class="general__head">
-              <div class="general__head-title">
+              <div class="general__head-title" data-split="lines">
                 <h2>
                   Гарантии стабильного развития
                 </h2>
               </div>
             </div>
 
-            <div class="guarantees__body">
+            <div class="guarantees__body" data-transform="fade">
               <div class="guarantees__items">
                 <div class="guarantees__item">
                   <div class="guarantees__item-img">
@@ -135,14 +139,14 @@
           <div class="popular__inner">
 
             <div class="general__head">
-              <div class="general__head-title">
+              <div class="general__head-title" data-split="lines">
                 <h2>
                   Популярные товары
                 </h2>
               </div>
             </div>
 
-            <div class="popular__body">
+            <div class="popular__body" data-transform="fade">
               <div class="swiper popular__slider">
                 <div class="swiper-wrapper">
                   @@loop('./elements/product-card-slide-item.html', './data/product-card-items.json')
@@ -163,7 +167,7 @@
       <section class="banners">
         <div class="container">
           <div class="banners__inner">
-            <div class="banners__items">
+            <div class="banners__items" data-transform="fade">
               <div class="banners__item banners__item--1">
                 <div class="banners__item-content">
                   <div class="banners__item-suptitle">
@@ -261,7 +265,7 @@
           <div class="press-center__inner">
 
             <div class="general__head">
-              <div class="general__head-title">
+              <div class="general__head-title" data-split="lines">
                 <h2>
                   Пресс-центр
                 </h2>
@@ -274,7 +278,7 @@
               </div>
             </div>
 
-            <div class="press-center__body">
+            <div class="press-center__body" data-transform="fade">
               <div class="swiper press-center__slider">
                 <div class="swiper-wrapper">
                   @@loop('./elements/press-center-slide-item.html', './data/press-center-items.json')
@@ -298,7 +302,7 @@
           <div class="reviews__inner">
 
             <div class="general__head">
-              <div class="general__head-title">
+              <div class="general__head-title" data-split="lines">
                 <h2>
                   Отзывы
                 </h2>
@@ -311,7 +315,7 @@
               </div>
             </div>
 
-            <div class="reviews__body">
+            <div class="reviews__body" data-transform="fade">
               <div class="swiper reviews__slider">
                 <div class="swiper-wrapper">
                   @@loop('./elements/reviews-slide-item.html', './data/reviews-items.json')
@@ -334,7 +338,7 @@
         <div class="container">
           <div class="find__inner">
 
-            <div class="find__content">
+            <div class="find__content" data-transform="fade">
               <div class="find__content-title">
                 Отдел продаж
               </div>
@@ -405,14 +409,14 @@
           <div class="template__inner">
 
             <div class="general__head">
-              <div class="general__head-title">
+              <div class="general__head-title" data-split="lines">
                 <h3>
                   Высокое качество и надежность
                 </h3>
               </div>
             </div>
 
-            <div class="template__content">
+            <div class="template__content" data-transform="fade">
               <p>
                 Современное российское предприятие, специализирующееся на производстве патрубков любой сложности для
                 промышленности и automotive-сектора. Мы предлагаем полный цикл услуг: от проектирования и изготовления

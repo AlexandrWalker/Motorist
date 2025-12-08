@@ -1,4 +1,198 @@
-<div class="megamenu lenis" data-lenis-prevent>
+<!DOCTYPE html>
+<html lang="ru" class="page__inner">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
+  <!-- noindex -->
+  <meta name="robots" content="noindex, nofollow" />
+  <!-- format -->
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="format-detection" content="date=no">
+  <meta name="format-detection" content="address=no">
+  <meta name="format-detection" content="email=no">
+  <!-- favicon -->
+
+  <!-- title -->
+  <title>Motorist</title>
+  <!-- icons -->
+  <link rel="stylesheet" href="icons/style.css">
+  <!-- styles -->
+  <link rel="stylesheet" href="./libs/fancybox/fancybox.css">
+  <link rel="stylesheet" href="./libs/lenis/lenis.min.css">
+  <link rel="stylesheet" href="./libs/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Шапка -->
+    <header id="header" class="header">
+  <div class="container">
+    <div class="header__inner">
+
+      <div class="header__top border">
+        <div class="header__geo dropout-parent">
+          <i class="icon-plane"></i>
+          <span>
+            Петропавловск-Камчатский
+          </span>
+
+          <div class="dropout">
+            <div class="dropout__inner">
+              <div class="dropout__head">
+                <h3>
+                  Ваш город Новосибирск?
+                </h3>
+              </div>
+              <div class="dropout__body">
+                <div class="dropout__btns">
+                  <a class="btn btn--blue" href="/">
+                    Да
+                  </a>
+                  <a class="btn" href="/">
+                    Выбрать
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav class="header__nav">
+          <ul>
+            <li>
+              <a href="/">
+                О компании
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                Оплата и доставка
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                Пресс-центр
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                Контакты
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                Лицензии и сертификаты
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__top-right">
+          <a class="header__download btn" href="/" download="#">
+            <i class="icon-download"></i>
+            Скачать прайс-лист
+          </a>
+          <div class="header__contact">
+            <a href="/">
+              <i class="icon-whatsapp"></i>
+            </a>
+            <a href="/">
+              <i class="icon-telegram"></i>
+            </a>
+          </div>
+          <a class="header__phone" href="tel:+73912030373">
+            +7 (391) 203-03-73
+          </a>
+        </div>
+      </div>
+
+      <div class="header__block">
+        <a class="logo" href="/">
+          <picture>
+            <source media="(min-width: 835px)" srcset="./images/logo/logo.svg">
+            <source media="(max-width: 834px)" srcset="./images/logo/logo-mob.svg">
+            <img src="./images/logo/logo.svg" alt="Motorist">
+          </picture>
+        </a>
+        <button id="headerCatalogBtn" class="header__btn btn">
+          <i class="icon-bento"></i>
+          Каталог
+        </button>
+        <div class="header__search">
+          <input class="header__search-input" name="header-search" type="text" placeholder="Артикул, толщина, название">
+          <button class="header__search-btn">
+            <i class="icon-search"></i>
+          </button>
+        </div>
+        <div class="header__navbar">
+          <a class="header__navbar-item" data-fancybox href="#popup-1">
+            <i class="icon-headphone"></i>
+            <span>
+              Связаться
+            </span>
+          </a>
+          <button class="header__navbar-item">
+            <i class="icon-favorite"></i>
+            <span>
+              Избранное
+            </span>
+          </button>
+          <button class="header__navbar-item">
+            <i class="icon-cart"></i>
+            <span>
+              Корзина
+            </span>
+          </button>
+        </div>
+        <a class="header__login btn dropout-parent" href="/">
+          Войти
+
+          <div class="dropout">
+            <div class="dropout__inner">
+              <div class="dropout__head">
+                <h3>
+                  Будем знакомы?
+                </h3>
+              </div>
+              <div class="dropout__body">
+                <p>
+                  Цены станут выгоднее, а работа с заказами – удобнее
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <button id="burger-btn" class="burger">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="social">
+      <div class="social__items">
+        <a class="social__item" href="/">
+          <i class="icon-plate-mail"></i>
+        </a>
+        <a class="social__item" href="/">
+          <i class="icon-plate-phone"></i>
+        </a>
+        <a class="social__item" href="/">
+          <i class="icon-plate-telegram"></i>
+        </a>
+        <a class="social__item" href="/">
+          <i class="icon-plate-whatsapp"></i>
+        </a>
+        <button class="social__item social__item-btn">
+          <i class="icon-plate-headphone"></i>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</header>
+    <!-- Мега меню каталога -->
+    <div class="megamenu lenis" data-lenis-prevent>
   <div class="container">
     <div class="megamenu__wrapper">
       <div class="megamenu__inner">
@@ -6,7 +200,7 @@
           <div class="megamenu__item megamenu__item-active">
             <div class="megamenu__head border">
               <div class="megamenu__head-img">
-                <img src="./../../images/temp/megamenu-items-1.png" alt="">
+                <img src="./images/temp/megamenu-items-1.png" alt="">
               </div>
               <div class="megamenu__head-title">
                 Патрубки силиконовые
@@ -18,7 +212,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-1.png" alt="">
+                      <img src="./images/temp/megamenu-item-1.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Рукав силиконовый
@@ -47,7 +241,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-2.png" alt="">
+                      <img src="./images/temp/megamenu-item-2.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Патрубки гофрированные
@@ -71,7 +265,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-3.png" alt="">
+                      <img src="./images/temp/megamenu-item-3.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Патрубки демпферные
@@ -100,7 +294,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-4.png" alt="">
+                      <img src="./images/temp/megamenu-item-4.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Т и Y образные патрубки
@@ -124,7 +318,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-5.png" alt="">
+                      <img src="./images/temp/megamenu-item-5.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Патрубки угловые
@@ -198,7 +392,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-6.png" alt="">
+                      <img src="./images/temp/megamenu-item-6.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Патрубки прямые
@@ -252,7 +446,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-7.png" alt="">
+                      <img src="./images/temp/megamenu-item-7.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Патрубки с переходом
@@ -286,7 +480,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-8.png" alt="">
+                      <img src="./images/temp/megamenu-item-8.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Для легковых автомобилей
@@ -343,7 +537,7 @@
           <div class="megamenu__item">
             <div class="megamenu__head border">
               <div class="megamenu__head-img">
-                <img src="./../../images/temp/megamenu-items-2.png" alt="">
+                <img src="./images/temp/megamenu-items-2.png" alt="">
               </div>
               <div class="megamenu__head-title">
                 Патрубки алюминиевые
@@ -355,7 +549,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-1.png" alt="">
+                      <img src="./images/temp/megamenu-item-1.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Рукав силиконовый
@@ -384,7 +578,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-2.png" alt="">
+                      <img src="./images/temp/megamenu-item-2.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Патрубки гофрированные
@@ -408,7 +602,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-3.png" alt="">
+                      <img src="./images/temp/megamenu-item-3.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Патрубки демпферные
@@ -437,7 +631,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-4.png" alt="">
+                      <img src="./images/temp/megamenu-item-4.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Т и Y образные патрубки
@@ -461,7 +655,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-7.png" alt="">
+                      <img src="./images/temp/megamenu-item-7.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Патрубки с переходом
@@ -498,7 +692,7 @@
           <div class="megamenu__item">
             <div class="megamenu__head border">
               <div class="megamenu__head-img">
-                <img src="./../../images/temp/megamenu-items-3.png" alt="">
+                <img src="./images/temp/megamenu-items-3.png" alt="">
               </div>
               <div class="megamenu__head-title">
                 Патрубки алюминиевые
@@ -510,7 +704,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-1.png" alt="">
+                      <img src="./images/temp/megamenu-item-1.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Рукав силиконовый
@@ -539,7 +733,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-2.png" alt="">
+                      <img src="./images/temp/megamenu-item-2.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Патрубки гофрированные
@@ -563,7 +757,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-3.png" alt="">
+                      <img src="./images/temp/megamenu-item-3.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Патрубки демпферные
@@ -592,7 +786,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-4.png" alt="">
+                      <img src="./images/temp/megamenu-item-4.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Т и Y образные патрубки
@@ -616,7 +810,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-7.png" alt="">
+                      <img src="./images/temp/megamenu-item-7.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Патрубки с переходом
@@ -653,7 +847,7 @@
           <div class="megamenu__item">
             <div class="megamenu__head border">
               <div class="megamenu__head-img">
-                <img src="./../../images/temp/megamenu-items-4.png" alt="">
+                <img src="./images/temp/megamenu-items-4.png" alt="">
               </div>
               <div class="megamenu__head-title">
                 Хомуты
@@ -665,7 +859,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-1.png" alt="">
+                      <img src="./images/temp/megamenu-item-1.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Рукав силиконовый
@@ -694,7 +888,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-2.png" alt="">
+                      <img src="./images/temp/megamenu-item-2.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Патрубки гофрированные
@@ -718,7 +912,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-3.png" alt="">
+                      <img src="./images/temp/megamenu-item-3.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Патрубки демпферные
@@ -747,7 +941,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-4.png" alt="">
+                      <img src="./images/temp/megamenu-item-4.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Т и Y образные патрубки
@@ -771,7 +965,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-7.png" alt="">
+                      <img src="./images/temp/megamenu-item-7.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Патрубки с переходом
@@ -808,7 +1002,7 @@
           <div class="megamenu__item">
             <div class="megamenu__head border">
               <div class="megamenu__head-img">
-                <img src="./../../images/temp/megamenu-items-5.png" alt="">
+                <img src="./images/temp/megamenu-items-5.png" alt="">
               </div>
               <div class="megamenu__head-title">
                 Силиконовая резиносмесь
@@ -820,7 +1014,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-1.png" alt="">
+                      <img src="./images/temp/megamenu-item-1.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Рукав силиконовый
@@ -849,7 +1043,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-2.png" alt="">
+                      <img src="./images/temp/megamenu-item-2.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Патрубки гофрированные
@@ -873,7 +1067,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-3.png" alt="">
+                      <img src="./images/temp/megamenu-item-3.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Патрубки демпферные
@@ -902,7 +1096,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-4.png" alt="">
+                      <img src="./images/temp/megamenu-item-4.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Т и Y образные патрубки
@@ -926,7 +1120,7 @@
                 <div class="megamenu__content-item">
                   <div class="megamenu__content-head">
                     <div class="megamenu__content-img">
-                      <img src="./../../images/temp/megamenu-item-7.png" alt="">
+                      <img src="./images/temp/megamenu-item-7.png" alt="">
                     </div>
                     <div class="megamenu__content-title">
                       Патрубки с переходом
@@ -962,7 +1156,681 @@
           </div>
         </div>
       </div>
-      @@include('./burger-menu.html')
+      <div class="burger-menu__inner">
+  <div class="burger-menu__content">
+    <div class="burger-menu__list">
+      <ul>
+        <li>
+          <a href="/">
+            О компании
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            Оплата и доставка
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            Пресс-центр
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            Контакты
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            Лицензии и сертификаты
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
+    </div>
+  </div>
+</div>
+    <main class="main">
+
+      <section class="template">
+        <div class="container">
+          <div class="template__inner">
+
+            <div class="breadcrumbs">
+              <ul>
+                <li>
+                  <a href="/">
+                    Главная
+                  </a>
+                </li>
+                <li>
+                  Пресс-центр
+                </li>
+              </ul>
+            </div>
+
+            <div class="general__head">
+              <div class="general__head-title">
+                <h2>
+                  Пресс-центр
+                </h2>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="press">
+        <div class="container">
+          <div class="press__inner">
+            <div class="press__items">
+              <a class="press-center__item" href="/">
+  <div class="press-center__item-img" data-animation="parallax-img">
+    <img src="./images/temp/press-center-item-1.png" alt="">
+  </div>
+  <div class="press-center__item-content">
+    <div class="press-center__item-date">
+      01.10.2024
+    </div>
+    <div class="press-center__item-title">
+      <p>
+        Расширение складских мощностей компании
+      </p>
+    </div>
+    <i class="icon-arrow"></i>
+  </div>
+</a><a class="press-center__item" href="/">
+  <div class="press-center__item-img" data-animation="parallax-img">
+    <img src="./images/temp/press-center-item-2.png" alt="">
+  </div>
+  <div class="press-center__item-content">
+    <div class="press-center__item-date">
+      01.10.2024
+    </div>
+    <div class="press-center__item-title">
+      <p>
+        Расширение складских мощностей компании
+      </p>
+    </div>
+    <i class="icon-arrow"></i>
+  </div>
+</a><a class="press-center__item" href="/">
+  <div class="press-center__item-img" data-animation="parallax-img">
+    <img src="./images/temp/press-center-item-3.png" alt="">
+  </div>
+  <div class="press-center__item-content">
+    <div class="press-center__item-date">
+      01.10.2024
+    </div>
+    <div class="press-center__item-title">
+      <p>
+        Расширение складских мощностей компании
+      </p>
+    </div>
+    <i class="icon-arrow"></i>
+  </div>
+</a><a class="press-center__item" href="/">
+  <div class="press-center__item-img" data-animation="parallax-img">
+    <img src="./images/temp/press-center-item-4.png" alt="">
+  </div>
+  <div class="press-center__item-content">
+    <div class="press-center__item-date">
+      01.10.2024
+    </div>
+    <div class="press-center__item-title">
+      <p>
+        Расширение складских мощностей компании
+      </p>
+    </div>
+    <i class="icon-arrow"></i>
+  </div>
+</a><a class="press-center__item" href="/">
+  <div class="press-center__item-img" data-animation="parallax-img">
+    <img src="./images/temp/press-center-item-1.png" alt="">
+  </div>
+  <div class="press-center__item-content">
+    <div class="press-center__item-date">
+      01.10.2024
+    </div>
+    <div class="press-center__item-title">
+      <p>
+        Расширение складских мощностей компании
+      </p>
+    </div>
+    <i class="icon-arrow"></i>
+  </div>
+</a><a class="press-center__item" href="/">
+  <div class="press-center__item-img" data-animation="parallax-img">
+    <img src="./images/temp/press-center-item-2.png" alt="">
+  </div>
+  <div class="press-center__item-content">
+    <div class="press-center__item-date">
+      01.10.2024
+    </div>
+    <div class="press-center__item-title">
+      <p>
+        Расширение складских мощностей компании
+      </p>
+    </div>
+    <i class="icon-arrow"></i>
+  </div>
+</a><a class="press-center__item" href="/">
+  <div class="press-center__item-img" data-animation="parallax-img">
+    <img src="./images/temp/press-center-item-3.png" alt="">
+  </div>
+  <div class="press-center__item-content">
+    <div class="press-center__item-date">
+      01.10.2024
+    </div>
+    <div class="press-center__item-title">
+      <p>
+        Расширение складских мощностей компании
+      </p>
+    </div>
+    <i class="icon-arrow"></i>
+  </div>
+</a><a class="press-center__item" href="/">
+  <div class="press-center__item-img" data-animation="parallax-img">
+    <img src="./images/temp/press-center-item-4.png" alt="">
+  </div>
+  <div class="press-center__item-content">
+    <div class="press-center__item-date">
+      01.10.2024
+    </div>
+    <div class="press-center__item-title">
+      <p>
+        Расширение складских мощностей компании
+      </p>
+    </div>
+    <i class="icon-arrow"></i>
+  </div>
+</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <!-- Плашка -->
+    <div class="plate">
+  <div class="container">
+    <div class="plate__inner">
+      <div class="plate__items">
+        <a class="plate__item" data-fancybox href="#popup-1">
+          <div class="plate__item-icon">
+            <i class="icon-headphone"></i>
+          </div>
+          <span class="plate__item-text">
+            Связаться
+          </span>
+        </a>
+        <button class="plate__item">
+          <div class="plate__item-icon">
+            <i class="icon-compare"></i>
+          </div>
+          <span class="plate__item-text">
+            Сравнить
+          </span>
+        </button>
+        <button class="plate__item">
+          <div class="plate__item-icon">
+            <span>20</span>
+            <i class="icon-favorite"></i>
+          </div>
+          <span class="plate__item-text">
+            Избранное
+          </span>
+        </button>
+        <button class="plate__item">
+          <div class="plate__item-icon">
+            <span>143</span>
+            <i class="icon-basket"></i>
+          </div>
+          <span class="plate__item-text">
+            Корзина
+          </span>
+        </button>
+        <a class="plate__btn btn" href="/">
+          Войти
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- Попап -->
+    <div class="popup" id="popup-1">
+  <div class="popup__inner">
+    <div class="popup__head">
+      <h3>
+        Свяжитесь с нами удобным для вас способом
+      </h3>
+    </div>
+    <div class="popup__body">
+      <div class="popup__links">
+        <a class="popup__link popup__link-telegram" href="/">
+          <span class="popup__link-text">
+            Написать в Telegram
+          </span>
+          <i class="icon-telegram"></i>
+        </a>
+        <a class="popup__link popup__link-whatsapp" href="/">
+          <span class="popup__link-text">
+            Написать в WhatsApp
+          </span>
+          <i class="icon-whatsapp"></i>
+        </a>
+        <a class="popup__link popup__link-phone" href="/">
+          <span class="popup__link-text">
+            Позвонить по телефону
+          </span>
+          <i class="icon-plate-phone"></i>
+        </a>
+        <a class="popup__link popup__link-mail" href="/">
+          <span class="popup__link-text">
+            Написать на почту
+          </span>
+          <i class="icon-plate-mail"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- Подвал -->
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+
+      <div class="footer__contact" data-split="lines">
+        <a class="footer__contact-tel" href="tel:+73912030373">
+          +7 (391) 203-03-73
+        </a>
+        <a class="footer__contact-mail" href="mailto:2030373@gmail.com">
+          2030373@gmail.com
+        </a>
+      </div>
+
+      <div class="footer__top">
+        <div class="footer__items accordion-parent">
+          <div class="footer__item accordion">
+            <div class="footer__item-head accordion-head">
+              <p>
+                Патрубки силиконовые
+              </p>
+              <i class="icon-chevron-min"></i>
+            </div>
+            <div class="footer__item-body accordion-body">
+              <ul>
+                <li>
+                  <a href="/">
+                    Патрубки силиконовые
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Рукав силиконовый
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Патрубки угловые
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Патрубки прямые
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Для легковых автомобилей
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Патрубки гофрированные
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Патрубки демпферные
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Т и Y образные патрубки
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Патрубки с переходом
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__item accordion">
+            <div class="footer__item-head accordion-head">
+              <p>
+                Патрубки алюминиевые
+              </p>
+              <i class="icon-chevron-min"></i>
+            </div>
+            <div class="footer__item-body accordion-body">
+              <ul>
+                <li>
+                  <a href="/">
+                    Патрубки алюминиевые
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Рукав силиконовый
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Патрубки угловые
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Патрубки прямые
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__item accordion">
+            <div class="footer__item-head accordion-head">
+              <p>
+                Патрубки металлические
+              </p>
+              <i class="icon-chevron-min"></i>
+            </div>
+            <div class="footer__item-body accordion-body">
+              <ul>
+                <li>
+                  <a href="/">
+                    Патрубки металлические
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Рукав силиконовый
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Патрубки угловые
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Патрубки прямые
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Для легковых автомобилей
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Патрубки гофрированные
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Патрубки демпферные
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Т и Y образные патрубки
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__item accordion">
+            <div class="footer__item-head accordion-head">
+              <p>
+                Силиконовая резиносмесь
+              </p>
+              <i class="icon-chevron-min"></i>
+            </div>
+            <div class="footer__item-body accordion-body">
+              <ul>
+                <li>
+                  <a href="/">
+                    Силиконовая резиносмесь
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Для легковых автомобилей
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Т и Y образные патрубки
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Патрубки с переходом
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__item accordion">
+            <div class="footer__item-head accordion-head">
+              <p>
+                Хомуты
+              </p>
+              <i class="icon-chevron-min"></i>
+            </div>
+            <div class="footer__item-body accordion-body">
+              <ul>
+                <li>
+                  <a href="/">
+                    Хомуты
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Рукав силиконовый
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Патрубки угловые
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Патрубки прямые
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Для легковых автомобилей
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Патрубки гофрированные
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__info">
+        <div class="footer__nav">
+          <ul>
+            <li>
+              <a href="/">
+                О компании
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                Производство
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                Сотрудничество
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                Каталог
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                Вакансии
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                Контакты
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                Пресс-центр
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__wrap">
+          <div class="footer__wrap-item">
+            <div class="footer__wrap-suptitle">
+              <p>
+                Офис
+              </p>
+            </div>
+            <div class="footer__wrap-text">
+              <p>
+                Алексеева, 49, офис 3-02
+              </p>
+            </div>
+          </div>
+          <div class="footer__wrap-item">
+            <div class="footer__wrap-suptitle">
+              <p>
+                Склад
+              </p>
+            </div>
+            <div class="footer__wrap-text">
+              <p>
+                Джамбульская, 12Д
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__links">
+          <a href="/" download="#">
+            <i class="icon-doc"></i>
+            <span>
+              Скачать презентацию
+            </span>
+          </a>
+          <a href="/" download="#">
+            <i class="icon-doc"></i>
+            <span>
+              Реквизиты для розничных покупок
+            </span>
+          </a>
+          <a href="/" download="#">
+            <i class="icon-doc"></i>
+            <span>
+              Реквизиты для оптовых покупок
+            </span>
+          </a>
+          <a href="/" download="#">
+            <i class="icon-doc"></i>
+            <span>
+              Скачать прайс-лист
+            </span>
+          </a>
+        </div>
+
+        <div class="footer__main">
+          <a class="logo" href="/">
+            <img src="./images/logo/logo-gray.svg" alt="">
+          </a>
+          <div class="footer__main-text">
+            <p>
+              Вся информация на странице предназначена только для ознакомления и носит справочный характер, не является
+              публичной офертой или коммерческим предложением.
+            </p>
+          </div>
+          <div class="footer__pays">
+            <img src="./images/icon/mastercard.svg" alt="">
+            <img src="./images/icon/mir.svg" alt="">
+            <img src="./images/icon/visa.svg" alt="">
+            <img src="./images/icon/youkassa.svg" alt="">
+            <img src="./images/icon/sberbank.svg" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__bottom-content">
+          <div class="footer__bottom-wrap">
+            <p>
+              Разработка сайта: <a href="/">Контора Громова</a>
+            </p>
+            <p>
+              © 2022 Motorist
+            </p>
+          </div>
+          <div class="footer__bottom-links">
+            <a href="/">
+              Политика конфиденциальности
+            </a>
+            <a href="/">
+              Политика обработки персональных данных
+            </a>
+          </div>
+        </div>
+        <div class="footer__bottom-social">
+          <a href="/">
+            <i class="icon-telegram"></i>
+          </a>
+          <a href="/">
+            <i class="icon-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</footer>
+</div>
+<!-- libs -->
+<script src="./libs/jquery/jquery.v3.7.1.min.js"></script>
+<script src="./libs/fancybox/fancybox.umd.js"></script>
+<script src="./libs/gsap/gsap.min.js"></script>
+<script src="./libs/gsap/ScrollTrigger.min.js"></script>
+<script src="./libs/gsap/SplitText.min.js"></script>
+<script src="./libs/jquery/jquery.v3.7.1.min.js"></script>
+<script src="./libs/lenis/lenis.min.js"></script>
+<script src="./libs/swiper/swiper-bundle.min.js"></script>
+<!-- scripts -->
+<script src="./js/main.js"></script>
+</body>
+
+</html>

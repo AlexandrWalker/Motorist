@@ -35,7 +35,8 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  height: 100%;
+  min-height: 100vh;
 
   padding-top: var(--header-height);
 }
@@ -50,7 +51,7 @@ body {
 
 section {
   overflow-x: hidden;
-  overflow-y: visible;
+  overflow-y: hidden;
 
   padding-bottom: 5rem;
 

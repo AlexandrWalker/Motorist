@@ -1,0 +1,33 @@
+@use './../mixins' as *;
+
+.breadcrumbs {
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 100%;
+
+    &::after {
+      content: "/";
+    }
+  }
+
+  a {
+
+    &:hover {
+      color: var(--blue);
+    }
+  }
+}

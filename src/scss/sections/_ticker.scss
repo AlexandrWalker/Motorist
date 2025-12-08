@@ -24,7 +24,7 @@
     flex-direction: row;
 
     margin-left: calc((var(--container-padding) + var(--ticker-padding) + var(--ticker-margin)) * -1);
-    animation: ticker 5s infinite linear;
+    animation: ticker 10s infinite linear;
 
     @include md {
       width: calc(100vw/(440/825));

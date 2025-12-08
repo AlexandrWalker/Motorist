@@ -1,0 +1,34 @@
+@use './../mixins' as *;
+
+.catalog {
+
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+
+    @include md {
+      flex-direction: column;
+      gap: 1;
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    @include md {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    @include xxs {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .product-card__item {
+    position: relative;
+  }
+}

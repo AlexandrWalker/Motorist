@@ -24,7 +24,7 @@
     --header-inner-height: 4.4rem;
   }
 
-  .header-catalog-open & {
+  .menu-wrapper--open & {
     color: var(--white);
   }
 
@@ -85,7 +85,7 @@
       }
     }
 
-    .header-catalog-open & {
+    .menu-wrapper--open & {
       gap: 0.5rem;
     }
 
@@ -98,7 +98,7 @@
       text-decoration-color: var(--black-50);
       text-decoration-line: underline;
 
-      .header-catalog-open & {
+      .menu-wrapper--open & {
         font-weight: 700;
         color: var(--white);
         text-decoration-color: var(--white);
@@ -113,7 +113,7 @@
       color: var(--blue);
       background-color: var(--white);
 
-      .header-catalog-open & {
+      .menu-wrapper--open & {
         width: 1.6rem;
         height: 1.6rem;
         color: var(--white);
@@ -138,14 +138,14 @@
 
       color: var(--black-50);
 
-      .header-catalog-open & {
+      .menu-wrapper--open & {
         color: var(--white-50);
       }
 
       &:hover {
         color: var(--black);
 
-        .header-catalog-open & {
+        .menu-wrapper--open & {
           color: var(--white);
         }
       }
@@ -162,7 +162,7 @@
     font-size: 1rem;
     color: var(--orange);
 
-    .header-catalog-open & {
+    .menu-wrapper--open & {
       --btn-height: unset;
       --btn-padding-x: unset;
 
@@ -176,7 +176,7 @@
       --btn-height: 2.4rem;
     }
 
-    &:not(.header-catalog-open .header__download):hover {
+    &:not(.menu-wrapper--open .header__download):hover {
       background-color: var(--orange);
 
       color: var(--white);
@@ -185,7 +185,7 @@
     i {
       --font-size: 1.6rem;
 
-      .header-catalog-open & {
+      .menu-wrapper--open & {
         font-weight: 700;
       }
     }
@@ -201,11 +201,11 @@
       background-color: var(--white);
       border-radius: 50%;
 
-      .header-catalog-open & {
+      .menu-wrapper--open & {
         background-color: transparent;
       }
 
-      &:not(.header-catalog-open .header__contact a):hover {
+      &:not(.menu-wrapper--open .header__contact a):hover {
         background-color: var(--second-black);
       }
     }
@@ -217,7 +217,7 @@
         --font-size: 2.4rem;
       }
 
-      .header-catalog-open & {
+      .menu-wrapper--open & {
         width: 1.8rem;
         height: 1.8rem;
         color: var(--white) !important;
@@ -228,7 +228,7 @@
   &__phone {
     font-weight: 700;
 
-    .header-catalog-open & {
+    .menu-wrapper--open & {
       font-size: 1.2rem;
       margin-left: -0.5rem;
     }
@@ -256,7 +256,7 @@
       padding: 1rem;
     }
 
-    .header-catalog-open & {
+    .menu-wrapper--open & {
       background-color: var(--gray-21);
       box-shadow: none;
     }
@@ -273,7 +273,7 @@
       padding: 1rem;
     }
 
-    .header-catalog-open & {
+    .menu-wrapper--open & {
       background-color: var(--blue);
       color: var(--white);
     }
@@ -296,7 +296,7 @@
         --font-size: 2rem;
       }
 
-      .header-catalog-open & {
+      .menu-wrapper--open & {
         color: var(--white);
       }
     }
@@ -350,7 +350,7 @@
       left: 0;
       z-index: -1;
 
-      .header-catalog-open & {
+      .menu-wrapper--open & {
         background: var(--gray);
         border-color: var(--white-60);
       }
@@ -425,11 +425,11 @@
       padding: 0.2rem 1.5rem 0.2rem 2.3rem;
     }
 
-    .header-catalog-open & {
+    .menu-wrapper--open & {
       background-color: var(--gray-60);
     }
 
-    &:not(.header-catalog-open .header__navbar):hover {
+    &:not(.menu-wrapper--open .header__navbar):hover {
       background-color: var(--white);
     }
 
@@ -463,7 +463,7 @@
           font-size: 0;
         }
 
-        .header-catalog-open & {
+        .menu-wrapper--open & {
           color: var(--white-50);
         }
       }

@@ -4,13 +4,12 @@
   --megamenu-padding-top: 17.3rem;
 
   width: 100%;
-  height: 100vh;
   background: rgba(4, 29, 44, 0.8);
   backdrop-filter: blur(37.65px);
   height: 0;
-  overflow: hidden;
   transition: all 0.5s ease;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 
   color: var(--white);
 
@@ -23,17 +22,46 @@
     --megamenu-padding-top: 10.7rem;
   }
 
-  .header-catalog-open & {
+  .menu-wrapper--open & {
     height: 100vh;
   }
 
-  .container {}
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    transition: all 0.5s ease;
+    position: relative;
+  }
 
   &__inner {
     padding: var(--megamenu-padding-top) 0 0 0;
+    overflow: hidden;
+    transition: 0s;
+    width: 100%;
+
+    transform: translateX(-100vw);
+    pointer-events: none;
+
+    .megamenu--active & {
+      transform: translateX(0);
+      pointer-events: all;
+    }
+
+    .burger--active & {
+      transform: translateX(-100vw);
+      pointer-events: none;
+    }
+
+    .menu--switching & {
+      transition: all 0.5s ease;
+    }
 
     @include md {
-      padding: var(--megamenu-padding-top) 0 2.4rem 0;
+      // padding: var(--megamenu-padding-top) 0 2.4rem 0;
+      padding: var(--megamenu-padding-top) 0 8rem 0;
     }
   }
 
@@ -71,6 +99,7 @@
     border-radius: 1.5rem;
     background-color: var(--gray-25);
     transition: all 0.5s ease;
+    cursor: pointer;
 
     @include md {
       justify-content: space-between;

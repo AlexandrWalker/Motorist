@@ -66,8 +66,22 @@
     opacity: 0;
     transition: opacity 0.5s ease;
 
-    .header-catalog-open & {
+    .menu-wrapper--open & {
       opacity: 1;
     }
+  }
+}
+
+[data-split="lines"],
+[data-split="text"],
+[data-transform="fade"] {}
+
+[data-animation="parallax-img"] {
+  overflow: hidden;
+
+  img {
+    height: 140% !important;
+    margin-top: -10%;
+    object-fit: cover;
   }
 }

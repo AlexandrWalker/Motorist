@@ -1,0 +1,23 @@
+@use './../mixins' as *;
+
+.press {
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+
+    @include md {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    @include xxs {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .press-center__item {
+    position: relative;
+  }
+}

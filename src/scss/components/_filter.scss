@@ -1,0 +1,133 @@
+@use './../mixins' as *;
+
+.filter {
+  max-width: 29.5rem;
+  width: 100%;
+
+  @include md {
+    display: none;
+  }
+
+  &__items {}
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &-head {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      height: 5rem;
+      padding: 0 1.5rem;
+      border-radius: 0.8rem;
+      background-color: var(--white);
+
+      font-weight: 700;
+      font-size: 1.4rem;
+      line-height: 120%;
+    }
+
+    &-body {
+      display: grid;
+      grid-template-rows: 0fr;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      padding-left: 1.5rem;
+
+      .accordion-active & {
+        grid-template-rows: 1fr;
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      overflow: hidden;
+    }
+
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      input {
+        display: none;
+
+        &:checked {
+
+          &+label::after {
+            opacity: 1;
+          }
+        }
+      }
+
+      label {
+        padding-left: 3rem;
+        position: relative;
+
+        &::before {
+          content: "";
+          background: var(--white-50);
+          border: 0.1rem solid var(--white);
+          border-radius: 0.4rem;
+          width: 2rem;
+          height: 2rem;
+
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+        }
+
+        &::after {
+          content: "";
+          background: var(--blue);
+          border-radius: 0.2rem;
+          width: 1.4rem;
+          height: 1.4rem;
+          opacity: 0;
+          transition: all 0.3s ease;
+
+          position: absolute;
+          top: 50%;
+          left: 0.3rem;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    &-title {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 120%;
+    }
+
+    &-list {
+      padding-left: 3rem;
+
+      li {
+        margin-bottom: 2rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .btn {
+    --btn-width: 100%;
+
+    justify-content: space-between;
+  }
+}

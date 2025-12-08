@@ -1,0 +1,22 @@
+@use './../mixins' as *;
+
+.page {
+
+  &__inner {
+
+    .template {
+      padding-bottom: 0;
+
+      &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        padding: 2.5rem 0 3rem 0;
+      }
+
+      .general__head {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
