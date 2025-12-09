@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'MotoristIconFonts';
-  src:  url('fonts/MotoristIconFonts.eot?flsfyq');
-  src:  url('fonts/MotoristIconFonts.eot?flsfyq#iefix') format('embedded-opentype'),
-    url('fonts/MotoristIconFonts.ttf?flsfyq') format('truetype'),
-    url('fonts/MotoristIconFonts.woff?flsfyq') format('woff'),
-    url('fonts/MotoristIconFonts.svg?flsfyq#MotoristIconFonts') format('svg');
+  src:  url('fonts/MotoristIconFonts.eot?3mqwwm');
+  src:  url('fonts/MotoristIconFonts.eot?3mqwwm#iefix') format('embedded-opentype'),
+    url('fonts/MotoristIconFonts.ttf?3mqwwm') format('truetype'),
+    url('fonts/MotoristIconFonts.woff?3mqwwm') format('woff'),
+    url('fonts/MotoristIconFonts.svg?3mqwwm#MotoristIconFonts') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -70,72 +70,75 @@
 .icon-favorite-min:before {
   content: "\e90e";
 }
-.icon-form-mail:before {
+.icon-filter:before {
   content: "\e90f";
 }
-.icon-form-phone:before {
+.icon-form-mail:before {
   content: "\e910";
 }
-.icon-form-photo-camera:before {
+.icon-form-phone:before {
   content: "\e911";
 }
-.icon-form-tie:before {
+.icon-form-photo-camera:before {
   content: "\e912";
 }
-.icon-form-user:before {
+.icon-form-tie:before {
   content: "\e913";
 }
-.icon-headphone:before {
+.icon-form-user:before {
   content: "\e914";
 }
-.icon-kebab-menu:before {
+.icon-headphone:before {
   content: "\e915";
 }
-.icon-minus:before {
+.icon-kebab-menu:before {
   content: "\e916";
 }
-.icon-plane:before {
+.icon-minus:before {
   content: "\e917";
 }
-.icon-plate-headphone:before {
+.icon-plane:before {
   content: "\e918";
 }
-.icon-plate-mail:before {
+.icon-plate-headphone:before {
   content: "\e919";
 }
-.icon-plate-phone:before {
+.icon-plate-mail:before {
   content: "\e91a";
 }
-.icon-plate-telegram:before {
+.icon-plate-phone:before {
   content: "\e91b";
 }
-.icon-plate-whatsapp:before {
+.icon-plate-telegram:before {
   content: "\e91c";
 }
-.icon-plus:before {
+.icon-plate-whatsapp:before {
   content: "\e91d";
 }
-.icon-plus-min:before {
+.icon-plus:before {
   content: "\e91e";
 }
-.icon-search:before {
+.icon-plus-min:before {
   content: "\e91f";
 }
-.icon-slider-arrow:before {
+.icon-search:before {
   content: "\e920";
 }
-.icon-star:before {
+.icon-slider-arrow:before {
   content: "\e921";
 }
-.icon-telegram:before {
+.icon-star:before {
   content: "\e922";
 }
-.icon-thermometer:before {
+.icon-telegram:before {
   content: "\e923";
 }
-.icon-trash:before {
+.icon-thermometer:before {
   content: "\e924";
 }
-.icon-whatsapp:before {
+.icon-trash:before {
   content: "\e925";
+}
+.icon-whatsapp:before {
+  content: "\e926";
 }
