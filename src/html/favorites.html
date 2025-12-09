@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru" class="page__inner page__favorites">
+@@include('blocks/head.html', {"title": "Motorist"})
+
+<body>
+  <div class="wrapper">
+    <!-- Шапка -->
+    @@include('./blocks/header.html')
+    <!-- Мега меню каталога -->
+    @@include('./blocks/megamenu.html')
+    <main class="main">
+
+      <section class="template">
+        <div class="container">
+          <div class="template__inner">
+
+            <div class="breadcrumbs">
+              <ul>
+                <li>
+                  <a href="/">
+                    Главная
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Каталог
+                  </a>
+                </li>
+                <li>
+                  Избранные товары
+                </li>
+              </ul>
+            </div>
+
+            <div class="general__head">
+              <div class="general__head-title">
+                <h2>
+                  Избранные товары
+                </h2>
+              </div>
+              <div class="general__head-text">
+                <p>
+                  <a href="/">Авторизуйтесь,</a> чтобы сохранить список понравившихся товаров для просмотра на ваших
+                  устройствах
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="favorites">
+        <div class="container">
+          <div class="favorites__inner">
+
+            <div class="control">
+              <div class="control__search">
+                <input class="control__search-input" name="favorites-search" type="text"
+                  placeholder="Поиск по артикулу">
+                <button class="control__search-btn">
+                  <i class="icon-search"></i>
+                </button>
+              </div>
+              <div class="control__btns">
+                <button class="control__btn btn block block-active">
+                  <i class="icon-bento-menu"></i>
+                </button>
+                <button class="control__btn btn list">
+                  <i class="icon-kebab-menu"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="favorites__body">
+
+              <div class="favorites__block catalogblock block">
+                @@loop('./elements/product-card-item.html', './data/product-card-items.json')
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <!-- Плашка -->
+    @@include('blocks/plate.html')
+    <!-- Попап -->
+    @@include('blocks/popup.html')
+    <!-- Подвал -->
+    @@include('blocks/footer.html')

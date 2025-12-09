@@ -15,6 +15,11 @@
       margin-bottom: 2.5rem;
     }
 
+    .page__favorites & {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
     &-btns {
 
       .btn {
@@ -36,6 +41,25 @@
 
           background-color: var(--blue);
           color: var(--white);
+        }
+      }
+    }
+
+    &-text {
+
+      p {
+
+        .template & {
+          font-size: 1.4rem;
+          margin-bottom: 0;
+        }
+      }
+
+      a {
+        color: var(--blue);
+
+        &:hover {
+          text-decoration: underline;
         }
       }
     }

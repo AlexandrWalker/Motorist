@@ -20,6 +20,7 @@
     height: 100%;
     overflow: hidden;
     transition: all 0.5s ease;
+    position: relative;
 
     @include md {
       gap: 0.5rem;
@@ -99,6 +100,7 @@
       &.favorite-active {
 
         i::before {
+          /* icon-favorite-fill-min */
           content: "\e90d";
         }
       }
@@ -168,6 +170,69 @@
 
       span {
         color: var(--blue);
+      }
+
+      .list & {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+
+        font-size: 1.2rem;
+
+        span {
+          font-size: 1.4rem;
+          color: var(--black);
+        }
+      }
+    }
+
+    &-text {
+      display: none;
+
+      color: var(--gray);
+
+      p {
+        font-size: 1.4rem;
+      }
+
+      .list & {
+        display: block;
+      }
+    }
+
+    &-material {
+      display: none;
+      flex-direction: column;
+      gap: 0.3rem;
+
+      font-size: 1.2rem;
+      color: var(--gray);
+
+      span {
+        font-size: 1.4rem;
+        color: var(--black);
+      }
+
+      .list & {
+        display: flex;
+      }
+    }
+
+    &-diameter {
+      display: none;
+      flex-direction: column;
+      gap: 0.3rem;
+
+      font-size: 1.2rem;
+      color: var(--gray);
+
+      span {
+        font-size: 1.4rem;
+        color: var(--black);
+      }
+
+      .list & {
+        display: flex;
       }
     }
 

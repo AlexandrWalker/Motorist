@@ -50,8 +50,16 @@
   &__btn {
     --btn-width: 5rem;
     --btn-height: 5rem;
+    --btn-color: var(--gray);
 
     padding: 0;
+
+    &.block-active,
+    &.list-active,
+    &.btn:hover {
+      --btn-color: var(--blue);
+      --btn-background: var(--white);
+    }
 
     i {
       --font-size: 2rem;

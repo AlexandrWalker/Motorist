@@ -589,5 +589,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  const control = document.querySelector('.control');
+  const catalogBlock = document.querySelector('.catalogblock');
+
+  if (control) {
+    const block = control.querySelector('.block');
+    const list = control.querySelector('.list');
+
+    block.addEventListener('click', () => {
+      block.classList.add('block-active');
+      list.classList.remove('list-active');
+
+      catalogBlock.classList.add('block');
+      catalogBlock.classList.remove('list');
+    });
+
+    list.addEventListener('click', () => {
+      block.classList.remove('block-active');
+      list.classList.add('list-active');
+
+      catalogBlock.classList.remove('block');
+      catalogBlock.classList.add('list');
+    });
+  }
 
 });

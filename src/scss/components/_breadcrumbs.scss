@@ -22,6 +22,13 @@
     &::after {
       content: "/";
     }
+
+    &:last-child {
+
+      &::after {
+        display: none;
+      }
+    }
   }
 
   a {

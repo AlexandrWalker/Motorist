@@ -12,6 +12,11 @@
         flex-direction: column;
         gap: 3rem;
         padding: 2.5rem 0 3rem 0;
+
+        @include md {
+          gap: 2rem;
+          padding-bottom: 2rem;
+        }
       }
 
       .general__head {

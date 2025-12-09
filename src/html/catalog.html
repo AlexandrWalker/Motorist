@@ -57,12 +57,12 @@
                 </button>
               </div>
               <div class="control__btns">
-                <div class="control__btn btn">
-                  <i class="icon-bento"></i>
-                </div>
-                <div class="control__btn btn">
+                <button class="control__btn btn block block-active">
+                  <i class="icon-bento-menu"></i>
+                </button>
+                <button class="control__btn btn list">
                   <i class="icon-kebab-menu"></i>
-                </div>
+                </button>
               </div>
             </div>
 
@@ -130,12 +130,13 @@
               <h6>
                 Фильтр товаров
               </h6>
+              <i class="icon-filter"></i>
             </button>
 
             <div class="catalog__body">
 
               @@include('./blocks/filter.html')
-              <div class="catalog__block">
+              <div class="catalog__block catalogblock block">
                 @@loop('./elements/product-card-item.html', './data/product-card-items.json')
               </div>
 
