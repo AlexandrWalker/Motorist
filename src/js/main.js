@@ -111,8 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   /**
- * Аккордеон
- */
+   * Аккордеон
+   */
   (function accordionFunc() {
     var accordionParents = document.querySelectorAll('.accordion-parent');
     if (!accordionParents.length) return;
@@ -163,6 +163,36 @@ document.addEventListener('DOMContentLoaded', () => {
       })(accordionParents[i]);
     }
   })();
+
+  /**
+   * Инициализация раскрытия фильтра
+   */
+  // Универсальная функция для фильтра
+  function initFilter(container) {
+    container.forEach(element => {
+      element.addEventListener('click', e => {
+        // Клик по заголовку первого уровня
+        if (e.target.classList.contains('filter__item-head')) {
+          e.target.classList.toggle('active'); // добавляем/удаляем класс
+          const subgroup = e.target.nextElementSibling;
+          subgroup.classList.toggle('active'); // добавляем/удаляем класс
+        }
+
+        // Клик по чекбоксу второго уровня
+        if (e.target.tagName === 'INPUT' && e.target.type === 'checkbox') {
+          const nested = e.target.parentElement.nextElementSibling;
+          const nestedParent = e.target.parentElement;
+          if (nested && nested.classList.contains('filter__nested')) {
+            nested.classList.toggle('active', e.target.checked);
+            nestedParent.classList.toggle('active', e.target.checked);
+          }
+        }
+      });
+    });
+  }
+
+  // Инициализация
+  initFilter(document.querySelectorAll('.filter'));
 
   /**
    * Код для раскрытия меню кталога и бургер меню

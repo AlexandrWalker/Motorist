@@ -1,131 +1,142 @@
 @use './../mixins' as *;
 
 .filter {
-  max-width: 29.5rem;
-  width: 100%;
 
-  @include md {
-    display: none;
+  *,
+  i {
+    transition: all 0.3s ease;
   }
 
-  &__items {}
+  &__group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    width: 100%;
+
+    i {
+      --font-size: 1.3rem;
+
+      background-color: var(--white);
+      margin-left: auto;
+      pointer-events: none;
+    }
+  }
 
   &__item {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+
+    input {
+      display: none;
+
+      &:checked {
+
+        &+.filter__check::before {
+          opacity: 1;
+        }
+      }
+    }
+
+    h6 {
+      margin-right: 2rem;
+    }
+
+    &.active {
+
+      i {
+        transform: rotate(180deg);
+        background-color: var(--blue);
+        color: var(--white);
+      }
+    }
 
     &-head {
       display: flex;
       flex-direction: row;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       height: 5rem;
-      padding: 0 1.5rem;
-      border-radius: 0.8rem;
+      padding: 1rem 1.5rem;
       background-color: var(--white);
+      border-radius: 0.8rem;
 
-      font-weight: 700;
-      font-size: 1.4rem;
-      line-height: 120%;
-    }
+      cursor: pointer;
+      font-weight: bold;
 
-    &-body {
-      display: grid;
-      grid-template-rows: 0fr;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      padding-left: 1.5rem;
-
-      .accordion-active & {
-        grid-template-rows: 1fr;
-      }
-    }
-
-    &-content {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      overflow: hidden;
-    }
-
-    &-wrap {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-
-      input {
-        display: none;
-
-        &:checked {
-
-          &+label::after {
-            opacity: 1;
-          }
-        }
+      h6 {
+        pointer-events: none;
       }
 
-      label {
-        padding-left: 3rem;
-        position: relative;
+      &.active {
+        margin-bottom: 1rem;
 
-        &::before {
-          content: "";
-          background: var(--white-50);
-          border: 0.1rem solid var(--white);
-          border-radius: 0.4rem;
-          width: 2rem;
-          height: 2rem;
-
-          position: absolute;
-          top: 50%;
-          left: 0;
-          transform: translateY(-50%);
-        }
-
-        &::after {
-          content: "";
-          background: var(--blue);
-          border-radius: 0.2rem;
-          width: 1.4rem;
-          height: 1.4rem;
-          opacity: 0;
-          transition: all 0.3s ease;
-
-          position: absolute;
-          top: 50%;
-          left: 0.3rem;
-          transform: translateY(-50%);
-        }
-      }
-    }
-
-    &-title {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.5rem;
-
-      font-weight: 400;
-      font-size: 1.4rem;
-      line-height: 120%;
-    }
-
-    &-list {
-      padding-left: 3rem;
-
-      li {
-        margin-bottom: 2rem;
-
-        &:last-child {
-          margin-bottom: 0;
+        i {
+          transform: rotate(180deg);
         }
       }
     }
   }
 
-  .btn {
+  &__check {
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+    background: var(--white-50);
+    border: 0.1rem solid var(--white);
+    border-radius: 0.4rem;
+    flex-shrink: 0;
+
+    position: relative;
+
+    &::before {
+      content: "";
+      background: var(--blue);
+      border-radius: 0.2rem;
+      width: 1.4rem;
+      height: 1.4rem;
+      opacity: 0;
+      flex-shrink: 0;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__subgroup,
+  &__nested {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    &.active {
+      grid-template-rows: 1fr;
+      opacity: 1;
+    }
+
+    i {
+      margin-top: 0.3rem;
+    }
+  }
+
+  &__nested {
+
+    .filter__item {
+      padding: 1rem 1.5rem 1rem 4.5rem;
+    }
+  }
+
+  &__btn {
     --btn-width: 100%;
 
     justify-content: space-between;

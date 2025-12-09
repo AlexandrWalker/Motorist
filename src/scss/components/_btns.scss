@@ -67,4 +67,9 @@
       --btn-background: var(--second-black);
     }
   }
+
+  &--gray {
+    --btn-color: var(--white);
+    --btn-background: var(--gray);
+  }
 }

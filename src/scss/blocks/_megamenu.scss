@@ -172,6 +172,7 @@
     left: 0;
 
     clip-path: inset(0 0 100% 0);
+    opacity: 0;
 
     @include md {
       grid-template-rows: 0fr;
@@ -186,6 +187,7 @@
       transition-delay: 0.5s;
 
       clip-path: inset(0 0 0 0);
+      opacity: 1;
 
       @include md {
         grid-template-rows: 1fr;

@@ -1,0 +1,60 @@
+@use './../mixins' as *;
+
+.control {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+
+  &__search {
+    height: 5rem;
+    padding: 1rem 7rem 1rem 2rem;
+    background-color: var(--white-50);
+    border: 0.1rem solid var(--white);
+    border-radius: 0.8rem;
+    width: 100%;
+
+    position: relative;
+
+    &-input {
+      width: 100%;
+
+      &::placeholder {
+        color: var(--gray);
+      }
+    }
+
+    &-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 5rem;
+      height: 5rem;
+
+      position: absolute;
+      top: 50%;
+      right: 0.6rem;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    @include md {
+      display: none;
+    }
+  }
+
+  &__btn {
+    --btn-width: 5rem;
+    --btn-height: 5rem;
+
+    padding: 0;
+
+    i {
+      --font-size: 2rem;
+    }
+  }
+}
