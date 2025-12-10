@@ -2,11 +2,27 @@
 
 .breadcrumbs {
 
+  @include md {
+    width: 100vw;
+    margin-left: calc(var(--container-padding) * -1);
+    padding: 0 var(--container-padding);
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
   ul {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 0.5rem;
+    width: fit-content;
   }
 
   li {
@@ -18,6 +34,7 @@
     font-weight: 400;
     font-size: 1.4rem;
     line-height: 100%;
+    white-space: nowrap;
 
     &::after {
       content: "/";

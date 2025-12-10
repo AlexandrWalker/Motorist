@@ -2,10 +2,7 @@
 
 .template {
 
-  &__inner {
-
-
-  }
+  &__inner {}
 
   &__body {}
 
@@ -45,11 +42,9 @@
         flex-shrink: 0;
 
         position: absolute;
-        top: 0.8rem;
+        top: 0.9rem;
         left: 0.75rem;
       }
     }
   }
-
-
 }

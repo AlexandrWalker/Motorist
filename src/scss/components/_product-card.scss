@@ -96,11 +96,9 @@
         right: 0.9rem;
       }
 
-      &:hover,
-      &.favorite-active {
+      &:hover {
 
         i::before {
-          /* icon-favorite-fill-min */
           content: "\e90d";
         }
       }
@@ -315,6 +313,16 @@
           --font-size: 1.2rem;
         }
       }
+    }
+  }
+}
+
+.favorite-btn {
+
+  &.favorite-active {
+
+    i::before {
+      content: "\e90d";
     }
   }
 }

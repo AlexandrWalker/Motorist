@@ -1,6 +1,7 @@
 @use './../mixins' as *;
 
 .swiper {
+  max-width: 100%;
   overflow: visible;
 
   @include md {
