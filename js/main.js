@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
    * Добавление активного класса для кнопки "В избранное"
    */
   (function favoriteBtnFunc() {
-    const productCardFavorites = document.querySelectorAll('.product-card__item-favorite');
+    const productCardFavorites = document.querySelectorAll('.favorite-btn');
     if (!productCardFavorites.length) return;
 
     productCardFavorites.forEach(productCardFavorite => {
@@ -381,6 +381,41 @@ document.addEventListener('DOMContentLoaded', () => {
       navigation: { prevEl: ".reviews-button-prev", nextEl: ".reviews-button-next" },
       pagination: { el: ".swiper-pagination", clickable: true },
     });
+    const productSliderMin = new Swiper('.product__slider-min', {
+      slidesPerGroup: 1,
+      slidesPerView: 4,
+      spaceBetween: 10,
+      loop: false,
+      speed: 500,
+      simulateTouch: true,
+      watchOverflow: true,
+      watchSlidesProgress: true,
+      mousewheel: {
+        forceToAxis: true,
+        sensitivity: 1,
+        releaseOnEdges: true
+      },
+    });
+    const productSliderBig = new Swiper('.product__slider-big', {
+      slidesPerGroup: 1,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: false,
+      speed: 500,
+      simulateTouch: true,
+      watchOverflow: true,
+      watchSlidesProgress: true,
+      mousewheel: {
+        forceToAxis: true,
+        sensitivity: 1,
+        releaseOnEdges: true
+      },
+      thumbs: {
+        swiper: productSliderMin,
+      },
+    });
+    // productSliderMin.controller.control = productSliderBig;
+    // productSliderBig.controller.control = productSliderMin;
   })();
 
   /**
