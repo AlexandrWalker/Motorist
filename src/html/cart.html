@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru" class="page__inner">
+@@include('blocks/head.html', {"title": "Motorist"})
+
+<body>
+  <div class="wrapper">
+    <!-- Шапка -->
+    @@include('./blocks/header.html')
+    <!-- Мега меню каталога -->
+    @@include('./blocks/megamenu.html')
+    <main class="main">
+
+      <section class="template">
+        <div class="container">
+          <div class="template__inner">
+
+            <div class="breadcrumbs">
+              <ul>
+                <li>
+                  <a href="/">
+                    Главная
+                  </a>
+                </li>
+                <li>
+                  Корзина
+                </li>
+              </ul>
+            </div>
+
+            <div class="general__head">
+              <div class="general__head-title">
+                <h2>
+                  Корзина
+                </h2>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+
+    </main>
+    <!-- Плашка -->
+    @@include('blocks/plate.html')
+    <!-- Попап -->
+    @@include('blocks/popup.html')
+    <!-- Подвал -->
+    @@include('blocks/footer.html')

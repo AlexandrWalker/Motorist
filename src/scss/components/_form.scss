@@ -1,1 +1,80 @@
 @use './../mixins' as *;
+
+.form {
+
+  &-group {
+    position: relative;
+
+    &--textarea {
+      grid-column: 1/4;
+
+      .form-label {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &-input {
+    width: 100%;
+    height: 5rem;
+    padding: 0 2rem;
+    border-radius: 0.8rem;
+    background-color: var(--white);
+
+    &.filled,
+    &:focus,
+    &:active,
+    &:checked {
+
+      &+.form-label {
+        opacity: 0;
+      }
+    }
+  }
+
+  &-label {
+    padding-left: 2.4rem;
+    opacity: 1;
+    transition: all 0.3s ease;
+
+    font-size: 1.4rem;
+    line-height: 140%;
+    color: var(--black-50);
+    pointer-events: none;
+
+    position: absolute;
+    top: 1.5rem;
+    left: 2rem;
+
+    span {
+      color: var(--red);
+    }
+
+    i {
+      --font-size: 2rem;
+
+      color: var(--blue);
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  &-textarea {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    border-radius: 0.8rem;
+    background-color: var(--white);
+
+    &.filled,
+    &:focus,
+    &:active,
+    &:checked {
+
+      &+.form-label {
+        opacity: 0;
+      }
+    }
+  }
+}

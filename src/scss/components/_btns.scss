@@ -72,4 +72,20 @@
     --btn-color: var(--white);
     --btn-background: var(--gray);
   }
+
+  &--arrow {
+    --btn-height: 4rem;
+    --btn-color: var(--blue);
+    border-radius: 5rem;
+    gap: 1.5rem;
+    padding: 0 0.9rem 0 2rem;
+    font-size: 1.2rem;
+
+    i {
+      --font-size: 2.2rem;
+
+      background-color: var(--blue);
+      color: var(--white);
+    }
+  }
 }

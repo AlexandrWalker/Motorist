@@ -175,6 +175,7 @@
                         </div>
                       </div>
                     </div>
+                    <div class="swiper-pagination"></div>
                   </div>
                   <div class="product__item-tags">
                     <div class="product__item-tag yellow">
@@ -257,24 +258,29 @@
                   </div>
                 </div>
               </div>
+
               <div class="product__body">
                 <div class="product__body-wrap">
                   <div class="product__body-price">
-                    <h3>
-                      125 850 ₽
-                    </h3>
-                    <h5>
-                      135 850 ₽
-                    </h5>
+                    <div class="product__price">
+                      <h3>
+                        125 850 ₽
+                      </h3>
+                    </div>
+                    <div class="product__sale">
+                      <h5>
+                        135 850 ₽
+                      </h5>
+                    </div>
                   </div>
-                  <div class="product__quantity">
-                    <button class="product__quantity-btn">
+                  <div class="quantity">
+                    <button class="quantity__btn">
                       <i class="icon-minus"></i>
                     </button>
-                    <div class="product__quantity-text">
-                      <span>10</span> шт
+                    <div class="quantity__text">
+                      <input type="text" value="10 шт">
                     </div>
-                    <button class="product__quantity-btn">
+                    <button class="quantity__btn">
                       <i class="icon-plus"></i>
                     </button>
                   </div>
@@ -294,6 +300,7 @@
                   </button>
                 </div>
               </div>
+
               <div class="product__foot">
                 <div class="product__foot-item">
                   <div class="product__foot-title">
@@ -302,7 +309,7 @@
                     </h5>
                   </div>
                   <div class="product__foot-btns">
-                    <div class="product__foot-btn">
+                    <div class="product__foot-btn product__foot-btn--active">
                       Алюминиевая
                     </div>
                     <div class="product__foot-btn">
@@ -334,10 +341,10 @@
                     </h5>
                   </div>
                   <div class="product__foot-text">
-                    <h6>
+                    <p>
                       Компания «Моторист» осуществляет бесплатную доставку до терминала города получателя в любой регион
                       России, СНГ и бывшего СССР.
-                    </h6>
+                    </p>
                   </div>
                 </div>
                 <div class="product__foot-item">
@@ -347,10 +354,10 @@
                     </h5>
                   </div>
                   <div class="product__foot-text">
-                    <h6>
+                    <p>
                       Компания «Моторист» осуществляет бесплатную доставку до терминала города получателя в любой регион
                       России, СНГ и бывшего СССР.
-                    </h6>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -370,6 +377,13 @@
                   Рекомендуемые товары
                 </h2>
               </div>
+            </div>
+
+            <div class="general__btns">
+              <a class="btn" href="/">
+                Все товары
+                <i class="icon-arrow"></i>
+              </a>
             </div>
 
             <div class="popular__body" data-transform="fade">
@@ -400,12 +414,13 @@
                   Отзывы
                 </h2>
               </div>
-              <div class="general__head-btns">
-                <a class="btn" href="/">
-                  Все отзывы
-                  <i class="icon-arrow"></i>
-                </a>
-              </div>
+            </div>
+
+            <div class="general__btns">
+              <a class="btn" href="/">
+                Все отзывы
+                <i class="icon-arrow"></i>
+              </a>
             </div>
 
             <div class="reviews__body" data-transform="fade">

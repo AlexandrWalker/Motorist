@@ -57,8 +57,12 @@
       }
     }
 
-    p {
+    h5 {
       font-weight: 700;
+
+      @include md {
+        font-size: 1.4rem;
+      }
     }
 
     &:last-child {

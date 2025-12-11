@@ -32,9 +32,10 @@
     }
 
     &-title {
-      font-weight: 700;
-      font-size: 1.6rem;
-      line-height: 120%;
+
+      h4 {
+        font-weight: 700;
+      }
 
       @include domd {
         font-size: 2.4rem;
@@ -57,24 +58,19 @@
       gap: 0.6rem;
     }
 
-    &-suptitle {
-
-      @include md {
-        font-size: 1.2rem;
-      }
-    }
+    &-suptitle {}
 
     &-text {
-      font-weight: 700;
 
-      @include md {
-        font-size: 1.2rem;
+      h5 {
+        font-weight: 700;
       }
     }
 
     &-link {
       font-weight: 700;
       width: fit-content;
+      
       position: relative;
 
       @include md {
@@ -167,11 +163,6 @@
     min-height: 58.5rem;
     border-radius: 1.5rem;
     overflow: hidden;
-    // aspect-ratio: 1240/585;
-
-    @include md {
-      // aspect-ratio: 420/585;
-    }
 
     img {
       max-width: unset;

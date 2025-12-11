@@ -48,7 +48,10 @@
     }
 
     &-title {
-      font-weight: 700;
+
+      h6 {
+        font-weight: 700;
+      }
     }
 
     i {
@@ -151,8 +154,8 @@
           color: var(--blue);
 
           span {
-            color: var(--gray);
             line-height: 100%;
+            color: var(--gray);
           }
         }
 

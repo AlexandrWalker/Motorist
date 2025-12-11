@@ -52,7 +52,7 @@
         color: var(--white);
 
         .category__item::before {
-          width: 100%;
+          transform: scaleX(1);
         }
 
         i {
@@ -95,7 +95,6 @@
         color: var(--white);
 
         &::before {
-          // width: 100%;
           transform: scaleX(1);
         }
 
@@ -117,6 +116,10 @@
 
       position: relative;
       z-index: 2;
+
+      @include md {
+        padding: 2rem 5.5rem 3.7rem 2rem;
+      }
     }
 
     &-img {
@@ -131,8 +134,10 @@
     }
 
     &-name {
-      font-weight: 700;
-      font-size: 1.4rem;
+
+      * {
+        font-weight: 700;
+      }
     }
 
     i {

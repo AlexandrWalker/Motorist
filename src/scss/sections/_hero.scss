@@ -33,6 +33,17 @@
     }
   }
 
+  &__text {
+    
+    p {
+      font-size: 1.6rem;
+
+      @include md {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
   &__cover {
     width: 57.8rem;
     height: 44rem;

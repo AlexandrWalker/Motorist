@@ -9,6 +9,7 @@
 
     @include md {
       grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
     }
   }
 
@@ -45,7 +46,15 @@
       z-index: 3;
     }
 
-    &-suptitle {}
+    &-suptitle {
+
+      * {
+
+        @include md {
+          font-size: 1.4rem;
+        }
+      }
+    }
 
     &-sale {
       font-weight: 700;
@@ -54,6 +63,10 @@
       color: var(--blue);
 
       margin-bottom: 0.5rem;
+
+      @include md {
+        font-size: 3rem;
+      }
     }
 
     &-title {}
@@ -62,6 +75,10 @@
 
       @include md {
         display: none;
+      }
+
+      p {
+        font-size: 1.4rem;
       }
     }
 
@@ -259,6 +276,10 @@
         @include md {
           display: none;
         }
+      }
+
+      .banners__item-text {
+        max-width: 25rem;
       }
     }
   }

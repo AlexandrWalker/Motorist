@@ -36,18 +36,40 @@ h3 {
   }
 }
 
-h4 {}
 
-h5 {}
+h4 {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 120%;
+
+  @include md {
+    font-size: 1.6rem;
+  }
+}
+
+h5 {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 120%;
+
+  @include md {
+    font-size: 1.2rem;
+  }
+}
 
 h6 {
+  font-family: var(--font-family);
+  font-weight: 400;
   font-size: 1.4rem;
+  line-height: 120%;
 }
 
 /* Текст */
 p {
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   line-height: 120%;
 }

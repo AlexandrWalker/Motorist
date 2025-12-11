@@ -5,7 +5,8 @@
   overflow: visible;
 
   @include md {
-    width: calc(100% + (var(--container-padding) * 2));
+    max-width: unset;
+    width: 100vw;
     margin-left: calc(var(--container-padding) * -1);
     padding: 0 var(--container-padding);
   }
@@ -44,7 +45,10 @@
 
 /* Пагинация слайдера */
 .swiper-pagination {
-  top: calc(100% + 1rem) !important;
+  line-height: 0.5rem;
+  font-size: 0.5rem;
+
+  top: calc(100% + 1.5rem) !important;
   bottom: unset !important;
 
   @include domd {
