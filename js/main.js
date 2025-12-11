@@ -410,6 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sensitivity: 1,
         releaseOnEdges: true
       },
+      pagination: { el: ".swiper-pagination", clickable: true },
       thumbs: {
         swiper: productSliderMin,
       },
@@ -645,6 +646,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
       catalogBlock.classList.remove('block');
       catalogBlock.classList.add('list');
+    });
+  }
+
+  /**
+   * Инициализация формы набора символов
+   */
+  const form = document.querySelector('form');
+  if (form) {
+    const inputElements = document.querySelectorAll('.form-input');
+    const textareaElements = document.querySelectorAll('.form-textarea');
+    const className = 'filled';
+
+    inputElements.forEach(element => {
+      element.addEventListener('input', function () {
+        if (this.value.trim() !== '') {
+          element.classList.add(className);
+        } else {
+          element.classList.remove(className);
+        }
+      });
+    });
+
+    textareaElements.forEach(element => {
+      element.addEventListener('input', function () {
+        if (this.value.trim() !== '') {
+          element.classList.add(className);
+        } else {
+          element.classList.remove(className);
+        }
+      });
     });
   }
 
