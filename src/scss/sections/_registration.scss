@@ -1,0 +1,39 @@
+@use './../mixins' as *;
+
+.registration {
+
+  &__inner {
+    max-width: 92.5rem;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 3rem;
+    border-radius: 1.5rem;
+    background-color: var(--white-50);
+    border: 0.1rem solid var(--white);
+
+    &-head {
+
+      * {
+        font-weight: 700;
+      }
+    }
+
+    &-body {
+
+    }
+  }
+
+  &__btn {
+    --btn-width: 100%;
+  }
+}

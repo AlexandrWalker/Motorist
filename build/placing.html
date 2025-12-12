@@ -1312,10 +1312,15 @@
                   </h6>
                 </button>
               </div>
+              
               <div class="placing__body">
                 <div class="placing__items">
                   <div class="placing__item">
-                    <button class="placing__item-check"></button>
+                    <div class="check">
+                      <input class="check-input" id="cart-product-1" type="checkbox">
+                      <label class="check-label" for="cart-product-1">
+                      </label>
+                    </div>
                     <div class="placing__item-img">
                       <img src="./images/temp/placing-item-1.png" alt="">
                     </div>
@@ -1351,7 +1356,11 @@
                     </div>
                   </div>
                   <div class="placing__item">
-                    <button class="placing__item-check"></button>
+                    <div class="check">
+                      <input class="check-input" id="cart-product-2" type="checkbox">
+                      <label class="check-label" for="cart-product-2">
+                      </label>
+                    </div>
                     <div class="placing__item-img">
                       <img src="./images/temp/placing-item-1.png" alt="">
                     </div>
@@ -1387,7 +1396,11 @@
                     </div>
                   </div>
                   <div class="placing__item">
-                    <button class="placing__item-check"></button>
+                    <div class="check">
+                      <input class="check-input" id="cart-product-3" type="checkbox">
+                      <label class="check-label" for="cart-product-3">
+                      </label>
+                    </div>
                     <div class="placing__item-img">
                       <img src="./images/temp/placing-item-1.png" alt="">
                     </div>
@@ -1423,7 +1436,11 @@
                     </div>
                   </div>
                   <div class="placing__item">
-                    <button class="placing__item-check"></button>
+                    <div class="check">
+                      <input class="check-input" id="cart-product-4" type="checkbox">
+                      <label class="check-label" for="cart-product-4">
+                      </label>
+                    </div>
                     <div class="placing__item-img">
                       <img src="./images/temp/placing-item-1.png" alt="">
                     </div>
@@ -1459,12 +1476,13 @@
                     </div>
                   </div>
                 </div>
-                <a class="btn btn--arrow" href="/">
+                <a class="placing__body-btn btn btn--arrow" href="/">
                   Продолжить
                   <i class="icon-arrow"></i>
                 </a>
               </div>
-              <div class="placing__block accordion">
+
+              <div class="placing__block placing__block--recipient accordion">
                 <div class="placing__block-head accordion-head">
                   <h5>
                     Получатель
@@ -1472,40 +1490,44 @@
                 </div>
                 <div class="placing__block-body accordion-body">
                   <div class="placing__block-content">
-                    <form class="form" action="#">
-                      <div class="form__body">
-                        <div class="form-group">
-                          <input id="placing-name" class="form-input" name="name" type="text">
-                          <label for="placing-name" class="form-label">
-                            <i class="icon-form-user"></i>
-                            Имя <span>*</span>
-                          </label>
-                        </div>
-                        <div class="form-group">
-                          <input id="placing-tel" class="form-input" name="tel" type="tel">
-                          <label for="placing-tel" class="form-label">
-                            <i class="icon-form-phone"></i>
-                            Телефон <span>*</span>
-                          </label>
-                        </div>
-                        <div class="form-group">
-                          <input id="placing-mail" class="form-input" name="mail" type="email">
-                          <label for="placing-mail" class="form-label">
-                            <i class="icon-form-mail"></i>
-                            Эл.почта <span>*</span>
-                          </label>
-                        </div>
-                        <div class="form-group form-group--textarea">
-                          <textarea class="form-textarea" name="comments" rows="4"></textarea>
-                          <label class="form-label">
-                            Комментарий
-                          </label>
-                        </div>
+                    <div class="form__body">
+                      <div class="form-group">
+                        <input id="placing-name" class="form-input" name="name" type="text">
+                        <label for="placing-name" class="form-label">
+                          <i class="icon-form-user"></i>
+                          Имя <span>*</span>
+                        </label>
                       </div>
-                    </form>
+                      <div class="form-group">
+                        <input id="placing-tel" class="form-input" name="tel" type="tel">
+                        <label for="placing-tel" class="form-label">
+                          <i class="icon-form-phone"></i>
+                          Телефон <span>*</span>
+                        </label>
+                      </div>
+                      <div class="form-group">
+                        <input id="placing-mail" class="form-input" name="mail" type="email">
+                        <label for="placing-mail" class="form-label">
+                          <i class="icon-form-mail"></i>
+                          Эл.почта <span>*</span>
+                        </label>
+                      </div>
+                      <div class="form-group form-group--textarea">
+                        <textarea class="form-textarea" name="comments" rows="4"></textarea>
+                        <label class="form-label">
+                          Комментарий
+                        </label>
+                      </div>
+                    </div>
+
+                    <button class="btn btn--arrow">
+                      Продолжить
+                      <i class="icon-arrow"></i>
+                    </button>
                   </div>
                 </div>
               </div>
+
               <div class="placing__block accordion">
                 <div class="placing__block-head accordion-head">
                   <h5>
@@ -1515,8 +1537,12 @@
                 <div class="placing__block-body accordion-body">
                   <div class="placing__block-content">
                     <div class="placing__block-items">
-                      <div class="placing__block-item">
-                        <button class="placing__item-check"></button>
+                      <div class="placing__block-item check-block">
+                        <div class="check">
+                          <input class="check-input" id="cart-delivery-1" name="cart-delivery" type="radio">
+                          <label class="check-label" for="cart-delivery-1">
+                          </label>
+                        </div>
                         <div class="placing__block-wrap">
                           <div class="placing__block-title">
                             <h5>
@@ -1535,8 +1561,12 @@
                           </h6>
                         </div>
                       </div>
-                      <div class="placing__block-item">
-                        <button class="placing__item-check"></button>
+                      <div class="placing__block-item check-block">
+                        <div class="check">
+                          <input class="check-input" id="cart-delivery-2" name="cart-delivery" type="radio">
+                          <label class="check-label" for="cart-delivery-2">
+                          </label>
+                        </div>
                         <div class="placing__block-wrap">
                           <div class="placing__block-title">
                             <h5>
@@ -1555,8 +1585,12 @@
                           </h6>
                         </div>
                       </div>
-                      <div class="placing__block-item">
-                        <button class="placing__item-check"></button>
+                      <div class="placing__block-item check-block">
+                        <div class="check">
+                          <input class="check-input" id="cart-delivery-3" name="cart-delivery" type="radio">
+                          <label class="check-label" for="cart-delivery-3">
+                          </label>
+                        </div>
                         <div class="placing__block-wrap">
                           <div class="placing__block-title">
                             <h5>
@@ -1571,10 +1605,38 @@
                         </div>
                       </div>
                     </div>
+
+                    <div class="placing__block-head">
+                      <h5>
+                        Адрес доставки
+                      </h5>
+                    </div>
+
+                    <div class="form__body">
+                      <div class="form-group">
+                        <input id="placing-address" class="form-input" name="address" type="text">
+                        <label for="placing-address" class="form-label">
+                          <i class="icon-form-user"></i>
+                          Адрес доставки <span>*</span>
+                        </label>
+                      </div>
+                      <div class="form-group form-group--textarea">
+                        <textarea class="form-textarea" name="comments" rows="4"></textarea>
+                        <label class="form-label">
+                          Комментарий
+                        </label>
+                      </div>
+                    </div>
+
+                    <button class="btn btn--arrow">
+                      Продолжить
+                      <i class="icon-arrow"></i>
+                    </button>
                   </div>
                 </div>
               </div>
-              <div class="placing__block accordion">
+
+              <div class="placing__block placing__block--pays accordion">
                 <div class="placing__block-head accordion-head">
                   <h5>
                     Способы оплаты
@@ -1583,8 +1645,12 @@
                 <div class="placing__block-body accordion-body">
                   <div class="placing__block-content">
                     <div class="placing__block-items">
-                      <div class="placing__block-item">
-                        <button class="placing__item-check"></button>
+                      <div class="placing__block-item check-block">
+                        <div class="check">
+                          <input class="check-input" id="cart-pay-1" name="cart-pay" type="radio">
+                          <label class="check-label" for="cart-pay-1">
+                          </label>
+                        </div>
                         <div class="placing__block-wrap">
                           <div class="placing__block-title">
                             <h5>
@@ -1593,8 +1659,12 @@
                           </div>
                         </div>
                       </div>
-                      <div class="placing__block-item">
-                        <button class="placing__item-check"></button>
+                      <div class="placing__block-item check-block">
+                        <div class="check">
+                          <input class="check-input" id="cart-pay-2" name="cart-pay" type="radio">
+                          <label class="check-label" for="cart-pay-2">
+                          </label>
+                        </div>
                         <div class="placing__block-wrap">
                           <div class="placing__block-title">
                             <h5>
@@ -1603,8 +1673,12 @@
                           </div>
                         </div>
                       </div>
-                      <div class="placing__block-item">
-                        <button class="placing__item-check"></button>
+                      <div class="placing__block-item check-block">
+                        <div class="check">
+                          <input class="check-input" id="cart-pay-3" name="cart-pay" type="radio">
+                          <label class="check-label" for="cart-pay-3">
+                          </label>
+                        </div>
                         <div class="placing__block-wrap">
                           <div class="placing__block-title">
                             <h5>
@@ -1613,8 +1687,12 @@
                           </div>
                         </div>
                       </div>
-                      <div class="placing__block-item">
-                        <button class="placing__item-check"></button>
+                      <div class="placing__block-item check-block">
+                        <div class="check">
+                          <input class="check-input" id="cart-pay-4" name="cart-pay" type="radio">
+                          <label class="check-label" for="cart-pay-4">
+                          </label>
+                        </div>
                         <div class="placing__block-wrap">
                           <div class="placing__block-title">
                             <h5>
@@ -1624,6 +1702,10 @@
                         </div>
                       </div>
                     </div>
+                    <button class="btn btn--arrow">
+                      Оформить заказ
+                      <i class="icon-arrow"></i>
+                    </button>
                   </div>
                 </div>
               </div>

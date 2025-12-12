@@ -1,0 +1,26 @@
+@use './../mixins' as *;
+
+.check {
+  cursor: pointer;
+
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1;
+
+  .check-input {
+    display: none;
+
+    &:checked+.check-label {
+      background-color: var(--blue);
+    }
+  }
+
+  .check-label {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--gray-20);
+  }
+}

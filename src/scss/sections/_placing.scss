@@ -20,7 +20,17 @@
     gap: 3rem;
 
     @include md {
-      gap: 1rem;
+      gap: 2rem;
+    }
+
+    .btn {
+      --btn-color: var(--white);
+      --btn-background: var(--blue);
+
+      i {
+        background-color: var(--white);
+        color: var(--blue);
+      }
     }
   }
 
@@ -78,18 +88,19 @@
     background-color: var(--white-50);
 
     @include md {
+      gap: 1rem;
       background-color: transparent;
       border: 0;
       padding: 0;
+      margin-top: -1rem;
     }
 
-    .btn {
-      --btn-color: var(--white);
-      --btn-background: var(--blue);
+    &-btn {
 
-      i {
-        background-color: var(--white);
-        color: var(--blue);
+      @include md {
+        --btn-width: 100%;
+
+        justify-content: space-between;
       }
     }
   }
@@ -113,7 +124,12 @@
     position: relative;
 
     @include md {
-      padding: 2rem 3.5rem 2rem 1.5rem;
+      align-items: flex-start;
+      padding: 2rem 1.5rem 2rem 1.5rem;
+    }
+
+    @include xs {
+      gap: 1rem;
     }
 
     &-wrap {
@@ -125,22 +141,9 @@
 
       @include md {
         flex-direction: column;
+        align-items: flex-start;
         gap: 0;
       }
-    }
-
-    &-check {
-      width: 2rem;
-      height: 2rem;
-      border-radius: 50%;
-      background-color: var(--gray-20);
-
-      cursor: pointer;
-
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      z-index: 1;
     }
 
     &-img {
@@ -148,7 +151,11 @@
       flex-shrink: 0;
 
       @include md {
-        height: 12.2rem;
+        height: calc(100vw/(440/122));
+      }
+
+      @include xs {
+        height: calc(100vw/(440/100));
       }
 
       img {
@@ -160,6 +167,10 @@
 
     &-title {
       max-width: 23rem;
+
+      @include md {
+        margin-bottom: 3rem;
+      }
 
       * {
         font-weight: 700;
@@ -175,7 +186,10 @@
 
       @include md {
         flex-direction: column-reverse;
+        align-items: flex-start;
         gap: 0.5rem;
+        margin-top: 1.5rem;
+        margin-left: 0;
       }
 
       * {
@@ -193,15 +207,58 @@
     border: 0.1rem solid var(--white);
     background-color: var(--white-50);
 
+    @include md {
+      padding: 2rem 1.5rem 2.3rem;
+    }
+
+    &--recipient {
+
+      .form__body {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+    }
+
+    &--pays {
+
+      .placing__block-item {
+        min-height: 9rem;
+      }
+    }
+
+    .form__body {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+
+      @include md {
+        gap: 1rem;
+      }
+    }
+
+    .form-group--textarea {
+      grid-column: 1/2;
+    }
+
     &-head {
+      cursor: pointer;
 
       * {
         font-weight: 700;
+
+        @include md {
+          font-size: 1.4rem;
+        }
       }
 
       a {
         color: var(--blue);
         text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
       }
     }
 
@@ -219,20 +276,26 @@
     }
 
     &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+
       overflow: hidden;
       transition: all 0.3s ease;
-    }
 
-    .form__body {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      @include md {
+        gap: 2rem;
+      }
     }
 
     &-items {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
+
+      @include md {
+        grid-template-columns: repeat(1, 1fr);
+      }
     }
 
     &-item {
@@ -246,7 +309,13 @@
 
       position: relative;
 
-      .placing__item-check {
+      @include md {
+        gap: 2rem;
+        padding: 2rem 1.5rem;
+        min-height: 14.4rem;
+      }
+
+      .check {
         top: 2rem;
         right: 2rem;
         left: unset;
@@ -262,18 +331,48 @@
     &-title {
       color: var(--gray-50);
 
+      @include md {
+        color: var(--black);
+      }
+
       * {
         font-weight: 700;
+
+        @include md {
+          font-size: 1.4rem;
+        }
       }
     }
 
     &-price {
       color: var(--gray-50);
+
+      @include md {
+        color: var(--black);
+      }
+
+      * {
+
+        @include md {
+          font-size: 1.4rem;
+        }
+      }
     }
 
     &-text {
       color: var(--gray-50);
       max-width: 28.6rem;
+
+      @include md {
+        color: var(--gray);
+      }
+
+      * {
+
+        @include md {
+          font-size: 1.2rem;
+        }
+      }
     }
   }
 
@@ -291,7 +390,18 @@
     top: var(--header-height);
 
     @include md {
+      padding: 2rem;
       position: static;
+    }
+
+    &-suptitle {
+
+      * {
+
+        @include md {
+          font-size: 1.4rem;
+        }
+      }
     }
 
     &-title {
@@ -305,18 +415,36 @@
       display: flex;
       flex-direction: column;
       gap: 2rem;
+
+      @include md {
+        display: inline;
+        column-count: 2;
+      }
     }
 
     &-wrap {
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
+
+      @include md {
+        break-inside: avoid;
+        margin-bottom: 1.5rem;
+      }
+
+      &:nth-child(even) {
+        margin-bottom: 0;
+      }
     }
 
     &-count {
 
       * {
         font-weight: 700;
+
+        @include md {
+          font-size: 2.5rem;
+        }
       }
     }
 
@@ -324,6 +452,10 @@
 
       * {
         color: var(--blue);
+
+        @include md {
+          font-size: 2.5rem;
+        }
       }
     }
 
@@ -333,6 +465,10 @@
         font-weight: 700;
         color: var(--blue);
         text-decoration: underline;
+
+        @include md {
+          font-size: 1.4rem;
+        }
       }
     }
 

@@ -8,6 +8,10 @@
     &--textarea {
       grid-column: 1/4;
 
+      @include md {
+        grid-column: 1/2;
+      }
+
       .form-label {
         padding-left: 0;
       }
@@ -74,6 +78,70 @@
 
       &+.form-label {
         opacity: 0;
+      }
+    }
+  }
+
+  &__row {
+
+    &-1 {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2rem;
+
+      @include md {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+
+    &-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+
+      @include md {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+
+    &-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+
+      @include md {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+
+  &-captcha {
+    width: auto;
+    height: 4.6rem;
+
+    img {
+      width: auto;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &-foot {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+
+    .check {
+      position: static;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
       }
     }
   }
