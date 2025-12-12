@@ -405,6 +405,7 @@ document.addEventListener('DOMContentLoaded', () => {
       simulateTouch: true,
       watchOverflow: true,
       watchSlidesProgress: true,
+      grabCursor: true,
       mousewheel: {
         forceToAxis: true,
         sensitivity: 1,
@@ -678,5 +679,32 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // const checkInputs = document.querySelectorAll('.check-label');
+
+  // if (!checkInputs.lenght) return;
+
+  // checkInputs.forEach(checkInput => {
+  //   checkInput.addEventListener('click', function () {
+  //     checkInput.parentNode.classList.add('check-active');
+  //   });
+  // });
+
+  // const checkBlocks = document.querySelectorAll('.check-block');
+
+  // if (!checkBlocks.length) return;
+
+  // checkBlocks.forEach(checkBlock => {
+  //   const checkInput = checkBlock.querySelector('.check-input');
+
+  //   checkBlock.addEventListener('click', () => {
+  //     checkInput.checked = true;
+  //     checkInput.dispatchEvent(new Event('change')); // если нужно отслеживать событие
+
+  //     checkBlocks.forEach(b => b.classList.remove('check-active'));
+
+  //     checkBlock.classList.add('check-active');
+  //   });
+  // });
 
 });
