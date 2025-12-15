@@ -37,7 +37,10 @@
   }
 
   &-label {
-    padding-left: 2.4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
     opacity: 1;
     transition: all 0.3s ease;
 
@@ -58,10 +61,6 @@
       --font-size: 2rem;
 
       color: var(--blue);
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
     }
   }
 

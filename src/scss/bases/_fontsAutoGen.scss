@@ -22,6 +22,13 @@
 @font-face {
 	font-family: HelveticaNeue;
 	font-display: swap;
+	src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
+	font-weight: 100;
+	font-style: normal;
+}
+@font-face {
+	font-family: HelveticaNeue;
+	font-display: swap;
 	src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
 	font-weight: 500;
 	font-style: normal;
@@ -31,13 +38,6 @@
 	font-display: swap;
 	src: url("../fonts/Montserrat-Black.woff2") format("woff2"), url("../fonts/Montserrat-Black.woff") format("woff");
 	font-weight: 900;
-	font-style: normal;
-}
-@font-face {
-	font-family: HelveticaNeue;
-	font-display: swap;
-	src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
-	font-weight: 100;
 	font-style: normal;
 }
 @font-face {
@@ -90,17 +90,17 @@
 	font-style: normal;
 }
 @font-face {
-	font-family: Montserrat;
-	font-display: swap;
-	src: url("../fonts/Montserrat-Thin.woff2") format("woff2"), url("../fonts/Montserrat-Thin.woff") format("woff");
-	font-weight: 100;
-	font-style: normal;
-}
-@font-face {
 	font-family: TeXGyreHeros;
 	font-display: swap;
 	src: url("../fonts/TeXGyreHeros-bold.woff2") format("woff2"), url("../fonts/TeXGyreHeros-bold.woff") format("woff");
 	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: Montserrat;
+	font-display: swap;
+	src: url("../fonts/Montserrat-Thin.woff2") format("woff2"), url("../fonts/Montserrat-Thin.woff") format("woff");
+	font-weight: 100;
 	font-style: normal;
 }
 @font-face {

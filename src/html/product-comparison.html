@@ -22,7 +22,7 @@
                   </a>
                 </li>
                 <li>
-                  Пресс-центр
+                  Сравнение товаров
                 </li>
               </ul>
             </div>
@@ -30,17 +30,17 @@
             <div class="general__head">
               <div class="general__head-title">
                 <h2>
-                  Пресс-центр
+                  Сравнение товаров
                 </h2>
               </div>
             </div>
 
             <div class="general__tabs">
               <button class="general__tabs-btn tabs-active">
-                2024
+                Силиконовые резиносмеси
               </button>
               <button class="general__tabs-btn">
-                2025
+                Патрубки
               </button>
             </div>
 
@@ -48,12 +48,20 @@
         </div>
       </section>
 
-      <section class="press">
+      <section class="comparison">
         <div class="container">
-          <div class="press__inner">
-            <div class="press__items">
-              @@loop('./elements/press-center-item.html', './data/press-center-items.json')
+          <div class="comparison__inner">
+
+            <div class="comparison__body">
+              <div class="comparison__items accordion-parent accordion-multiple">
+                @@loop('./elements/comparison-item.html', './data/comparison-items.json')
+              </div>
+              <button class="comparison__btn btn btn--blue">
+                Очистить список
+                <i class="icon-trash"></i>
+              </button>
             </div>
+
           </div>
         </div>
       </section>

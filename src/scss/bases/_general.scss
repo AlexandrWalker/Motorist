@@ -90,6 +90,35 @@
       }
     }
   }
+
+  &__tabs {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    &-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--gray);
+      border-radius: 5rem;
+      padding: 0 2rem;
+      height: 4rem;
+      transition: all 0.5s ease;
+
+      font-weight: 400;
+      font-size: 1.2rem;
+      line-height: 100%;
+      color: var(--white);
+      cursor: pointer;
+
+      &:hover,
+      &.tabs-active {
+        background-color: var(--white);
+        color: var(--gray);
+      }
+    }
+  }
 }
 
 .border {
