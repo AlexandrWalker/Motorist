@@ -122,10 +122,16 @@ document.addEventListener('DOMContentLoaded', () => {
       var active = document.querySelector('.accordion.accordion-active');
       if (!active) return;
 
+      var parent = active.closest('.accordion-parent');
+      if (parent && parent.classList.contains('accordion-multiple')) return;
+
       var body = active.querySelector('.accordion-body');
       if (!body) return;
 
-      if (!body.contains(e.target) && !active.querySelector('.accordion-head').contains(e.target)) {
+      if (
+        !body.contains(e.target) &&
+        !active.querySelector('.accordion-head').contains(e.target)
+      ) {
         active.classList.remove('accordion-active');
       }
     });
@@ -134,7 +140,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' || e.keyCode === 27) {
         var active = document.querySelector('.accordion.accordion-active');
-        if (active) active.classList.remove('accordion-active');
+        if (!active) return;
+
+        var parent = active.closest('.accordion-parent');
+        if (parent && parent.classList.contains('accordion-multiple')) return;
+
+        active.classList.remove('accordion-active');
       }
     });
 
@@ -151,9 +162,13 @@ document.addEventListener('DOMContentLoaded', () => {
             head.addEventListener('click', function (e) {
               e.stopPropagation();
 
-              var active = accordionContainer.querySelector('.accordion.accordion-active');
-              if (active && active !== accordion) {
-                active.classList.remove('accordion-active');
+              var isMultiple = accordionContainer.classList.contains('accordion-multiple');
+
+              if (!isMultiple) {
+                var active = accordionContainer.querySelector('.accordion.accordion-active');
+                if (active && active !== accordion) {
+                  active.classList.remove('accordion-active');
+                }
               }
 
               accordion.classList.toggle('accordion-active');
