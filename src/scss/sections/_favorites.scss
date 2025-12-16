@@ -45,7 +45,7 @@
       }
     }
 
-    &.list {
+    .list & {
 
       .product-card__item {
         flex-direction: row;

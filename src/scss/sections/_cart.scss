@@ -1,0 +1,384 @@
+@use './../mixins' as *;
+
+.cart {
+
+  .control {
+
+    .block & {
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+  }
+
+  &__inner {
+    display: grid;
+    gap: 1rem 2rem;
+
+    .block & {
+      grid-template-columns: 92.5rem 29.5rem;
+    }
+  }
+
+  &__side {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 6rem;
+    padding: 3rem;
+    background-color: var(--white-50);
+    border: 0.1rem solid var(--white);
+    border-radius: 1.5rem;
+
+    .block & {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3rem;
+      height: fit-content;
+
+      grid-column: 2/3;
+      grid-row: 1/3;
+    }
+
+    &-suptitle {
+      color: var(--blue);
+
+      * {
+        font-weight: 700;
+      }
+
+      .block & {
+        color: inherit;
+
+        * {
+          font-weight: 400;
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    &-title {
+
+      * {
+        font-weight: 400;
+
+        .block & {
+          font-size: 3.4rem;
+        }
+      }
+
+      .block & {
+        color: var(--blue);
+      }
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      * {
+        white-space: nowrap;
+      }
+
+      .block & {
+
+        &:not(.cart__side-item:first-child) {
+          display: none;
+        }
+      }
+    }
+
+    &-btns {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+
+      .block & {
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      .btn {
+        justify-content: space-between;
+        max-width: 23.5rem;
+        width: 100%;
+        color: var(--white);
+        background-color: var(--gray);
+
+        &:first-child {
+          background-color: var(--orange);
+        }
+
+        i {
+          background-color: var(--white);
+          color: var(--gray);
+        }
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    background-color: var(--white-50);
+    border: 0.1rem solid var(--white);
+    border-radius: 1.5rem;
+    padding: 3rem;
+
+    .block & {
+      background-color: transparent;
+      border: 0;
+      padding: 0;
+
+      max-width: 92.5rem;
+
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+  }
+
+  &__head {
+    display: grid;
+    grid-template-columns: 6fr 2fr 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+
+    .block & {
+      display: none;
+    }
+
+    &-item {
+
+      * {
+        font-weight: 700;
+        color: var(--blue);
+      }
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+
+    .block & {
+      gap: 1rem;
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 6.5fr 2fr 1fr 1fr 1fr 0.5fr;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-top: 0.1rem solid var(--gray-20);
+
+    position: relative;
+
+    .block & {
+      grid-template-columns: 2.5fr 4fr 3fr 2.5fr;
+      padding: 2rem 2rem 3rem 2rem;
+      background-color: var(--white-50);
+      border: 0.1rem solid var(--white);
+      border-radius: 1.5rem;
+    }
+
+    &-img {
+      display: none;
+      height: 12.2rem;
+
+      img {
+        width: auto;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .block & {
+        display: block;
+
+        grid-column: 1/2;
+        grid-row: 1/5;
+      }
+    }
+
+    &-text {
+      display: flex;
+      align-items: center;
+
+      * {
+        font-weight: 700;
+
+        .block & {
+          font-size: 1.6rem;
+        }
+      }
+
+      &--name {
+
+        .block & {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1.5rem;
+
+          grid-column: 2/3;
+          grid-row: 1/5;
+        }
+      }
+
+      &--price,
+      &--weight {
+
+        .block & {
+          display: none;
+        }
+      }
+
+      &--sum {
+
+        .block & {
+          display: flex;
+          flex-direction: column-reverse;
+          align-items: flex-start;
+          gap: 0.5rem;
+
+          grid-column: 3/4;
+          grid-row: 2/3;
+        }
+      }
+
+      .product__sale {
+        display: none;
+
+        * {
+          font-size: 1.4rem;
+        }
+
+        .block & {
+          display: block;
+        }
+      }
+
+      .product__price {
+
+        * {
+          font-size: 1.4rem;
+          color: inherit;
+
+          .block & {
+            font-weight: 400;
+            font-size: 3.4rem;
+          }
+        }
+      }
+    }
+
+    &-name {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        margin-top: 0.5rem;
+        border-radius: 50%;
+        background-color: var(--green);
+        flex-shrink: 0;
+
+        .block & {
+          display: none;
+        }
+      }
+    }
+
+    &-quantity {
+
+      .block & {
+        grid-column: 3/4;
+        grid-row: 1/2;
+      }
+
+      .quantity {
+
+        &__btn,
+        &__text {
+          border-radius: 0.8rem;
+        }
+      }
+    }
+
+    &-check {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      .check {
+        position: static;
+
+        .block & {
+          position: absolute;
+          top: 1rem;
+          left: 1rem;
+        }
+      }
+    }
+  }
+
+  &__economy {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    gap: 1ch;
+
+    .block & {
+      display: flex;
+
+      grid-column: 3/4;
+      grid-row: 3/4;
+    }
+
+    &-wrap {
+      padding: 0.3rem 0.7rem;
+      border-radius: 10rem;
+      background-color: var(--blue);
+      color: var(--white);
+
+      * {
+        font-weight: 700;
+      }
+    }
+  }
+
+  .product-card__item {
+
+    &-art,
+    &-material,
+    &-diameter {
+      display: none;
+
+      .block & {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+    }
+
+    &-tags {
+      display: none;
+      position: static;
+
+      .block & {
+        display: flex;
+      }
+    }
+
+    &-tag {
+      font-weight: 400;
+      font-size: 0.8rem;
+    }
+  }
+}

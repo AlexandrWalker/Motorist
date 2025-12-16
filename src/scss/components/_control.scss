@@ -5,6 +5,23 @@
   flex-direction: row;
   gap: 2rem;
 
+  &__body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    padding: 0 3rem;
+    border-radius: 0.8rem;
+    border: 0.1rem solid var(--white);
+    background-color: var(--white-50);
+
+    @include md {
+      padding: 0 1.5rem;
+    }
+  }
+
   &__search {
     display: flex;
     align-items: center;
@@ -58,8 +75,8 @@
 
     padding: 0;
 
-    &.block-active,
-    &.list-active,
+    &--active,
+    &--active,
     &.btn:hover {
       --btn-color: var(--blue);
       --btn-background: var(--white);
@@ -67,6 +84,37 @@
 
     i {
       --font-size: 2rem;
+    }
+  }
+
+  &__title {
+
+    &--blue {
+      color: var(--blue);
+    }
+
+    * {
+      font-weight: 700;
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+
+    i {
+      --font-size: 2.4rem;
+
+      color: var(--blue);
+    }
+
+    h6 {
+
+      @include md {
+        display: none;
+      }
     }
   }
 }

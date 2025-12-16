@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru" class="page__inner list">
+@@include('blocks/head.html', {"title": "Motorist"})
+
+<body>
+  <div class="wrapper">
+    <!-- Шапка -->
+    @@include('./blocks/header.html')
+    <!-- Мега меню каталога -->
+    @@include('./blocks/megamenu.html')
+    <main class="main">
+
+      <section class="template">
+        <div class="container">
+          <div class="template__inner">
+
+            <div class="breadcrumbs">
+              <ul>
+                <li>
+                  <a href="/">
+                    Главная
+                  </a>
+                </li>
+                <li>
+                  Личный кабинет
+                </li>
+              </ul>
+            </div>
+
+            <div class="general__head">
+              <div class="general__head-title">
+                <h2>
+                  Личный кабинет
+                </h2>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="cabinet">
+        <div class="container">
+          <div class="cabinet__inner">
+            <div class="cabinet__head">
+              <a class="cabinet__head-item cabinet__head-item--active" href="/">
+                Настройки профиля
+              </a>
+              <a class="cabinet__head-item" href="/">
+                История заказов
+              </a>
+              <a class="cabinet__head-item" href="/">
+                Корзина
+              </a>
+              <a class="cabinet__head-item" href="/">
+                Персональные предложения
+              </a>
+            </div>
+            <div class="cabinet__body">
+              <div class="cabinet__block">
+                <div class="cabinet__block-head">
+                  <h5>
+                    Учетные данные
+                  </h5>
+                </div>
+                <div class="cabinet__block-body">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <!-- Плашка -->
+    @@include('blocks/plate.html')
+    <!-- Попап -->
+    @@include('blocks/popup.html')
+    <!-- Подвал -->
+    @@include('blocks/footer.html')

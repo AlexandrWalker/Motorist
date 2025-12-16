@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="page__inner">
+<html lang="ru" class="page__inner list">
 @@include('blocks/head.html', {"title": "Motorist"})
 
 <body>
@@ -39,7 +39,363 @@
         </div>
       </section>
 
+      <section class="cart">
+        <div class="container">
+          <div class="cart__inner">
 
+            <div class="control">
+              <div class="control__body">
+                <div class="control__title control__title--blue">
+                  <h5>
+                    Товары в корзине (3 позиции)
+                  </h5>
+                </div>
+                <button class="control__link">
+                  <i class="icon-trash"></i>
+                  <h6>
+                    Удалить выбранные
+                  </h6>
+                </button>
+              </div>
+              <div class="control__btns">
+                <button class="control__btn btn" data-view="block">
+                  <i class="icon-bento-menu"></i>
+                </button>
+                <button class="control__btn btn control__btn--active" data-view="list">
+                  <i class="icon-kebab-menu"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="cart__content">
+              <div class="cart__head">
+                <div class="cart__head-item">
+                  <h6>
+                    Название
+                  </h6>
+                </div>
+                <div class="cart__head-item">
+                  <h6>
+                    Количество
+                  </h6>
+                </div>
+                <div class="cart__head-item">
+                  <h6>
+                    Цена
+                  </h6>
+                </div>
+                <div class="cart__head-item">
+                  <h6>
+                    Сумма
+                  </h6>
+                </div>
+                <div class="cart__head-item">
+                  <h6>
+                    Вес
+                  </h6>
+                </div>
+                <div class="cart__head-item">
+
+                </div>
+              </div>
+              <div class="cart__body">
+                <div class="cart__items">
+                  <div class="cart__item">
+                    <div class="cart__item-img">
+                      <img src="./../images/temp/cart-item-1.png" alt="">
+                    </div>
+                    <div class="cart__item-text cart__item-text--name">
+                      <div class="product-card__item-tags">
+                        <div class="product-card__item-tag sale">
+                          Акция %
+                        </div>
+                      </div>
+                      <div class="cart__item-name">
+                        <h6>
+                          Рукав пневматический Г Ф 16 мм (10 атм) ТУ 22.19.30.131-108-05800952-2020
+                        </h6>
+                      </div>
+                      <div class="product-card__item-art">
+                        Артикул <span>2321421412414</span>
+                      </div>
+                      <div class="product-card__item-material">
+                        Материал <span>Армированный силикон</span>
+                      </div>
+                      <div class="product-card__item-diameter">
+                        Диаметр, мм <span>34</span>
+                      </div>
+                    </div>
+                    <div class="cart__item-quantity">
+                      <div class="quantity">
+                        <button class="quantity__btn">
+                          <i class="icon-minus"></i>
+                        </button>
+                        <div class="quantity__text">
+                          <input type="text" value="10 шт">
+                        </div>
+                        <button class="quantity__btn">
+                          <i class="icon-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="cart__item-text cart__item-text--price">
+                      <h6>
+                        20 ₽
+                      </h6>
+                    </div>
+                    <div class="cart__item-text cart__item-text--sum">
+                      <div class="product__sale">
+                        <h6>
+                          3700 ₽
+                        </h6>
+                      </div>
+                      <div class="product__price">
+                        <h3>
+                          4000 ₽
+                        </h3>
+                      </div>
+                    </div>
+                    <div class="cart__item-text cart__item-text--weight">
+                      <h6>
+                        0.33 кг
+                      </h6>
+                    </div>
+                    <div class="cart__economy">
+                      <div class="cart__economy-text">
+                        <h6>
+                          Экономия
+                        </h6>
+                      </div>
+                      <div class="cart__economy-wrap">
+                        <h5>
+                          100 000₽
+                        </h5>
+                      </div>
+                    </div>
+                    <div class="cart__item-check">
+                      <div class="check">
+                        <input class="check-input" id="cart-product-1" type="checkbox">
+                        <label class="check-label" for="cart-product-1">
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cart__item">
+                    <div class="cart__item-img">
+                      <img src="./../images/temp/cart-item-1.png" alt="">
+                    </div>
+                    <div class="cart__item-text cart__item-text--name">
+                      <div class="product-card__item-tags">
+                        <div class="product-card__item-tag sale">
+                          Акция %
+                        </div>
+                      </div>
+                      <div class="cart__item-name">
+                        <h6>
+                          Рукав пневматический Г Ф 16 мм (10 атм) ТУ 22.19.30.131-108-05800952-2020
+                        </h6>
+                      </div>
+                      <div class="product-card__item-art">
+                        Артикул <span>2321421412414</span>
+                      </div>
+                      <div class="product-card__item-material">
+                        Материал <span>Армированный силикон</span>
+                      </div>
+                      <div class="product-card__item-diameter">
+                        Диаметр, мм <span>34</span>
+                      </div>
+                    </div>
+                    <div class="cart__item-quantity">
+                      <div class="quantity">
+                        <button class="quantity__btn">
+                          <i class="icon-minus"></i>
+                        </button>
+                        <div class="quantity__text">
+                          <input type="text" value="10 шт">
+                        </div>
+                        <button class="quantity__btn">
+                          <i class="icon-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="cart__item-text cart__item-text--price">
+                      <h6>
+                        20 ₽
+                      </h6>
+                    </div>
+                    <div class="cart__item-text cart__item-text--sum">
+                      <div class="product__sale">
+                        <h6>
+                          3700 ₽
+                        </h6>
+                      </div>
+                      <div class="product__price">
+                        <h3>
+                          4000 ₽
+                        </h3>
+                      </div>
+                    </div>
+                    <div class="cart__item-text cart__item-text--weight">
+                      <h6>
+                        0.33 кг
+                      </h6>
+                    </div>
+                    <div class="cart__economy">
+                      <div class="cart__economy-text">
+                        <h6>
+                          Экономия
+                        </h6>
+                      </div>
+                      <div class="cart__economy-wrap">
+                        <h5>
+                          100 000₽
+                        </h5>
+                      </div>
+                    </div>
+                    <div class="cart__item-check">
+                      <div class="check">
+                        <input class="check-input" id="cart-product-1" type="checkbox">
+                        <label class="check-label" for="cart-product-1">
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cart__item">
+                    <div class="cart__item-img">
+                      <img src="./../images/temp/cart-item-1.png" alt="">
+                    </div>
+                    <div class="cart__item-text cart__item-text--name">
+                      <div class="product-card__item-tags">
+                        <div class="product-card__item-tag sale">
+                          Акция %
+                        </div>
+                      </div>
+                      <div class="cart__item-name">
+                        <h6>
+                          Рукав пневматический Г Ф 16 мм (10 атм) ТУ 22.19.30.131-108-05800952-2020
+                        </h6>
+                      </div>
+                      <div class="product-card__item-art">
+                        Артикул <span>2321421412414</span>
+                      </div>
+                      <div class="product-card__item-material">
+                        Материал <span>Армированный силикон</span>
+                      </div>
+                      <div class="product-card__item-diameter">
+                        Диаметр, мм <span>34</span>
+                      </div>
+                    </div>
+                    <div class="cart__item-quantity">
+                      <div class="quantity">
+                        <button class="quantity__btn">
+                          <i class="icon-minus"></i>
+                        </button>
+                        <div class="quantity__text">
+                          <input type="text" value="10 шт">
+                        </div>
+                        <button class="quantity__btn">
+                          <i class="icon-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="cart__item-text cart__item-text--price">
+                      <h6>
+                        20 ₽
+                      </h6>
+                    </div>
+                    <div class="cart__item-text cart__item-text--sum">
+                      <div class="product__sale">
+                        <h6>
+                          3700 ₽
+                        </h6>
+                      </div>
+                      <div class="product__price">
+                        <h3>
+                          4000 ₽
+                        </h3>
+                      </div>
+                    </div>
+                    <div class="cart__item-text cart__item-text--weight">
+                      <h6>
+                        0.33 кг
+                      </h6>
+                    </div>
+                    <div class="cart__economy">
+                      <div class="cart__economy-text">
+                        <h6>
+                          Экономия
+                        </h6>
+                      </div>
+                      <div class="cart__economy-wrap">
+                        <h5>
+                          100 000₽
+                        </h5>
+                      </div>
+                    </div>
+                    <div class="cart__item-check">
+                      <div class="check">
+                        <input class="check-input" id="cart-product-1" type="checkbox">
+                        <label class="check-label" for="cart-product-1">
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="cart__side">
+              <div class="cart__side-item">
+                <div class="cart__side-suptitle">
+                  <h6>
+                    Итоговая сумма:
+                  </h6>
+                </div>
+                <div class="cart__side-title">
+                  <h3>
+                    750 000 ₽
+                  </h3>
+                </div>
+              </div>
+              <div class="cart__side-item">
+                <div class="cart__side-suptitle">
+                  <h6>
+                    В том числе НДС:
+                  </h6>
+                </div>
+                <div class="cart__side-title">
+                  <h3>
+                    25 443 ₽
+                  </h3>
+                </div>
+              </div>
+              <div class="cart__side-item">
+                <div class="cart__side-suptitle">
+                  <h6>
+                    Итоговый вес:
+                  </h6>
+                </div>
+                <div class="cart__side-title">
+                  <h3>
+                    25 кг
+                  </h3>
+                </div>
+              </div>
+              <div class="cart__side-btns">
+                <button class="btn btn--arrow">
+                  Оформить заказ
+                  <i class="icon-arrow"></i>
+                </button>
+                <button class="btn btn--arrow">
+                  Купить в один клик
+                  <i class="icon-arrow"></i>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
 
     </main>
     <!-- Плашка -->

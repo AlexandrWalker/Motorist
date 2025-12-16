@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="page__inner">
+<html lang="ru" class="page__inner block">
 @@include('blocks/head.html', {"title": "Motorist"})
 
 <body>
@@ -56,10 +56,10 @@
                 </button>
               </div>
               <div class="control__btns">
-                <button class="control__btn btn block block-active">
+                <button class="control__btn btn control__btn--active" data-view="block">
                   <i class="icon-bento-menu"></i>
                 </button>
-                <button class="control__btn btn list">
+                <button class="control__btn btn" data-view="list">
                   <i class="icon-kebab-menu"></i>
                 </button>
               </div>
@@ -135,7 +135,7 @@
             <div class="catalog__body">
 
               @@include('./blocks/filter.html')
-              <div class="catalog__block catalogblock block">
+              <div class="catalog__block">
                 @@loop('./elements/product-card-item.html', './data/product-card-items.json')
               </div>
 
