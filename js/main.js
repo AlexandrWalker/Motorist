@@ -642,26 +642,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const control = document.querySelector('.control');
-  const catalogBlock = document.querySelector('.catalogblock');
 
   if (control) {
-    const block = control.querySelector('.block');
-    const list = control.querySelector('.list');
+    const buttons = control.querySelectorAll('.control__btn');
+    const html = document.documentElement;
 
-    block.addEventListener('click', () => {
-      block.classList.add('block-active');
-      list.classList.remove('list-active');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const view = btn.dataset.view;
 
-      catalogBlock.classList.add('block');
-      catalogBlock.classList.remove('list');
-    });
+        html.classList.remove('list', 'block');
+        html.classList.add(view);
 
-    list.addEventListener('click', () => {
-      block.classList.remove('block-active');
-      list.classList.add('list-active');
-
-      catalogBlock.classList.remove('block');
-      catalogBlock.classList.add('list');
+        buttons.forEach(b => b.classList.remove('control__btn--active'));
+        btn.classList.add('control__btn--active');
+      });
     });
   }
 
