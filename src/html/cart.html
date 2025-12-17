@@ -397,6 +397,36 @@
         </div>
       </section>
 
+      <section class="popular">
+        <div class="container">
+          <div class="popular__inner">
+
+            <div class="general__head">
+              <div class="general__head-title" data-split="lines">
+                <h2>
+                  Недавно просмотренные
+                </h2>
+              </div>
+            </div>
+
+            <div class="popular__body" data-transform="fade">
+              <div class="swiper popular__slider">
+                <div class="swiper-wrapper">
+                  @@loop('./elements/product-card-slide-item.html', './data/product-card-items.json')
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev popular-button-prev">
+                  <i class="icon-slider-arrow"></i>
+                </div>
+                <div class="swiper-button-next popular-button-next">
+                  <i class="icon-slider-arrow"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
     <!-- Плашка -->
     @@include('blocks/plate.html')

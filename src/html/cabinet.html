@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="page__inner list">
+<html lang="ru" class="page__inner page__cabinet ajax-page">
 @@include('blocks/head.html', {"title": "Motorist"})
 
 <body>
@@ -42,31 +42,24 @@
       <section class="cabinet">
         <div class="container">
           <div class="cabinet__inner">
-            <div class="cabinet__head">
-              <a class="cabinet__head-item cabinet__head-item--active" href="/">
+            <div class="cabinet__head ajax-btns">
+              <button class="cabinet__head-item ajax-btn ajax-btn-active" data-cabinet="setting">
                 Настройки профиля
-              </a>
-              <a class="cabinet__head-item" href="/">
+              </button>
+              <button class="cabinet__head-item ajax-btn" data-cabinet="history">
                 История заказов
-              </a>
-              <a class="cabinet__head-item" href="/">
+              </button>
+              <button class="cabinet__head-item ajax-btn" data-cabinet="cart">
                 Корзина
-              </a>
-              <a class="cabinet__head-item" href="/">
+              </button>
+              <button class="cabinet__head-item ajax-btn" data-cabinet="personal-offers">
                 Персональные предложения
-              </a>
+              </button>
             </div>
             <div class="cabinet__body">
-              <div class="cabinet__block">
-                <div class="cabinet__block-head">
-                  <h5>
-                    Учетные данные
-                  </h5>
-                </div>
-                <div class="cabinet__block-body">
-                  
-                </div>
-              </div>
+
+              @@include('ajax/cabinet-setting.html')
+
             </div>
           </div>
         </div>

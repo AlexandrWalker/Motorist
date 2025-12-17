@@ -116,7 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
   (function accordionFunc() {
     var accordionParents = document.querySelectorAll('.accordion-parent');
     if (!accordionParents.length) return;
-
     // Закрытие при клике вне активного блока
     document.addEventListener('click', function (e) {
       var active = document.querySelector('.accordion.accordion-active');
@@ -135,7 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
         active.classList.remove('accordion-active');
       }
     });
-
     // Закрытие по Esc
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' || e.keyCode === 27) {
@@ -148,7 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
         active.classList.remove('accordion-active');
       }
     });
-
     // Перебор всех аккордеонов
     for (var i = 0; i < accordionParents.length; i++) {
       (function (accordionContainer) {
@@ -192,7 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
           const subgroup = e.target.nextElementSibling;
           subgroup.classList.toggle('active'); // добавляем/удаляем класс
         }
-
         // Клик по чекбоксу второго уровня
         if (e.target.tagName === 'INPUT' && e.target.type === 'checkbox') {
           const nested = e.target.parentElement.nextElementSibling;
@@ -205,7 +201,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-
   // Инициализация
   initFilter(document.querySelectorAll('.filter'));
 
@@ -716,5 +711,22 @@ document.addEventListener('DOMContentLoaded', () => {
   //     checkBlock.classList.add('check-active');
   //   });
   // });
+
+  /**
+   * Смена отзывов через фильтр
+   */
+  const ajaxPage = document.querySelector('.ajax-page');
+  if (ajaxPage) {
+    const ajaxBtns = ajaxPage.querySelector('.ajax-btns');
+    const ajaxBtn = $(ajaxBtns).find('.ajax-btn');
+    ajaxBtn.on('click', function filterFunc() {
+      ajaxBtn.removeClass('ajax-btn-active')
+      $(this).addClass('ajax-btn-active')
+      const attr = $(this).data('cabinet');
+      $.get('./ajax/cabinet-' + attr + '.html', function (data) {
+        $('.cabinet__body').html(data)
+      })
+    })
+  }
 
 });
