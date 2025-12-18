@@ -22,7 +22,7 @@ html {
 
 body {
   min-width: 320px;
-  background-color: var(--bg);
+  // background-color: var(--bg);
 
   font-family: var(--font-family);
   font-weight: 400;
@@ -30,6 +30,8 @@ body {
   line-height: 120%;
   color: var(--black);
   cursor: default;
+
+  background: radial-gradient(71% 50.86% at 87.6% -2.01%, rgba(225, 235, 246, 0.33) 0%, rgba(255, 255, 255, 0.33) 8.41%, rgba(53, 175, 218, 0.2706) 43.34%, rgba(180, 226, 255, 0.33) 100%), var(--bg);
 }
 
 .wrapper {

@@ -12,13 +12,13 @@ html {
 
 body {
   min-width: 320px;
-  background-color: var(--bg);
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 120%;
   color: var(--black);
   cursor: default;
+  background: radial-gradient(71% 50.86% at 87.6% -2.01%, rgba(225, 235, 246, 0.33) 0%, rgba(255, 255, 255, 0.33) 8.41%, rgba(53, 175, 218, 0.2706) 43.34%, rgba(180, 226, 255, 0.33) 100%), var(--bg);
 }
 
 .wrapper {
@@ -97,14 +97,6 @@ img {
 @font-face {
   font-family: HelveticaNeue;
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: HelveticaNeue;
-  font-display: swap;
   src: url("../fonts/HelveticaNeue-Regilar.woff2") format("woff2"), url("../fonts/HelveticaNeue-Regilar.woff") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -115,6 +107,14 @@ img {
   font-display: swap;
   src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
   font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: HelveticaNeue;
+  font-display: swap;
+  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -1270,6 +1270,7 @@ body {
   padding: 1.5rem 2rem;
   border-radius: 0.8rem;
   background-color: var(--white);
+  resize: none;
 }
 
 .form-textarea.filled + .form-label,
@@ -3734,11 +3735,15 @@ p {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  gap: 1rem;
 }
 
 .cabinet__list-head {
   padding: 0 3rem;
   color: var(--gray);
+  border-radius: 1.5rem;
+  border: 0.1rem solid var(--white);
+  background-color: var(--white-50);
 }
 
 .cabinet__list-head .cabinet__list-items {
@@ -3756,6 +3761,9 @@ p {
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0 3rem;
+  border-radius: 1.5rem;
+  border: 0.1rem solid var(--white);
+  background-color: var(--white-50);
 }
 
 .cabinet__list-body .cabinet__list-items {
@@ -3854,6 +3862,43 @@ p {
 
 .cabinet__list a p {
   text-decoration: underline;
+}
+
+.cabinet .block .product-card__item-diameter,
+.cabinet .block .product-card__item-material {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cabinet .block .product-card__item-diameter span,
+.cabinet .block .product-card__item-material span {
+  color: var(--black);
+  font-weight: 400;
+}
+
+.cabinet .block .product-card__item-art {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.cabinet .block .product-card__item-art span {
+  color: var(--black);
+  font-weight: 400;
+}
+
+.cabinet .block .product-card__item-tags {
+  position: static;
+}
+
+.cabinet .block .product__price {
+  color: var(--blue);
 }
 
 .block .cart .control {
@@ -6947,12 +6992,6 @@ p {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .cabinet__list {
-    background-color: var(--white-50);
-    border: 0.1rem solid var(--white);
-    border-radius: 1.5rem;
-  }
-
   .cabinet__list-head {
     padding: 0 1.5rem;
     display: none;
@@ -6975,6 +7014,10 @@ p {
   .cabinet__list-items {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .cabinet .block .cart__items {
+    display: none;
   }
 
   .catalog__inner {
