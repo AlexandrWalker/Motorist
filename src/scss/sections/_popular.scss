@@ -19,4 +19,48 @@
   }
 
   &__slider {}
+
+  .card__item {
+
+    &-text {
+      display: flex;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -moz-box;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -moz-box-orient: vertical;
+      -webkit-box-orient: vertical;
+      box-orient: vertical;
+    }
+
+    &-art {
+      display: none;
+    }
+
+    &-price {
+      width: fit-content;
+
+      .product__price {
+
+        * {
+          font-weight: 400;
+          font-size: 3.4rem;
+
+          @include md {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+
+    &-btn {
+      display: none;
+    }
+
+    &-plus {
+      display: flex;
+    }
+  }
 }

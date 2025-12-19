@@ -15,16 +15,56 @@
 
   .container {
     overflow: hidden;
+    padding: 0;
   }
 
-  &__inner {}
+  &__inner {
+    padding: 0 var(--container-padding);
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 8rem;
+      height: 100%;
+      background: linear-gradient(90deg, #FFFFFF 20%, transparent 80%);
+
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+
+      @include md {
+        width: 2rem;
+      }
+    }
+
+    &::after {
+      content: "";
+      width: 8rem;
+      height: 100%;
+      background: linear-gradient(270deg, #FFFFFF 20%, transparent 80%);
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+
+      @include md {
+        width: 2rem;
+      }
+    }
+  }
 
   &__items {
     display: flex;
     flex-direction: row;
-
     margin-left: calc((var(--container-padding) + var(--ticker-padding) + var(--ticker-margin)) * -1);
     animation: ticker 10s infinite linear;
+
+    position: relative;
+    z-index: 1;
 
     @include md {
       width: calc(100vw/(440/825));

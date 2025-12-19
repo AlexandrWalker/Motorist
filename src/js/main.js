@@ -729,4 +729,48 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
+  (function quantityFunc() {
+
+    const quantities = document.querySelectorAll('.quantity');
+
+    if(!quantities.length) return;
+
+    quantities.forEach(quantity => {
+      const input = quantity.querySelector('input');
+      const btnMinus = quantity.querySelector('.quantity__btn--minus');
+      const btnPlus = quantity.querySelector('.quantity__btn--plus');
+
+      const min = Number(quantity.dataset.min) || 1;
+      const max = Number(quantity.dataset.max) || 100;
+      const suffix = ' шт';
+
+      function getValue() {
+        const number = parseInt(input.value.replace(/\D/g, ''), 10);
+        return isNaN(number) ? min : number;
+      }
+
+      function setValue(value) {
+        value = Math.max(min, Math.min(max, value));
+        input.value = value + suffix;
+      }
+
+      btnMinus.addEventListener('click', () => {
+        setValue(getValue() - 1);
+      });
+
+      btnPlus.addEventListener('click', () => {
+        setValue(getValue() + 1);
+      });
+
+      input.addEventListener('input', () => {
+        const value = getValue();
+        input.value = value + suffix;
+      });
+
+      input.addEventListener('blur', () => {
+        setValue(getValue());
+      });
+    });
+  })();
+
 });

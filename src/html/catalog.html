@@ -136,7 +136,7 @@
 
               @@include('./blocks/filter.html')
               <div class="catalog__block">
-                @@loop('./elements/product-card-item.html', './data/product-card-items.json')
+                @@loop('./elements/card-item.html', './data/card-items.json')
               </div>
 
             </div>
@@ -167,7 +167,7 @@
             <div class="popular__body" data-transform="fade">
               <div class="swiper popular__slider">
                 <div class="swiper-wrapper">
-                  @@loop('./elements/product-card-slide-item.html', './data/product-card-items.json')
+                  @@loop('./elements/card-slide-item.html', './data/card-items.json')
                 </div>
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button-prev popular-button-prev">

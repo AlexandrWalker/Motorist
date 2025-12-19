@@ -97,6 +97,10 @@
 
       i {
         --font-size: 0.6rem;
+
+        .accordion-active & {
+          transform: rotate(180deg);
+        }
       }
     }
 

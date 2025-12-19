@@ -69,6 +69,16 @@
         pointer-events: none;
       }
 
+      &.active,
+      &:hover {
+        background-color: var(--gray);
+        color: var(--white);
+
+        i {
+          color: var(--black);
+        }
+      }
+
       &.active {
         margin-bottom: 1rem;
 

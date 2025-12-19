@@ -1,6 +1,6 @@
 @use './../mixins' as *;
 
-.product-card {
+.card {
 
   &__slide {
 
@@ -14,7 +14,8 @@
     flex-direction: column;
     gap: 2rem;
     padding: 2rem;
-    background-color: var(--white);
+    background-color: var(--white-50);
+    border: 0.1rem solid var(--white);
     box-shadow: 5px 12px 23px rgba(113, 133, 149, 0.1);
     border-radius: 1.5rem;
     height: 100%;
@@ -80,11 +81,11 @@
       }
     }
 
-    &-favorite {
-      width: 2.4rem;
-      height: 2.4rem;
-
-      color: var(--gray);
+    &-controls {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
 
       position: absolute;
       top: 2.3rem;
@@ -95,11 +96,21 @@
         top: 1.4rem;
         right: 0.9rem;
       }
+    }
 
-      &:hover {
+    &-control {
+      width: 2.4rem;
+      height: 2.4rem;
 
-        i::before {
-          content: "\e90d";
+      color: var(--gray);
+
+      &.favorite-btn {
+
+        &:hover {
+
+          i::before {
+            content: "\e90d";
+          }
         }
       }
 
@@ -149,7 +160,7 @@
     &-name {
       padding-right: 1.8rem;
 
-      &:hover {
+      .card__item:hover & {
         color: var(--blue);
       }
 
@@ -312,6 +323,28 @@
         @include md {
           --font-size: 1.2rem;
         }
+      }
+    }
+
+    &-plus {
+      display: none;
+      width: fit-content;
+
+      position: absolute;
+      right: 2rem;
+      bottom: 2rem;
+      z-index: 2;
+
+      @include md {
+        right: 1rem;
+        bottom: 1rem;
+      }
+
+      i {
+        --font-size: 2.2rem;
+
+        background-color: var(--gray);
+        color: var(--white);
       }
     }
   }

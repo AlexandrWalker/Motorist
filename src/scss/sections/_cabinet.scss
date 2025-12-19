@@ -291,8 +291,8 @@
       }
     }
 
-    .product-card__item-diameter,
-    .product-card__item-material {
+    .card__item-diameter,
+    .card__item-material {
       display: flex;
 
       span {
@@ -301,7 +301,7 @@
       }
     }
 
-    .product-card__item-art {
+    .card__item-art {
       display: flex;
       flex-direction: column;
       gap: 0.3rem;
@@ -312,7 +312,7 @@
       }
     }
 
-    .product-card__item-tags {
+    .card__item-tags {
       position: static;
     }
 

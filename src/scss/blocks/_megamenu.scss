@@ -199,16 +199,16 @@
   }
 
   &__content {
-    display: inline;
-    column-count: 4;
-    column-gap: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4rem;
     padding: 0.7rem 0 6rem 0;
     transition: all 0.5s ease;
 
     @include md {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 2rem;
       column-count: unset;
       column-gap: unset;
       overflow: hidden;
@@ -222,13 +222,20 @@
       }
     }
 
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+
+      @include md {
+        gap: 2rem;
+      }
+    }
+
     &-item {
       display: flex;
       flex-direction: column;
       gap: 2rem;
-
-      margin-bottom: 4rem;
-      break-inside: avoid;
 
       @include md {
         margin: 0;
