@@ -139,31 +139,6 @@
     }
   }
 
-  &__price {
-
-    * {
-      white-space: nowrap;
-      color: var(--blue);
-
-      @include md {
-        font-size: 2.5rem;
-      }
-    }
-  }
-
-  &__sale {
-
-    * {
-      white-space: nowrap;
-      color: var(--gray);
-      text-decoration-line: line-through;
-
-      @include md {
-        font-size: 1.4rem;
-      }
-    }
-  }
-
   &__foot {
     display: flex;
     flex-direction: column;

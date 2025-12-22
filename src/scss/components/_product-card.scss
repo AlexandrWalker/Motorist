@@ -173,12 +173,23 @@
       }
     }
 
-    &-art {
+    &-lists {}
+
+    &-list {
+      display: none;
+      flex-direction: column;
+      gap: 0.3rem;
+
       font-size: 1rem;
       color: var(--gray);
 
-      span {
-        color: var(--blue);
+      &.articul {
+        display: flex;
+        flex-direction: row;
+
+        span {
+          color: var(--blue);
+        }
       }
 
       .list & {
@@ -209,52 +220,22 @@
       }
     }
 
-    &-material {
-      display: none;
-      flex-direction: column;
-      gap: 0.3rem;
-
-      font-size: 1.2rem;
-      color: var(--gray);
-
-      span {
-        font-size: 1.4rem;
-        color: var(--black);
-      }
-
-      .list & {
-        display: flex;
-      }
-    }
-
-    &-diameter {
-      display: none;
-      flex-direction: column;
-      gap: 0.3rem;
-
-      font-size: 1.2rem;
-      color: var(--gray);
-
-      span {
-        font-size: 1.4rem;
-        color: var(--black);
-      }
-
-      .list & {
-        display: flex;
-      }
-    }
-
     &-price {
-      font-size: 3.4rem;
-      color: var(--black);
 
-      @include md {
-        font-size: 2.5rem;
+      * {
+        white-space: nowrap;
+        color: var(--blue);
+
+        @include md {
+          font-size: 2.5rem;
+        }
       }
+    }
 
-      span {
-        font-size: 1.6rem;
+    &-sale {
+
+      * {
+        white-space: nowrap;
         color: var(--gray);
         text-decoration-line: line-through;
 
@@ -263,6 +244,25 @@
         }
       }
     }
+
+    // &-price {
+    //   font-size: 3.4rem;
+    //   color: var(--black);
+
+    //   @include md {
+    //     font-size: 2.5rem;
+    //   }
+
+    //   span {
+    //     font-size: 1.6rem;
+    //     color: var(--gray);
+    //     text-decoration-line: line-through;
+
+    //     @include md {
+    //       font-size: 1.4rem;
+    //     }
+    //   }
+    // }
 
     &-btn {
       --btn-width: 100%;
