@@ -97,16 +97,16 @@ img {
 @font-face {
   font-family: HelveticaNeue;
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/HelveticaNeue-Regilar.woff2") format("woff2"), url("../fonts/HelveticaNeue-Regilar.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: HelveticaNeue;
+  font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Regilar.woff2") format("woff2"), url("../fonts/HelveticaNeue-Regilar.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -119,18 +119,18 @@ img {
 }
 
 @font-face {
-  font-family: Montserrat;
+  font-family: HelveticaNeue;
   font-display: swap;
-  src: url("../fonts/Montserrat-Black.woff2") format("woff2"), url("../fonts/Montserrat-Black.woff") format("woff");
-  font-weight: 900;
+  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Montserrat-Black.woff2") format("woff2"), url("../fonts/Montserrat-Black.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -161,16 +161,16 @@ img {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -2298,7 +2298,7 @@ p {
   padding: 1rem 1rem 1rem 2rem;
   border-radius: 1.5rem;
   border: 0.1rem solid var(--white);
-  background-color: var(--white-50);
+  background: rgba(113, 133, 149, 0.15);
   z-index: 2;
 }
 
@@ -2360,10 +2360,10 @@ p {
 }
 
 .header__geo p {
-  font-weight: 700;
-  color: var(--blue);
+  font-weight: 400;
+  color: var(--black-50);
   text-decoration-style: dotted;
-  text-decoration-color: var(--white);
+  text-decoration-color: var(--black-50);
   text-decoration-line: underline;
 }
 
@@ -2374,8 +2374,11 @@ p {
 
 .header__geo i {
   --font-size: 1.6;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background-color: var(--white);
   color: var(--blue);
-  background-color: transparent;
 }
 
 .menu-wrapper--open .header__geo i {
@@ -2424,6 +2427,7 @@ p {
   background-color: transparent;
   border-radius: 4rem;
   gap: 0.3rem;
+  padding: 0.7rem 1.5rem;
   font-size: 1.2rem;
   color: var(--blue);
 }
@@ -2526,9 +2530,12 @@ p {
   padding: 1rem 1rem 1rem 2rem;
   backdrop-filter: blur(2px);
   border-radius: 1.5rem;
-  background: rgba(113, 133, 149, 0.78);
+  background: var(--blue);
   -webkit-box-shadow: 0px 12px 33.8px rgba(113, 133, 149, 0.72);
   box-shadow: 0px 12px 33.8px rgba(113, 133, 149, 0.72);
+  -webkit-box-shadow: 0px 12px 33.8px rgba(53, 175, 218, 0.42);
+  box-shadow: 0px 12px 33.8px rgba(53, 175, 218, 0.42);
+  backdrop-filter: blur(2px);
   z-index: 1;
 }
 
@@ -2546,6 +2553,8 @@ p {
   gap: 1rem;
   height: var(--header-inner-height);
   padding: 0 2rem 0 1.5rem;
+  background-color: var(--orange);
+  color: var(--white);
 }
 
 .menu-wrapper--open .header__btn {
@@ -2554,7 +2563,7 @@ p {
 }
 
 .header__btn i {
-  color: var(--blue);
+  color: var(--white);
 }
 
 .menu-wrapper--open .header__btn i {
@@ -2663,7 +2672,7 @@ p {
   gap: 3.5rem;
   padding: 0.3rem 1.5rem 1.7rem 2.3rem;
   border-radius: 0.8rem;
-  background-color: var(--gray-60);
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .header-fixed .header__navbar {
@@ -2672,6 +2681,10 @@ p {
 
 .menu-wrapper--open .header__navbar {
   background-color: var(--gray-60);
+}
+
+.header__navbar:not(.menu-wrapper--open .header__navbar):hover {
+  background-color: var(--white);
 }
 
 .header__navbar-item {
@@ -2685,7 +2698,7 @@ p {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: var(--white);
+  color: var(--black);
   position: relative;
 }
 
@@ -2701,7 +2714,7 @@ p {
   font-size: 1rem;
   line-height: 140%;
   white-space: nowrap;
-  color: var(--white-50);
+  color: var(--black);
   position: absolute;
   top: calc(100% - 0.1rem);
 }
@@ -3407,10 +3420,6 @@ p {
 
 .page__main .general__head {
   width: 100%;
-}
-
-.page__inner body {
-  background: radial-gradient(71% 50.86% at 87.6% -2.01%, rgba(225, 235, 246, 0.33) 0%, rgba(255, 255, 255, 0.33) 8.41%, rgba(53, 175, 218, 0.2706) 43.34%, rgba(180, 226, 255, 0.33) 100%), var(--bg);
 }
 
 .page__inner .template {

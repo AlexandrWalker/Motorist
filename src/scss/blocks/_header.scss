@@ -44,7 +44,9 @@
     padding: 1rem 1rem 1rem 2rem;
     border-radius: 1.5rem;
     border: 0.1rem solid var(--white);
-    background-color: var(--white-50);
+    // background-color: var(--white-50);
+    background: rgba(113, 133, 149, 0.15);
+
     z-index: 2;
 
     @include md {
@@ -96,10 +98,11 @@
     }
 
     p {
-      font-weight: 700;
-      color: var(--blue);
+      font-weight: 400;
+      // color: var(--blue);
+      color: var(--black-50);
       text-decoration-style: dotted;
-      text-decoration-color: var(--white);
+      text-decoration-color: var(--black-50);
       text-decoration-line: underline;
 
       .menu-wrapper--open & {
@@ -111,8 +114,12 @@
     i {
       --font-size: 1.6;
 
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+      background-color: var(--white);
+
       color: var(--blue);
-      background-color: transparent;
 
       .menu-wrapper--open & {
         width: 1.6rem;
@@ -160,6 +167,7 @@
     background-color: transparent;
     border-radius: 4rem;
     gap: 0.3rem;
+    padding: 0.7rem 1.5rem;
 
     font-size: 1.2rem;
     color: var(--blue);
@@ -254,8 +262,10 @@
     padding: 1rem 1rem 1rem 2rem;
     backdrop-filter: blur(2px);
     border-radius: 1.5rem;
-    background: rgba(113, 133, 149, 0.78);
+    background: var(--blue);
     box-shadow: 0px 12px 33.8px rgba(113, 133, 149, 0.72);
+    box-shadow: 0px 12px 33.8px rgba(53, 175, 218, 0.42);
+    backdrop-filter: blur(2px);
 
     z-index: 1;
 
@@ -274,6 +284,9 @@
     gap: 1rem;
     height: var(--header-inner-height);
     padding: 0 2rem 0 1.5rem;
+    background-color: var(--orange);
+
+    color: var(--white);
 
     @include md {
       gap: 0.7rem;
@@ -297,7 +310,7 @@
     }
 
     i {
-      color: var(--blue);
+      color: var(--white);
 
       @include md {
         --font-size: 2rem;
@@ -422,7 +435,8 @@
     gap: 3.5rem;
     padding: 0.3rem 1.5rem 1.7rem 2.3rem;
     border-radius: 0.8rem;
-    background-color: var(--gray-60);
+    // background-color: var(--gray-60);
+    background: rgba(255, 255, 255, 0.6);
 
     @include md {
       display: none;
@@ -437,7 +451,7 @@
     }
 
     &:not(.menu-wrapper--open .header__navbar):hover {
-      // background-color: var(--white);
+      background-color: var(--white);
     }
 
     &-item {
@@ -445,7 +459,8 @@
       flex-direction: column;
       align-items: center;
 
-      color: var(--white);
+      // color: var(--white);
+      color: var(--black);
 
       position: relative;
 
@@ -464,7 +479,8 @@
         font-size: 1rem;
         line-height: 140%;
         white-space: nowrap;
-        color: var(--white-50);
+        // color: var(--white-50);
+        color: var(--black);
 
         position: absolute;
         top: calc(100% - 0.1rem);
