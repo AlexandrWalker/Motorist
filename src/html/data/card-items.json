@@ -35,7 +35,7 @@
     "link": "/",
     "img": "./../images/temp/popular-item-1.png",
     "control": "<button class=\"card__item-control\"><i class=\"icon-compare\"></i></button><button class=\"card__item-control favorite-btn\"><i class=\"icon-favorite-min\"></i></button>",
-    "tags": "<div class=\"card__item-tag new\">Новинка</div><div class=\"card__item-tag hit\">Хиты прподаж</div><div class=\"card__item-tag sale\">Акция %</div>",
+    "tags": "<div class=\"card__item-tag new\">Новинка</div>",
 
     "name": "Трубка соединительная прямая L 300 мм",
     "text": "Идейные соображения высшего порядка, а также консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Р",
@@ -51,7 +51,7 @@
     "link": "/",
     "img": "./../images/temp/popular-item-1.png",
     "control": "<button class=\"card__item-control\"><i class=\"icon-compare\"></i></button><button class=\"card__item-control favorite-btn\"><i class=\"icon-favorite-min\"></i></button>",
-    "tags": "<div class=\"card__item-tag new\">Новинка</div><div class=\"card__item-tag hit\">Хиты прподаж</div><div class=\"card__item-tag sale\">Акция %</div>",
+    "tags": "<div class=\"card__item-tag new\">Новинка</div>",
 
     "name": "Трубка соединительная прямая L 300 мм",
     "text": "Идейные соображения высшего порядка, а также консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Р",
@@ -67,23 +67,7 @@
     "link": "/",
     "img": "./../images/temp/popular-item-1.png",
     "control": "<button class=\"card__item-control\"><i class=\"icon-compare\"></i></button><button class=\"card__item-control favorite-btn\"><i class=\"icon-favorite-min\"></i></button>",
-    "tags": "<div class=\"card__item-tag new\">Новинка</div><div class=\"card__item-tag hit\">Хиты прподаж</div><div class=\"card__item-tag sale\">Акция %</div>",
-
-    "name": "Трубка соединительная прямая L 300 мм",
-    "text": "Идейные соображения высшего порядка, а также консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Р",
-    "articul": "2321421412414",
-    "material": "Армированный силикон",
-    "diameter": "34",
-    
-    "price": "250",
-    "sale": "350",
-    "economy": "100 000"
-  },
-  {
-    "link": "/",
-    "img": "./../images/temp/popular-item-1.png",
-    "control": "<button class=\"card__item-control\"><i class=\"icon-compare\"></i></button><button class=\"card__item-control favorite-btn\"><i class=\"icon-favorite-min\"></i></button>",
-    "tags": "<div class=\"card__item-tag new\">Новинка</div><div class=\"card__item-tag hit\">Хиты прподаж</div><div class=\"card__item-tag sale\">Акция %</div>",
+    "tags": "<div class=\"card__item-tag new\">Новинка</div><div class=\"card__item-tag hit\">Хиты прподаж</div>",
 
     "name": "Трубка соединительная прямая L 300 мм",
     "text": "Идейные соображения высшего порядка, а также консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Р",
@@ -99,7 +83,7 @@
     "link": "/",
     "img": "./../images/temp/popular-item-1.png",
     "control": "<button class=\"card__item-control\"><i class=\"icon-compare\"></i></button><button class=\"card__item-control favorite-btn\"><i class=\"icon-favorite-min\"></i></button>",
-    "tags": "<div class=\"card__item-tag new\">Новинка</div><div class=\"card__item-tag hit\">Хиты прподаж</div><div class=\"card__item-tag sale\">Акция %</div>",
+    "tags": "<div class=\"card__item-tag new\">Новинка</div><div class=\"card__item-tag hit\">Хиты прподаж</div>",
 
     "name": "Трубка соединительная прямая L 300 мм",
     "text": "Идейные соображения высшего порядка, а также консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Р",
@@ -115,7 +99,23 @@
     "link": "/",
     "img": "./../images/temp/popular-item-1.png",
     "control": "<button class=\"card__item-control\"><i class=\"icon-compare\"></i></button><button class=\"card__item-control favorite-btn\"><i class=\"icon-favorite-min\"></i></button>",
-    "tags": "<div class=\"card__item-tag new\">Новинка</div><div class=\"card__item-tag hit\">Хиты прподаж</div><div class=\"card__item-tag sale\">Акция %</div>",
+    "tags": "<div class=\"card__item-tag new\">Новинка</div><div class=\"card__item-tag sale\">Акция %</div>",
+
+    "name": "Трубка соединительная прямая L 300 мм",
+    "text": "Идейные соображения высшего порядка, а также консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Р",
+    "articul": "2321421412414",
+    "material": "Армированный силикон",
+    "diameter": "34",
+    
+    "price": "250",
+    "sale": "350",
+    "economy": "100 000"
+  },
+  {
+    "link": "/",
+    "img": "./../images/temp/popular-item-1.png",
+    "control": "<button class=\"card__item-control\"><i class=\"icon-compare\"></i></button><button class=\"card__item-control favorite-btn\"><i class=\"icon-favorite-min\"></i></button>",
+    "tags": "<div class=\"card__item-tag new\">Новинка</div><div class=\"card__item-tag sale\">Акция %</div>",
 
     "name": "Трубка соединительная прямая L 300 мм",
     "text": "Идейные соображения высшего порядка, а также консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Р",

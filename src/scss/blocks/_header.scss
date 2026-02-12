@@ -17,7 +17,7 @@
   }
 
   & * {
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
   }
 
   .header-fixed & {
@@ -39,12 +39,10 @@
     justify-content: space-between;
     gap: 0 4rem;
     align-items: center;
-    // height: 5rem;
     backdrop-filter: blur(2px);
     padding: 1rem 1rem 1rem 2rem;
     border-radius: 1.5rem;
     border: 0.1rem solid var(--white);
-    // background-color: var(--white-50);
     background: rgba(113, 133, 149, 0.15);
 
     z-index: 2;
@@ -100,6 +98,7 @@
     p {
       font-weight: 400;
       // color: var(--blue);
+      white-space: nowrap;
       color: var(--black-50);
       text-decoration-style: dotted;
       text-decoration-color: var(--black-50);
@@ -143,7 +142,7 @@
       font-weight: 700;
       font-size: 1.2rem;
       line-height: 120%;
-
+      white-space: nowrap;
       color: var(--black-50);
 
       .menu-wrapper--open & {
@@ -164,13 +163,13 @@
     --btn-height: unset;
     --btn-padding-x: unset;
 
-    background-color: transparent;
+    background-color: var(--white);
     border-radius: 4rem;
     gap: 0.3rem;
     padding: 0.7rem 1.5rem;
 
-    font-size: 1.2rem;
-    color: var(--blue);
+    font-size: 1rem;
+    color: var(--orange);
 
     .menu-wrapper--open & {
       --btn-height: unset;
@@ -208,11 +207,15 @@
     gap: 0.5rem;
 
     a {
-      background-color: transparent;
+      width: 3rem;
+      height: 3rem;
+      background-color: var(--white);
       border-radius: 50%;
 
       .menu-wrapper--open & {
         background-color: transparent;
+        width: auto;
+        height: auto;
       }
 
       &:not(.menu-wrapper--open .header__contact a):hover {
@@ -222,9 +225,6 @@
 
     i {
       --font-size: 3rem;
-
-      width: 1.8rem;
-      height: 1.8rem;
 
       .header-fixed & {
         --font-size: 2.4rem;
@@ -240,8 +240,8 @@
 
   &__phone {
     font-weight: 700;
-    font-size: 1.2rem;
-    margin-left: -0.5rem;
+    font-size: 1.6rem;
+    white-space: nowrap;
 
     .menu-wrapper--open & {
       font-size: 1.2rem;
@@ -260,10 +260,8 @@
     gap: 1rem;
 
     padding: 1rem 1rem 1rem 2rem;
-    backdrop-filter: blur(2px);
     border-radius: 1.5rem;
     background: var(--blue);
-    box-shadow: 0px 12px 33.8px rgba(113, 133, 149, 0.72);
     box-shadow: 0px 12px 33.8px rgba(53, 175, 218, 0.42);
     backdrop-filter: blur(2px);
 
@@ -284,9 +282,7 @@
     gap: 1rem;
     height: var(--header-inner-height);
     padding: 0 2rem 0 1.5rem;
-    background-color: var(--orange);
-
-    color: var(--white);
+    color: var(--black);
 
     @include md {
       gap: 0.7rem;
@@ -302,6 +298,7 @@
 
       @include dosm {
         --btn-background: var(--orange);
+        color: var(--white);
 
         i {
           color: var(--white);
@@ -310,7 +307,7 @@
     }
 
     i {
-      color: var(--white);
+      color: var(--orange);
 
       @include md {
         --font-size: 2rem;
@@ -333,15 +330,17 @@
   }
 
   &__search {
+    display: flex;
+    align-items: center;
     width: 100%;
     height: var(--header-inner-height);
+    border-radius: 0.8rem;
     overflow: hidden;
 
     position: relative;
     z-index: 1;
 
     @include md {
-      // display: none;
       width: 4rem;
       margin-left: auto;
     }
@@ -349,7 +348,7 @@
     &:hover {
 
       &::before {
-        background: var(--black-70);
+        background-color: var(--black-70);
         border-color: var(--white);
       }
     }
@@ -358,12 +357,13 @@
       content: "";
       width: 100%;
       height: 100%;
-      background: var(--gray);
+      background-color: var(--gray);
       opacity: 0.48;
       border: 0.1rem solid var(--white-60);
+      border-radius: 0.8rem;
       box-shadow: inset 0px 0px 11.1px rgba(4, 29, 44, 0.5);
       backdrop-filter: blur(4.2px);
-      border-radius: 0.8rem;
+      transition: background-color 0.3s ease;
 
       position: absolute;
       top: 0;
@@ -371,8 +371,12 @@
       z-index: -1;
 
       .menu-wrapper--open & {
-        background: var(--gray);
+        background-color: var(--gray);
         border-color: var(--white-60);
+      }
+
+      .header-fixed & {
+        background-color: var(--black-30);
       }
 
       @include md {
@@ -383,15 +387,20 @@
     &-input {
       width: 100%;
       height: 100%;
-      padding: 1.8rem 7.4rem 2.2rem 2rem;
+      // padding: 1.8rem 7.4rem 2.2rem 2rem;
+      padding: 0 7.4rem 0 2rem;
 
       font-weight: 400;
       font-size: 1.4rem;
       line-height: 140%;
       color: var(--white);
 
+      position: relative;
+      z-index: 1;
+
       &::placeholder {
-        color: var(--white-50);
+        // color: var(--white-50);
+        color: var(--white);
       }
 
       @include md {
@@ -404,9 +413,12 @@
       height: 3.4rem;
       opacity: 0.5;
 
+      cursor: pointer;
+
       position: absolute;
       top: 50%;
       right: 2rem;
+      z-index: 2;
       transform: translateY(-50%);
 
       @include md {
@@ -473,6 +485,10 @@
 
       i {
         --font-size: 4rem;
+
+        .menu-wrapper--open & {
+          color: var(--white);
+        }
       }
 
       span {

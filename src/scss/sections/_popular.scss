@@ -39,7 +39,11 @@
       display: none;
     }
 
-    &-price {
+    &-value {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 0.9rem;
       width: fit-content;
 
       .card__item-price {
@@ -47,6 +51,7 @@
         * {
           font-weight: 400;
           font-size: 3.4rem;
+          color: var(--black);
 
           @include md {
             font-size: 2rem;
@@ -57,10 +62,12 @@
 
     &-btn {
       display: none;
+      display: flex;
     }
 
     &-plus {
       display: flex;
+      display: none;
     }
   }
 }
