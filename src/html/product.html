@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="page__inner">
+<html lang="ru" class="page__inner page__product">
 @@include('blocks/head.html', {"title": "Motorist"})
 
 <body>
@@ -278,7 +278,7 @@
                       <i class="icon-minus"></i>
                     </button>
                     <div class="quantity__text">
-                      <input type="text" value="10 шт">
+                      <input type="text" min="1" value="10 шт">
                     </div>
                     <button class="quantity__btn quantity__btn--plus" type="button">
                       <i class="icon-plus"></i>
@@ -289,7 +289,7 @@
                   <button class="product__body-btn btn btn--orange">
                     В корзину
                     <span>
-                      <i class="icon-arrow"></i>
+                      <i class="icon-cart-min"></i>
                     </span>
                   </button>
                   <button class="product__body-btn btn btn--gray">

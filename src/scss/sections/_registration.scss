@@ -21,6 +21,10 @@
     background-color: var(--white-50);
     border: 0.1rem solid var(--white);
 
+    @include md {
+      padding: 2rem 1.5rem;
+    }
+
     &-head {
 
       * {

@@ -110,7 +110,11 @@
       color: var(--blue);
     }
 
-    h6 {
+    &-text {
+      font-family: var(--font-family);
+      font-weight: 700;
+      font-size: 1.4rem;
+      line-height: 120%;
 
       @include md {
         display: none;

@@ -183,6 +183,8 @@
 
     .header-fixed & {
       --btn-height: 2.4rem;
+
+      padding: 0.4rem 1.5rem;
     }
 
     &:not(.menu-wrapper--open .header__download):hover {
@@ -212,10 +214,16 @@
       background-color: var(--white);
       border-radius: 50%;
 
+      .header-fixed.menu-wrapper--open &,
       .menu-wrapper--open & {
         background-color: transparent;
         width: auto;
         height: auto;
+      }
+
+      .header-fixed & {
+        width: 2.4rem;
+        height: 2.4rem;
       }
 
       &:not(.menu-wrapper--open .header__contact a):hover {
@@ -230,6 +238,7 @@
         --font-size: 2.4rem;
       }
 
+      .header-fixed.menu-wrapper--open &,
       .menu-wrapper--open & {
         width: 1.8rem;
         height: 1.8rem;
@@ -471,7 +480,6 @@
       flex-direction: column;
       align-items: center;
 
-      // color: var(--white);
       color: var(--black);
 
       position: relative;
@@ -509,6 +517,28 @@
           color: var(--white-50);
         }
       }
+    }
+
+    &-count {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 3rem;
+      background-color: var(--blue);
+      width: fit-content;
+      min-width: 2rem;
+      height: 2rem;
+      padding: 0 0.4rem;
+
+      font-size: 0.9rem;
+      line-height: 100%;
+      text-align: center;
+      color: var(--white);
+
+      position: absolute;
+      top: 0.3rem;
+      right: 0;
+      z-index: 2;
     }
   }
 }

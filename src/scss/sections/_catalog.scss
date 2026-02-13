@@ -30,13 +30,17 @@
     flex-direction: row;
     align-items: center;
     background-color: var(--white-50);
-    border: 0.1rem solid var(--white);
+    // border: 0.1rem solid var(--white);
     border-radius: 1.5rem;
     padding: 0.5rem 1rem;
     transition: all 0.5s ease;
     cursor: pointer;
 
     position: relative;
+
+    &.border-opacity::after {
+      border-radius: 1.5rem;
+    }
 
     &:hover {
       background-color: var(--gray);
@@ -123,7 +127,7 @@
       }
 
       &-btn {
-        display: none;
+        // display: none;
 
         &.btn--gray {
           display: none;
@@ -142,8 +146,11 @@
         -webkit-box-orient: vertical;
         box-orient: vertical;
 
-        @include md {
-          display: none;
+        display: none;
+
+        .list & {
+          display: flex;
+          max-width: 19rem;
         }
       }
 
@@ -156,7 +163,7 @@
       }
 
       &-material {
-        
+
         @include md {
           display: flex;
         }
@@ -185,9 +192,7 @@
         }
       }
 
-      &-plus {
-        display: flex;
-      }
+      &-plus {}
 
       &-name {
 

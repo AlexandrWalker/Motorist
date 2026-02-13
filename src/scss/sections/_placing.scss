@@ -3,6 +3,13 @@
 .placing {
   overflow: clip;
 
+  &__page {
+
+    .card__item-price {
+      color: var(--blue);
+    }
+  }
+
   &__inner {
     display: grid;
     grid-template-columns: 92.5rem 29.5rem;

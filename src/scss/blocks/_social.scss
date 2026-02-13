@@ -12,6 +12,10 @@
   @include dosm {
     display: block;
     opacity: 1;
+    pointer-events: none;
+  }
+
+  .active {
     pointer-events: all;
   }
 

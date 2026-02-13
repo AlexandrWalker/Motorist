@@ -41,7 +41,10 @@
       min-height: 25.6rem;
       padding: 1rem 1rem 2rem 1rem;
       background-color: var(--white-50);
-      border: 0.1rem solid var(--white);
+    }
+
+    &.border-opacity::after {
+      border-radius: 1.5rem;
     }
 
     &:hover {

@@ -150,23 +150,21 @@
     &-title {
       width: min-content;
       height: fit-content;
+      font-weight: 700;
+      letter-spacing: 0.02em;
 
       @include md {
         width: auto;
-      }
-
-      h6 {
-        font-weight: 700;
-        letter-spacing: 0.02em;
       }
     }
   }
 
   &__body {
     display: grid;
-    transition: all 0.5s ease;
-
     width: var(--container-width);
+    height: calc(100dvh - var(--megamenu-padding-top) - 4rem - 7.6rem);
+    overflow-y: auto;
+    transition: all 0.5s ease;
 
     position: absolute;
     top: calc(100% + 4rem);
@@ -180,8 +178,13 @@
       clip-path: none;
       overflow: hidden;
       width: 100%;
+      height: auto;
 
       position: static;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
     }
 
     .megamenu__item-active & {

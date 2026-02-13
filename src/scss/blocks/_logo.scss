@@ -8,7 +8,11 @@
   flex-shrink: 0;
 
   @include md {
-    width: 8.3rem;
+    width: 12rem;
     margin-right: 0;
+  }
+
+  @include sm {
+    width: 8.3rem;
   }
 }

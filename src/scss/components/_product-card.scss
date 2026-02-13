@@ -15,7 +15,6 @@
     gap: 2rem;
     padding: 2rem;
     background-color: var(--white-50);
-    border: 0.1rem solid var(--white);
     box-shadow: 5px 12px 23px rgba(113, 133, 149, 0.1);
     border-radius: 1.5rem;
     height: 100%;
@@ -95,6 +94,11 @@
       @include md {
         top: 1.4rem;
         right: 0.9rem;
+      }
+
+      .list & {
+        top: 3.3rem;
+        right: 3rem;
       }
     }
 
@@ -220,49 +224,49 @@
       }
     }
 
+    &-value {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 0.9rem;
+      width: fit-content;
+
+      @include md {
+        gap: 0.5rem;
+      }
+
+      .list & {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+      }
+    }
+
     &-price {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 3.5rem;
+      line-height: 100%;
+      white-space: nowrap;
 
-      * {
-        white-space: nowrap;
-        color: var(--blue);
-
-        @include md {
-          font-size: 2.5rem;
-        }
+      @include md {
+        font-size: 2.5rem;
       }
     }
 
     &-sale {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 120%;
+      white-space: nowrap;
+      color: var(--gray);
+      text-decoration-line: line-through;
 
-      * {
-        white-space: nowrap;
-        color: var(--gray);
-        text-decoration-line: line-through;
-
-        @include md {
-          font-size: 1.4rem;
-        }
+      @include md {
+        font-size: 1.4rem;
       }
     }
-
-    // &-price {
-    //   font-size: 3.4rem;
-    //   color: var(--black);
-
-    //   @include md {
-    //     font-size: 2.5rem;
-    //   }
-
-    //   span {
-    //     font-size: 1.6rem;
-    //     color: var(--gray);
-    //     text-decoration-line: line-through;
-
-    //     @include md {
-    //       font-size: 1.4rem;
-    //     }
-    //   }
-    // }
 
     &-btn {
       --btn-width: 100%;
