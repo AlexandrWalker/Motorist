@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     megamenuItems.forEach(item => {
       item.addEventListener('click', function () {
 
-        const isMobile = window.innerWidth < 834;
+        const isMobile = window.innerWidth < 835;
         const isActive = item.classList.contains('megamenu__item-active');
 
         if (isMobile) {
