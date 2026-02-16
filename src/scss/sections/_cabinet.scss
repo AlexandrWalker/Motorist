@@ -217,7 +217,12 @@
       }
     }
 
-    &-text {}
+    &-text {
+
+      @include md {
+        display: none;
+      }
+    }
 
     &-items {
       display: grid;
@@ -229,12 +234,24 @@
         grid-template-columns: 1fr;
         gap: 2rem;
       }
+
+      &--sostav {
+
+        @include md {
+          grid-template-columns: 1fr 1fr;
+          align-items: flex-end;
+        }
+      }
     }
 
     &-item {
       display: flex;
       flex-direction: column;
       gap: 1rem;
+
+      @include md {
+        font-size: 1.4rem;
+      }
 
       * {
         font-weight: 700;
@@ -251,6 +268,67 @@
 
       &.cancellation * {
         color: var(--red);
+      }
+
+      &--zakaz,
+      &--summ,
+      &--status {
+
+        @include md {
+          flex-direction: row;
+        }
+
+        &::before {
+          font-weight: 400;
+          font-size: 1.4rem;
+          line-height: 120%;
+          color: var(--gray);
+
+          display: none;
+
+          @include md {
+            display: block;
+          }
+        }
+      }
+
+      &--zakaz {
+
+        &::before {
+          content: "Заказ";
+        }
+      }
+
+      &--summ {
+
+        &::before {
+          content: "Сумма";
+        }
+      }
+
+      &--status {
+
+        &::before {
+          content: "Статус";
+        }
+      }
+
+      &--docs {
+
+        &::before {
+          content: "Документы";
+
+          font-weight: 400;
+          font-size: 1.4rem;
+          line-height: 120%;
+          color: var(--gray);
+
+          display: none;
+
+          @include md {
+            display: block;
+          }
+        }
       }
     }
 
