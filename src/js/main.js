@@ -60,21 +60,117 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
+  // const dropoutParents = document.querySelectorAll('.dropout-parent');
+  // if (!dropoutParents) return;
+
+  // dropoutParents.forEach(dropoutParent => {
+  //   dropoutParent.addEventListener('mouseenter', function () {
+  //     dropoutParent.querySelector('.dropout').classList.add('dropout-show');
+  //   })
+  //   dropoutParent.addEventListener('mouseleave', function () {
+  //     dropoutParent.querySelector('.dropout').classList.remove('dropout-show');
+  //   })
+  // });
+
   /**
    * Функция выпадашки при наведении на dropout айтемы
    */
   (function dropoutFunc() {
-    const dropoutParents = document.querySelectorAll('.dropout-parent');
-    if (!dropoutParents) return;
+    const isTouch = window.matchMedia('(hover: none)').matches;
+    let activeDrop = null;
+    let hoverTimer = null;
 
-    dropoutParents.forEach(dropoutParent => {
-      dropoutParent.addEventListener('mouseenter', function () {
-        dropoutParent.querySelector('.dropout').classList.add('dropout-show');
-      })
-      dropoutParent.addEventListener('mouseleave', function () {
-        dropoutParent.querySelector('.dropout').classList.remove('dropout-show');
-      })
+    function closeAll() {
+      document.querySelectorAll('.dropout.is-active')
+        .forEach(d => d.classList.remove('is-active'));
+      activeDrop = null;
+    }
+
+    function openDrop(drop) {
+      if (!drop) return;
+      closeAll();
+      drop.classList.add('is-active');
+      activeDrop = drop;
+    }
+
+    // === hover/click на ссылках с data-dropout ===
+    document.querySelectorAll('[data-dropout]').forEach(link => {
+      const dropId = link.dataset.dropout;
+      const drop = document.getElementById(dropId);
+      if (!drop) return;
+
+      if (!isTouch) {
+        // DESKTOP hover с задержкой
+        link.addEventListener('mouseenter', () => {
+          hoverTimer = setTimeout(() => openDrop(drop), 180); // 180ms задержка
+        });
+
+        link.addEventListener('mouseleave', () => {
+          clearTimeout(hoverTimer); // отменяем открытие если ушли быстро
+          hoverTimer = null;
+          setTimeout(() => {
+            if (!drop.matches(':hover')) {
+              drop.classList.remove('is-active');
+              if (activeDrop === drop) activeDrop = null;
+            }
+          }, 50);
+        });
+
+        drop.addEventListener('mouseleave', () => {
+          drop.classList.remove('is-active');
+          if (activeDrop === drop) activeDrop = null;
+        });
+
+      } else {
+        // MOBILE click
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          if (drop.classList.contains('is-active')) {
+            drop.classList.remove('is-active');
+            activeDrop = null;
+          } else {
+            openDrop(drop);
+          }
+        });
+
+        document.addEventListener('click', e => {
+          if (!drop.contains(e.target) && e.target !== link) closeAll();
+        });
+      }
     });
+
+    // === hover/leave для всех dropdown ===
+    document.querySelectorAll('.dropout').forEach(drop => {
+      if (!isTouch) {
+        drop.addEventListener('mouseleave', () => {
+          drop.classList.remove('is-active');
+          if (activeDrop === drop) activeDrop = null;
+        });
+      }
+    });
+
+    // === кнопки открытия других dropdown через data-dropout-target ===
+    document.querySelectorAll('[data-dropout-target]').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        const targetId = btn.dataset.dropoutTarget;
+        const targetDrop = document.getElementById(targetId);
+        if (!targetDrop) return;
+        openDrop(targetDrop);
+      });
+    });
+
+    // === кнопки закрытия текущего dropdown через data-dropout-close ===
+    document.querySelectorAll('[data-dropout-close]').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        if (activeDrop) {
+          activeDrop.classList.remove('is-active');
+          activeDrop = null;
+        }
+      });
+    });
+
   })();
 
   /**
@@ -727,33 +823,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // const checkInputs = document.querySelectorAll('.check-label');
-
-  // if (!checkInputs.lenght) return;
-
-  // checkInputs.forEach(checkInput => {
-  //   checkInput.addEventListener('click', function () {
-  //     checkInput.parentNode.classList.add('check-active');
-  //   });
-  // });
-
-  // const checkBlocks = document.querySelectorAll('.check-block');
-
-  // if (!checkBlocks.length) return;
-
-  // checkBlocks.forEach(checkBlock => {
-  //   const checkInput = checkBlock.querySelector('.check-input');
-
-  //   checkBlock.addEventListener('click', () => {
-  //     checkInput.checked = true;
-  //     checkInput.dispatchEvent(new Event('change')); // если нужно отслеживать событие
-
-  //     checkBlocks.forEach(b => b.classList.remove('check-active'));
-
-  //     checkBlock.classList.add('check-active');
-  //   });
-  // });
-
   /**
    * Смена отзывов через фильтр
    */
@@ -882,10 +951,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
   })();
-
-  // Выявление заполненности поля формы для присваивания класса
-  document.querySelectorAll('input, textarea').forEach(input => {
-    input.addEventListener('input', () => input.classList.toggle('filled', input.value.trim() !== ''));
-  });
 
 });

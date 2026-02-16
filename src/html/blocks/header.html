@@ -3,13 +3,14 @@
     <div class="header__inner">
 
       <div class="header__top border">
-        <div class="header__geo dropout-parent">
-          <i class="icon-plane"></i>
-          <p>
-            Петропавловск-Камчатский
-          </p>
-
-          <div class="dropout">
+        <div class="dropout-wrapper">
+          <div class="header__geo" data-dropout="drop1">
+            <i class="icon-plane"></i>
+            <p>
+              Петропавловск-Камчатский
+            </p>
+          </div>
+          <div id="drop1" class="dropout">
             <div class="dropout__inner">
               <div class="dropout__head">
                 <div class="dropout__head-title h3">
@@ -18,12 +19,55 @@
               </div>
               <div class="dropout__body">
                 <div class="dropout__btns">
-                  <a class="btn btn--blue" href="/Motorist">
+                  <button class="btn btn--blue" data-dropout-close>
                     Да
-                  </a>
-                  <a class="btn" href="/Motorist">
+                  </button>
+                  <button class="btn" data-dropout-target="drop2">
                     Выбрать
-                  </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="drop2" class="dropout">
+            <div class="dropout__inner">
+              <div class="dropout__head">
+                <div class="dropout__head-title h3">
+                  Выберите город
+                </div>
+              </div>
+              <div class="dropout__body">
+                <div class="dropout__input">
+                  <input class="form-input" type="text" placeholder="Введите ваш город">
+                </div>
+                <div class="dropout__list">
+                  <ul>
+                    <li>
+                      <a href="/Motorist">
+                        Новосибирск
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/Motorist">
+                        Красноярск
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/Motorist">
+                        Урюпинск
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/Motorist">
+                        Москва
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/Motorist">
+                        Санкт-Петербург
+                      </a>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -90,7 +134,8 @@
           Каталог
         </button>
         <div class="header__search">
-          <input class="header__search-input" name="header-search" type="text" placeholder="Артикул, толщина, название">
+          <input class="header__search-input form-input" name="header-search" type="text"
+            placeholder="Артикул, толщина, название">
           <div class="header__search-block">
             <ul>
               <li>
@@ -120,13 +165,14 @@
           </button>
         </div>
         <div class="header__navbar">
-          <button class="header__navbar-item dropout-parent" data-fancybox href="#popup-1">
-            <i class="icon-headphone"></i>
-            <span>
-              Связаться
-            </span>
-
-            <div class="dropout">
+          <div class="dropout-wrapper">
+            <button class="header__navbar-item" data-dropout="dropCallback" data-fancybox href="#popup-1">
+              <i class="icon-headphone"></i>
+              <span>
+                Связаться
+              </span>
+            </button>
+            <div id="dropCallback" class="dropout">
               <div class="dropout__inner">
                 <div class="dropout__body">
                   <div class="popup__links">
@@ -150,7 +196,7 @@
                 </div>
               </div>
             </div>
-          </button>
+          </div>
           <a class="header__navbar-item" href="/Motorist/sravnenie.html">
             <i class="icon-compare"></i>
             <span>
@@ -176,10 +222,11 @@
             </span>
           </a>
         </div>
-        <a class="header__login btn dropout-parent" href="/Motorist/cabinet.html">
-          Войти
-
-          <div class="dropout">
+        <div class="dropout-wrapper">
+          <a class="header__login btn dropout-parent" data-dropout="dropAuth2" href="/Motorist/cabinet.html">
+            Войти
+          </a>
+          <!-- <div id="dropAuth" class="dropout">
             <div class="dropout__inner">
               <div class="dropout__head">
                 <div class="dropout__head-title h3">
@@ -192,8 +239,51 @@
                 </p>
               </div>
             </div>
+          </div> -->
+          <div id="dropAuth2" class="dropout">
+            <div class="dropout__inner">
+              <div class="dropout__head">
+                <div class="dropout__head-title h3">
+                  Василий А.
+                </div>
+              </div>
+              <div class="dropout__body">
+                <div class="dropout__list">
+                  <ul>
+                    <li>
+                      <a href="/Motorist/cabinet.html">
+                        Личный кабинет
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/Motorist/cart.html">
+                        Мои заказы (10)
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/Motorist/cabinet.html">
+                        Личная информация
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/Motorist/cabinet.html">
+                        Редактировать личный кабинет
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/Motorist">
+                        Доставка
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <button class="btn btn--blue" data-dropout-close>
+                  Выйти
+                </button>
+              </div>
+            </div>
           </div>
-        </a>
+        </div>
         <button id="burger-btn" class="burger">
           <span class="burger-line"></span>
           <span class="burger-line"></span>

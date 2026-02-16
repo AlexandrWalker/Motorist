@@ -77,15 +77,8 @@
 
     cursor: pointer;
 
-    .dropout {
-      right: unset;
-      left: -2rem;
-      top: calc(100% + 0.1rem);
-
-      &::before {
-        right: unset;
-        left: 1.3rem;
-      }
+    &+.dropout {
+      min-width: 27.1rem;
 
       &__inner {
         padding: 3rem 4rem 3rem 3rem;
@@ -337,6 +330,16 @@
     @include md {
       display: none;
     }
+
+    &+.dropout {
+      right: -1rem;
+      left: unset;
+
+      &::before {
+        right: 2.6rem;
+        left: unset;
+      }
+    }
   }
 
   &__search {
@@ -396,8 +399,8 @@
     &-input {
       width: 100%;
       height: 100%;
-      // padding: 1.8rem 7.4rem 2.2rem 2rem;
       padding: 0 7.4rem 0 2rem;
+      background-color: transparent;
 
       font-weight: 400;
       font-size: 1.4rem;
@@ -564,6 +567,10 @@
         .menu-wrapper--open & {
           color: var(--white-50);
         }
+      }
+
+      &+.dropout {
+        min-width: 28.7rem;
       }
     }
 

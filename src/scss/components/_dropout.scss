@@ -4,24 +4,23 @@
   padding-top: 2rem;
   opacity: 0;
   pointer-events: none;
+  min-width: 39.5rem;
 
   position: absolute;
   top: calc(100% - 0.5rem);
-  right: -1rem;
+  left: -2rem;
   z-index: 10;
 
-  &__head {
-
-    &-title {
-      
-    }
-  }
-
-  &-parent {
+  &-wrapper {
     position: relative;
   }
 
-  &-show {
+  &__head {
+
+    &-title {}
+  }
+
+  &.is-active {
     opacity: 1;
     pointer-events: all;
   }
@@ -37,7 +36,7 @@
 
     position: absolute;
     top: 0;
-    right: 3rem;
+    left: 1.6rem;
   }
 
   &__inner {
@@ -60,5 +59,50 @@
 
   .btn {
     --btn-height: 4rem;
+
+    &:hover {
+      --btn-background: var(--orange);
+    }
+  }
+
+  &__input {
+    margin-bottom: 3rem;
+
+    .form-input {
+      background-color: transparent;
+      border: 0.1rem solid var(--gray);
+    }
+  }
+
+  &__list {
+    padding-left: 2rem;
+    width: 28.5rem;
+
+    li {
+      margin-bottom: 2rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+
+      &:hover {
+        color: var(--blue);
+      }
+    }
+  }
+}
+
+#dropAuth2 {
+
+  &.dropout {
+    width: 34.5rem;
+  }
+
+  .dropout__list {
+    padding-left: 0;
+    margin-bottom: 3rem;
   }
 }
