@@ -17,7 +17,7 @@
             <div class="breadcrumbs">
               <ul>
                 <li>
-                  <a href="/">
+                  <a href="/Motorist">
                     Главная
                   </a>
                 </li>
@@ -33,6 +33,33 @@
                   Сравнение товаров
                 </h2>
               </div>
+            </div>
+
+            <div class="general__tabs">
+              <button class="general__tabs-btn tabs-active">
+                Силиконовые резиносмеси
+              </button>
+              <button class="general__tabs-btn">
+                Патрубки
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="comparison">
+        <div class="container">
+          <div class="comparison__inner">
+
+            <div class="comparison__body">
+              <div class="comparison__items accordion-parent accordion-multiple">
+                @@loop('./elements/comparison-item.html', './data/comparison-items.json')
+              </div>
+              <button class="comparison__btn btn btn--blue">
+                Очистить список
+                <i class="icon-trash"></i>
+              </button>
             </div>
 
           </div>
