@@ -321,6 +321,13 @@ document.addEventListener('DOMContentLoaded', () => {
       simulateTouch: true,
       watchOverflow: true,
       watchSlidesProgress: true,
+
+      direction: 'horizontal',
+      touchStartPreventDefault: true,
+      touchMoveStopPropagation: true,
+      threshold: 8,
+      touchAngle: 25,
+
       mousewheel: {
         forceToAxis: true,
         sensitivity: 1,
@@ -340,6 +347,13 @@ document.addEventListener('DOMContentLoaded', () => {
       simulateTouch: true,
       watchOverflow: true,
       watchSlidesProgress: true,
+
+      direction: 'horizontal',
+      touchStartPreventDefault: true,
+      touchMoveStopPropagation: true,
+      threshold: 8,
+      touchAngle: 25,
+
       mousewheel: {
         forceToAxis: true,
         sensitivity: 1,
@@ -360,6 +374,13 @@ document.addEventListener('DOMContentLoaded', () => {
       simulateTouch: true,
       watchOverflow: true,
       watchSlidesProgress: true,
+
+      direction: 'horizontal',
+      touchStartPreventDefault: true,
+      touchMoveStopPropagation: true,
+      threshold: 8,
+      touchAngle: 25,
+
       mousewheel: {
         forceToAxis: true,
         sensitivity: 1,
@@ -380,6 +401,13 @@ document.addEventListener('DOMContentLoaded', () => {
       simulateTouch: true,
       watchOverflow: true,
       watchSlidesProgress: true,
+
+      direction: 'horizontal',
+      touchStartPreventDefault: true,
+      touchMoveStopPropagation: true,
+      threshold: 8,
+      touchAngle: 25,
+
       mousewheel: {
         forceToAxis: true,
         sensitivity: 1,
@@ -400,6 +428,13 @@ document.addEventListener('DOMContentLoaded', () => {
       simulateTouch: true,
       watchOverflow: true,
       watchSlidesProgress: true,
+
+      direction: 'horizontal',
+      touchStartPreventDefault: true,
+      touchMoveStopPropagation: true,
+      threshold: 8,
+      touchAngle: 25,
+
       mousewheel: {
         forceToAxis: true,
         sensitivity: 1,
@@ -416,6 +451,13 @@ document.addEventListener('DOMContentLoaded', () => {
       watchOverflow: true,
       watchSlidesProgress: true,
       grabCursor: true,
+
+      direction: 'horizontal',
+      touchStartPreventDefault: true,
+      touchMoveStopPropagation: true,
+      threshold: 8,
+      touchAngle: 25,
+
       mousewheel: {
         forceToAxis: true,
         sensitivity: 1,
@@ -732,45 +774,113 @@ document.addEventListener('DOMContentLoaded', () => {
   (function quantityFunc() {
 
     const quantities = document.querySelectorAll('.quantity');
-
     if (!quantities.length) return;
 
     quantities.forEach(quantity => {
+
       const input = quantity.querySelector('input');
       const btnMinus = quantity.querySelector('.quantity__btn--minus');
       const btnPlus = quantity.querySelector('.quantity__btn--plus');
 
       const min = Number(quantity.dataset.min) || 1;
-      const max = Number(quantity.dataset.max) || 100;
+      const max = Number(quantity.dataset.max) || 1000;
       const suffix = ' шт';
 
-      function getValue() {
-        const number = parseInt(input.value.replace(/\D/g, ''), 10);
+      function parse(value) {
+        const number = parseInt(value, 10);
         return isNaN(number) ? min : number;
       }
 
-      function setValue(value) {
-        value = Math.max(min, Math.min(max, value));
-        input.value = value + suffix;
+      function clamp(value) {
+        return Math.max(min, Math.min(max, value));
       }
 
+      function format(value) {
+        return clamp(value) + suffix;
+      }
+
+      function setFormatted(value) {
+        input.value = format(value);
+      }
+
+      function setRaw(value) {
+        input.value = value;
+      }
+
+      // Кнопки
       btnMinus.addEventListener('click', () => {
-        setValue(getValue() - 1);
+        const value = parse(input.value.replace(/\D/g, ''));
+        setFormatted(value - 1);
       });
 
       btnPlus.addEventListener('click', () => {
-        setValue(getValue() + 1);
+        const value = parse(input.value.replace(/\D/g, ''));
+        setFormatted(value + 1);
       });
 
+      // Фокус — убираем суффикс
+      input.addEventListener('focus', () => {
+        setRaw(parse(input.value.replace(/\D/g, '')));
+      });
+
+      // Ввод — только цифры
       input.addEventListener('input', () => {
-        const value = getValue();
-        input.value = value + suffix;
+        input.value = input.value.replace(/\D/g, '');
       });
 
+      // Blur — нормализуем и добавляем суффикс
       input.addEventListener('blur', () => {
-        setValue(getValue());
+        const value = clamp(parse(input.value));
+        setFormatted(value);
       });
+
+      // Инициализация
+      const initial = parse(input.value.replace(/\D/g, ''));
+      setFormatted(initial);
+
     });
+
+  })();
+
+  (function checkBlockFunc() {
+
+    const groups = document.querySelectorAll('.placing__block');
+    if (!groups.length) return;
+
+    groups.forEach(group => {
+
+      // Делегирование внутри конкретной группы
+      group.addEventListener('change', (e) => {
+
+        const target = e.target;
+        if (!target.matches('.check-input[type="radio"]')) return;
+
+        const name = target.name;
+        if (!name) return;
+
+        // Снимаем активность только у радио с тем же name внутри группы
+        group.querySelectorAll(`.check-input[name="${name}"]`)
+          .forEach(input => {
+            const block = input.closest('.check-block');
+            if (block) block.classList.remove('activity');
+          });
+
+        // Добавляем активность выбранному
+        const activeBlock = target.closest('.check-block');
+        if (activeBlock) activeBlock.classList.add('activity');
+
+      });
+
+      // Инициализация при загрузке
+      const checkedInputs = group.querySelectorAll('.check-input[type="radio"]:checked');
+
+      checkedInputs.forEach(input => {
+        const block = input.closest('.check-block');
+        if (block) block.classList.add('activity');
+      });
+
+    });
+
   })();
 
   // Выявление заполненности поля формы для присваивания класса

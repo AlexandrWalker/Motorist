@@ -9,7 +9,6 @@
   z-index: 1;
 
   .check-input {
-    display: none;
 
     &:checked+.check-label {
       background-color: var(--blue);
@@ -22,5 +21,9 @@
     height: 2rem;
     border-radius: 50%;
     background-color: var(--gray-20);
+  }
+
+  &-input {
+    display: none;
   }
 }

@@ -96,9 +96,14 @@
         right: 0.9rem;
       }
 
-      .list & {
+      &:not(.popular .card__item-controls) .list & {
         top: 3.3rem;
         right: 3rem;
+
+        @include md {
+          top: 1.4rem;
+          right: 0.9rem;
+        }
       }
     }
 

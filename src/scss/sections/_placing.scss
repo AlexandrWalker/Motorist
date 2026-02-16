@@ -277,6 +277,10 @@
 
       position: relative;
 
+      * {
+        transition: all 0.3s ease;
+      }
+
       @include md {
         gap: 2rem;
         padding: 2rem 1.5rem;
@@ -299,6 +303,10 @@
     &-title {
       color: var(--gray-50);
 
+      .activity & {
+        color: var(--gray);
+      }
+
       @include md {
         color: var(--black);
       }
@@ -315,6 +323,10 @@
     &-price {
       color: var(--gray-50);
 
+      .activity & {
+        color: var(--gray);
+      }
+
       @include md {
         color: var(--black);
       }
@@ -330,6 +342,10 @@
     &-text {
       color: var(--gray-50);
       max-width: 28.6rem;
+
+      .activity & {
+        color: var(--gray);
+      }
 
       @include md {
         color: var(--gray);
