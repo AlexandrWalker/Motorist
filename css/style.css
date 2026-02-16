@@ -97,8 +97,8 @@ img {
 @font-face {
   font-family: HelveticaNeue;
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Regilar.woff2") format("woff2"), url("../fonts/HelveticaNeue-Regilar.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -113,8 +113,8 @@ img {
 @font-face {
   font-family: HelveticaNeue;
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/HelveticaNeue-Regilar.woff2") format("woff2"), url("../fonts/HelveticaNeue-Regilar.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -153,16 +153,16 @@ img {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -858,10 +858,6 @@ body {
   z-index: 1;
 }
 
-.check .check-input {
-  display: none;
-}
-
 .check .check-input:checked + .check-label {
   background-color: var(--blue);
 }
@@ -872,6 +868,10 @@ body {
   height: 2rem;
   border-radius: 50%;
   background-color: var(--gray-20);
+}
+
+.check-input {
+  display: none;
 }
 
 .control {
@@ -1540,7 +1540,7 @@ body {
   z-index: 2;
 }
 
-.list .card__item-controls {
+.card__item-controls:not(.popular .card__item-controls) .list .card__item-controls {
   top: 3.3rem;
   right: 3rem;
 }
@@ -5925,6 +5925,11 @@ p {
   position: relative;
 }
 
+.placing__block-item * {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
 .placing__block-item .check {
   top: 2rem;
   right: 2rem;
@@ -5946,6 +5951,10 @@ p {
   color: var(--gray-50);
 }
 
+.activity .placing__block-title {
+  color: var(--gray);
+}
+
 .placing__block-title * {
   font-weight: 700;
 }
@@ -5954,9 +5963,17 @@ p {
   color: var(--gray-50);
 }
 
+.activity .placing__block-price {
+  color: var(--gray);
+}
+
 .placing__block-text {
   color: var(--gray-50);
   max-width: 28.6rem;
+}
+
+.activity .placing__block-text {
+  color: var(--gray);
 }
 
 .placing__info {
@@ -6846,6 +6863,7 @@ p {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  width: 100%;
 }
 
 .ticker {
@@ -7223,6 +7241,11 @@ p {
   }
 
   .card__item-controls {
+    top: 1.4rem;
+    right: 0.9rem;
+  }
+
+  .card__item-controls:not(.popular .card__item-controls) .list .card__item-controls {
     top: 1.4rem;
     right: 0.9rem;
   }
@@ -8582,6 +8605,5 @@ p {
 
   .reviews__items {
     grid-template-columns: repeat(1, 1fr);
-    width: 100%;
   }
 }
