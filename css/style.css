@@ -97,14 +97,6 @@ img {
 @font-face {
   font-family: HelveticaNeue;
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: HelveticaNeue;
-  font-display: swap;
   src: url("../fonts/HelveticaNeue-Regilar.woff2") format("woff2"), url("../fonts/HelveticaNeue-Regilar.woff") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -115,6 +107,14 @@ img {
   font-display: swap;
   src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
   font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: HelveticaNeue;
+  font-display: swap;
+  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -153,16 +153,16 @@ img {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -4150,6 +4150,37 @@ p {
   color: var(--red);
 }
 
+.cabinet__list-item--zakaz::before,
+.cabinet__list-item--summ::before,
+.cabinet__list-item--status::before {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 120%;
+  color: var(--gray);
+  display: none;
+}
+
+.cabinet__list-item--zakaz::before {
+  content: "Заказ";
+}
+
+.cabinet__list-item--summ::before {
+  content: "Сумма";
+}
+
+.cabinet__list-item--status::before {
+  content: "Статус";
+}
+
+.cabinet__list-item--docs::before {
+  content: "Документы";
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 120%;
+  color: var(--gray);
+  display: none;
+}
+
 .cabinet__list-links {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7654,9 +7685,43 @@ p {
     border-radius: 1.5rem;
   }
 
+  .cabinet__list-text {
+    display: none;
+  }
+
   .cabinet__list-items {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .cabinet__list-items--sostav {
+    grid-template-columns: 1fr 1fr;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+  }
+
+  .cabinet__list-item {
+    font-size: 1.4rem;
+  }
+
+  .cabinet__list-item--zakaz,
+  .cabinet__list-item--summ,
+  .cabinet__list-item--status {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
+  .cabinet__list-item--zakaz::before,
+  .cabinet__list-item--summ::before,
+  .cabinet__list-item--status::before {
+    display: block;
+  }
+
+  .cabinet__list-item--docs::before {
+    display: block;
   }
 
   .cabinet .block .cart__items {
@@ -8510,5 +8575,6 @@ p {
 
   .reviews__items {
     grid-template-columns: repeat(1, 1fr);
+    width: 100%;
   }
 }
