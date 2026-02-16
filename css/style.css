@@ -2414,6 +2414,7 @@ p {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
   padding: 1rem 1rem 1rem 2rem;
   border-radius: 1.5rem;
@@ -2661,9 +2662,10 @@ p {
   gap: 1rem;
   padding: 1rem 1rem 1rem 2rem;
   border-radius: 1.5rem;
-  background: var(--blue);
+  background-color: var(--blue);
   -webkit-box-shadow: 0px 12px 33.8px rgba(53, 175, 218, 0.42);
   box-shadow: 0px 12px 33.8px rgba(53, 175, 218, 0.42);
+  -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
   z-index: 1;
 }
@@ -2732,6 +2734,7 @@ p {
   border-radius: 0.8rem;
   -webkit-box-shadow: inset 0px 0px 11.1px rgba(4, 29, 44, 0.5);
   box-shadow: inset 0px 0px 11.1px rgba(4, 29, 44, 0.5);
+  -webkit-backdrop-filter: blur(4.2px);
   backdrop-filter: blur(4.2px);
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
@@ -2962,6 +2965,7 @@ p {
   --megamenu-padding-top: 17.3rem;
   width: 100%;
   background-color: rgba(4, 29, 44, 0.8);
+  -webkit-backdrop-filter: blur(37.65px);
   backdrop-filter: blur(37.65px);
   height: 0;
   -webkit-transition: all 0.5s ease;
@@ -3266,7 +3270,8 @@ p {
   padding: 0 1rem 0 1.4rem;
   height: 6rem;
   border-radius: 0.8rem;
-  background: var(--black-60);
+  background-color: var(--black-60);
+  -webkit-backdrop-filter: blur(6.1px);
   backdrop-filter: blur(6.1px);
 }
 
@@ -3484,7 +3489,8 @@ p {
 }
 
 .fancybox__backdrop {
-  background: rgba(4, 29, 44, 0.8);
+  background-color: rgba(4, 29, 44, 0.8);
+  -webkit-backdrop-filter: blur(37.65px);
   backdrop-filter: blur(37.65px);
 }
 
@@ -5407,8 +5413,9 @@ p {
   width: -moz-fit-content;
   width: fit-content;
   padding: 2rem 5rem 2rem 2rem;
-  background: var(--white-50);
+  background-color: var(--white-50);
   border-radius: 1.5rem;
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   overflow: hidden;
   position: absolute;
