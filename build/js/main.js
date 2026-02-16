@@ -733,7 +733,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const quantities = document.querySelectorAll('.quantity');
 
-    if(!quantities.length) return;
+    if (!quantities.length) return;
 
     quantities.forEach(quantity => {
       const input = quantity.querySelector('input');
@@ -772,5 +772,10 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   })();
+
+  // Выявление заполненности поля формы для присваивания класса
+  document.querySelectorAll('input, textarea').forEach(input => {
+    input.addEventListener('input', () => input.classList.toggle('filled', input.value.trim() !== ''));
+  });
 
 });

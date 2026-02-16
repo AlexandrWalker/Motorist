@@ -4,7 +4,8 @@
   --megamenu-padding-top: 17.3rem;
 
   width: 100%;
-  background: rgba(4, 29, 44, 0.8);
+  background-color: rgba(4, 29, 44, 0.8);
+  -webkit-backdrop-filter: blur(37.65px);
   backdrop-filter: blur(37.65px);
   height: 0;
   transition: all 0.5s ease;

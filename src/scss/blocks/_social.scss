@@ -18,10 +18,11 @@
   .active {
     pointer-events: all;
   }
-
+в
   .menu-wrapper--open & {
     opacity: 0;
     pointer-events: none;
+    display: none;
   }
 
   &__items {

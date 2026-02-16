@@ -51,6 +51,7 @@
 
       * {
         font-weight: 700;
+        font-weight: 400;
       }
 
       .block & {
@@ -67,6 +68,7 @@
 
       * {
         font-weight: 400;
+        font-weight: 700;
 
         .block & {
           font-size: 3.4rem;
@@ -114,6 +116,11 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      @include xs {
+        grid-template-columns: 1fr;
+        margin-top: 2rem;
+      }
+
       .block & {
         flex-direction: column;
         justify-content: flex-start;
@@ -125,6 +132,10 @@
         width: 100%;
         color: var(--white);
         background-color: var(--gray);
+
+        @include xs {
+          max-width: 100%;
+        }
 
         &:first-child {
           background-color: var(--orange);

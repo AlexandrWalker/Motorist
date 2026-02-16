@@ -39,13 +39,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2rem;
     width: 100%;
     height: 5rem;
     padding: 0.4rem 0.4rem 0.4rem 3rem;
     border-radius: 5rem;
     background-color: var(--gray);
 
+    font-weight: 700;
+    font-size: 1.2rem;
     color: var(--white);
+    white-space: nowrap;
 
     &-telegram {
       background-color: var(--blue);
@@ -68,10 +72,22 @@
     &-phone {
       background-color: var(--black);
 
+      .header__navbar & {
+        color: var(--black);
+
+        background-color: var(--white);
+      }
+
       i {
         color: var(--white);
 
         background-color: var(--gray);
+
+        .header__navbar & {
+          color: var(--blue);
+
+          background-color: var(--gray-10);
+        }
       }
     }
 
@@ -84,13 +100,11 @@
       }
     }
 
-    &-text {
-      font-weight: 700;
-      font-size: 1.2rem;
-    }
+    &-text {}
 
     i {
       --font-size: 4.2rem;
+      font-weight: 400;
     }
   }
 
