@@ -97,8 +97,8 @@ img {
 @font-face {
   font-family: HelveticaNeue;
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/HelveticaNeue-Regilar.woff2") format("woff2"), url("../fonts/HelveticaNeue-Regilar.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -113,8 +113,8 @@ img {
 @font-face {
   font-family: HelveticaNeue;
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Regilar.woff2") format("woff2"), url("../fonts/HelveticaNeue-Regilar.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -1035,17 +1035,18 @@ body {
   padding-top: 2rem;
   opacity: 0;
   pointer-events: none;
+  min-width: 39.5rem;
   position: absolute;
   top: calc(100% - 0.5rem);
-  right: -1rem;
+  left: -2rem;
   z-index: 10;
 }
 
-.dropout-parent {
+.dropout-wrapper {
   position: relative;
 }
 
-.dropout-show {
+.dropout.is-active {
   opacity: 1;
   pointer-events: all;
 }
@@ -1060,7 +1061,7 @@ body {
   height: 3.3rem;
   position: absolute;
   top: 0;
-  right: 3rem;
+  left: 1.6rem;
 }
 
 .dropout__inner {
@@ -1092,6 +1093,45 @@ body {
 
 .dropout .btn {
   --btn-height: 4rem;
+}
+
+.dropout .btn:hover {
+  --btn-background: var(--orange);
+}
+
+.dropout__input {
+  margin-bottom: 3rem;
+}
+
+.dropout__input .form-input {
+  background-color: transparent;
+  border: 0.1rem solid var(--gray);
+}
+
+.dropout__list {
+  padding-left: 2rem;
+  width: 28.5rem;
+}
+
+.dropout__list li {
+  margin-bottom: 2rem;
+}
+
+.dropout__list li:last-child {
+  margin-bottom: 0;
+}
+
+.dropout__list a:hover {
+  color: var(--blue);
+}
+
+#dropAuth2.dropout {
+  width: 34.5rem;
+}
+
+#dropAuth2 .dropout__list {
+  padding-left: 0;
+  margin-bottom: 3rem;
 }
 
 .filter *,
@@ -2461,18 +2501,11 @@ p {
   cursor: pointer;
 }
 
-.header__geo .dropout {
-  right: unset;
-  left: -2rem;
-  top: calc(100% + 0.1rem);
+.header__geo + .dropout {
+  min-width: 27.1rem;
 }
 
-.header__geo .dropout::before {
-  right: unset;
-  left: 1.3rem;
-}
-
-.header__geo .dropout__inner {
+.header__geo + .dropout__inner {
   padding: 3rem 4rem 3rem 3rem;
 }
 
@@ -2705,6 +2738,16 @@ p {
   padding: 1rem 1.3rem 1rem 1.4rem;
 }
 
+.header__login + .dropout {
+  right: -1rem;
+  left: unset;
+}
+
+.header__login + .dropout::before {
+  right: 2.6rem;
+  left: unset;
+}
+
 .header__search {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2757,6 +2800,7 @@ p {
   width: 100%;
   height: 100%;
   padding: 0 7.4rem 0 2rem;
+  background-color: transparent;
   font-weight: 400;
   font-size: 1.4rem;
   line-height: 140%;
@@ -2923,6 +2967,10 @@ p {
 
 .menu-wrapper--open .header__navbar-item span {
   color: var(--white-50);
+}
+
+.header__navbar-item + .dropout {
+  min-width: 28.7rem;
 }
 
 .header__navbar-count {
