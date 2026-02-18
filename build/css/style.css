@@ -97,16 +97,24 @@ img {
 @font-face {
   font-family: HelveticaNeue;
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/HelveticaNeue-Regilar.woff2") format("woff2"), url("../fonts/HelveticaNeue-Regilar.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: HelveticaNeue;
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Regilar.woff2") format("woff2"), url("../fonts/HelveticaNeue-Regilar.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Black.woff2") format("woff2"), url("../fonts/Montserrat-Black.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -121,8 +129,8 @@ img {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Black.woff2") format("woff2"), url("../fonts/Montserrat-Black.woff") format("woff");
-  font-weight: 900;
+  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -131,14 +139,6 @@ img {
   font-display: swap;
   src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
   font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
-  font-weight: 800;
   font-style: normal;
 }
 
@@ -705,6 +705,7 @@ body {
   --black-50: rgba(4, 29, 44, 0.5);
   --black-60: rgba(4, 29, 44, 0.6);
   --black-70: rgba(4, 29, 44, 0.7);
+  --black-80: rgba(4, 29, 44, 0.8);
   --second-black: #1E2327;
   --blue: #35AFDA;
   --green: #52BB79;
@@ -4864,9 +4865,23 @@ p {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 2rem;
+  position: relative;
 }
 
-.catalog__item {
+.catalog__items .megamenu__content {
+  overflow: hidden;
+  padding: 0;
+}
+
+.catalog__item:hover .catalog__items .megamenu__content {
+  padding: 0.7rem 0 6rem 0;
+}
+
+.catalog__items .megamenu__content-title {
+  color: var(--white);
+}
+
+.catalog__item-head {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4886,13 +4901,99 @@ p {
   position: relative;
 }
 
-.catalog__item.border-opacity::after {
+.catalog__item-head.border-opacity::after {
   border-radius: 1.5rem;
 }
 
-.catalog__item:hover {
+.catalog__item:hover .catalog__item-head {
   background-color: var(--gray);
   border-color: var(--gray);
+}
+
+.catalog__item:hover .catalog__item-head i {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.catalog__item-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 0 2.5rem;
+  border-radius: 1.5rem;
+  max-width: var(--container-width);
+  width: 100%;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  background-color: var(--black-50);
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  z-index: 10;
+}
+
+.catalog__item:hover .catalog__item-body {
+  grid-template-rows: 1fr;
+  padding: 2.5rem;
+}
+
+.catalog__item-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 2rem;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.catalog__item-list ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.catalog__item-list li {
+  padding-left: 1.3rem;
+  position: relative;
+}
+
+.catalog__item-list li::before {
+  content: "";
+  display: block;
+  width: 0.3rem;
+  height: 0.3rem;
+  border-radius: 50%;
+  background-color: var(--white-50);
+  position: absolute;
+  top: 0.9rem;
+  left: 0;
+}
+
+.catalog__item-list a {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  color: var(--white);
+}
+
+.catalog__item-list a:hover {
+  text-decoration-line: underline;
 }
 
 .catalog__item-img {
@@ -4928,7 +5029,7 @@ p {
 
 .catalog__body {
   display: grid;
-  grid-template-columns: 29.5rem 92.5rem;
+  grid-template-columns: 29.5rem 90.5rem;
   gap: 2rem;
 }
 
