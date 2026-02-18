@@ -308,6 +308,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const html = document.documentElement;
     const catalogBtn = document.getElementById('headerCatalogBtn');
     const burgerBtn = document.getElementById('burger-btn');
+    const megaMenuContainer = document.querySelector('.megamenu__wrapper');
+
+    const isMobile = () => window.innerWidth <= 834;
+
+    const OPEN_DELAY = 200; // задержка открытия (мс)
+    const CLOSE_DELAY = 100; // задержка закрытия
+
+    let openTimeout = null;
+    let closeTimeout = null;
+    let isClickNavigation = false;
 
     const removeMegaItemActive = () => {
       document
@@ -338,6 +348,9 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const closeMenu = () => {
+      clearTimeout(openTimeout);
+      clearTimeout(closeTimeout);
+
       html.classList.remove(
         'menu-wrapper--open',
         'megamenu--active',
@@ -371,9 +384,81 @@ document.addEventListener('DOMContentLoaded', () => {
       openMenu(type);
     };
 
+    /* HOVER ЛОГИКА */
+    const scheduleOpen = () => {
+      if (isMobile()) return; // отключаем hover на мобилке
+      if (isClickNavigation) return;
+      if (html.classList.contains('megamenu--active')) return;
+
+      clearTimeout(closeTimeout);
+
+      openTimeout = setTimeout(() => {
+        if (!isClickNavigation) {
+          openMenu('mega');
+        }
+      }, OPEN_DELAY);
+    };
+
+    const scheduleClose = (e) => {
+      const related = e.relatedTarget;
+
+      if (
+        related &&
+        (catalogBtn.contains(related) ||
+          (megaMenuContainer && megaMenuContainer.contains(related)))
+      ) {
+        return;
+      }
+
+      clearTimeout(openTimeout);
+
+      closeTimeout = setTimeout(() => {
+        if (html.classList.contains('megamenu--active')) {
+          closeMenu();
+        }
+      }, CLOSE_DELAY);
+    };
+
+    catalogBtn.addEventListener('mouseenter', scheduleOpen);
+    catalogBtn.addEventListener('mouseleave', scheduleClose);
+
+    if (megaMenuContainer) {
+      megaMenuContainer.addEventListener('mouseenter', () => {
+        clearTimeout(closeTimeout);
+      });
+
+      megaMenuContainer.addEventListener('mouseleave', scheduleClose);
+    }
+    // catalogBtn.addEventListener('mouseenter', (e) => {
+    //   const isActive = html.classList.contains('megamenu--active');
+    //   if (!isActive) {
+    //     toggleMenu('mega');
+    //   }
+    //   // e.preventDefault();
+    //   // toggleMenu('mega');
+    // });
+
     catalogBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      toggleMenu('mega');
+      if (isMobile()) {
+        e.preventDefault(); // запрещаем переход
+
+        const isActive = html.classList.contains('megamenu--active');
+
+        clearTimeout(openTimeout);
+        clearTimeout(closeTimeout);
+
+        if (isActive) {
+          closeMenu();
+        } else {
+          openMenu('mega');
+        }
+
+        return;
+      }
+
+      // desktop логика — разрешаем переход
+      isClickNavigation = true;
+      clearTimeout(openTimeout);
     });
 
     burgerBtn.addEventListener('click', (e) => {
@@ -383,6 +468,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
+        closeMenu();
+      }
+    });
+
+    window.addEventListener('pageshow', () => {
+      isClickNavigation = false;
+    });
+
+    /* Клик вне контейнера */
+    document.addEventListener('click', (e) => {
+      const isMegaOpen = html.classList.contains('megamenu--active');
+      if (!isMegaOpen) return;
+
+      const clickInsideContainer =
+        megaMenuContainer && megaMenuContainer.contains(e.target);
+
+      const clickOnCatalogBtn =
+        catalogBtn && catalogBtn.contains(e.target);
+
+      if (!clickInsideContainer && !clickOnCatalogBtn) {
         closeMenu();
       }
     });
