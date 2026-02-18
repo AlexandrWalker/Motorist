@@ -365,7 +365,16 @@
     .cart__items {
 
       @include md {
-        display: none;
+        // display: none;
+      }
+    }
+
+    .cart__item {
+
+      @include md {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
       }
     }
 
@@ -387,6 +396,10 @@
       span {
         color: var(--black);
         font-weight: 400;
+
+        @include md {
+          font-size: 1.2rem !important;
+        }
       }
     }
 

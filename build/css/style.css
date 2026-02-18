@@ -97,24 +97,16 @@ img {
 @font-face {
   font-family: HelveticaNeue;
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Regilar.woff2") format("woff2"), url("../fonts/HelveticaNeue-Regilar.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: HelveticaNeue;
-  font-display: swap;
   src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: Montserrat;
+  font-family: HelveticaNeue;
   font-display: swap;
-  src: url("../fonts/Montserrat-Black.woff2") format("woff2"), url("../fonts/Montserrat-Black.woff") format("woff");
-  font-weight: 900;
+  src: url("../fonts/HelveticaNeue-Regilar.woff2") format("woff2"), url("../fonts/HelveticaNeue-Regilar.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -129,6 +121,14 @@ img {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
   src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
@@ -137,8 +137,8 @@ img {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Montserrat-Black.woff2") format("woff2"), url("../fonts/Montserrat-Black.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -153,16 +153,16 @@ img {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -4746,6 +4746,7 @@ p {
 }
 
 .block .cart__item-quantity {
+  margin: 1rem 0;
   grid-column: 3/4;
   grid-row: 1/2;
 }
@@ -4753,6 +4754,15 @@ p {
 .cart__item-quantity .quantity__btn,
 .cart__item-quantity .quantity__text {
   border-radius: 0.8rem;
+}
+
+.cabinet-cart .cart__item-quantity .quantity__btn,
+.cabinet-cart .cart__item-quantity .quantity__text {
+  border-radius: 5rem;
+}
+
+.cabinet-cart .cart__item-quantity {
+  display: none;
 }
 
 .cart__item-check {
@@ -7933,8 +7943,14 @@ p {
     display: block;
   }
 
-  .cabinet .block .cart__items {
-    display: none;
+  .cabinet .block .cart__item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .cabinet .block .card__item-art span {
+    font-size: 1.2rem !important;
   }
 
   .cart__side {
@@ -7994,8 +8010,21 @@ p {
     background-color: var(--white-50);
   }
 
+  .block .cart__item {
+    padding: 2rem 2rem 1rem 2rem;
+  }
+
   .cart__page .cart__item-text {
     padding-top: 0;
+  }
+
+  .block .cart__item-text * {
+    font-size: 1.2rem;
+  }
+
+  .block .cart__item-text--name {
+    gap: 1rem;
+    grid-row: 1/2;
   }
 
   .cart__item-text--name .cart__item-wrap {
@@ -8034,6 +8063,11 @@ p {
     display: block;
   }
 
+  .block .cart__item-text--sum {
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+
   .cart__item-text--sum {
     -webkit-box-align: end;
     -ms-flex-align: end;
@@ -8045,6 +8079,10 @@ p {
     display: block;
   }
 
+  .cabinet-cart .cart__item-text--sum::before {
+    display: none;
+  }
+
   .cart__page .cart__item-name {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -8052,11 +8090,22 @@ p {
     flex-direction: column;
   }
 
+  .cabinet-cart .cart__item-quantity {
+    display: block;
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
   .cart__page .cart__item-check {
     padding-top: 0;
     position: absolute;
     top: 1rem;
     right: 1rem;
+  }
+
+  .block .cart__economy {
+    grid-column: 2/3;
+    grid-row: 4/5;
   }
 
   .catalog__inner {

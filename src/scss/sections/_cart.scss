@@ -238,6 +238,10 @@
       background-color: var(--white-50);
       border: 0.1rem solid var(--white);
       border-radius: 1.5rem;
+
+      @include md {
+        padding: 2rem 2rem 1rem 2rem;
+      }
     }
 
     &-img {
@@ -276,6 +280,10 @@
 
         .block & {
           font-size: 1.6rem;
+
+          @include md {
+            font-size: 1.2rem;
+          }
         }
       }
 
@@ -288,6 +296,12 @@
 
           grid-column: 2/3;
           grid-row: 1/5;
+
+          @include md {
+            gap: 1rem;
+
+            grid-row: 1/2;
+          }
         }
 
         .h6 {
@@ -311,7 +325,7 @@
             &:nth-child(2) {
               font-weight: 700;
               color: var(--red);
-              
+
               @include md {
                 line-height: 120%;
                 font-size: 1rem;
@@ -321,7 +335,7 @@
             &:last-child {
               font-weight: 400;
               color: var(--gray);
-              
+
               @include md {
                 line-height: 120%;
                 font-size: 1rem;
@@ -403,6 +417,11 @@
 
           grid-column: 3/4;
           grid-row: 2/3;
+
+          @include md {
+            grid-column: 2/3;
+            grid-row: 3/4;
+          }
         }
 
         .cart__item--disabled & {
@@ -426,6 +445,13 @@
 
           @include md {
             display: block;
+          }
+
+          .cabinet-cart & {
+
+            @include md {
+              display: none;
+            }
           }
         }
       }
@@ -491,6 +517,8 @@
     &-quantity {
 
       .block & {
+        margin: 1rem 0;
+
         grid-column: 3/4;
         grid-row: 1/2;
       }
@@ -500,6 +528,21 @@
         &__btn,
         &__text {
           border-radius: 0.8rem;
+
+          .cabinet-cart & {
+            border-radius: 5rem;
+          }
+        }
+      }
+
+      .cabinet-cart & {
+        display: none;
+
+        @include md {
+          display: block;
+
+          grid-column: 2/3;
+          grid-row: 2/3;
         }
       }
     }
@@ -545,6 +588,11 @@
 
       grid-column: 3/4;
       grid-row: 3/4;
+
+      @include md {
+        grid-column: 2/3;
+        grid-row: 4/5;
+      }
     }
 
     &-wrap {
