@@ -79,7 +79,7 @@
 .social.active {
 
   .social__item-btn {
-    top: 22rem;
+    top: 16.5rem;
   }
 
   .social__item:not(.social__item-btn) {
@@ -99,9 +99,5 @@
 
   .social__item:nth-child(3) {
     transition-delay: 0.15s;
-  }
-
-  .social__item:nth-child(4) {
-    transition-delay: 0.2s;
   }
 }

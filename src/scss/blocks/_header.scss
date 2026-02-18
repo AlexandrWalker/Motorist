@@ -222,11 +222,18 @@
 
       &:not(.menu-wrapper--open .header__contact a):hover {
         background-color: var(--second-black);
+
+        i {
+          color: var(--white);
+        }
       }
     }
 
     i {
       --font-size: 3rem;
+
+      color: var(--black);
+      transition: all 0.3s ease;
 
       .header-fixed & {
         --font-size: 2.4rem;

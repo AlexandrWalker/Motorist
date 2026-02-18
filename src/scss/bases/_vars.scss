@@ -1,9 +1,9 @@
 @use './../mixins' as *;
 
 :root {
-  --font-family: "TeXGyreHeros", sans-serif;
-  --second-family: "HelveticaNeue", sans-serif;
-  --third-family: "Montserrat", sans-serif;
+  --font-family: "TeXGyreHeros", Arial, sans-serif;
+  --second-family: "HelveticaNeue", Arial, sans-serif;
+  --third-family: "Montserrat", Arial, sans-serif;
 
   --container-padding: 10rem;
   --container-width: 124rem;

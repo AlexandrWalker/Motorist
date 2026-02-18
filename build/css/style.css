@@ -97,6 +97,14 @@ img {
 @font-face {
   font-family: HelveticaNeue;
   font-display: swap;
+  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: HelveticaNeue;
+  font-display: swap;
   src: url("../fonts/HelveticaNeue-Regilar.woff2") format("woff2"), url("../fonts/HelveticaNeue-Regilar.woff") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -107,14 +115,6 @@ img {
   font-display: swap;
   src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
   font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: HelveticaNeue;
-  font-display: swap;
-  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
-  font-weight: 500;
   font-style: normal;
 }
 
@@ -685,9 +685,9 @@ body {
 }
 
 :root {
-  --font-family: "TeXGyreHeros", sans-serif;
-  --second-family: "HelveticaNeue", sans-serif;
-  --third-family: "Montserrat", sans-serif;
+  --font-family: "TeXGyreHeros", Arial, sans-serif;
+  --second-family: "HelveticaNeue", Arial, sans-serif;
+  --third-family: "Montserrat", Arial, sans-serif;
   --container-padding: 10rem;
   --container-width: 124rem;
   --header-height: 17.6rem;
@@ -1482,8 +1482,8 @@ body {
   color: #2097C9;
 }
 
-.icon-whatsapp {
-  color: #25D366;
+.icon-max {
+  color: var(--gray);
 }
 
 .card__item {
@@ -2651,8 +2651,15 @@ p {
   background-color: var(--second-black);
 }
 
+.header__contact a:not(.menu-wrapper--open .header__contact a):hover i {
+  color: var(--white);
+}
+
 .header__contact i {
   --font-size: 3rem;
+  color: var(--black);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .header-fixed .header__contact i {
@@ -3446,11 +3453,13 @@ p {
   background-color: var(--white);
 }
 
-.popup__link-whatsapp {
-  background-color: #25D366;
+.popup__link-max {
+  background: -webkit-gradient(linear, left top, right top, from(#2AA8FC), to(#7E3FE4));
+  background: linear-gradient(90deg, #2AA8FC 0%, #7E3FE4 100%);
 }
 
-.popup__link-whatsapp i {
+.popup__link-max i {
+  color: var(--gray);
   background-color: var(--white);
 }
 
@@ -3655,7 +3664,7 @@ p {
 /* Активное состояние */
 
 .social.active .social__item-btn {
-  top: 22rem;
+  top: 16.5rem;
 }
 
 .social.active .social__item:not(.social__item-btn) {
@@ -3683,11 +3692,6 @@ p {
 .social.active .social__item:nth-child(3) {
   -webkit-transition-delay: 0.15s;
   transition-delay: 0.15s;
-}
-
-.social.active .social__item:nth-child(4) {
-  -webkit-transition-delay: 0.2s;
-  transition-delay: 0.2s;
 }
 
 .template p {
@@ -4303,8 +4307,30 @@ p {
   position: static;
 }
 
+.cabinet .block .card__item-tag {
+  font-size: 0.8rem;
+}
+
 .cabinet .block .card__item-price {
   color: var(--blue);
+}
+
+.cabinet-cart .card__item-art,
+.cabinet-cart .card__item-material,
+.cabinet-cart .card__item-diameter {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-weight: 400;
+  font-size: 1.2rem !important;
+  color: var(--gray);
+}
+
+.cabinet-cart .card__item-art span,
+.cabinet-cart .card__item-material span,
+.cabinet-cart .card__item-diameter span {
+  font-size: 1.4rem !important;
 }
 
 .block .cart .control {
@@ -6265,6 +6291,10 @@ p {
   margin-bottom: 0;
 }
 
+.press-inner__head .general__head-title * {
+  font-weight: 400;
+}
+
 .press-inner__date {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6277,7 +6307,7 @@ p {
   -ms-flex-align: end;
   align-items: flex-end;
   gap: 1rem;
-  color: var(--gray);
+  color: var(--blue);
 }
 
 .press-inner__date span {

@@ -394,8 +394,29 @@
       position: static;
     }
 
+    .card__item-tag {
+      font-size: 0.8rem;
+    }
+
     .card__item-price {
       color: var(--blue);
+    }
+  }
+}
+
+.cabinet-cart {
+
+  .card__item-art,
+  .card__item-material,
+  .card__item-diameter {
+    flex-direction: column;
+
+    font-weight: 400;
+    font-size: 1.2rem !important;
+    color: var(--gray);
+
+    span {
+      font-size: 1.4rem !important;
     }
   }
 }

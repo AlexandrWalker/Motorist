@@ -25,6 +25,13 @@
 
     .general__head {
       margin-bottom: 0;
+
+      &-title {
+
+        * {
+          font-weight: 400;
+        }
+      }
     }
   }
 
@@ -34,7 +41,8 @@
     align-items: flex-end;
     gap: 1rem;
 
-    color: var(--gray);
+    // color: var(--gray);
+    color: var(--blue);
 
     span {
       font-weight: 700;

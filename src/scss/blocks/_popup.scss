@@ -57,14 +57,14 @@
       i {
         color: #35AFDA;
         background-color: var(--white);
-
       }
     }
 
-    &-whatsapp {
-      background-color: #25D366;
+    &-max {
+      background: linear-gradient(90deg, #2AA8FC 0%, #7E3FE4 100%);
 
       i {
+        color: var(--gray);
         background-color: var(--white);
       }
     }
