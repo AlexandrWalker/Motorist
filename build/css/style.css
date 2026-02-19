@@ -121,6 +121,14 @@ img {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
+  src: url("../fonts/Montserrat-Black.woff2") format("woff2"), url("../fonts/Montserrat-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
   src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -137,24 +145,8 @@ img {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Black.woff2") format("woff2"), url("../fonts/Montserrat-Black.woff") format("woff");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
   src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
   font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
-  font-weight: 500;
   font-style: normal;
 }
 
@@ -169,8 +161,8 @@ img {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -179,6 +171,14 @@ img {
   font-display: swap;
   src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
   font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -321,7 +321,7 @@ img {
 }
 
 .general__tabs-btn:hover,
-.general__tabs-btn.tabs-active {
+.general__tabs-btn.ajax-btn-active {
   background-color: var(--white);
   color: var(--gray);
 }
@@ -4334,6 +4334,10 @@ p {
   font-size: 1.4rem !important;
 }
 
+.cart {
+  overflow-x: visible;
+}
+
 .block .cart .control {
   grid-column: 1/2;
   grid-row: 1/2;
@@ -4361,9 +4365,12 @@ p {
   align-items: flex-end;
   gap: 6rem;
   padding: 3rem;
-  background-color: var(--white-50);
+  background-color: var(--white);
   border: 0.1rem solid var(--white);
   border-radius: 1.5rem;
+  position: sticky;
+  top: var(--header-height);
+  z-index: 10;
 }
 
 .block .cart__side {

@@ -1,6 +1,7 @@
 @use './../mixins' as *;
 
 .cart {
+  overflow-x: visible;
 
   .control {
 
@@ -25,9 +26,15 @@
     align-items: flex-end;
     gap: 6rem;
     padding: 3rem;
-    background-color: var(--white-50);
+    // background-color: var(--white-50);
+    // backdrop-filter: blur(6px);
+    background-color: var(--white);
     border: 0.1rem solid var(--white);
     border-radius: 1.5rem;
+
+    position: sticky;
+    top: var(--header-height);
+    z-index: 10;
 
     @include md {
       flex-direction: column;

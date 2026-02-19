@@ -126,7 +126,7 @@
       cursor: pointer;
 
       &:hover,
-      &.tabs-active {
+      &.ajax-btn-active {
         background-color: var(--white);
         color: var(--gray);
       }
