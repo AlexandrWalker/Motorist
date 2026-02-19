@@ -935,14 +935,30 @@ document.addEventListener('DOMContentLoaded', () => {
   if (ajaxPage) {
     const ajaxBtns = ajaxPage.querySelector('.ajax-btns');
     const ajaxBtn = $(ajaxBtns).find('.ajax-btn');
-    ajaxBtn.on('click', function filterFunc() {
-      ajaxBtn.removeClass('ajax-btn-active')
-      $(this).addClass('ajax-btn-active')
-      const attr = $(this).data('cabinet');
-      $.get('./ajax/cabinet-' + attr + '.html', function (data) {
-        $('.cabinet__body').html(data)
+
+    const page__cabinet = $('.page__cabinet');
+    const page__reg = $('.page__reg');
+
+    if (page__cabinet) {
+      ajaxBtn.on('click', function filterFunc() {
+        ajaxBtn.removeClass('ajax-btn-active')
+        $(this).addClass('ajax-btn-active')
+        const attr = $(this).data('cabinet');
+        $.get('./ajax/cabinet-' + attr + '.html', function (data) {
+          $('.cabinet__body').html(data)
+        })
       })
-    })
+    }
+    if (page__reg) {
+      ajaxBtn.on('click', function filterFunc() {
+        ajaxBtn.removeClass('ajax-btn-active')
+        $(this).addClass('ajax-btn-active')
+        const attr = $(this).data('reg');
+        $.get('./ajax/reg-' + attr + '.html', function (data) {
+          $('.registration__inner').html(data)
+        })
+      })
+    }
   }
 
   (function quantityFunc() {
