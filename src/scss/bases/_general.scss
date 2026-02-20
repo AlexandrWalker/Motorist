@@ -113,7 +113,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: var(--gray);
+      background-color: var(--white);
       border-radius: 5rem;
       padding: 0 2rem;
       height: 4rem;
@@ -122,13 +122,17 @@
       font-weight: 400;
       font-size: 1.2rem;
       line-height: 100%;
-      color: var(--white);
+      color: var(--gray);
       cursor: pointer;
 
-      &:hover,
+      &:hover {
+        background-color: var(--blue);
+        color: var(--white);
+      }
+
       &.ajax-btn-active {
-        background-color: var(--white);
-        color: var(--gray);
+        background-color: var(--gray);
+        color: var(--white);
       }
     }
   }

@@ -74,12 +74,12 @@
       transition: all 0.3s ease;
       padding: 0 2.5rem;
       border-radius: 1.5rem;
-      // background-color: var(--gray);
       max-width: var(--container-width);
       width: 100%;
-
-      backdrop-filter: blur(6px);
-      background-color: var(--black-50);
+      
+      // backdrop-filter: blur(6px);
+      background-color: var(--gray);
+      // background-color: var(--black-50);
 
 
       position: absolute;
@@ -174,8 +174,7 @@
 
   &__body {
     display: grid;
-    // grid-template-columns: 29.5rem 92.5rem;
-    grid-template-columns: 29.5rem 90.5rem;
+    grid-template-columns: 29.5rem 92.5rem;
     gap: 2rem;
 
     @include md {
