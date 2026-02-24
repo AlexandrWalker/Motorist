@@ -32,10 +32,7 @@
     }
 
     &-title {
-
-      h4 {
-        font-weight: 700;
-      }
+      font-weight: 700;
 
       @include domd {
         font-size: 2.4rem;
@@ -58,19 +55,14 @@
       gap: 0.6rem;
     }
 
-    &-suptitle {}
-
     &-text {
-
-      h5 {
-        font-weight: 700;
-      }
+      font-weight: 700;
     }
 
     &-link {
       font-weight: 700;
       width: fit-content;
-      
+
       position: relative;
 
       @include md {

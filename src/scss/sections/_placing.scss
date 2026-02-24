@@ -7,6 +7,7 @@
 
     .card__item-price {
       color: var(--blue);
+      font-weight: 400;
     }
   }
 
@@ -136,12 +137,10 @@
     &-title {
       max-width: 23rem;
 
+      font-weight: 700;
+
       @include md {
         margin-bottom: 3rem;
-      }
-
-      * {
-        font-weight: 700;
       }
     }
 
@@ -158,11 +157,6 @@
         gap: 0.5rem;
         margin-top: 1.5rem;
         margin-left: 0;
-      }
-
-      * {
-        font-weight: 400;
-        line-height: 100%;
       }
     }
   }
@@ -211,13 +205,10 @@
 
     &-head {
       cursor: pointer;
+      font-weight: 700;
 
-      * {
-        font-weight: 700;
-
-        @include md {
-          font-size: 1.4rem;
-        }
+      @include md {
+        font-size: 1.4rem;
       }
 
       a {
@@ -301,41 +292,29 @@
     }
 
     &-title {
+      font-weight: 700;
       color: var(--gray-50);
-
-      .activity & {
-        color: var(--gray);
-      }
 
       @include md {
         color: var(--black);
+        font-size: 1.4rem;
       }
 
-      * {
-        font-weight: 700;
-
-        @include md {
-          font-size: 1.4rem;
-        }
+      .activity & {
+        color: var(--gray);
       }
     }
 
     &-price {
       color: var(--gray-50);
 
-      .activity & {
-        color: var(--gray);
-      }
-
       @include md {
+        font-size: 1.4rem;
         color: var(--black);
       }
 
-      * {
-
-        @include md {
-          font-size: 1.4rem;
-        }
+      .activity & {
+        color: var(--gray);
       }
     }
 
@@ -343,19 +322,13 @@
       color: var(--gray-50);
       max-width: 28.6rem;
 
+      @include md {
+        font-size: 1.2rem;
+        color: var(--gray);
+      }
+
       .activity & {
         color: var(--gray);
-      }
-
-      @include md {
-        color: var(--gray);
-      }
-
-      * {
-
-        @include md {
-          font-size: 1.2rem;
-        }
       }
     }
   }
@@ -380,19 +353,13 @@
 
     &-suptitle {
 
-      * {
-
-        @include md {
-          font-size: 1.4rem;
-        }
+      @include md {
+        font-size: 1.4rem;
       }
     }
 
     &-title {
-
-      * {
-        font-weight: 400;
-      }
+      font-weight: 400;
     }
 
     &-wrapper {
@@ -422,24 +389,18 @@
     }
 
     &-count {
+      font-weight: 700;
 
-      * {
-        font-weight: 700;
-
-        @include md {
-          font-size: 2.5rem;
-        }
+      @include md {
+        font-size: 2.5rem;
       }
     }
 
     &-profit {
+      color: var(--blue);
 
-      * {
-        color: var(--blue);
-
-        @include md {
-          font-size: 2.5rem;
-        }
+      @include md {
+        font-size: 2.5rem;
       }
     }
 
@@ -460,6 +421,7 @@
       --btn-height: 4rem;
       --btn-color: var(--white);
 
+      justify-content: space-between;
       width: 100%;
       border-radius: 5rem;
       gap: 1.5rem;

@@ -130,13 +130,8 @@
 
     &-title {
       margin-bottom: auto;
-
-      * {
-        font-weight: 700;
-      }
+      font-weight: 700;
     }
-
-    .btn {}
   }
 
   &__list {
@@ -361,13 +356,6 @@
   }
 
   .block {
-
-    .cart__items {
-
-      @include md {
-        // display: none;
-      }
-    }
 
     .cart__item {
 

@@ -26,8 +26,6 @@
     align-items: flex-end;
     gap: 6rem;
     padding: 3rem;
-    // background-color: var(--white-50);
-    // backdrop-filter: blur(6px);
     background-color: var(--white);
     border: 0.1rem solid var(--white);
     border-radius: 1.5rem;
@@ -55,34 +53,20 @@
 
     &-suptitle {
       color: var(--blue);
-
-      * {
-        font-weight: 700;
-        font-weight: 400;
-      }
+      font-weight: 400;
 
       .block & {
         color: inherit;
-
-        * {
-          font-weight: 400;
-          font-size: 2.5rem;
-        }
+        font-weight: 400;
+        font-size: 2.5rem;
       }
     }
 
     &-title {
-
-      * {
-        font-weight: 400;
-        font-weight: 700;
-
-        .block & {
-          font-size: 3.4rem;
-        }
-      }
+      font-weight: 700;
 
       .block & {
+        font-size: 3.4rem;
         color: var(--blue);
       }
     }
@@ -185,7 +169,6 @@
 
   &__head {
     display: grid;
-    // grid-template-columns: 6fr 2fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 6.5fr 2fr 1fr 1fr 1fr 0.5fr;
     gap: 2rem;
 
@@ -198,11 +181,8 @@
     }
 
     &-item {
-
-      * {
-        font-weight: 700;
-        color: var(--blue);
-      }
+      font-weight: 700;
+      color: var(--blue);
     }
   }
 
@@ -273,24 +253,22 @@
       display: flex;
       align-items: center;
 
+      font-weight: 700;
+
+      .block & {
+        font-size: 1.6rem;
+
+        @include md {
+          font-size: 1.2rem;
+        }
+      }
+
       .cart__page & {
         padding-top: 1.1rem;
         height: fit-content;
 
         @include md {
           padding-top: 0;
-        }
-      }
-
-      * {
-        font-weight: 700;
-
-        .block & {
-          font-size: 1.6rem;
-
-          @include md {
-            font-size: 1.2rem;
-          }
         }
       }
 
@@ -466,9 +444,7 @@
       .card__item-sale {
         display: none;
 
-        * {
-          font-size: 1.4rem;
-        }
+        font-size: 1.4rem;
 
         .block & {
           display: block;
@@ -476,15 +452,12 @@
       }
 
       .card__item-price {
+        font-size: 1.4rem;
+        color: inherit;
 
-        * {
-          font-size: 1.4rem;
-          color: inherit;
-
-          .block & {
-            font-weight: 400;
-            font-size: 3.4rem;
-          }
+        .block & {
+          font-weight: 400;
+          font-size: 3.4rem;
         }
       }
     }
@@ -498,6 +471,14 @@
 
         @include md {
           flex-direction: column;
+        }
+      }
+
+      * {
+        
+        .block & {
+          font-size: 1.6rem;
+          font-weight: 700;
         }
       }
 
@@ -606,11 +587,9 @@
       padding: 0.3rem 0.7rem;
       border-radius: 10rem;
       background-color: var(--blue);
-      color: var(--white);
 
-      * {
-        font-weight: 700;
-      }
+      color: var(--white);
+      font-weight: 700;
     }
   }
 
@@ -625,6 +604,16 @@
         display: flex;
         flex-direction: column;
         gap: 0.3rem;
+
+        color: var(--gray);
+        font-weight: 400;
+      }
+
+      span {
+
+        .block & {
+          color: var(--black);
+        }
       }
     }
 

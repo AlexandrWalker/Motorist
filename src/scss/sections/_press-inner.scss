@@ -41,7 +41,6 @@
     align-items: flex-end;
     gap: 1rem;
 
-    // color: var(--gray);
     color: var(--blue);
 
     span {
@@ -51,11 +50,8 @@
       color: var(--blue);
     }
 
-    h5 {
-      
-      @include md {
-        font-size: 1.6rem;
-      }
+    @include md {
+      font-size: 1.6rem;
     }
   }
 
@@ -77,7 +73,6 @@
       width: 100%;
       height: auto;
       object-fit: contain;
-      // aspect-ratio: 505/319;
     }
   }
 

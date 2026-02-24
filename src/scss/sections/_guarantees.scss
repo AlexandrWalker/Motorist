@@ -47,6 +47,14 @@
       }
     }
 
+    &-title {
+      font-weight: 700;
+
+      @include md {
+        font-size: 1.4rem;
+      }
+    }
+
     img {
       width: auto;
       height: 13.9rem;
@@ -54,14 +62,6 @@
 
       @include md {
         height: 11.2rem;
-      }
-    }
-
-    h5 {
-      font-weight: 700;
-
-      @include md {
-        font-size: 1.4rem;
       }
     }
 

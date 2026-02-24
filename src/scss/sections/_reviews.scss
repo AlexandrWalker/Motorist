@@ -106,16 +106,12 @@
     &-name {
       margin-bottom: 1rem;
 
+      font-weight: 700;
+
       @include md {
         margin-bottom: 0.5rem;
-      }
 
-      * {
-        font-weight: 700;
-
-        @include md {
-          font-size: 1.2rem;
-        }
+        font-size: 1.2rem;
       }
     }
 

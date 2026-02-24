@@ -169,20 +169,16 @@
     &-name {
       padding-right: 1.8rem;
 
+      font-weight: 700 !important;
+
+      @include md {
+        font-size: 1.2rem;
+      }
+
       .card__item:hover & {
         color: var(--blue);
       }
-
-      h5 {
-        font-weight: 700;
-
-        @include md {
-          font-size: 1.2rem;
-        }
-      }
     }
-
-    &-lists {}
 
     &-list {
       display: none;

@@ -682,7 +682,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   gsap.utils.toArray('[data-split="lines"]').forEach(dataSplitLines => {
-    const textSplits = dataSplitLines.querySelectorAll('h1, h2, h3, h4, h5, h6, a');
+    // const textSplits = dataSplitLines.querySelectorAll('h1, h2, h3, h4, h5, h6, a');
+    const textSplits = dataSplitLines.querySelectorAll('*');
     textSplits.forEach(textSplit => {
       if (textSplit) SplitText.create(textSplit, {
         type: "words,lines",

@@ -76,11 +76,7 @@
       border-radius: 1.5rem;
       max-width: var(--container-width);
       width: 100%;
-      
-      // backdrop-filter: blur(6px);
       background-color: var(--gray);
-      // background-color: var(--black-50);
-
 
       position: absolute;
       top: calc(100% + 0.5rem);
@@ -150,13 +146,10 @@
     }
 
     &-title {
+      font-weight: 700;
 
       .catalog__item:hover & {
         color: var(--white);
-      }
-
-      h6 {
-        font-weight: 700;
       }
     }
 
@@ -306,6 +299,7 @@
     --btn-width: 100%;
 
     justify-content: space-between;
+    font-weight: 700;
 
     @include domd {
       display: none;

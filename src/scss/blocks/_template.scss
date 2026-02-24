@@ -2,11 +2,19 @@
 
 .template {
 
-  &__inner {}
+  .general__head-title {
 
-  &__body {}
+    h1 {
+      font-family: var(--font-family);
+      font-weight: 700;
+      font-size: 3.5rem;
+      line-height: 100%;
 
-  &__content {}
+      @include md {
+        font-size: 2.5rem;
+      }
+    }
+  }
 
   p {
     font-size: 1.2rem;

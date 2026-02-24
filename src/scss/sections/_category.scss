@@ -7,6 +7,20 @@
     @include md {
       display: none;
     }
+
+    &-title {
+
+      h2 {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 2.5rem;
+        line-height: 100%;
+
+        @include md {
+          font-size: 2rem;
+        }
+      }
+    }
   }
 
   &__body {

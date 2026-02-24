@@ -48,11 +48,8 @@
 
     &-suptitle {
 
-      * {
-
-        @include md {
-          font-size: 1.4rem;
-        }
+      @include md {
+        font-size: 1.4rem;
       }
     }
 
@@ -103,20 +100,12 @@
         @include md {
           font-size: 1.2rem;
         }
-
-        @include xs {
-          // font-size: 1rem;
-        }
       }
 
       .h2 {
 
         @include md {
           font-size: 2rem;
-        }
-        
-        @include xs {
-          // font-size: 1.6rem;
         }
       }
     }
