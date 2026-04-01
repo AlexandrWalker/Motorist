@@ -103,10 +103,10 @@ img {
 }
 
 @font-face {
-  font-family: HelveticaNeue;
+  font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
-  font-weight: 100;
+  src: url("../fonts/Montserrat-Black.woff2") format("woff2"), url("../fonts/Montserrat-Black.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -119,10 +119,10 @@ img {
 }
 
 @font-face {
-  font-family: Montserrat;
+  font-family: HelveticaNeue;
   font-display: swap;
-  src: url("../fonts/Montserrat-Black.woff2") format("woff2"), url("../fonts/Montserrat-Black.woff") format("woff");
-  font-weight: 900;
+  src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -408,6 +408,7 @@ img {
 
 .quantity__text input {
   width: 100%;
+  font-size: 1.4rem;
   text-align: center;
 }
 
@@ -6472,6 +6473,10 @@ p {
   position: relative;
 }
 
+.product {
+  overflow-x: visible;
+}
+
 .product__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6500,8 +6505,15 @@ p {
   flex-direction: column;
   gap: 1rem;
   overflow: hidden;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   grid-column: 1/2;
   grid-row: 1/3;
+  position: sticky;
+  top: var(--header-height);
+  left: 0;
+  z-index: 1;
 }
 
 .product__head-top {
@@ -6588,7 +6600,7 @@ p {
   -ms-flex-direction: column;
   flex-direction: column;
   gap: 2rem;
-  padding: 3rem 11rem 4rem 4rem;
+  padding: 3rem 6rem 6rem 4rem;
   border-radius: 1.5rem;
   border: 0.1rem solid var(--white);
   background-color: var(--white-50);
@@ -6608,13 +6620,8 @@ p {
 }
 
 .product__foot-btns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   gap: 1rem;
 }
 
@@ -6632,10 +6639,12 @@ p {
   border: 0.1rem solid var(--gray);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  height: 5rem;
-  padding: 0 1.5rem;
+  height: 3rem;
+  padding: 0.5rem 1.5rem;
   font-size: 1.4rem;
+  line-height: 100%;
   text-align: center;
+  white-space: nowrap;
   color: var(--gray);
   cursor: pointer;
 }
@@ -6655,6 +6664,8 @@ p {
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
@@ -6703,6 +6714,99 @@ p {
 
 .product__foot-text * {
   font-size: 1.4rem;
+  line-height: 140%;
+}
+
+.product__foot-text li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.product__foot-text li::before {
+  content: "";
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background-color: var(--gray);
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+}
+
+.product__foot-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.product__foot-wrap.accordion-active {
+  gap: 1.5rem;
+}
+
+.product__foot-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.product__foot-head i {
+  --font-size: 2.2rem;
+  background-color: var(--white);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  color: var(--blue);
+}
+
+.accordion-active .product__foot-head i {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.product__foot-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.accordion-active .product__foot-body {
+  grid-template-rows: 1fr;
+}
+
+.product__foot-content {
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .product__slider-big .swiper-pagination {

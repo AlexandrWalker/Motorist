@@ -1074,4 +1074,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   })();
 
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.product__foot-btn');
+    if (!btn) return;
+
+    const group = btn.closest('.product__foot-btns');
+    if (!group) return;
+
+    const activeClass = 'product__foot-btn--active';
+
+    group.querySelectorAll('.product__foot-btn').forEach(el => {
+      el.classList.toggle(activeClass, el === btn);
+    });
+  });
+
 });
