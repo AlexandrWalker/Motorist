@@ -1,0 +1,95 @@
+@use './../mixins' as *;
+
+.faq {
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background-color: var(--white-50);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    padding: 3rem 2rem 3rem 3rem;
+    transition: all 0.5s ease;
+
+    @include md {
+      padding: 2rem;
+    }
+
+    &.accordion-active {
+      gap: 2rem;
+
+      @include md {
+        gap: 1.5rem;
+      }
+    }
+
+    &-head {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      cursor: pointer;
+
+      i {
+        --font-size: 2.2rem;
+
+        background-color: var(--gray);
+        transform: rotate(90deg);
+
+        color: var(--white);
+
+        .accordion-active & {
+          background-color: var(--blue);
+          transform: rotate(-90deg);
+        }
+      }
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 2rem;
+      line-height: 120%;
+
+      @include md {
+        font-size: 1.6rem;
+      }
+    }
+
+    &-body {
+      display: grid;
+      grid-template-rows: 0fr;
+      overflow: hidden;
+      transition: all 0.5s ease;
+      padding: 0 1rem 0 0;
+
+      .accordion-active & {
+        grid-template-rows: 1fr;
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      overflow: hidden;
+
+      @include md {
+        gap: 1.5rem;
+      }
+
+      p {
+        color: var(--gray);
+        font-size: 1.4rem;
+        line-height: 140%;
+      }
+    }
+  }
+}
