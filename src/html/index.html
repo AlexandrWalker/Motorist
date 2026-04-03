@@ -62,12 +62,12 @@
                 <div class="swiper-wrapper">
                   @@loop('./elements/category-item.html', './data/category-items.json')
                 </div>
-                <div class="swiper-button-prev category-button-prev">
-                  <i class="icon-slider-arrow"></i>
-                </div>
-                <div class="swiper-button-next category-button-next">
-                  <i class="icon-slider-arrow"></i>
-                </div>
+              </div>
+              <div class="swiper-button-prev category-button-prev">
+                <i class="icon-slider-arrow"></i>
+              </div>
+              <div class="swiper-button-next category-button-next">
+                <i class="icon-slider-arrow"></i>
               </div>
             </div>
           </div>
@@ -138,20 +138,8 @@
               </div>
             </div>
 
-            <div class="popular__body" data-transform="fade">
-              <div class="swiper popular__slider">
-                <div class="swiper-wrapper">
-                  @@loop('./elements/card-slide-item.html', './data/card-items.json')
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev popular-button-prev">
-                  <i class="icon-slider-arrow"></i>
-                </div>
-                <div class="swiper-button-next popular-button-next">
-                  <i class="icon-slider-arrow"></i>
-                </div>
-              </div>
-            </div>
+            @@include('./repeating-blocks/popular-block.html')
+
           </div>
         </div>
       </section>
@@ -276,12 +264,12 @@
                   @@loop('./elements/press-center-slide-item.html', './data/press-center-items.json')
                 </div>
                 <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev press-center-button-prev">
-                  <i class="icon-slider-arrow"></i>
-                </div>
-                <div class="swiper-button-next press-center-button-next">
-                  <i class="icon-slider-arrow"></i>
-                </div>
+              </div>
+              <div class="swiper-button-prev press-center-button-prev">
+                <i class="icon-slider-arrow"></i>
+              </div>
+              <div class="swiper-button-next press-center-button-next">
+                <i class="icon-slider-arrow"></i>
               </div>
             </div>
 
@@ -307,20 +295,7 @@
               </div>
             </div>
 
-            <div class="reviews__body" data-transform="fade">
-              <div class="swiper reviews__slider">
-                <div class="swiper-wrapper">
-                  @@loop('./elements/reviews-slide-item.html', './data/reviews-items.json')
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev reviews-button-prev">
-                  <i class="icon-slider-arrow"></i>
-                </div>
-                <div class="swiper-button-next reviews-button-next">
-                  <i class="icon-slider-arrow"></i>
-                </div>
-              </div>
-            </div>
+            @@include('./repeating-blocks/reviews-block.html')
 
           </div>
         </div>

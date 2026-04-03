@@ -301,85 +301,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initFilter(document.querySelectorAll('.filter'));
 
   /**
-   * Всплывашка у фильтра
-   */
-  (function () {
-    const catalogBody = document.querySelector('.catalog__body');
-    if(!catalogBody) return;
-
-    const filter = catalogBody.querySelector('.filter');
-    const form = filter.querySelector('form');
-
-    let filterDrop = filter.querySelector('.filter__drop');
-    form.appendChild(filterDrop);
-
-    const checkedOrder = [];
-    const DESKTOP_BREAKPOINT = 834;
-
-    function isDesktop() {
-      return window.innerWidth > DESKTOP_BREAKPOINT;
-    }
-
-    function getLastCheckedItem() {
-      if (!checkedOrder.length) return null;
-      return checkedOrder[checkedOrder.length - 1];
-    }
-
-    function updateDropPosition() {
-      const lastChecked = getLastCheckedItem();
-
-      if (!lastChecked) {
-        filterDrop.classList.remove('active');
-        filterDrop.style.top = '';
-        return;
-      }
-
-      filterDrop.classList.add('active');
-
-      const labelEl = lastChecked.closest('.filter__item');
-      const formRect = form.getBoundingClientRect();
-      const labelRect = labelEl.getBoundingClientRect();
-
-      const topOffset = labelRect.top - formRect.top;
-      const dropHeight = filterDrop.offsetHeight;
-      const labelCenter = topOffset + labelRect.height / 2;
-
-      const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
-
-      const finalTop = labelCenter - dropHeight / 3.6;
-
-      filterDrop.style.top = finalTop + 'px';
-    }
-
-    form.addEventListener('change', (e) => {
-      if (e.target.type !== 'checkbox') return;
-      if (e.target.closest('.filter__nested')) return;
-
-      const input = e.target;
-
-      if (input.checked) {
-        checkedOrder.push(input);
-      } else {
-        const idx = checkedOrder.indexOf(input);
-        if (idx !== -1) checkedOrder.splice(idx, 1);
-      }
-
-      updateDropPosition();
-    });
-
-    window.addEventListener('resize', () => {
-      updateDropPosition();
-    });
-
-    // Пересчитываем позицию когда форма меняет высоту
-    // (раскрытие/закрытие групп фильтра)
-    const resizeObserver = new ResizeObserver(() => {
-      updateDropPosition();
-    });
-
-    resizeObserver.observe(form);
-  })();
-  /**
    * Код для раскрытия меню кталога и бургер меню
    * Смена мегаменю и бургер-меню внутри раскрытой обертки
    */
@@ -590,6 +511,172 @@ document.addEventListener('DOMContentLoaded', () => {
    * Инициализация слайдера
    */
   (function swiperWrapper() {
+    const swiperSliders = document.querySelector('.swiper');
+    if (!swiperSliders) return;
+
+    const categorySlider = new Swiper('.category__slider', {
+      slidesPerGroup: 1,
+      slidesPerView: 'auto',
+      spaceBetween: 10,
+      speed: 500,
+      simulateTouch: true,
+      watchOverflow: true,
+      watchSlidesProgress: true,
+
+      direction: 'horizontal',
+      touchStartPreventDefault: true,
+      touchMoveStopPropagation: true,
+      threshold: 8,
+      touchAngle: 25,
+
+      mousewheel: {
+        forceToAxis: true,
+        sensitivity: 1,
+        releaseOnEdges: true
+      },
+      breakpoints: {
+        835: { slidesPerView: 6, spaceBetween: 20 }
+      },
+      navigation: { prevEl: ".category-button-prev", nextEl: ".category-button-next" },
+    });
+    const popularSlider = new Swiper('.popular__slider', {
+      slidesPerGroup: 1,
+      slidesPerView: 'auto',
+      spaceBetween: 10,
+      loop: true,
+      speed: 500,
+      simulateTouch: true,
+      watchOverflow: true,
+      watchSlidesProgress: true,
+
+      direction: 'horizontal',
+      touchStartPreventDefault: true,
+      touchMoveStopPropagation: true,
+      threshold: 8,
+      touchAngle: 25,
+
+      mousewheel: {
+        forceToAxis: true,
+        sensitivity: 1,
+        releaseOnEdges: true
+      },
+      breakpoints: {
+        835: { slidesPerView: 4, spaceBetween: 20 }
+      },
+      navigation: { prevEl: ".popular-button-prev", nextEl: ".popular-button-next" },
+      pagination: { el: ".swiper-pagination", clickable: true },
+    });
+    const pressCenterSlider = new Swiper('.press-center__slider', {
+      slidesPerGroup: 1,
+      slidesPerView: 'auto',
+      spaceBetween: 10,
+      loop: true,
+      speed: 500,
+      simulateTouch: true,
+      watchOverflow: true,
+      watchSlidesProgress: true,
+
+      direction: 'horizontal',
+      touchStartPreventDefault: true,
+      touchMoveStopPropagation: true,
+      threshold: 8,
+      touchAngle: 25,
+
+      mousewheel: {
+        forceToAxis: true,
+        sensitivity: 1,
+        releaseOnEdges: true
+      },
+      breakpoints: {
+        835: { slidesPerView: 4, spaceBetween: 20 }
+      },
+      navigation: { prevEl: ".press-center-button-prev", nextEl: ".press-center-button-next" },
+      pagination: { el: ".swiper-pagination", clickable: true },
+    });
+    const reviewsSlider = new Swiper('.reviews__slider', {
+      slidesPerGroup: 1,
+      slidesPerView: 'auto',
+      spaceBetween: 10,
+      loop: true,
+      speed: 500,
+      simulateTouch: true,
+      watchOverflow: true,
+      watchSlidesProgress: true,
+
+      direction: 'horizontal',
+      touchStartPreventDefault: true,
+      touchMoveStopPropagation: true,
+      threshold: 8,
+      touchAngle: 25,
+
+      mousewheel: {
+        forceToAxis: true,
+        sensitivity: 1,
+        releaseOnEdges: true
+      },
+      breakpoints: {
+        835: { slidesPerView: 3, spaceBetween: 20 }
+      },
+      navigation: { prevEl: ".reviews-button-prev", nextEl: ".reviews-button-next" },
+      pagination: { el: ".swiper-pagination", clickable: true },
+    });
+    const productSliderMin = new Swiper('.product__slider-min', {
+      slidesPerGroup: 1,
+      slidesPerView: 4,
+      spaceBetween: 10,
+      loop: false,
+      speed: 500,
+      simulateTouch: true,
+      watchOverflow: true,
+      watchSlidesProgress: true,
+
+      direction: 'horizontal',
+      touchStartPreventDefault: true,
+      touchMoveStopPropagation: true,
+      threshold: 8,
+      touchAngle: 25,
+
+      mousewheel: {
+        forceToAxis: true,
+        sensitivity: 1,
+        releaseOnEdges: true
+      },
+    });
+    const productSliderBig = new Swiper('.product__slider-big', {
+      slidesPerGroup: 1,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: false,
+      speed: 500,
+      simulateTouch: true,
+      watchOverflow: true,
+      watchSlidesProgress: true,
+      grabCursor: true,
+
+      direction: 'horizontal',
+      touchStartPreventDefault: true,
+      touchMoveStopPropagation: true,
+      threshold: 8,
+      touchAngle: 25,
+
+      mousewheel: {
+        forceToAxis: true,
+        sensitivity: 1,
+        releaseOnEdges: true
+      },
+      pagination: { el: ".swiper-pagination", clickable: true },
+      thumbs: {
+        swiper: productSliderMin,
+      },
+    });
+    // productSliderMin.controller.control = productSliderBig;
+    // productSliderBig.controller.control = productSliderMin;
+  })();
+
+  /**
+ * Инициализация слайдера
+ */
+  (function swiperWrapper() {
 
     if (!document.querySelector('.swiper')) return;
 
@@ -614,10 +701,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const slidersConfig = [
       {
         sliderSelector: '.category__slider',
-        prevSelector: '.category-button-prev',
-        nextSelector: '.category-button-next',
         highlight: false,
-        edgeTracker: false,
         swiperOptions: {
           slidesPerGroup: 1,
           slidesPerView: 1,
@@ -654,194 +738,8 @@ document.addEventListener('DOMContentLoaded', () => {
           breakpoints: {
             0: {
               slidesPerGroup: 1,
-              slidesPerView: 'auto',
-              spaceBetween: 10,
-            },
-            601: {
-              slidesPerGroup: 1,
-              slidesPerView: 4,
+              slidesPerView: 1,
               spaceBetween: 20,
-            },
-            835: {
-              slidesPerGroup: 1,
-              slidesPerView: 6,
-              spaceBetween: 20,
-            },
-          },
-        },
-      },
-      {
-        sliderSelector: '.popular__slider',
-        prevSelector: '.popular-button-prev',
-        nextSelector: '.popular-button-next',
-        highlight: false,
-        edgeTracker: false,
-        swiperOptions: {
-          slidesPerGroup: 1,
-          slidesPerView: 1,
-          spaceBetween: 10,
-          speed: 500,
-          grabCursor: true,
-          loop: false,
-          touchRatio: 1.6,
-          resistance: true,
-          resistanceRatio: 0.4,
-          centeredSlides: false,
-          centeredSlidesBounds: true,
-          simulateTouch: true,
-          direction: 'horizontal',
-          touchStartPreventDefault: true,
-          touchMoveStopPropagation: true,
-          threshold: 8,
-          touchAngle: 25,
-          watchOverflow: true,
-          freeMode: {
-            enabled: true,
-            momentum: true,
-            momentumRatio: 0.85,
-            momentumVelocityRatio: 1,
-            momentumBounce: false,
-            sticky: true,
-          },
-          mousewheel: {
-            forceToAxis: true,
-            sensitivity: 1,
-            releaseOnEdges: true,
-          },
-          navigation: false,
-          pagination: {
-            el: '.popular__slider .swiper-pagination',
-            clickable: true,
-          },
-          breakpoints: {
-            0: {
-              slidesPerGroup: 1,
-              slidesPerView: 'auto',
-              spaceBetween: 10,
-            },
-            601: {
-              slidesPerGroup: 1,
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            835: {
-              slidesPerGroup: 1,
-              slidesPerView: 4,
-              spaceBetween: 20,
-            },
-          },
-        },
-      },
-      {
-        sliderSelector: '.press-center__slider',
-        prevSelector: '.press-center-button-prev',
-        nextSelector: '.press-center-button-next',
-        highlight: false,
-        edgeTracker: false,
-        swiperOptions: {
-          slidesPerGroup: 1,
-          slidesPerView: 1,
-          spaceBetween: 10,
-          speed: 500,
-          grabCursor: true,
-          loop: false,
-          touchRatio: 1.6,
-          resistance: true,
-          resistanceRatio: 0.4,
-          centeredSlides: false,
-          centeredSlidesBounds: true,
-          simulateTouch: true,
-          direction: 'horizontal',
-          touchStartPreventDefault: true,
-          touchMoveStopPropagation: true,
-          threshold: 8,
-          touchAngle: 25,
-          watchOverflow: true,
-          freeMode: {
-            enabled: true,
-            momentum: true,
-            momentumRatio: 0.85,
-            momentumVelocityRatio: 1,
-            momentumBounce: false,
-            sticky: true,
-          },
-          mousewheel: {
-            forceToAxis: true,
-            sensitivity: 1,
-            releaseOnEdges: true,
-          },
-          navigation: false,
-          pagination: {
-            el: '.press-center__slider .swiper-pagination',
-            clickable: true,
-          },
-          breakpoints: {
-            0: {
-              slidesPerGroup: 1,
-              slidesPerView: 'auto',
-              spaceBetween: 10,
-            },
-            601: {
-              slidesPerGroup: 1,
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            835: {
-              slidesPerGroup: 1,
-              slidesPerView: 4,
-              spaceBetween: 20,
-            },
-          },
-        },
-      },
-      {
-        sliderSelector: '.reviews__slider',
-        prevSelector: '.reviews-button-prev',
-        nextSelector: '.reviews-button-next',
-        highlight: false,
-        edgeTracker: false,
-        swiperOptions: {
-          slidesPerGroup: 1,
-          slidesPerView: 1,
-          spaceBetween: 10,
-          speed: 500,
-          grabCursor: true,
-          loop: false,
-          touchRatio: 1.6,
-          resistance: true,
-          resistanceRatio: 0.4,
-          centeredSlides: false,
-          centeredSlidesBounds: true,
-          simulateTouch: true,
-          direction: 'horizontal',
-          touchStartPreventDefault: true,
-          touchMoveStopPropagation: true,
-          threshold: 8,
-          touchAngle: 25,
-          watchOverflow: true,
-          freeMode: {
-            enabled: true,
-            momentum: true,
-            momentumRatio: 0.85,
-            momentumVelocityRatio: 1,
-            momentumBounce: false,
-            sticky: true,
-          },
-          mousewheel: {
-            forceToAxis: true,
-            sensitivity: 1,
-            releaseOnEdges: true,
-          },
-          navigation: false,
-          pagination: {
-            el: '.reviews__slider .swiper-pagination',
-            clickable: true,
-          },
-          breakpoints: {
-            0: {
-              slidesPerGroup: 1,
-              slidesPerView: 'auto',
-              spaceBetween: 10,
             },
             601: {
               slidesPerGroup: 1,
@@ -851,103 +749,16 @@ document.addEventListener('DOMContentLoaded', () => {
             835: {
               slidesPerGroup: 1,
               slidesPerView: 3,
-              spaceBetween: 20,
+              spaceBetween: 80,
             },
-          },
-        },
-      },
-      {
-        sliderSelector: '.product__slider-big',
-        prevSelector: '.product-button-prev',
-        nextSelector: '.product-button-next',
-        highlight: false,
-        edgeTracker: false,
-        thumbs: {
-          sliderSelector: '.product__slider-min',
-          swiperOptions: {
-            slidesPerGroup: 1,
-            slidesPerView: 4,
-            spaceBetween: 10,
-            speed: 500,
-            grabCursor: true,
-            loop: false,
-            touchRatio: 1.6,
-            resistance: true,
-            resistanceRatio: 0.4,
-            centeredSlides: false,
-            centeredSlidesBounds: true,
-            simulateTouch: true,
-            direction: 'horizontal',
-            touchStartPreventDefault: true,
-            touchMoveStopPropagation: true,
-            threshold: 8,
-            touchAngle: 25,
-            watchOverflow: true,
-            watchSlidesProgress: true,
-            freeMode: {
-              enabled: true,
-              momentum: true,
-              momentumRatio: 0.85,
-              momentumVelocityRatio: 1,
-              momentumBounce: false,
-              sticky: true,
-            },
-            mousewheel: {
-              forceToAxis: true,
-              sensitivity: 1,
-              releaseOnEdges: true,
-            },
-          },
-        },
-        swiperOptions: {
-          slidesPerGroup: 1,
-          slidesPerView: 1,
-          spaceBetween: 0,
-          speed: 500,
-          grabCursor: true,
-          loop: false,
-          touchRatio: 1.6,
-          resistance: true,
-          resistanceRatio: 0.4,
-          centeredSlides: false,
-          centeredSlidesBounds: true,
-          simulateTouch: true,
-          direction: 'horizontal',
-          touchStartPreventDefault: true,
-          touchMoveStopPropagation: true,
-          threshold: 8,
-          touchAngle: 25,
-          watchOverflow: true,
-          watchSlidesProgress: true,
-          freeMode: {
-            enabled: true,
-            momentum: true,
-            momentumRatio: 0.85,
-            momentumVelocityRatio: 1,
-            momentumBounce: false,
-            sticky: true,
-          },
-          mousewheel: {
-            forceToAxis: true,
-            sensitivity: 1,
-            releaseOnEdges: true,
-          },
-          navigation: false,
-          pagination: {
-            el: '.product__slider-big .swiper-pagination',
-            clickable: true,
           },
         },
       },
     ];
 
-    slidersConfig.forEach(({ sliderSelector, prevSelector, nextSelector, highlight, thumbs, autoSlidesView, edgeTracker: useEdgeTracker, swiperOptions }) => {
+    slidersConfig.forEach(({ sliderSelector, prevSelector, nextSelector, highlight, thumbs, swiperOptions }) => {
 
       if (!document.querySelector(sliderSelector)) return;
-
-      if (autoSlidesView) {
-        applyAutoSlidesView(swiperOptions);
-      }
 
       const prevEl = prevSelector ? document.querySelector(prevSelector) : null;
       const nextEl = nextSelector ? document.querySelector(nextSelector) : null;
@@ -973,7 +784,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const highlightInstance = createHighlight(swiper, fromEl, toEl);
 
-      const edgeTracker = useEdgeTracker === true
+      const needsEdgeTracker = shouldUseEdgeTracker(swiperOptions);
+      const edgeTracker = needsEdgeTracker
         ? createEdgeTracker(swiper, highlightInstance)
         : createEdgeTrackerStub();
 
@@ -982,20 +794,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    function applyAutoSlidesView(swiperOptions) {
-
-      swiperOptions.centeredSlidesBounds = false;
-
-      if (swiperOptions.freeMode) {
-        swiperOptions.freeMode.sticky = false;
-      }
+    function shouldUseEdgeTracker(swiperOptions) {
+      const base = swiperOptions.slidesPerView;
+      if (typeof base === 'number' && base > 1) return true;
 
       const breakpoints = swiperOptions.breakpoints ?? {};
-      Object.values(breakpoints).forEach(bp => {
-        if (bp.slidesPerView === 'auto') {
-          bp.centeredSlidesBounds = false;
-          if (bp.sticky !== undefined) bp.sticky = false;
-        }
+      return Object.values(breakpoints).some(bp => {
+        return typeof bp.slidesPerView === 'number' && bp.slidesPerView > 1;
       });
     }
 
@@ -1301,14 +1106,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let nextBlocked = false;
         if (swiper.isEnd) {
-          const virtualIndex = edgeTracker.getVirtualIndex();
-          if (virtualIndex === null) {
-            nextBlocked = true;
-          } else {
-            const visible = getVisibleIndicesForNav();
-            const lastVisible = visible[visible.length - 1] ?? swiper.activeIndex;
-            nextBlocked = virtualIndex >= lastVisible;
-          }
+          const visible = getVisibleIndicesForNav();
+          const lastVisible = visible[visible.length - 1] ?? swiper.activeIndex;
+          const currentVirt = edgeTracker.getVirtualIndex() ?? swiper.activeIndex;
+          nextBlocked = currentVirt >= lastVisible;
         }
 
         prevEl.classList.toggle('swiper-button-disabled', isStart);

@@ -1,0 +1,14 @@
+<div class="reviews__body" data-transform="fade">
+  <div class="swiper reviews__slider">
+    <div class="swiper-wrapper">
+      @@loop('./../elements/reviews-slide-item.html', './data/reviews-items.json')
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <div class="swiper-button-prev reviews-button-prev">
+    <i class="icon-slider-arrow"></i>
+  </div>
+  <div class="swiper-button-next reviews-button-next">
+    <i class="icon-slider-arrow"></i>
+  </div>
+</div>

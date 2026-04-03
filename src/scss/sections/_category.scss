@@ -37,7 +37,7 @@
       max-width: 19rem;
     }
 
-    &:last-child {
+    &:not(.page__inner .category__slide):last-child {
 
       .category__item {
         color: var(--white);
@@ -83,7 +83,8 @@
     overflow: hidden;
     height: 100%;
     background-color: var(--white);
-    box-shadow: 5px 12px 23px rgba(113, 133, 149, 0.1);
+    // box-shadow: 5px 12px 23px rgba(113, 133, 149, 0.1);
+    box-shadow: 0px 0px 10px 0px rgba(113, 133, 149, 0.1);
 
     position: relative;
 
@@ -94,8 +95,8 @@
       height: 100%;
       background-color: var(--blue);
       transform: scaleX(0);
-      transform-origin: left;
-      transition: all 0.5s ease-in-out;
+      transform-origin: right;
+      transition: transform 0.5s ease-in-out;
 
       position: absolute;
       top: 0;
@@ -110,6 +111,7 @@
 
         &::before {
           transform: scaleX(1);
+          transform-origin: left;
         }
 
         i {

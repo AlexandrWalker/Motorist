@@ -301,6 +301,85 @@ document.addEventListener('DOMContentLoaded', () => {
   initFilter(document.querySelectorAll('.filter'));
 
   /**
+   * Всплывашка у фильтра
+   */
+  (function () {
+    const catalogBody = document.querySelector('.catalog__body');
+    if(!catalogBody) return;
+
+    const filter = catalogBody.querySelector('.filter');
+    const form = filter.querySelector('form');
+
+    let filterDrop = filter.querySelector('.filter__drop');
+    form.appendChild(filterDrop);
+
+    const checkedOrder = [];
+    const DESKTOP_BREAKPOINT = 834;
+
+    function isDesktop() {
+      return window.innerWidth > DESKTOP_BREAKPOINT;
+    }
+
+    function getLastCheckedItem() {
+      if (!checkedOrder.length) return null;
+      return checkedOrder[checkedOrder.length - 1];
+    }
+
+    function updateDropPosition() {
+      const lastChecked = getLastCheckedItem();
+
+      if (!lastChecked) {
+        filterDrop.classList.remove('active');
+        filterDrop.style.top = '';
+        return;
+      }
+
+      filterDrop.classList.add('active');
+
+      const labelEl = lastChecked.closest('.filter__item');
+      const formRect = form.getBoundingClientRect();
+      const labelRect = labelEl.getBoundingClientRect();
+
+      const topOffset = labelRect.top - formRect.top;
+      const dropHeight = filterDrop.offsetHeight;
+      const labelCenter = topOffset + labelRect.height / 2;
+
+      const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+
+      const finalTop = labelCenter - dropHeight / 3.6;
+
+      filterDrop.style.top = finalTop + 'px';
+    }
+
+    form.addEventListener('change', (e) => {
+      if (e.target.type !== 'checkbox') return;
+      if (e.target.closest('.filter__nested')) return;
+
+      const input = e.target;
+
+      if (input.checked) {
+        checkedOrder.push(input);
+      } else {
+        const idx = checkedOrder.indexOf(input);
+        if (idx !== -1) checkedOrder.splice(idx, 1);
+      }
+
+      updateDropPosition();
+    });
+
+    window.addEventListener('resize', () => {
+      updateDropPosition();
+    });
+
+    // Пересчитываем позицию когда форма меняет высоту
+    // (раскрытие/закрытие групп фильтра)
+    const resizeObserver = new ResizeObserver(() => {
+      updateDropPosition();
+    });
+
+    resizeObserver.observe(form);
+  })();
+  /**
    * Код для раскрытия меню кталога и бургер меню
    * Смена мегаменю и бургер-меню внутри раскрытой обертки
    */
@@ -511,166 +590,780 @@ document.addEventListener('DOMContentLoaded', () => {
    * Инициализация слайдера
    */
   (function swiperWrapper() {
-    const swiperSliders = document.querySelector('.swiper');
-    if (!swiperSliders) return;
 
-    const categorySlider = new Swiper('.category__slider', {
-      slidesPerGroup: 1,
-      slidesPerView: 'auto',
-      spaceBetween: 10,
-      speed: 500,
-      simulateTouch: true,
-      watchOverflow: true,
-      watchSlidesProgress: true,
+    if (!document.querySelector('.swiper')) return;
 
-      direction: 'horizontal',
-      touchStartPreventDefault: true,
-      touchMoveStopPropagation: true,
-      threshold: 8,
-      touchAngle: 25,
+    const globalImpulseOptions = {
+      // Максимальный интервал между кликами в мс который считается быстрым
+      fastClickDelay: 200,
 
-      mousewheel: {
-        forceToAxis: true,
-        sensitivity: 1,
-        releaseOnEdges: true
+      // Насколько сильно каждый быстрый клик увеличивает импульс
+      // Формула: impulse += (fastClickDelay - delta) * accelerationFactor
+      accelerationFactor: 0.23,
+
+      // Коэффициент затухания импульса (0-1), теряет 15% каждые 40мс
+      friction: 0.85,
+
+      // Верхняя граница импульса, итоговый шаг = 1 + round(impulse)
+      maxExtraSteps: 2,
+
+      // Как часто пересчитывается затухание в мс, ~2-3 кадра при 60fps
+      decayInterval: 40,
+    };
+
+    const slidersConfig = [
+      {
+        sliderSelector: '.category__slider',
+        prevSelector: '.category-button-prev',
+        nextSelector: '.category-button-next',
+        highlight: false,
+        edgeTracker: false,
+        swiperOptions: {
+          slidesPerGroup: 1,
+          slidesPerView: 1,
+          spaceBetween: 10,
+          speed: 500,
+          grabCursor: true,
+          loop: false,
+          touchRatio: 1.6,
+          resistance: true,
+          resistanceRatio: 0.4,
+          centeredSlides: false,
+          centeredSlidesBounds: true,
+          simulateTouch: true,
+          direction: 'horizontal',
+          touchStartPreventDefault: true,
+          touchMoveStopPropagation: true,
+          threshold: 8,
+          touchAngle: 25,
+          watchOverflow: true,
+          freeMode: {
+            enabled: true,
+            momentum: true,
+            momentumRatio: 0.85,
+            momentumVelocityRatio: 1,
+            momentumBounce: false,
+            sticky: true,
+          },
+          mousewheel: {
+            forceToAxis: true,
+            sensitivity: 1,
+            releaseOnEdges: true,
+          },
+          navigation: false,
+          breakpoints: {
+            0: {
+              slidesPerGroup: 1,
+              slidesPerView: 'auto',
+              spaceBetween: 10,
+            },
+            601: {
+              slidesPerGroup: 1,
+              slidesPerView: 4,
+              spaceBetween: 20,
+            },
+            835: {
+              slidesPerGroup: 1,
+              slidesPerView: 6,
+              spaceBetween: 20,
+            },
+          },
+        },
       },
-      breakpoints: {
-        835: { slidesPerView: 6, spaceBetween: 20 }
+      {
+        sliderSelector: '.popular__slider',
+        prevSelector: '.popular-button-prev',
+        nextSelector: '.popular-button-next',
+        highlight: false,
+        edgeTracker: false,
+        swiperOptions: {
+          slidesPerGroup: 1,
+          slidesPerView: 1,
+          spaceBetween: 10,
+          speed: 500,
+          grabCursor: true,
+          loop: false,
+          touchRatio: 1.6,
+          resistance: true,
+          resistanceRatio: 0.4,
+          centeredSlides: false,
+          centeredSlidesBounds: true,
+          simulateTouch: true,
+          direction: 'horizontal',
+          touchStartPreventDefault: true,
+          touchMoveStopPropagation: true,
+          threshold: 8,
+          touchAngle: 25,
+          watchOverflow: true,
+          freeMode: {
+            enabled: true,
+            momentum: true,
+            momentumRatio: 0.85,
+            momentumVelocityRatio: 1,
+            momentumBounce: false,
+            sticky: true,
+          },
+          mousewheel: {
+            forceToAxis: true,
+            sensitivity: 1,
+            releaseOnEdges: true,
+          },
+          navigation: false,
+          pagination: {
+            el: '.popular__slider .swiper-pagination',
+            clickable: true,
+          },
+          breakpoints: {
+            0: {
+              slidesPerGroup: 1,
+              slidesPerView: 'auto',
+              spaceBetween: 10,
+            },
+            601: {
+              slidesPerGroup: 1,
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            835: {
+              slidesPerGroup: 1,
+              slidesPerView: 4,
+              spaceBetween: 20,
+            },
+          },
+        },
       },
-      navigation: { prevEl: ".category-button-prev", nextEl: ".category-button-next" },
+      {
+        sliderSelector: '.press-center__slider',
+        prevSelector: '.press-center-button-prev',
+        nextSelector: '.press-center-button-next',
+        highlight: false,
+        edgeTracker: false,
+        swiperOptions: {
+          slidesPerGroup: 1,
+          slidesPerView: 1,
+          spaceBetween: 10,
+          speed: 500,
+          grabCursor: true,
+          loop: false,
+          touchRatio: 1.6,
+          resistance: true,
+          resistanceRatio: 0.4,
+          centeredSlides: false,
+          centeredSlidesBounds: true,
+          simulateTouch: true,
+          direction: 'horizontal',
+          touchStartPreventDefault: true,
+          touchMoveStopPropagation: true,
+          threshold: 8,
+          touchAngle: 25,
+          watchOverflow: true,
+          freeMode: {
+            enabled: true,
+            momentum: true,
+            momentumRatio: 0.85,
+            momentumVelocityRatio: 1,
+            momentumBounce: false,
+            sticky: true,
+          },
+          mousewheel: {
+            forceToAxis: true,
+            sensitivity: 1,
+            releaseOnEdges: true,
+          },
+          navigation: false,
+          pagination: {
+            el: '.press-center__slider .swiper-pagination',
+            clickable: true,
+          },
+          breakpoints: {
+            0: {
+              slidesPerGroup: 1,
+              slidesPerView: 'auto',
+              spaceBetween: 10,
+            },
+            601: {
+              slidesPerGroup: 1,
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            835: {
+              slidesPerGroup: 1,
+              slidesPerView: 4,
+              spaceBetween: 20,
+            },
+          },
+        },
+      },
+      {
+        sliderSelector: '.reviews__slider',
+        prevSelector: '.reviews-button-prev',
+        nextSelector: '.reviews-button-next',
+        highlight: false,
+        edgeTracker: false,
+        swiperOptions: {
+          slidesPerGroup: 1,
+          slidesPerView: 1,
+          spaceBetween: 10,
+          speed: 500,
+          grabCursor: true,
+          loop: false,
+          touchRatio: 1.6,
+          resistance: true,
+          resistanceRatio: 0.4,
+          centeredSlides: false,
+          centeredSlidesBounds: true,
+          simulateTouch: true,
+          direction: 'horizontal',
+          touchStartPreventDefault: true,
+          touchMoveStopPropagation: true,
+          threshold: 8,
+          touchAngle: 25,
+          watchOverflow: true,
+          freeMode: {
+            enabled: true,
+            momentum: true,
+            momentumRatio: 0.85,
+            momentumVelocityRatio: 1,
+            momentumBounce: false,
+            sticky: true,
+          },
+          mousewheel: {
+            forceToAxis: true,
+            sensitivity: 1,
+            releaseOnEdges: true,
+          },
+          navigation: false,
+          pagination: {
+            el: '.reviews__slider .swiper-pagination',
+            clickable: true,
+          },
+          breakpoints: {
+            0: {
+              slidesPerGroup: 1,
+              slidesPerView: 'auto',
+              spaceBetween: 10,
+            },
+            601: {
+              slidesPerGroup: 1,
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            835: {
+              slidesPerGroup: 1,
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+          },
+        },
+      },
+      {
+        sliderSelector: '.product__slider-big',
+        prevSelector: '.product-button-prev',
+        nextSelector: '.product-button-next',
+        highlight: false,
+        edgeTracker: false,
+        thumbs: {
+          sliderSelector: '.product__slider-min',
+          swiperOptions: {
+            slidesPerGroup: 1,
+            slidesPerView: 4,
+            spaceBetween: 10,
+            speed: 500,
+            grabCursor: true,
+            loop: false,
+            touchRatio: 1.6,
+            resistance: true,
+            resistanceRatio: 0.4,
+            centeredSlides: false,
+            centeredSlidesBounds: true,
+            simulateTouch: true,
+            direction: 'horizontal',
+            touchStartPreventDefault: true,
+            touchMoveStopPropagation: true,
+            threshold: 8,
+            touchAngle: 25,
+            watchOverflow: true,
+            watchSlidesProgress: true,
+            freeMode: {
+              enabled: true,
+              momentum: true,
+              momentumRatio: 0.85,
+              momentumVelocityRatio: 1,
+              momentumBounce: false,
+              sticky: true,
+            },
+            mousewheel: {
+              forceToAxis: true,
+              sensitivity: 1,
+              releaseOnEdges: true,
+            },
+          },
+        },
+        swiperOptions: {
+          slidesPerGroup: 1,
+          slidesPerView: 1,
+          spaceBetween: 0,
+          speed: 500,
+          grabCursor: true,
+          loop: false,
+          touchRatio: 1.6,
+          resistance: true,
+          resistanceRatio: 0.4,
+          centeredSlides: false,
+          centeredSlidesBounds: true,
+          simulateTouch: true,
+          direction: 'horizontal',
+          touchStartPreventDefault: true,
+          touchMoveStopPropagation: true,
+          threshold: 8,
+          touchAngle: 25,
+          watchOverflow: true,
+          watchSlidesProgress: true,
+          freeMode: {
+            enabled: true,
+            momentum: true,
+            momentumRatio: 0.85,
+            momentumVelocityRatio: 1,
+            momentumBounce: false,
+            sticky: true,
+          },
+          mousewheel: {
+            forceToAxis: true,
+            sensitivity: 1,
+            releaseOnEdges: true,
+          },
+          navigation: false,
+          pagination: {
+            el: '.product__slider-big .swiper-pagination',
+            clickable: true,
+          },
+        },
+      },
+    ];
+
+    slidersConfig.forEach(({ sliderSelector, prevSelector, nextSelector, highlight, thumbs, autoSlidesView, edgeTracker: useEdgeTracker, swiperOptions }) => {
+
+      if (!document.querySelector(sliderSelector)) return;
+
+      if (autoSlidesView) {
+        applyAutoSlidesView(swiperOptions);
+      }
+
+      const prevEl = prevSelector ? document.querySelector(prevSelector) : null;
+      const nextEl = nextSelector ? document.querySelector(nextSelector) : null;
+
+      const fromEl = highlight ? document.querySelector(`\${sliderSelector} .slider-highlight--from`) : null;
+      const toEl = highlight ? document.querySelector(`\${sliderSelector} .slider-highlight--to`) : null;
+
+      if (thumbs) {
+        const thumbsEl = document.querySelector(thumbs.sliderSelector);
+
+        if (!thumbsEl) {
+          console.warn(`Swiper thumbs: элемент "\${thumbs.sliderSelector}" не найден.`);
+        } else {
+          const thumbsSwiper = new Swiper(thumbs.sliderSelector, thumbs.swiperOptions);
+
+          swiperOptions.thumbs = { swiper: thumbsSwiper };
+        }
+      }
+
+      const swiper = new Swiper(sliderSelector, swiperOptions);
+
+      initPaginationBreakpoint(swiper);
+
+      const highlightInstance = createHighlight(swiper, fromEl, toEl);
+
+      const edgeTracker = useEdgeTracker === true
+        ? createEdgeTracker(swiper, highlightInstance)
+        : createEdgeTrackerStub();
+
+      if (prevEl && nextEl) {
+        createNavigation(swiper, prevEl, nextEl, highlightInstance, edgeTracker);
+      }
     });
-    const popularSlider = new Swiper('.popular__slider', {
-      slidesPerGroup: 1,
-      slidesPerView: 'auto',
-      spaceBetween: 10,
-      loop: true,
-      speed: 500,
-      simulateTouch: true,
-      watchOverflow: true,
-      watchSlidesProgress: true,
 
-      direction: 'horizontal',
-      touchStartPreventDefault: true,
-      touchMoveStopPropagation: true,
-      threshold: 8,
-      touchAngle: 25,
+    function applyAutoSlidesView(swiperOptions) {
 
-      mousewheel: {
-        forceToAxis: true,
-        sensitivity: 1,
-        releaseOnEdges: true
-      },
-      breakpoints: {
-        835: { slidesPerView: 4, spaceBetween: 20 }
-      },
-      navigation: { prevEl: ".popular-button-prev", nextEl: ".popular-button-next" },
-      pagination: { el: ".swiper-pagination", clickable: true },
-    });
-    const pressCenterSlider = new Swiper('.press-center__slider', {
-      slidesPerGroup: 1,
-      slidesPerView: 'auto',
-      spaceBetween: 10,
-      loop: true,
-      speed: 500,
-      simulateTouch: true,
-      watchOverflow: true,
-      watchSlidesProgress: true,
+      swiperOptions.centeredSlidesBounds = false;
 
-      direction: 'horizontal',
-      touchStartPreventDefault: true,
-      touchMoveStopPropagation: true,
-      threshold: 8,
-      touchAngle: 25,
+      if (swiperOptions.freeMode) {
+        swiperOptions.freeMode.sticky = false;
+      }
 
-      mousewheel: {
-        forceToAxis: true,
-        sensitivity: 1,
-        releaseOnEdges: true
-      },
-      breakpoints: {
-        835: { slidesPerView: 4, spaceBetween: 20 }
-      },
-      navigation: { prevEl: ".press-center-button-prev", nextEl: ".press-center-button-next" },
-      pagination: { el: ".swiper-pagination", clickable: true },
-    });
-    const reviewsSlider = new Swiper('.reviews__slider', {
-      slidesPerGroup: 1,
-      slidesPerView: 'auto',
-      spaceBetween: 10,
-      loop: true,
-      speed: 500,
-      simulateTouch: true,
-      watchOverflow: true,
-      watchSlidesProgress: true,
+      const breakpoints = swiperOptions.breakpoints ?? {};
+      Object.values(breakpoints).forEach(bp => {
+        if (bp.slidesPerView === 'auto') {
+          bp.centeredSlidesBounds = false;
+          if (bp.sticky !== undefined) bp.sticky = false;
+        }
+      });
+    }
 
-      direction: 'horizontal',
-      touchStartPreventDefault: true,
-      touchMoveStopPropagation: true,
-      threshold: 8,
-      touchAngle: 25,
+    function createEdgeTrackerStub() {
+      return {
+        handleEdgeNext: () => false,
+        handleEdgePrev: () => false,
+        clearVirtual: () => { },
+        getVirtualIndex: () => null,
+      };
+    }
 
-      mousewheel: {
-        forceToAxis: true,
-        sensitivity: 1,
-        releaseOnEdges: true
-      },
-      breakpoints: {
-        835: { slidesPerView: 3, spaceBetween: 20 }
-      },
-      navigation: { prevEl: ".reviews-button-prev", nextEl: ".reviews-button-next" },
-      pagination: { el: ".swiper-pagination", clickable: true },
-    });
-    const productSliderMin = new Swiper('.product__slider-min', {
-      slidesPerGroup: 1,
-      slidesPerView: 4,
-      spaceBetween: 10,
-      loop: false,
-      speed: 500,
-      simulateTouch: true,
-      watchOverflow: true,
-      watchSlidesProgress: true,
+    function initPaginationBreakpoint(swiper) {
+      const paginationEl = swiper.pagination?.el;
+      if (!paginationEl) return;
 
-      direction: 'horizontal',
-      touchStartPreventDefault: true,
-      touchMoveStopPropagation: true,
-      threshold: 8,
-      touchAngle: 25,
+      function applyVisibility() {
+        const params = swiper.currentBreakpointParams ?? {};
+        paginationEl.style.display = params.hidePagination === true ? 'none' : '';
+      }
 
-      mousewheel: {
-        forceToAxis: true,
-        sensitivity: 1,
-        releaseOnEdges: true
-      },
-    });
-    const productSliderBig = new Swiper('.product__slider-big', {
-      slidesPerGroup: 1,
-      slidesPerView: 1,
-      spaceBetween: 0,
-      loop: false,
-      speed: 500,
-      simulateTouch: true,
-      watchOverflow: true,
-      watchSlidesProgress: true,
-      grabCursor: true,
+      swiper.on('breakpoint', applyVisibility);
 
-      direction: 'horizontal',
-      touchStartPreventDefault: true,
-      touchMoveStopPropagation: true,
-      threshold: 8,
-      touchAngle: 25,
+      applyVisibility();
+    }
 
-      mousewheel: {
-        forceToAxis: true,
-        sensitivity: 1,
-        releaseOnEdges: true
-      },
-      pagination: { el: ".swiper-pagination", clickable: true },
-      thumbs: {
-        swiper: productSliderMin,
-      },
-    });
-    // productSliderMin.controller.control = productSliderBig;
-    // productSliderBig.controller.control = productSliderMin;
+    function createHighlight(swiper, fromEl, toEl) {
+
+      if (!fromEl || !toEl) {
+        return {
+          animateTo: () => { },
+          snapInstant: () => { },
+          getGeometry: (index) => {
+            const slide = swiper.slides[index];
+            if (!slide) return null;
+            return {
+              x: slide.offsetLeft + (swiper.translate ?? 0),
+              width: slide.offsetWidth,
+            };
+          },
+          getCurrentX: () => 0,
+          getCurrentW: () => 0,
+        };
+      }
+
+      const DURATION = 320;
+      const EASE_OUT = 'cubic-bezier(0.4, 0, 0.2, 1)';
+      const EASE_SNAP = 'cubic-bezier(0.34, 1.4, 0.64, 1)';
+
+      let currentX = 0;
+      let currentWidth = 0;
+      let rafId = null;
+
+      function getGeometry(index) {
+        const slide = swiper.slides[index];
+        if (!slide) return null;
+        return {
+          x: slide.offsetLeft + (swiper.translate ?? 0),
+          width: slide.offsetWidth,
+        };
+      }
+
+      function setInstant(el, x, width, visible) {
+        el.style.transition = 'none';
+        el.style.transform = `translateX(\${x}px)`;
+        el.style.width = `\${width}px`;
+        el.classList.toggle('is-visible', visible);
+      }
+
+      function setAnimated(el, x, width, duration, easing, visible) {
+        el.style.transition = [
+          `transform \${duration}ms \${easing}`,
+          `width \${duration}ms \${easing}`,
+          `opacity \${duration * 0.6}ms ease`,
+        ].join(', ');
+        el.style.transform = `translateX(\${x}px)`;
+        el.style.width = `\${width}px`;
+        el.classList.toggle('is-visible', visible);
+      }
+
+      function animateTo(toX, toWidth, dir) {
+        if (rafId) cancelAnimationFrame(rafId);
+
+        const fromX = currentX;
+        const fromWidth = currentWidth;
+        const collapseX = dir === 'next' ? fromX + fromWidth : fromX;
+        const startX = dir === 'next' ? toX : toX + toWidth;
+
+        setInstant(fromEl, fromX, fromWidth, true);
+        setInstant(toEl, startX, 0, true);
+
+        rafId = requestAnimationFrame(() => {
+          rafId = requestAnimationFrame(() => {
+            rafId = null;
+            setAnimated(fromEl, collapseX, 0, DURATION, EASE_OUT, false);
+            setAnimated(toEl, toX, toWidth, DURATION, EASE_SNAP, true);
+          });
+        });
+
+        currentX = toX;
+        currentWidth = toWidth;
+      }
+
+      function snapInstant(index) {
+        if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+        const geo = getGeometry(index);
+        if (!geo) return;
+        setInstant(fromEl, geo.x, geo.width, true);
+        setInstant(toEl, geo.x, 0, false);
+        currentX = geo.x;
+        currentWidth = geo.width;
+      }
+
+      swiper.on('slideChange', () => {
+        const curr = swiper.activeIndex;
+        const prev = swiper.previousIndex ?? curr;
+        const dir = curr >= prev ? 'next' : 'prev';
+        const geo = getGeometry(curr);
+        if (geo) animateTo(geo.x, geo.width, dir);
+      });
+
+      swiper.on('transitionEnd', () => {
+        setInstant(fromEl, currentX, currentWidth, true);
+        setInstant(toEl, currentX, 0, false);
+      });
+
+      swiper.on('setTranslate', () => {
+        if (swiper.animating) return;
+        const geo = getGeometry(swiper.activeIndex);
+        if (!geo) return;
+        if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+        setInstant(fromEl, geo.x, geo.width, true);
+        setInstant(toEl, geo.x, 0, false);
+        currentX = geo.x;
+        currentWidth = geo.width;
+      });
+
+      swiper.on('resize', () => snapInstant(swiper.activeIndex));
+
+      snapInstant(swiper.activeIndex ?? 0);
+
+      return {
+        animateTo,
+        snapInstant,
+        getGeometry,
+        getCurrentX: () => currentX,
+        getCurrentW: () => currentWidth,
+      };
+    }
+
+    function createEdgeTracker(swiper, highlight) {
+
+      const VIRTUAL_CLASS = 'is-virtual-active';
+      const BEFORE_EDGE_CLASS = 'is-before-edge';
+
+      let virtualIndex = null;
+
+      function getVisibleIndices() {
+        const containerWidth = swiper.width;
+        const offset = Math.abs(swiper.translate ?? 0);
+        const visible = [];
+        swiper.slides.forEach((slide, i) => {
+          const left = slide.offsetLeft;
+          const right = left + slide.offsetWidth;
+          if (right > offset && left < offset + containerWidth) visible.push(i);
+        });
+        return visible;
+      }
+
+      function clearBeforeEdge() {
+        swiper.slides.forEach(s => s.classList.remove(BEFORE_EDGE_CLASS));
+      }
+
+      function markBeforeEdge() {
+        clearBeforeEdge();
+        swiper.slides.forEach(s => {
+          if (s.classList.contains('swiper-slide-active')) {
+            s.classList.add(BEFORE_EDGE_CLASS);
+          }
+        });
+      }
+
+      function clearVirtual() {
+        swiper.slides.forEach(s => s.classList.remove(VIRTUAL_CLASS));
+        clearBeforeEdge();
+        virtualIndex = null;
+      }
+
+      function setVirtualActive(index, dir) {
+        if (virtualIndex === null) markBeforeEdge();
+        swiper.slides.forEach(s => s.classList.remove(VIRTUAL_CLASS));
+        virtualIndex = index;
+        swiper.slides[index]?.classList.add(VIRTUAL_CLASS);
+
+        const geo = highlight.getGeometry(index);
+        if (geo) highlight.animateTo(geo.x, geo.width, dir);
+      }
+
+      function handleEdgeNext() {
+        if (!swiper.isEnd) return false;
+        const visible = getVisibleIndices();
+        if (!visible.length) return false;
+        const lastVisible = visible[visible.length - 1];
+        const current = virtualIndex ?? swiper.activeIndex;
+        if (current >= lastVisible) return true;
+        setVirtualActive(current + 1, 'next');
+        return true;
+      }
+
+      function handleEdgePrev() {
+        if (virtualIndex === null) return false;
+        const current = virtualIndex;
+        const realActive = swiper.activeIndex;
+        if (current <= realActive) {
+          clearVirtual();
+          highlight.snapInstant(realActive);
+          return false;
+        }
+        setVirtualActive(current - 1, 'prev');
+        return true;
+      }
+
+      swiper.on('slideChange', () => {
+        if (virtualIndex !== null) clearVirtual();
+      });
+
+      swiper.on('fromEdge', () => {
+        clearVirtual();
+      });
+
+      return {
+        handleEdgeNext,
+        handleEdgePrev,
+        clearVirtual,
+        getVirtualIndex: () => virtualIndex,
+      };
+    }
+
+    function createNavigation(swiper, prevEl, nextEl, highlight, edgeTracker) {
+
+      const {
+        fastClickDelay = 200,
+        accelerationFactor = 0.23,
+        friction = 0.85,
+        maxExtraSteps = 2,
+        decayInterval = 40,
+      } = globalImpulseOptions;
+
+      let lastClickTime = 0;
+      let lastDirection = null;
+      let extraImpulse = 0;
+      let decayTimer = null;
+
+      function resetImpulse() {
+        extraImpulse = 0;
+        lastDirection = null;
+        if (decayTimer) clearInterval(decayTimer);
+        decayTimer = null;
+      }
+
+      function accumulateImpulse(direction) {
+        const now = Date.now();
+        const delta = now - lastClickTime;
+
+        if (lastDirection !== null && lastDirection !== direction) {
+          extraImpulse = 0;
+        }
+
+        extraImpulse = delta < fastClickDelay
+          ? Math.min(extraImpulse + (fastClickDelay - delta) * accelerationFactor, maxExtraSteps)
+          : 0;
+
+        lastClickTime = now;
+        lastDirection = direction;
+
+        if (decayTimer) clearInterval(decayTimer);
+        decayTimer = setInterval(() => {
+          extraImpulse *= friction;
+          if (extraImpulse < 0.2) {
+            extraImpulse = 0;
+            clearInterval(decayTimer);
+            decayTimer = null;
+          }
+        }, decayInterval);
+      }
+
+      function getVisibleIndicesForNav() {
+        const containerWidth = swiper.width;
+        const offset = Math.abs(swiper.translate ?? 0);
+        const visible = [];
+        swiper.slides.forEach((slide, i) => {
+          const left = slide.offsetLeft;
+          const right = left + slide.offsetWidth;
+          if (right > offset && left < offset + containerWidth) visible.push(i);
+        });
+        return visible;
+      }
+
+      function updateDisabled() {
+        if (swiper.params.loop) return;
+
+        const isStart = swiper.isBeginning && edgeTracker.getVirtualIndex() === null;
+
+        let nextBlocked = false;
+        if (swiper.isEnd) {
+          const virtualIndex = edgeTracker.getVirtualIndex();
+          if (virtualIndex === null) {
+            nextBlocked = true;
+          } else {
+            const visible = getVisibleIndicesForNav();
+            const lastVisible = visible[visible.length - 1] ?? swiper.activeIndex;
+            nextBlocked = virtualIndex >= lastVisible;
+          }
+        }
+
+        prevEl.classList.toggle('swiper-button-disabled', isStart);
+        nextEl.classList.toggle('swiper-button-disabled', nextBlocked);
+
+        prevEl.disabled = isStart;
+        nextEl.disabled = nextBlocked;
+      }
+
+      function handle(direction) {
+        if (direction === 'next' && edgeTracker.handleEdgeNext()) {
+          updateDisabled();
+          return;
+        }
+        if (direction === 'prev' && edgeTracker.handleEdgePrev()) {
+          updateDisabled();
+          return;
+        }
+
+        accumulateImpulse(direction);
+        const steps = 1 + Math.round(extraImpulse);
+
+        if (swiper.params.loop) {
+          const total = swiper.slides.length - (swiper.loopedSlides ?? 0) * 2;
+          const curr = swiper.realIndex;
+          const target = direction === 'next'
+            ? (curr + steps) % total
+            : (curr - steps + total) % total;
+          swiper.slideToLoop(target);
+        } else {
+          const base = swiper.activeIndex;
+          const target = direction === 'next'
+            ? Math.min(base + steps, swiper.slides.length - 1)
+            : Math.max(base - steps, 0);
+          swiper.slideTo(target);
+        }
+
+        updateDisabled();
+      }
+
+      nextEl.addEventListener('click', (e) => { e.preventDefault(); handle('next'); });
+      prevEl.addEventListener('click', (e) => { e.preventDefault(); handle('prev'); });
+
+      swiper.on('touchStart', resetImpulse);
+      swiper.on('slideChange', updateDisabled);
+      swiper.on('resize', updateDisabled);
+
+      swiper.on('destroy', () => {
+        if (decayTimer) clearInterval(decayTimer);
+        decayTimer = null;
+      });
+
+      updateDisabled();
+    }
+
   })();
 
   /**

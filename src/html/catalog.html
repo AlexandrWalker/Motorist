@@ -64,7 +64,7 @@
         <div class="container">
           <div class="catalog__inner">
 
-            <div class="catalog__head">
+            <!-- <div class="catalog__head">
               <div class="catalog__items">
 
                 <div class="catalog__item">
@@ -1797,6 +1797,20 @@
                   </div>
                 </div>
               </div>
+            </div> -->
+
+            <div class="category__body" data-transform="fade">
+              <div class="swiper category__slider">
+                <div class="swiper-wrapper">
+                  @@loop('./elements/category-item.html', './data/catalog-category-items.json')
+                </div>
+              </div>
+              <div class="swiper-button-prev category-button-prev">
+                <i class="icon-slider-arrow"></i>
+              </div>
+              <div class="swiper-button-next category-button-next">
+                <i class="icon-slider-arrow"></i>
+              </div>
             </div>
 
             <button class="catalog__btn btn btn--gray h6" data-fancybox href="#popup-2">
@@ -1836,20 +1850,8 @@
               </a>
             </div>
 
-            <div class="popular__body" data-transform="fade">
-              <div class="swiper popular__slider">
-                <div class="swiper-wrapper">
-                  @@loop('./elements/card-slide-item.html', './data/card-items.json')
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev popular-button-prev">
-                  <i class="icon-slider-arrow"></i>
-                </div>
-                <div class="swiper-button-next popular-button-next">
-                  <i class="icon-slider-arrow"></i>
-                </div>
-              </div>
-            </div>
+            @@include('./repeating-blocks/popular-block.html')
+
           </div>
         </div>
       </section>
@@ -1873,20 +1875,7 @@
               </a>
             </div>
 
-            <div class="reviews__body" data-transform="fade">
-              <div class="swiper reviews__slider">
-                <div class="swiper-wrapper">
-                  @@loop('./elements/reviews-slide-item.html', './data/reviews-items.json')
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev reviews-button-prev">
-                  <i class="icon-slider-arrow"></i>
-                </div>
-                <div class="swiper-button-next reviews-button-next">
-                  <i class="icon-slider-arrow"></i>
-                </div>
-              </div>
-            </div>
+            @@include('./repeating-blocks/reviews-block.html')
 
           </div>
         </div>

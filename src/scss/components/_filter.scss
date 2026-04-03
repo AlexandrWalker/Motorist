@@ -2,6 +2,10 @@
 
 .filter {
 
+  form {
+    position: relative;
+  }
+
   *,
   i {
     transition: all 0.3s ease;
@@ -165,5 +169,68 @@
     --btn-width: 100%;
 
     justify-content: space-between;
+  }
+
+  &__drop {
+    position: absolute;
+    top: 0;
+    right: auto;
+    left: calc(100% + 1.5rem);
+    z-index: 10;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-1rem);
+    transition: opacity 0.3s ease, transform 0.3s ease, top 0.4s ease;
+
+    @include md {
+      display: none;
+    }
+
+    &.active {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(0);
+    }
+
+    &::before {
+      content: "";
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjkiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAyOSAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0xNC4yODkxIDBMMjguNTc4NSAyNC43NUgtMC4wMDAzNTY2NzRMMTQuMjg5MSAwWiIgZmlsbD0iIzA0MUQyQyIvPg0KPC9zdmc+DQo=);
+      background-repeat: no-repeat;
+      background-position-x: center;
+      display: block;
+      width: 2.1rem;
+      height: 2.1rem;
+      transform: rotate(-90deg);
+      position: absolute;
+      top: 1.3rem;
+      left: -1.4rem;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: fit-content;
+      padding: 1.5rem;
+      border-radius: 1.5rem;
+      background-color: var(--black);
+      white-space: nowrap;
+    }
+
+    &-text {
+      font-weight: 700;
+      font-size: 1.4rem;
+      line-height: 120%;
+      color: var(--white);
+
+      span {
+        color: var(--blue);
+      }
+    }
+
+    &-btn {
+      --btn-height: 3rem;
+    }
   }
 }

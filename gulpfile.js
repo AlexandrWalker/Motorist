@@ -115,7 +115,7 @@ gulp.task('clean', function (done) {
 
 gulp.task('html', function () {
   return gulp
-    .src([`${srcFolder}html/**/*.html`, `!${srcFolder}html/blocks/*.html`, `!${srcFolder}html/elements/*.html`, `!${srcFolder}html/privacy/*.html`])
+    .src([`${srcFolder}html/**/*.html`, `!${srcFolder}html/blocks/*.html`, `!${srcFolder}html/repeating-blocks/*.html`, `!${srcFolder}html/elements/*.html`, `!${srcFolder}html/privacy/*.html`])
     .pipe(plumber(plumberNotify('HTML')))
     .pipe(
       fileInclude({
@@ -356,7 +356,7 @@ gulp.task('fontsStyle', () => {
   });
 
   return gulp.src(`${srcFolder}`);
-  function cb() {}
+  function cb() { }
 });
 
 gulp.task('files', function () {

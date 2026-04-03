@@ -5,7 +5,7 @@
   &__inner {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
 
     @include md {
       gap: 1rem;
@@ -167,8 +167,10 @@
 
   &__body {
     display: grid;
-    grid-template-columns: 29.5rem 92.5rem;
-    gap: 2rem;
+    // grid-template-columns: 29.5rem 92.5rem;
+    grid-template-columns: 23.79% 74.6%;
+    // gap: 2rem;
+    gap: 1.61%;
 
     @include md {
       display: flex;
