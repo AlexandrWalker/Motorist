@@ -81,16 +81,16 @@ img {
 @font-face {
   font-family: HelveticaNeue;
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Bold.woff2") format("woff2"), url("../fonts/HelveticaNeue-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/HelveticaNeue-Light.woff2") format("woff2"), url("../fonts/HelveticaNeue-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: HelveticaNeue;
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Light.woff2") format("woff2"), url("../fonts/HelveticaNeue-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/HelveticaNeue-Bold.woff2") format("woff2"), url("../fonts/HelveticaNeue-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -129,22 +129,6 @@ img {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
   src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
   font-weight: 200;
   font-style: normal;
@@ -161,8 +145,40 @@ img {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
+  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
   src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
   font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: TeXGyreHeros;
+  font-display: swap;
+  src: url("../fonts/TeXGyreHeros-bold.woff2") format("woff2"), url("../fonts/TeXGyreHeros-bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -177,24 +193,8 @@ img {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
   src: url("../fonts/Montserrat-Thin.woff2") format("woff2"), url("../fonts/Montserrat-Thin.woff") format("woff");
   font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: TeXGyreHeros;
-  font-display: swap;
-  src: url("../fonts/TeXGyreHeros-bold.woff2") format("woff2"), url("../fonts/TeXGyreHeros-bold.woff") format("woff");
-  font-weight: 700;
   font-style: normal;
 }
 
@@ -455,20 +455,11 @@ img {
 
 .swiper {
   max-width: 100%;
-  overflow: visible;
+  border-radius: 1.5rem;
 }
 
 .swiper-slide {
   height: auto;
-  opacity: 0;
-  pointer-events: none;
-  -webkit-transition: opacity 0.5s ease;
-  transition: opacity 0.5s ease;
-}
-
-.swiper-slide-visible {
-  opacity: 1;
-  pointer-events: all;
 }
 
 .swiper-button-prev {
@@ -1140,6 +1131,10 @@ body {
   margin-bottom: 3rem;
 }
 
+.filter form {
+  position: relative;
+}
+
 .filter *,
 .filter i {
   -webkit-transition: all 0.3s ease;
@@ -1323,6 +1318,80 @@ body {
   justify-content: space-between;
 }
 
+.filter__drop {
+  position: absolute;
+  top: 0;
+  right: auto;
+  left: calc(100% + 1.5rem);
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transform: translateX(-1rem);
+  -ms-transform: translateX(-1rem);
+  transform: translateX(-1rem);
+  -webkit-transition: opacity 0.3s ease, top 0.4s ease, -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, top 0.4s ease, -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, top 0.4s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, top 0.4s ease, -webkit-transform 0.3s ease;
+}
+
+.filter__drop.active {
+  opacity: 1;
+  pointer-events: all;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.filter__drop::before {
+  content: "";
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjkiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAyOSAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0xNC4yODkxIDBMMjguNTc4NSAyNC43NUgtMC4wMDAzNTY2NzRMMTQuMjg5MSAwWiIgZmlsbD0iIzA0MUQyQyIvPg0KPC9zdmc+DQo=);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  display: block;
+  width: 2.1rem;
+  height: 2.1rem;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  position: absolute;
+  top: 1.3rem;
+  left: -1.4rem;
+}
+
+.filter__drop-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 1rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  background-color: var(--black);
+  white-space: nowrap;
+}
+
+.filter__drop-text {
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 120%;
+  color: var(--white);
+}
+
+.filter__drop-text span {
+  color: var(--blue);
+}
+
+.filter__drop-btn {
+  --btn-height: 3rem;
+}
+
 .form-group {
   position: relative;
 }
@@ -1503,8 +1572,8 @@ body {
   gap: 2rem;
   padding: 2rem;
   background-color: var(--white-50);
-  -webkit-box-shadow: 5px 12px 23px rgba(113, 133, 149, 0.1);
-  box-shadow: 5px 12px 23px rgba(113, 133, 149, 0.1);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(113, 133, 149, 0.1);
+  box-shadow: 0px 0px 10px 0px rgba(113, 133, 149, 0.1);
   border-radius: 1.5rem;
   height: 100%;
   overflow: hidden;
@@ -2458,6 +2527,7 @@ p {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
   padding: 1rem 1rem 1rem 2rem;
   border-radius: 1.5rem;
@@ -2709,6 +2779,7 @@ p {
   background-color: var(--blue);
   -webkit-box-shadow: 0px 12px 33.8px rgba(53, 175, 218, 0.42);
   box-shadow: 0px 12px 33.8px rgba(53, 175, 218, 0.42);
+  -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
   z-index: 1;
 }
@@ -2787,6 +2858,7 @@ p {
   border-radius: 0.8rem;
   -webkit-box-shadow: inset 0px 0px 11.1px rgba(4, 29, 44, 0.5);
   box-shadow: inset 0px 0px 11.1px rgba(4, 29, 44, 0.5);
+  -webkit-backdrop-filter: blur(4.2px);
   backdrop-filter: blur(4.2px);
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
@@ -3022,6 +3094,7 @@ p {
   --megamenu-padding-top: 17.3rem;
   width: 100%;
   background-color: rgba(4, 29, 44, 0.8);
+  -webkit-backdrop-filter: blur(37.65px);
   backdrop-filter: blur(37.65px);
   height: 0;
   -webkit-transition: all 0.5s ease;
@@ -3327,6 +3400,7 @@ p {
   height: 6rem;
   border-radius: 0.8rem;
   background-color: var(--black-60);
+  -webkit-backdrop-filter: blur(6.1px);
   backdrop-filter: blur(6.1px);
 }
 
@@ -3495,7 +3569,7 @@ p {
 .popup-filter {
   max-width: unset;
   width: 100%;
-  height: auto;
+  height: 100%;
   padding: 0;
   background-color: transparent;
   padding: 4rem 0;
@@ -3547,6 +3621,7 @@ p {
 
 .fancybox__backdrop {
   background-color: rgba(4, 29, 44, 0.8);
+  -webkit-backdrop-filter: blur(37.65px);
   backdrop-filter: blur(37.65px);
 }
 
@@ -4870,7 +4945,7 @@ p {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .catalog__items {
@@ -5039,8 +5114,8 @@ p {
 
 .catalog__body {
   display: grid;
-  grid-template-columns: 29.5rem 92.5rem;
-  gap: 2rem;
+  grid-template-columns: 23.79% 74.6%;
+  gap: 1.61%;
 }
 
 .catalog__block {
@@ -5214,16 +5289,16 @@ p {
   border-radius: 1.5rem;
 }
 
-.category__slide:last-child .category__item {
+.category__slide:not(.page__inner .category__slide):last-child .category__item {
   color: var(--white);
   background-color: var(--second-black);
 }
 
-.category__slide:last-child .category__item img {
+.category__slide:not(.page__inner .category__slide):last-child .category__item img {
   display: none;
 }
 
-.category__slide:last-child .category__item i {
+.category__slide:not(.page__inner .category__slide):last-child .category__item i {
   --font-size: 5rem;
   background-color: var(--white);
   color: var(--blue);
@@ -5238,8 +5313,8 @@ p {
   overflow: hidden;
   height: 100%;
   background-color: var(--white);
-  -webkit-box-shadow: 5px 12px 23px rgba(113, 133, 149, 0.1);
-  box-shadow: 5px 12px 23px rgba(113, 133, 149, 0.1);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(113, 133, 149, 0.1);
+  box-shadow: 0px 0px 10px 0px rgba(113, 133, 149, 0.1);
   position: relative;
 }
 
@@ -5252,11 +5327,13 @@ p {
   -webkit-transform: scaleX(0);
   -ms-transform: scaleX(0);
   transform: scaleX(0);
-  -webkit-transform-origin: left;
-  -ms-transform-origin: left;
-  transform-origin: left;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  -webkit-transform-origin: right;
+  -ms-transform-origin: right;
+  transform-origin: right;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
   position: absolute;
   top: 0;
   left: 0;
@@ -5708,6 +5785,7 @@ p {
   padding: 2rem 5rem 2rem 2rem;
   background-color: var(--white-50);
   border-radius: 1.5rem;
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   overflow: hidden;
   position: absolute;
@@ -6407,6 +6485,10 @@ p {
   display: -ms-flexbox;
   display: flex;
   display: none;
+}
+
+.press-center__body {
+  position: relative;
 }
 
 .press-center__item {
@@ -7438,6 +7520,9 @@ p {
     -webkit-transform: scaleX(1);
     -ms-transform: scaleX(1);
     transform: scaleX(1);
+    -webkit-transform-origin: left;
+    -ms-transform-origin: left;
+    transform-origin: left;
   }
 
   .category__item:hover i {
@@ -7576,6 +7661,7 @@ p {
     width: 100vw;
     margin-left: calc(var(--container-padding) * -1);
     padding: 0 var(--container-padding);
+    border-radius: 0;
   }
 
   [class^=swiper-button-],
@@ -7612,6 +7698,10 @@ p {
   }
 
   .control__link-text {
+    display: none;
+  }
+
+  .filter__drop {
     display: none;
   }
 
