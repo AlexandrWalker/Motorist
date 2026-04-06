@@ -168,4 +168,28 @@
       bottom: 2rem;
     }
   }
+
+  &__dropdowns {
+
+    .megamenu__content {
+      overflow: hidden;
+      padding: 0;
+
+      &-title {
+        color: var(--white);
+      }
+    }
+
+    .catalog__item.active {
+
+      .catalog__item-body {
+        grid-template-rows: 1fr;
+        padding: 2.5rem;
+      }
+
+      .megamenu__content {
+        padding: 0.7rem 0 6rem 0;
+      }
+    }
+  }
 }

@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   (function () {
     const catalogBody = document.querySelector('.catalog__body');
-    if(!catalogBody) return;
+    if (!catalogBody) return;
 
     const filter = catalogBody.querySelector('.filter');
     const form = filter.querySelector('form');
@@ -1781,4 +1781,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  (function () {
+    const categorySlides = document.querySelectorAll('.category__slide');
+    const categoryItems = document.querySelectorAll('.catalog__item');
+
+    let hideTimeout = null;
+
+    categorySlides.forEach(slide => {
+      slide.addEventListener('mouseenter', () => {
+        clearTimeout(hideTimeout);
+
+        categoryItems.forEach(item => {
+          item.classList.remove('active');
+          if (item.dataset.slide === slide.dataset.slide) {
+            item.classList.add('active');
+          }
+        });
+      });
+
+      slide.addEventListener('mouseleave', () => {
+        hideTimeout = setTimeout(() => {
+          categoryItems.forEach(item => item.classList.remove('active'));
+        }, 150);
+      });
+    });
+
+    categoryItems.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        clearTimeout(hideTimeout);
+      });
+
+      item.addEventListener('mouseleave', () => {
+        hideTimeout = setTimeout(() => {
+          categoryItems.forEach(i => i.classList.remove('active'));
+        }, 150);
+      });
+    });
+  })();
 });

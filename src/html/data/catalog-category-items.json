@@ -1,61 +1,81 @@
 [
   {
-    "link": "/Motorist/product.html",
+    "data": "0",
     "img": "./../images/temp/category-item-1.png",
     "name": "Патрубки силиконовые"
   },
   {
-    "link": "/Motorist/product.html",
+    "data": "1",
     "img": "./../images/temp/category-item-2.png",
     "name": "Патрубки алюминиевые"
   },
   {
-    "link": "/Motorist/product.html",
+    "data": "2",
     "img": "./../images/temp/category-item-3.png",
     "name": "Патрубки алюминиевые"
   },
   {
-    "link": "/Motorist/product.html",
+    "data": "3",
     "img": "./../images/temp/category-item-4.png",
     "name": "Хомуты"
   },
   {
-    "link": "/Motorist/product.html",
+    "data": "4",
     "img": "./../images/temp/category-item-5.png",
     "name": "Силиконовая резиносмесь"
   },
   {
-    "link": "/Motorist/product.html",
+    "data": "5",
     "img": "./../images/temp/category-item-6.png",
     "name": "Камлоки"
   },
   {
-    "link": "/Motorist/product.html",
+    "data": "6",
     "img": "./../images/temp/category-item-1.png",
     "name": "Патрубки силиконовые"
   },
   {
-    "link": "/Motorist/product.html",
+    "data": "7",
     "img": "./../images/temp/category-item-2.png",
     "name": "Патрубки алюминиевые"
   },
   {
-    "link": "/Motorist/product.html",
+    "data": "8",
     "img": "./../images/temp/category-item-3.png",
     "name": "Патрубки алюминиевые"
   },
   {
-    "link": "/Motorist/product.html",
+    "data": "9",
     "img": "./../images/temp/category-item-4.png",
     "name": "Хомуты"
   },
   {
-    "link": "/Motorist/product.html",
+    "data": "10",
     "img": "./../images/temp/category-item-5.png",
     "name": "Силиконовая резиносмесь"
   },
   {
-    "link": "/Motorist/product.html",
+    "data": "11",
+    "img": "./../images/temp/category-item-6.png",
+    "name": "Камлоки"
+  },
+  {
+    "data": "12",
+    "img": "./../images/temp/category-item-3.png",
+    "name": "Патрубки алюминиевые"
+  },
+  {
+    "data": "13",
+    "img": "./../images/temp/category-item-4.png",
+    "name": "Хомуты"
+  },
+  {
+    "data": "14",
+    "img": "./../images/temp/category-item-5.png",
+    "name": "Силиконовая резиносмесь"
+  },
+  {
+    "data": "15",
     "img": "./../images/temp/category-item-6.png",
     "name": "Камлоки"
   }

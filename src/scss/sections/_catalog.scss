@@ -2,6 +2,23 @@
 
 .catalog {
 
+  .category {
+
+    &__item {
+
+      &:hover {
+
+        i {
+          transform: rotate(-90deg);
+        }
+      }
+
+      i {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;
@@ -13,6 +30,8 @@
   }
 
   &__head {
+    position: relative;
+    z-index: 12;
 
     @include md {
       display: none;
