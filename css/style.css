@@ -81,14 +81,6 @@ img {
 @font-face {
   font-family: HelveticaNeue;
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Light.woff2") format("woff2"), url("../fonts/HelveticaNeue-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: HelveticaNeue;
-  font-display: swap;
   src: url("../fonts/HelveticaNeue-Bold.woff2") format("woff2"), url("../fonts/HelveticaNeue-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -97,8 +89,8 @@ img {
 @font-face {
   font-family: HelveticaNeue;
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/HelveticaNeue-Light.woff2") format("woff2"), url("../fonts/HelveticaNeue-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -107,6 +99,14 @@ img {
   font-display: swap;
   src: url("../fonts/HelveticaNeue-Regilar.woff2") format("woff2"), url("../fonts/HelveticaNeue-Regilar.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: HelveticaNeue;
+  font-display: swap;
+  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -129,6 +129,22 @@ img {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
   src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
   font-weight: 200;
   font-style: normal;
@@ -145,40 +161,8 @@ img {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
   src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
   font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: TeXGyreHeros;
-  font-display: swap;
-  src: url("../fonts/TeXGyreHeros-bold.woff2") format("woff2"), url("../fonts/TeXGyreHeros-bold.woff") format("woff");
-  font-weight: 700;
   font-style: normal;
 }
 
@@ -193,8 +177,24 @@ img {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
+  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
   src: url("../fonts/Montserrat-Thin.woff2") format("woff2"), url("../fonts/Montserrat-Thin.woff") format("woff");
   font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: TeXGyreHeros;
+  font-display: swap;
+  src: url("../fonts/TeXGyreHeros-bold.woff2") format("woff2"), url("../fonts/TeXGyreHeros-bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -4937,6 +4937,18 @@ p {
   font-size: 0.8rem;
 }
 
+.catalog .category__item:hover i {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.catalog .category__item i {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
 .catalog__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4946,6 +4958,11 @@ p {
   -ms-flex-direction: column;
   flex-direction: column;
   gap: 3rem;
+}
+
+.catalog__head {
+  position: relative;
+  z-index: 12;
 }
 
 .catalog__items {
@@ -5384,6 +5401,24 @@ p {
   position: absolute;
   right: 2rem;
   bottom: 2rem;
+}
+
+.category__dropdowns .megamenu__content {
+  overflow: hidden;
+  padding: 0;
+}
+
+.category__dropdowns .megamenu__content-title {
+  color: var(--white);
+}
+
+.category__dropdowns .catalog__item.active .catalog__item-body {
+  grid-template-rows: 1fr;
+  padding: 2.5rem;
+}
+
+.category__dropdowns .catalog__item.active .megamenu__content {
+  padding: 0.7rem 0 6rem 0;
 }
 
 .comparison .product__item-controls {
