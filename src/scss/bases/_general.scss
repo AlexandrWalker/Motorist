@@ -52,6 +52,13 @@
         }
       }
     }
+
+    &-date {
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 120%;
+      color: var(--blue);
+    }
   }
 
   &__head .general__head-btns,

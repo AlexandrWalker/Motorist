@@ -1,0 +1,144 @@
+@use './../mixins' as *;
+
+.offers-inner {
+
+  &__page {
+
+    .template {
+
+      .general__head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3rem;
+
+        @include md {
+          gap: 2rem;
+        }
+      }
+    }
+
+    .sample {
+
+      &__inner {
+        max-width: 103.2rem;
+      }
+    }
+
+    .sample {
+
+      &__inner {
+        max-width: 103.2rem;
+      }
+    }
+
+    .faq {
+
+      &__inner {
+        max-width: 103.2rem;
+      }
+    }
+  }
+
+  &__inner {
+    max-width: 103.2rem;
+  }
+
+  &__banner {
+    padding: 5rem 3rem;
+    border-radius: 1.5rem;
+    background-color: var(--blue);
+    overflow: hidden;
+
+    color: var(--white);
+
+    position: relative;
+
+    @include md {
+      padding: 3rem 2rem;
+    }
+
+    .general__head {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+      max-width: 42rem;
+      margin-bottom: 0;
+
+      position: relative;
+      z-index: 2;
+
+      &-text {
+
+        * {
+          line-height: 140%;
+        }
+      }
+    }
+
+    .btn {
+      --btn-height: 4rem;
+
+      border-radius: 5rem;
+
+      font-size: 1.2rem;
+    }
+
+    &-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.offers-form {
+
+  .general {
+
+    &__head {
+      margin-bottom: 3rem;
+
+      &-title {
+
+        * {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  .form {
+
+    &-btn {
+      --btn-color: var(--white);
+      --btn-background: var(--blue);
+
+      i {
+        background-color: var(--white);
+        color: var(--gray);
+      }
+    }
+
+    &-foot {
+      margin-top: -0.5rem;
+    }
+  }
+
+  &__inner {
+    max-width: 103.2rem;
+    padding: 4rem 3rem;
+    background-color: var(--white-f-50);
+    border-radius: 1.5rem;
+
+    @include md {
+      padding: 2rem 1.5rem;
+    }
+  }
+
+}

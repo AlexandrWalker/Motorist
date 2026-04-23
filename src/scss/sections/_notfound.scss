@@ -1,0 +1,61 @@
+@use './../mixins' as *;
+
+.notfound {
+  padding: 5rem 0 9rem;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.6rem;
+
+    @include md {
+      gap: 2rem;
+    }
+  }
+
+  &__cover {
+    width: auto;
+    height: 32.3rem;
+
+    @include md {
+      height: 28rem;
+    }
+
+    @include sm {
+      width: 100%;
+      height: auto;
+    }
+
+    img {
+      width: auto;
+      height: 100%;
+      object-fit: contain;
+
+      @include sm {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &__title {
+
+    * {
+      font-family: var(--second-family);
+      font-weight: 400;
+      font-size: 4.5rem;
+      color: var(--gray);
+      text-transform: uppercase;
+      text-align: center;
+
+      @include md {
+        font-size: 3.5rem;
+      }
+
+      @include sm {
+        font-size: calc(100vw/(440/30));
+      }
+    }
+  }
+}
