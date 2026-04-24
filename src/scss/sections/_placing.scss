@@ -189,13 +189,28 @@
       }
     }
 
-    .form__body {
+    .form__body:not(.form-row-3) {
       display: grid;
       grid-template-columns: 1fr;
       gap: 2rem;
 
       @include md {
         gap: 1rem;
+      }
+    }
+
+    .form-row-3 {
+
+      @include md {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group--textarea {
+        grid-column: 1/4;
+
+        @include md {
+          grid-column: 1/2;
+        }
       }
     }
 
@@ -330,6 +345,14 @@
       .activity & {
         color: var(--gray);
       }
+    }
+
+    &-notice {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 120%;
+      color: var(--red);
     }
   }
 

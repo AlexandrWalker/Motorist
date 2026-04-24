@@ -205,6 +205,12 @@
     }
   }
 
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
   &__block {
     display: flex;
     flex-direction: row;
