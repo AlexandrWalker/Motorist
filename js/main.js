@@ -952,14 +952,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const prevEl = prevSelector ? document.querySelector(prevSelector) : null;
       const nextEl = nextSelector ? document.querySelector(nextSelector) : null;
 
-      const fromEl = highlight ? document.querySelector(`\${sliderSelector} .slider-highlight--from`) : null;
-      const toEl = highlight ? document.querySelector(`\${sliderSelector} .slider-highlight--to`) : null;
+      const fromEl = highlight ? document.querySelector(`${sliderSelector} .slider-highlight--from`) : null;
+      const toEl = highlight ? document.querySelector(`${sliderSelector} .slider-highlight--to`) : null;
 
       if (thumbs) {
         const thumbsEl = document.querySelector(thumbs.sliderSelector);
 
         if (!thumbsEl) {
-          console.warn(`Swiper thumbs: элемент "\${thumbs.sliderSelector}" не найден.`);
+          console.warn(`Swiper thumbs: элемент "${thumbs.sliderSelector}" не найден.`);
         } else {
           const thumbsSwiper = new Swiper(thumbs.sliderSelector, thumbs.swiperOptions);
 
@@ -1060,19 +1060,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
       function setInstant(el, x, width, visible) {
         el.style.transition = 'none';
-        el.style.transform = `translateX(\${x}px)`;
-        el.style.width = `\${width}px`;
+        el.style.transform = `translateX(${x}px)`;
+        el.style.width = `${width}px`;
         el.classList.toggle('is-visible', visible);
       }
 
       function setAnimated(el, x, width, duration, easing, visible) {
         el.style.transition = [
-          `transform \${duration}ms \${easing}`,
-          `width \${duration}ms \${easing}`,
-          `opacity \${duration * 0.6}ms ease`,
+          `transform ${duration}ms ${easing}`,
+          `width ${duration}ms ${easing}`,
+          `opacity ${duration * 0.6}ms ease`,
         ].join(', ');
-        el.style.transform = `translateX(\${x}px)`;
-        el.style.width = `\${width}px`;
+        el.style.transform = `translateX(${x}px)`;
+        el.style.width = `${width}px`;
         el.classList.toggle('is-visible', visible);
       }
 
@@ -1595,63 +1595,161 @@ document.addEventListener('DOMContentLoaded', () => {
   /**
    * Инициализация формы набора символов
    */
-  const form = document.querySelector('form');
-  if (form) {
+  function initFormInputs() {
     const inputElements = document.querySelectorAll('.form-input');
     const textareaElements = document.querySelectorAll('.form-textarea');
     const className = 'filled';
 
     inputElements.forEach(element => {
-      element.addEventListener('input', function () {
+      // Удаляем старый обработчик, чтобы избежать дублирования
+      element.replaceWith(element.cloneNode(true));
+      const newElement = document.querySelector(`[name="${element.name}"]`) || element;
+
+      newElement.addEventListener('input', function () {
         if (this.value.trim() !== '') {
-          element.classList.add(className);
+          newElement.classList.add(className);
         } else {
-          element.classList.remove(className);
+          newElement.classList.remove(className);
         }
       });
+
+      // Инициализация текущего состояния
+      if (newElement.value.trim() !== '') {
+        newElement.classList.add(className);
+      }
     });
 
     textareaElements.forEach(element => {
-      element.addEventListener('input', function () {
+      element.replaceWith(element.cloneNode(true));
+      const newElement = document.querySelector(`[name="${element.name}"]`) || element;
+
+      newElement.addEventListener('input', function () {
         if (this.value.trim() !== '') {
-          element.classList.add(className);
+          newElement.classList.add(className);
         } else {
-          element.classList.remove(className);
+          newElement.classList.remove(className);
         }
       });
+
+      if (newElement.value.trim() !== '') {
+        newElement.classList.add(className);
+      }
     });
   }
+
+  initFormInputs();
+
+  // (function () {
+  //   const passwordFields = document.querySelectorAll('.form-password');
+
+  //   passwordFields.forEach(field => {
+  //     const passwordInput = field.querySelector('input[type="password"]');
+  //     const toggleIcon = field.querySelector('.form-password-toggle');
+  //     let isPasswordVisible = false;
+
+  //     toggleIcon.addEventListener('click', function () {
+  //       if (isPasswordVisible) {
+  //         passwordInput.type = 'password';
+  //         toggleIcon.textContent = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.5"><path d="M12 4C4.86536 4 0.256791 11.3689 0.173438 11.5031C0.0612427 11.6445 0.000121298 11.8196 0 12C0.000141923 12.1548 0.045192 12.3062 0.129688 12.4359C0.130724 12.4375 0.131765 12.4391 0.132813 12.4406C0.146567 12.469 4.01507 20 12 20C19.9511 20 23.8139 12.543 23.8609 12.4516C23.8641 12.4464 23.8672 12.4412 23.8703 12.4359C23.9548 12.3062 23.9999 12.1548 24 12C24 11.8203 23.9394 11.6458 23.8281 11.5047C23.8276 11.5042 23.8271 11.5036 23.8266 11.5031C23.7432 11.3689 19.1346 4 12 4ZM12 6.4C15.0928 6.4 17.6 8.9072 17.6 12C17.6 15.0928 15.0928 17.6 12 17.6C8.9072 17.6 6.4 15.0928 6.4 12C6.4 8.9072 8.9072 6.4 12 6.4ZM12 9.6C11.3635 9.6 10.753 9.85286 10.3029 10.3029C9.85286 10.753 9.6 11.3635 9.6 12C9.6 12.6365 9.85286 13.247 10.3029 13.6971C10.753 14.1471 11.3635 14.4 12 14.4C12.6365 14.4 13.247 14.1471 13.6971 13.6971C14.1471 13.247 14.4 12.6365 14.4 12C14.4 11.3635 14.1471 10.753 13.6971 10.3029C13.247 9.85286 12.6365 9.6 12 9.6Z"fill="#718595" /></g></svg>'; // Иконка закрытого глаза
+  //         isPasswordVisible = false;
+  //       } else {
+  //         // Показываем пароль
+  //         passwordInput.type = 'text';
+  //         toggleIcon.textContent = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.5"><path d="M12 4C4.86536 4 0.256791 11.3689 0.173438 11.5031C0.0612427 11.6445 0.000121298 11.8196 0 12C0.000141923 12.1548 0.045192 12.3062 0.129688 12.4359C0.130724 12.4375 0.131765 12.4391 0.132813 12.4406C0.146567 12.469 4.01507 20 12 20C19.9511 20 23.8139 12.543 23.8609 12.4516C23.8641 12.4464 23.8672 12.4412 23.8703 12.4359C23.9548 12.3062 23.9999 12.1548 24 12C24 11.8203 23.9394 11.6458 23.8281 11.5047C23.8276 11.5042 23.8271 11.5036 23.8266 11.5031C23.7432 11.3689 19.1346 4 12 4ZM12 6.4C15.0928 6.4 17.6 8.9072 17.6 12C17.6 15.0928 15.0928 17.6 12 17.6C8.9072 17.6 6.4 15.0928 6.4 12C6.4 8.9072 8.9072 6.4 12 6.4ZM12 9.6C11.3635 9.6 10.753 9.85286 10.3029 10.3029C9.85286 10.753 9.6 11.3635 9.6 12C9.6 12.6365 9.85286 13.247 10.3029 13.6971C10.753 14.1471 11.3635 14.4 12 14.4C12.6365 14.4 13.247 14.1471 13.6971 13.6971C14.1471 13.247 14.4 12.6365 14.4 12C14.4 11.3635 14.1471 10.753 13.6971 10.3029C13.247 9.85286 12.6365 9.6 12 9.6Z"fill="#35AFDA" /></g></svg>'; // Иконка открытого глаза
+  //         isPasswordVisible = true;
+  //       }
+
+  //       // Фокусируем поле после смены типа для корректного отображения курсора
+  //       passwordInput.focus();
+  //     });
+  //   });
+  // })();
+
+  function passwordToggles() {
+    const passwordFields = document.querySelectorAll('.form-password');
+
+    passwordFields.forEach(field => {
+      const passwordInput = field.querySelector('input[type="password"]');
+      const toggleButton = field.querySelector('.form-password-toggle');
+
+      // Синхронизируем начальное состояние
+      if (passwordInput.type === 'password') {
+        toggleButton.classList.remove('visible');
+        toggleButton.setAttribute('aria-label', 'Показать пароль');
+      }
+
+      toggleButton.addEventListener('click', function () {
+        const currentType = passwordInput.getAttribute('type');
+
+        if (currentType === 'password') {
+          // Показываем пароль
+          passwordInput.setAttribute('type', 'text');
+          toggleButton.classList.add('visible');
+          toggleButton.setAttribute('aria-label', 'Скрыть пароль');
+        } else {
+          // Скрываем пароль
+          passwordInput.setAttribute('type', 'password');
+          toggleButton.classList.remove('visible');
+          toggleButton.setAttribute('aria-label', 'Показать пароль');
+        }
+
+        passwordInput.focus();
+      });
+    });
+  };
+
+  passwordToggles();
 
   /**
    * Смена отзывов через фильтр
    */
   const ajaxPage = document.querySelector('.ajax-page');
   if (ajaxPage) {
-    const ajaxBtns = ajaxPage.querySelector('.ajax-btns');
-    const ajaxBtn = $(ajaxBtns).find('.ajax-btn');
-
     const page__cabinet = $('.page__cabinet');
     const page__reg = $('.page__reg');
+    const popup__auth = $('.popup__auth');
 
-    if (page__cabinet) {
-      ajaxBtn.on('click', function filterFunc() {
-        ajaxBtn.removeClass('ajax-btn-active')
-        $(this).addClass('ajax-btn-active')
+    if (page__cabinet.length) {
+      const ajaxBtn = page__cabinet.find('.ajax-btn');
+
+      ajaxBtn.on('click', function () {
+        ajaxBtn.removeClass('ajax-btn-active');
+        $(this).addClass('ajax-btn-active');
         const attr = $(this).data('cabinet');
         $.get('./ajax/cabinet-' + attr + '.html', function (data) {
-          $('.cabinet__body').html(data)
-        })
-      })
-    }
-    if (page__reg) {
-      ajaxBtn.on('click', function filterFunc() {
-        ajaxBtn.removeClass('ajax-btn-active')
-        $(this).addClass('ajax-btn-active')
+          $('.cabinet__body').html(data);
+          initFormInputs();
+          passwordToggles();
+        });
+      });
+    } else if (page__reg.length) {
+      const ajaxBtn = page__reg.find('.ajax-btn');
+
+      ajaxBtn.on('click', function () {
+        ajaxBtn.removeClass('ajax-btn-active');
+        $(this).addClass('ajax-btn-active');
         const attr = $(this).data('reg');
         $.get('./ajax/reg-' + attr + '.html', function (data) {
-          $('.registration__inner').html(data)
-        })
-      })
+          $('.registration__inner').html(data);
+          initFormInputs();
+          passwordToggles();
+        });
+      });
+    }
+
+    if (popup__auth.length) {
+      const ajaxBtn = popup__auth.find('.ajax-btn');
+
+      ajaxBtn.on('click', function () {
+        ajaxBtn.removeClass('ajax-btn-active');
+        $(this).addClass('ajax-btn-active');
+        const attr = $(this).data('auth');
+        $.get('./ajax/popup-' + attr + '.html', function (data) {
+          $('.popup__content').html(data);
+          initFormInputs();
+          passwordToggles();
+        });
+      });
     }
   }
 
