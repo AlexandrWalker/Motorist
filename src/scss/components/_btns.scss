@@ -88,4 +88,38 @@
       color: var(--white);
     }
   }
+
+  &--arrow-blue {
+    --btn-height: 4rem;
+    --btn-color: var(--white);
+    --btn-background: var(--blue);
+    border-radius: 5rem;
+    gap: 1.5rem;
+    padding: 0 0.9rem 0 2rem;
+    font-size: 1.2rem;
+
+    i {
+      --font-size: 2.2rem;
+
+      background-color: var(--white);
+      color: var(--gray);
+    }
+  }
+
+  &--arrow-gray {
+    --btn-height: 4rem;
+    --btn-color: var(--white);
+    --btn-background: var(--gray);
+    border-radius: 5rem;
+    gap: 1.5rem;
+    padding: 0 0.9rem 0 2rem;
+    font-size: 1.2rem;
+
+    i {
+      --font-size: 2.2rem;
+
+      background-color: var(--white);
+      color: var(--gray);
+    }
+  }
 }

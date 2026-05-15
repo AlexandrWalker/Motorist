@@ -244,10 +244,10 @@
           </a>
         </div>
         <div class="dropout-wrapper">
-          <a class="header__login btn dropout-parent" data-dropout="dropAuth2" href="/Motorist/cabinet.html">
+          <a class="header__login btn dropout-parent" data-dropout="dropAuth" href="/Motorist/cabinet.html">
             Войти
           </a>
-          <!-- <div id="dropAuth" class="dropout">
+          <div id="dropAuth" class="dropout dropout--auth">
             <div class="dropout__inner">
               <div class="dropout__head">
                 <div class="dropout__head-title h3">
@@ -255,13 +255,21 @@
                 </div>
               </div>
               <div class="dropout__body">
-                <p>
+                <div class="dropout__text">
                   Цены станут выгоднее, а работа с заказами – удобнее
-                </p>
+                </div>
+                <div class="dropout__btns">
+                  <button class="btn btn--blue" data-fancybox href="#popup-auth">
+                    Авторизоваться на сайте
+                  </button>
+                  <a class="btn btn--gray" href="/Motorist/registration.html">
+                    Регистрация
+                  </a>
+                </div>
               </div>
             </div>
-          </div> -->
-          <div id="dropAuth2" class="dropout">
+          </div>
+          <!-- <div id="dropAuth2" class="dropout">
             <div class="dropout__inner">
               <div class="dropout__head">
                 <div class="dropout__head-title h3">
@@ -303,7 +311,7 @@
                 </button>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         <button id="burger-btn" class="burger">
           <span class="burger-line"></span>
@@ -2807,6 +2815,120 @@
     </div>
   </form>
 </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup-auth" class="popup popup--form ajax-page lenis" data-lenis-prevent>
+  <div class="popup__inner popup__auth">
+    <div class="popup__head">
+      <div class="popup__head-title">
+        Авторизация на сайте
+      </div>
+    </div>
+    <div class="popup__body">
+      <div class="general__tabs ajax-btns">
+        <button class="general__tabs-btn ajax-btn ajax-btn-active" data-auth="fiz-auth">
+          Физическое лицо
+        </button>
+        <button class="general__tabs-btn ajax-btn" data-auth="yur-auth">
+          Юридическое лицо
+        </button>
+      </div>
+      <div class="popup__content">
+        <form class="form__content" action="#">
+  <div class="form__body form__row-1">
+    <div class="form-group">
+      <input id="auth-fiz-tel" class="form-input" name="auth-fiz-tel" type="tel">
+      <label for="auth-fiz-tel" class="form-label">
+        Телефон
+      </label>
+      <div class="form-link">
+        <a href="javascript:void(0)">
+          Отправить код
+        </a>
+      </div>
+    </div>
+    <div class="form-group">
+      <input id="auth-fiz-code" class="form-input" name="auth-fiz-code" type="text">
+      <label for="auth-fiz-code" class="form-label">
+        Код из смс
+      </label>
+    </div>
+  </div>
+  <div class="form__mid">
+    <div class="form-captcha">
+      <img src="./images/temp/captcha.png" alt="">
+    </div>
+    <div class="form-link">
+      <a href="/Motorist/registration.html">
+        Регистрация
+      </a>
+    </div>
+  </div>
+  <div class="form-foot">
+    <button class="btn btn--blue" data-fancybox href="#popup-auth-success">
+      Войти
+    </button>
+    <div class="form-group">
+      <input id="reg-yur-checkbox-1" class="form-checkbox" type="checkbox" required>
+      <label for="reg-yur-checkbox-1">
+        <div class="form-checkbox--item">
+        </div>
+        <p>
+          Я согласен на <a href="/Motorist">обработку персональных данных</a>
+        </p>
+      </label>
+    </div>
+    <div class="form-group">
+      <input id="reg-yur-checkbox-2" class="form-checkbox" type="checkbox" required>
+      <label for="reg-yur-checkbox-2">
+        <div class="form-checkbox--item">
+        </div>
+        <p>
+          Я согласен на <a href="/Motorist">рекламные уведомления</a>
+        </p>
+      </label>
+    </div>
+    <div class="form-text">
+      <p>
+        Нажимая на кнопку «Отправить» вы соглашаетесь с <a href="/Motorist">Политикой обработки персональных
+          данных</a>
+      </p>
+    </div>
+  </div>
+</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup-recovered-success" class="popup popup--success lenis" data-lenis-prevent>
+  <div class="popup__inner">
+    <div class="popup__head">
+      <div class="popup__head-title">
+        Вы успешно восстановили пароль!
+      </div>
+    </div>
+    <div class="popup__body">
+      <a class="btn btn--blue" href="/Motorist">
+        На главную
+      </a>
+    </div>
+  </div>
+</div>
+
+<div id="popup-auth-success" class="popup popup--success lenis" data-lenis-prevent>
+  <div class="popup__inner">
+    <div class="popup__head">
+      <div class="popup__head-title">
+        Вы авторизованы на сайте!
+      </div>
+    </div>
+    <div class="popup__body">
+      <a class="btn btn--blue" href="/Motorist">
+        На главную
+      </a>
     </div>
   </div>
 </div>

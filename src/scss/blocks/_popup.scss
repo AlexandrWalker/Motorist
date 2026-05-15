@@ -4,10 +4,37 @@
   display: none;
   padding: 6rem 2rem 3rem 2rem;
   border-radius: 1.5rem;
-  background-color: var(--white);
+  // background-color: var(--white);
+  background-color: var(--white-50);
   max-width: 28.7rem;
+  width: 100%;
+
+  &--form {
+    padding: 4rem 3rem 5rem 3rem;
+    max-width: 54.3rem;
+
+    @include md {
+      padding: 2rem;
+    }
+  }
+
+  &--success {
+    padding: 4rem;
+    max-width: 54.3rem;
+
+    .btn {
+      --btn-padding-x: 7rem;
+    }
+  }
 
   &__head {
+
+    .popup--success & {
+      display: flex;
+      justify-content: center;
+
+      text-align: center;
+    }
 
     &-title {
       font-family: var(--font-family);
@@ -18,6 +45,32 @@
       @include md {
         font-size: 2.5rem;
       }
+
+      .popup--form & {
+        padding-right: 2rem;
+
+        font-size: 3.5rem;
+
+        @include md {
+          font-size: 2.5rem;
+        }
+      }
+
+      .popup--success & {
+        max-width: 29.4rem;
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .popup--success & {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 
@@ -157,19 +210,18 @@
       }
     }
   }
-}
 
-.fancybox__slide.has-close-btn {
-  padding-top: 1rem;
-}
+  .form {
 
-.f-button.is-close-button {
-  top: 1.2rem;
-  right: 1.2rem;
-  color: var(--black);
-}
+    &-link {
+      padding: 0;
+    }
 
-.fancybox__backdrop {
-  background-color: rgba(4, 29, 44, 0.8);
-  backdrop-filter: blur(37.65px);
+    &-foot {
+
+      .btn {
+        width: 100%;
+      }
+    }
+  }
 }

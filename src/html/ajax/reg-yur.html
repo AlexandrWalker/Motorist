@@ -1,6 +1,6 @@
 <div class="registration__head"></div>
 
-<div class="registration__body">
+<form class="registration__body">
   <div class="registration__block">
     <div class="registration__block-head">
       <div class="registration__block-title h5">
@@ -10,32 +10,33 @@
     <div class="registration__block-body">
       <div class="form__body form__row-2">
         <div class="form-group">
-          <input id="registration-name" class="form-input" name="name" type="text">
-          <label for="registration-name" class="form-label">
-            <i class="icon-form-user"></i>
-            Контактное лицо
+          <input id="reg-yur-company-name" class="form-input" name="reg-yur-company-name" type="text" required>
+          <label for="reg-yur-company-name" class="form-label">
+            Наименование компании <span>*</span>
           </label>
         </div>
         <div class="form-group">
-          <input id="registration-post" class="form-input" name="post" type="text">
-          <label for="registration-post" class="form-label">
-            <i class="icon-form-tie"></i>
-            Должность
+          <input id="reg-yur-name" class="form-input" name="reg-yur-name" type="text" required>
+          <label for="reg-yur-name" class="form-label">
+            Имя <span>*</span>
           </label>
         </div>
         <div class="form-group">
-          <input id="registration-tel" class="form-input" name="tel" type="tel">
-          <label for="registration-tel" class="form-label">
-            <i class="icon-form-phone"></i>
+          <input id="reg-yur-tel" class="form-input" name="reg-yur-tel" type="tel" required>
+          <label for="reg-yur-tel" class="form-label">
             Телефон <span>*</span>
           </label>
         </div>
         <div class="form-group">
-          <input id="registration-mail" class="form-input" name="mail" type="email">
-          <label for="registration-mail" class="form-label">
-            <i class="icon-form-mail"></i>
+          <input id="reg-yur-mail" class="form-input" name="reg-yur-mail" type="email" required>
+          <label for="reg-yur-mail" class="form-label">
             Эл.почта <span>*</span>
           </label>
+          <div class="form-link">
+            <a href="javascript:void(0)">
+              Подтвердить почту
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -43,68 +44,22 @@
   <div class="registration__block">
     <div class="registration__block-head">
       <div class="registration__block-title h5">
-        Данные об организации
+        Реквизиты компании
       </div>
     </div>
     <div class="registration__block-body">
-      <div class="form__body form__row-1">
-        <div class="form__row-2">
-          <div class="form-group">
-            <input id="registration-name" class="form-input" name="name" type="text">
-            <label for="registration-name" class="form-label">
-              Полное название организации <span>*</span>
-            </label>
-          </div>
-          <div class="form-group">
-            <input id="registration-name" class="form-input" name="name" type="text">
-            <label for="registration-name" class="form-label">
-              ИНН <span>*</span>
-            </label>
-          </div>
+      <div class="form__body form__row-2">
+        <div class="form-group">
+          <input id="reg-yur-inn" class="form-input" name="reg-yur-inn" type="text" required>
+          <label for="reg-yur-inn" class="form-label">
+            ИНН <span>*</span>
+          </label>
         </div>
-        <div class="form__row-1">
-          <div class="form-group">
-            <input id="registration-name" class="form-input" name="name" type="text">
-            <label for="registration-name" class="form-label">
-              Юридический адрес <span>*</span>
-            </label>
-          </div>
-          <div class="form-group">
-            <input id="registration-name" class="form-input" name="name" type="text">
-            <label for="registration-name" class="form-label">
-              Фактический адрес <span>*</span>
-            </label>
-          </div>
-          <div class="form-group">
-            <input id="registration-name" class="form-input" name="name" type="text">
-            <label for="registration-name" class="form-label">
-              Расчетный счет <span>*</span>
-            </label>
-          </div>
-          <div class="form-group">
-            <input id="registration-name" class="form-input" name="name" type="text">
-            <label for="registration-name" class="form-label">
-              Банк <span>*</span>
-            </label>
-          </div>
-          <div class="form-group">
-            <input id="registration-name" class="form-input" name="name" type="text">
-            <label for="registration-name" class="form-label">
-              БИК <span>*</span>
-            </label>
-          </div>
-          <div class="form-group">
-            <input id="registration-name" class="form-input" name="name" type="text">
-            <label for="registration-name" class="form-label">
-              Корреспондентский счет <span>*</span>
-            </label>
-          </div>
-          <div class="form-group">
-            <input id="registration-name" class="form-input" name="name" type="text">
-            <label for="registration-name" class="form-label">
-              КПП <span>*</span>
-            </label>
-          </div>
+        <div class="form-group">
+          <input id="reg-yur-kpp" class="form-input" name="reg-yur-kpp" type="text" required>
+          <label for="reg-yur-kpp" class="form-label">
+            КПП <span>*</span>
+          </label>
         </div>
       </div>
     </div>
@@ -117,46 +72,49 @@
     </div>
     <div class="registration__block-body">
       <div class="form__body form__row-2">
-        <div class="form-group">
-          <input id="registration-password" class="form-input" name="password" type="password">
-          <label for="registration-password" class="form-label">
+        <div class="form-group form-password">
+          <input id="reg-yur-password" class="form-input" name="reg-yur-password" type="password">
+          <label for="reg-yur-password" class="form-label">
             Пароль <span>*</span>
           </label>
+          <div class="form-password-toggle" title="Показать/скрыть пароль" aria-label="Показать пароль">
+            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
+              <g opacity="0.5">
+                <path
+                  d="M12 4C4.86536 4 0.256791 11.3689 0.173438 11.5031C0.0612427 11.6445 0.000121298 11.8196 0 12C0.000141923 12.1548 0.045192 12.3062 0.129688 12.4359C0.130724 12.4375 0.131765 12.4391 0.132813 12.4406C0.146567 12.469 4.01507 20 12 20C19.9511 20 23.8139 12.543 23.8609 12.4516C23.8641 12.4464 23.8672 12.4412 23.8703 12.4359C23.9548 12.3062 23.9999 12.1548 24 12C24 11.8203 23.9394 11.6458 23.8281 11.5047C23.8276 11.5042 23.8271 11.5036 23.8266 11.5031C23.7432 11.3689 19.1346 4 12 4ZM12 6.4C15.0928 6.4 17.6 8.9072 17.6 12C17.6 15.0928 15.0928 17.6 12 17.6C8.9072 17.6 6.4 15.0928 6.4 12C6.4 8.9072 8.9072 6.4 12 6.4ZM12 9.6C11.3635 9.6 10.753 9.85286 10.3029 10.3029C9.85286 10.753 9.6 11.3635 9.6 12C9.6 12.6365 9.85286 13.247 10.3029 13.6971C10.753 14.1471 11.3635 14.4 12 14.4C12.6365 14.4 13.247 14.1471 13.6971 13.6971C14.1471 13.247 14.4 12.6365 14.4 12C14.4 11.3635 14.1471 10.753 13.6971 10.3029C13.247 9.85286 12.6365 9.6 12 9.6Z"
+                  fill="#718595" />
+              </g>
+            </svg>
+          </div>
         </div>
-        <div class="form-group">
-          <input id="registration-repassword" class="form-input" name="password" type="password">
-          <label for="registration-repassword" class="form-label">
+        <div class="form-group form-password">
+          <input id="reg-yur-repassword" class="form-input" name="reg-yur-repassword" type="password">
+          <label for="reg-yur-repassword" class="form-label">
             Подтверждение пароля <span>*</span>
           </label>
-        </div>
-      </div>
-    </div>
-    <div class="registration__block-head">
-      <div class="registration__block-title h5">
-        Защита от автоматической регистрации
-      </div>
-    </div>
-    <div class="registration__block-body">
-      <div class="form__body form__row-1">
-        <div class="form-group">
-          <input id="registration-text" class="form-input" name="password" type="text">
-          <label for="registration-text" class="form-label">
-            Введите слово с картинки <span>*</span>
-          </label>
-        </div>
-        <div class="form-captcha">
-          <img src="./../images/temp/form-captcha.svg" alt="">
+          <div class="form-password-toggle" title="Показать/скрыть пароль" aria-label="Показать пароль">
+            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
+              <g opacity="0.5">
+                <path
+                  d="M12 4C4.86536 4 0.256791 11.3689 0.173438 11.5031C0.0612427 11.6445 0.000121298 11.8196 0 12C0.000141923 12.1548 0.045192 12.3062 0.129688 12.4359C0.130724 12.4375 0.131765 12.4391 0.132813 12.4406C0.146567 12.469 4.01507 20 12 20C19.9511 20 23.8139 12.543 23.8609 12.4516C23.8641 12.4464 23.8672 12.4412 23.8703 12.4359C23.9548 12.3062 23.9999 12.1548 24 12C24 11.8203 23.9394 11.6458 23.8281 11.5047C23.8276 11.5042 23.8271 11.5036 23.8266 11.5031C23.7432 11.3689 19.1346 4 12 4ZM12 6.4C15.0928 6.4 17.6 8.9072 17.6 12C17.6 15.0928 15.0928 17.6 12 17.6C8.9072 17.6 6.4 15.0928 6.4 12C6.4 8.9072 8.9072 6.4 12 6.4ZM12 9.6C11.3635 9.6 10.753 9.85286 10.3029 10.3029C9.85286 10.753 9.6 11.3635 9.6 12C9.6 12.6365 9.85286 13.247 10.3029 13.6971C10.753 14.1471 11.3635 14.4 12 14.4C12.6365 14.4 13.247 14.1471 13.6971 13.6971C14.1471 13.247 14.4 12.6365 14.4 12C14.4 11.3635 14.1471 10.753 13.6971 10.3029C13.247 9.85286 12.6365 9.6 12 9.6Z"
+                  fill="#718595" />
+              </g>
+            </svg>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <button class="registration__btn btn btn--blue">
-    Регистрация
-  </button>
+  <div class="form-captcha">
+    <img src="./../../images/temp/captcha.png" alt="">
+  </div>
   <div class="form-foot">
+    <button class="registration__btn btn btn--blue">
+      Регистрация
+    </button>
     <div class="form-group">
-      <input id="form-checkbox-3" class="form-checkbox" type="checkbox">
-      <label for="form-checkbox-3">
+      <input id="reg-yur-checkbox-1" class="form-checkbox" type="checkbox" required>
+      <label for="reg-yur-checkbox-1">
         <div class="form-checkbox--item">
         </div>
         <p>
@@ -165,8 +123,8 @@
       </label>
     </div>
     <div class="form-group">
-      <input id="form-checkbox-4" class="form-checkbox" type="checkbox">
-      <label for="form-checkbox-4">
+      <input id="reg-yur-checkbox-2" class="form-checkbox" type="checkbox" required>
+      <label for="reg-yur-checkbox-2">
         <div class="form-checkbox--item">
         </div>
         <p>
@@ -181,4 +139,4 @@
       </p>
     </div>
   </div>
-</div>
+</form>

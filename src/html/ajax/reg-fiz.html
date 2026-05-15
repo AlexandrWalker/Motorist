@@ -1,6 +1,6 @@
 <div class="registration__head"></div>
 
-<div class="registration__body">
+<form class="registration__body" action="#">
   <div class="registration__block">
     <div class="registration__block-head">
       <div class="registration__block-title h5">
@@ -10,83 +10,61 @@
     <div class="registration__block-body">
       <div class="form__body form__row-3">
         <div class="form-group">
-          <input id="registration-name" class="form-input" name="name" type="text">
-          <label for="registration-name" class="form-label">
-            <i class="icon-form-user"></i>
+          <input id="reg-fiz-name" class="form-input" name="reg-fiz-name" type="text" required>
+          <label for="reg-fiz-name" class="form-label">
             Имя <span>*</span>
           </label>
         </div>
         <div class="form-group">
-          <input id="registration-tel" class="form-input" name="tel" type="tel">
-          <label for="registration-tel" class="form-label">
-            <i class="icon-form-phone"></i>
+          <input id="reg-fiz-tel" class="form-input" name="reg-fiz-tel" type="tel" required>
+          <label for="reg-fiz-tel" class="form-label">
             Телефон <span>*</span>
           </label>
         </div>
         <div class="form-group">
-          <input id="registration-mail" class="form-input" name="mail" type="email">
-          <label for="registration-mail" class="form-label">
-            <i class="icon-form-mail"></i>
-            Эл.почта <span>*</span>
-          </label>
-        </div>
-        <div class="form-group form-group--textarea">
-          <textarea class="form-textarea" name="comments" rows="4"></textarea>
-          <label class="form-label">
-            Адрес доставки <span>*</span>
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="registration__block">
-    <div class="registration__block-head">
-      <div class="registration__block-title h5">
-        Задайте пароль
-      </div>
-    </div>
-    <div class="registration__block-body">
-      <div class="form__body form__row-2">
-        <div class="form-group">
-          <input id="registration-password" class="form-input" name="password" type="password">
-          <label for="registration-password" class="form-label">
-            Пароль <span>*</span>
-          </label>
-        </div>
-        <div class="form-group">
-          <input id="registration-repassword" class="form-input" name="password" type="password">
-          <label for="registration-repassword" class="form-label">
-            Подтверждение пароля <span>*</span>
+          <input id="reg-fiz-mail" class="form-input" name="reg-fiz-mail" type="email">
+          <label for="reg-fiz-mail" class="form-label">
+            Эл.почта
           </label>
         </div>
       </div>
     </div>
     <div class="registration__block-head">
       <div class="registration__block-title h5">
-        Защита от автоматической регистрации
+        Подтверждение телефона по смс
       </div>
     </div>
     <div class="registration__block-body">
-      <div class="form__body form__row-1">
+      <div class="form__body form__row-3">
         <div class="form-group">
-          <input id="registration-text" class="form-input" name="password" type="text">
-          <label for="registration-text" class="form-label">
-            Введите слово с картинки <span>*</span>
+          <input id="reg-fiz-code" class="form-input" name="reg-fiz-code" type="text">
+          <label for="reg-fiz-code" class="form-label">
+            Введите код
           </label>
+          <div class="form-link">
+            <a href="javascript:void(0)">
+              Выслать код подтверждения
+            </a>
+          </div>
         </div>
-        <div class="form-captcha">
-          <img src="./../images/temp/form-captcha.svg" alt="">
+        <div class="form-group">
+          <button class="registration__btn btn btn--blue" disabled>
+            Подтвердить
+          </button>
         </div>
       </div>
     </div>
   </div>
-  <button class="registration__btn btn btn--blue">
-    Регистрация
-  </button>
+  <div class="form-captcha">
+    <img src="./../../images/temp/captcha.png" alt="">
+  </div>
   <div class="form-foot">
+    <button class="registration__btn btn btn--blue">
+      Регистрация
+    </button>
     <div class="form-group">
-      <input id="form-checkbox-5" class="form-checkbox" type="checkbox">
-      <label for="form-checkbox-5">
+      <input id="reg-fiz-checkbox-1" class="form-checkbox" type="checkbox" required>
+      <label for="reg-fiz-checkbox-1">
         <div class="form-checkbox--item">
         </div>
         <p>
@@ -95,8 +73,8 @@
       </label>
     </div>
     <div class="form-group">
-      <input id="form-checkbox-6" class="form-checkbox" type="checkbox">
-      <label for="form-checkbox-6">
+      <input id="reg-fiz-checkbox-2" class="form-checkbox" type="checkbox" required>
+      <label for="reg-fiz-checkbox-2">
         <div class="form-checkbox--item">
         </div>
         <p>
@@ -111,4 +89,4 @@
       </p>
     </div>
   </div>
-</div>
+</form>

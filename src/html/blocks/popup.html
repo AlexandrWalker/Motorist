@@ -42,3 +42,56 @@
     </div>
   </div>
 </div>
+
+<div id="popup-auth" class="popup popup--form ajax-page lenis" data-lenis-prevent>
+  <div class="popup__inner popup__auth">
+    <div class="popup__head">
+      <div class="popup__head-title">
+        Авторизация на сайте
+      </div>
+    </div>
+    <div class="popup__body">
+      <div class="general__tabs ajax-btns">
+        <button class="general__tabs-btn ajax-btn ajax-btn-active" data-auth="fiz-auth">
+          Физическое лицо
+        </button>
+        <button class="general__tabs-btn ajax-btn" data-auth="yur-auth">
+          Юридическое лицо
+        </button>
+      </div>
+      <div class="popup__content">
+        @@include('./../ajax/popup-fiz-auth.html')
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup-recovered-success" class="popup popup--success lenis" data-lenis-prevent>
+  <div class="popup__inner">
+    <div class="popup__head">
+      <div class="popup__head-title">
+        Вы успешно восстановили пароль!
+      </div>
+    </div>
+    <div class="popup__body">
+      <a class="btn btn--blue" href="/Motorist">
+        На главную
+      </a>
+    </div>
+  </div>
+</div>
+
+<div id="popup-auth-success" class="popup popup--success lenis" data-lenis-prevent>
+  <div class="popup__inner">
+    <div class="popup__head">
+      <div class="popup__head-title">
+        Вы авторизованы на сайте!
+      </div>
+    </div>
+    <div class="popup__body">
+      <a class="btn btn--blue" href="/Motorist">
+        На главную
+      </a>
+    </div>
+  </div>
+</div>

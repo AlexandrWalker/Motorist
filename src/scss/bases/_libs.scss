@@ -97,3 +97,22 @@
     display: none;
   }
 }
+
+.fancybox__slide.has-close-btn {
+  padding-top: 1rem;
+}
+
+.f-button.is-close-button {
+  top: 1.2rem;
+  right: 1.2rem;
+  color: var(--black);
+
+  &:hover {
+    color: var(--blue);
+  }
+}
+
+.fancybox__backdrop {
+  background: rgba(214, 214, 214, 0.65);
+  backdrop-filter: blur(15px);
+}

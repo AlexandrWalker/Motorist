@@ -30,7 +30,7 @@
             <div class="general__head">
               <div class="general__head-title" data-split="lines">
                 <h1>
-                  Личный кабинет
+                  Личный кабинет (юр.лицо)
                 </h1>
               </div>
             </div>
@@ -43,7 +43,7 @@
         <div class="container">
           <div class="cabinet__inner">
             <div class="cabinet__head ajax-btns">
-              <button class="cabinet__head-item ajax-btn ajax-btn-active" data-cabinet="setting">
+              <button class="cabinet__head-item ajax-btn ajax-btn-active" data-cabinet="yur-setting">
                 Настройки профиля
               </button>
               <button class="cabinet__head-item ajax-btn" data-cabinet="history">
@@ -56,11 +56,11 @@
                 Персональные предложения
               </button>
             </div>
-            <div class="cabinet__body">
+            <form class="cabinet__body">
 
-              @@include('ajax/cabinet-setting.html')
+              @@include('ajax/cabinet-yur-setting.html')
 
-            </div>
+            </form>
           </div>
         </div>
       </section>
