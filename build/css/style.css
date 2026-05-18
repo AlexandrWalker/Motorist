@@ -82,24 +82,16 @@ img {
 @font-face {
   font-family: HelveticaNeue;
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Light.woff2") format("woff2"), url("../fonts/HelveticaNeue-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: HelveticaNeue;
-  font-display: swap;
-  src: url("../fonts/HelveticaNeue-Regilar.woff2") format("woff2"), url("../fonts/HelveticaNeue-Regilar.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: HelveticaNeue;
-  font-display: swap;
   src: url("../fonts/HelveticaNeue-Bold.woff2") format("woff2"), url("../fonts/HelveticaNeue-Bold.woff") format("woff");
   font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: HelveticaNeue;
+  font-display: swap;
+  src: url("../fonts/HelveticaNeue-Light.woff2") format("woff2"), url("../fonts/HelveticaNeue-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -116,6 +108,22 @@ img {
   font-display: swap;
   src: url("../fonts/Montserrat-Black.woff2") format("woff2"), url("../fonts/Montserrat-Black.woff") format("woff");
   font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: HelveticaNeue;
+  font-display: swap;
+  src: url("../fonts/HelveticaNeue-Regilar.woff2") format("woff2"), url("../fonts/HelveticaNeue-Regilar.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: HelveticaNeue;
+  font-display: swap;
+  src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -154,16 +162,16 @@ img {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -186,14 +194,6 @@ img {
 @font-face {
   font-family: OpenSans;
   font-display: swap;
-  src: url("../fonts/OpenSans-ExtraBold.woff2") format("woff2"), url("../fonts/OpenSans-ExtraBold.woff") format("woff");
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: OpenSans;
-  font-display: swap;
   src: url("../fonts/OpenSans-Bold.woff2") format("woff2"), url("../fonts/OpenSans-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -202,8 +202,8 @@ img {
 @font-face {
   font-family: OpenSans;
   font-display: swap;
-  src: url("../fonts/OpenSans-Medium.woff2") format("woff2"), url("../fonts/OpenSans-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/OpenSans-ExtraBold.woff2") format("woff2"), url("../fonts/OpenSans-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -218,8 +218,8 @@ img {
 @font-face {
   font-family: OpenSans;
   font-display: swap;
-  src: url("../fonts/OpenSans-SemiBold.woff2") format("woff2"), url("../fonts/OpenSans-SemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/OpenSans-Medium.woff2") format("woff2"), url("../fonts/OpenSans-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -232,10 +232,10 @@ img {
 }
 
 @font-face {
-  font-family: TeXGyreHeros;
+  font-family: OpenSans;
   font-display: swap;
-  src: url("../fonts/TeXGyreHeros-bold.woff2") format("woff2"), url("../fonts/TeXGyreHeros-bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/OpenSans-SemiBold.woff2") format("woff2"), url("../fonts/OpenSans-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -248,10 +248,10 @@ img {
 }
 
 @font-face {
-  font-family: HelveticaNeue;
+  font-family: TeXGyreHeros;
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
-  font-weight: 100;
+  src: url("../fonts/TeXGyreHeros-bold.woff2") format("woff2"), url("../fonts/TeXGyreHeros-bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -802,6 +802,7 @@ body {
   --gray-60: rgba(113, 133, 149, 0.6);
   --white-gray: #D9D9D9;
   --white-gray-50: rgba(217, 217, 217, 0.5);
+  --error-color: #FF3021;
 }
 
 /* Components */
@@ -1644,8 +1645,10 @@ body {
   opacity: 0;
 }
 
-.form-input.filled + .form-label + .form-link {
+.form-input.filled + .form-label + .form-link,
+.form-input.filled + .form-label + .form-under-link {
   opacity: 1;
+  pointer-events: all;
 }
 
 .form-input + .form-label + .form-link {
@@ -1657,6 +1660,10 @@ body {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.form-input.invalid {
+  color: var(--error-color);
 }
 
 .form-label {
@@ -1834,13 +1841,32 @@ body {
   transform: translateY(-50%);
 }
 
-.form-link {
+.form-under-link {
   display: block;
   padding: 1rem 2rem 0rem 2rem;
+  pointer-events: none;
   font-weight: 700;
   font-size: 1.4rem;
   line-height: 140%;
   color: var(--blue);
+}
+
+.form-under-link * {
+  cursor: pointer;
+}
+
+.form-link {
+  display: block;
+  padding: 0rem 2rem 0rem 2rem;
+  pointer-events: none;
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 140%;
+  color: var(--blue);
+}
+
+.form-link * {
+  cursor: pointer;
 }
 
 .form-file {
@@ -1933,7 +1959,6 @@ body {
 
 .form-password-toggle.visible svg g path {
   fill: #35AFDA !important;
-  /* Цвет для открытого глаза */
 }
 
 .form-password-toggle:hover svg g {
@@ -1942,6 +1967,21 @@ body {
 
 .form-password .form-link {
   margin-top: 1rem;
+  pointer-events: all;
+}
+
+.error-text {
+  display: none;
+  margin-top: 0.5rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 140%;
+  color: var(--error-color);
+}
+
+.form-input.invalid + .error-text,
+.form-input.invalid + .form-label + .error-text {
+  display: block;
 }
 
 /* Стили для иконок */
@@ -4046,13 +4086,25 @@ p {
   --btn-padding-x: 7rem;
 }
 
+.popup.border-opacity::after {
+  border-radius: 1.5rem;
+}
+
 .popup--success .popup__head {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 3rem;
   text-align: center;
 }
 
@@ -4061,15 +4113,35 @@ p {
   font-weight: 700;
   font-size: 2.5rem;
   line-height: 100%;
+  line-height: 120%;
 }
 
 .popup--form .popup__head-title {
   padding-right: 2rem;
+  font-weight: 400;
   font-size: 3.5rem;
 }
 
 .popup--success .popup__head-title {
-  max-width: 29.4rem;
+  max-width: 40.2rem;
+  font-weight: 400;
+  font-size: 3.5rem;
+}
+
+.popup__head-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 40.2rem;
+}
+
+.popup__head-text p {
+  font-size: 1.6rem;
 }
 
 .popup__body {
@@ -9141,6 +9213,10 @@ p {
     font-size: 2.5rem;
   }
 
+  .popup--success .popup__head-title {
+    font-size: 2.5rem;
+  }
+
   .sample p {
     margin-bottom: 1.5rem;
   }
@@ -10192,6 +10268,10 @@ p {
 
   .banners__item-sale {
     font-size: 6.8181818182vw;
+  }
+
+  .cabinet__block-head * {
+    font-size: 1.4rem;
   }
 
   .cabinet__items {

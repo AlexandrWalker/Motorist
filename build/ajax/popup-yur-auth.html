@@ -5,9 +5,13 @@
       <label for="auth-yur-email" class="form-label">
         Почта <span>*</span>
       </label>
+      <div class="error-text">
+        Пользователь не найден, попробуйте авторизоваться с помощью номера телефона
+      </div>
     </div>
     <div class="form-group form-password">
-      <input id="auth-yur-password" class="form-input" name="auth-yur-password" type="password">
+      <input id="auth-yur-password" class="form-input" name="auth-yur-password" type="password"
+        autocomplete="new-password">
       <label for="auth-yur-password" class="form-label">
         Пароль <span>*</span>
       </label>
@@ -21,7 +25,7 @@
         </svg>
       </div>
       <div class="form-link">
-        <a href="/Motorist/registration.html">
+        <a data-fancybox href="#popup-recovery">
           Восстановить пароль
         </a>
       </div>
@@ -42,8 +46,8 @@
       Войти
     </button>
     <div class="form-group">
-      <input id="reg-yur-checkbox-1" class="form-checkbox" type="checkbox" required>
-      <label for="reg-yur-checkbox-1">
+      <input id="auth-yur-checkbox-1" class="form-checkbox" type="checkbox" required>
+      <label for="auth-yur-checkbox-1">
         <div class="form-checkbox--item">
         </div>
         <p>
@@ -52,8 +56,8 @@
       </label>
     </div>
     <div class="form-group">
-      <input id="reg-yur-checkbox-2" class="form-checkbox" type="checkbox" required>
-      <label for="reg-yur-checkbox-2">
+      <input id="auth-yur-checkbox-2" class="form-checkbox" type="checkbox" required>
+      <label for="auth-yur-checkbox-2">
         <div class="form-checkbox--item">
         </div>
         <p>

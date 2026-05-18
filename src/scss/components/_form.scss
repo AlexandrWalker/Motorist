@@ -112,8 +112,10 @@
 
     &.filled {
 
-      &+.form-label+.form-link {
+      &+.form-label+.form-link,
+      &+.form-label+.form-under-link {
         opacity: 1;
+        pointer-events: all;
       }
     }
 
@@ -125,6 +127,10 @@
       right: 2rem;
       z-index: 1;
       transform: translateY(-50%);
+    }
+
+    &.invalid {
+      color: var(--error-color);
     }
   }
 
@@ -280,14 +286,34 @@
     }
   }
 
-  &-link {
+  &-under-link {
     display: block;
     padding: 1rem 2rem 0rem 2rem;
+    pointer-events: none;
 
     font-weight: 700;
     font-size: 1.4rem;
     line-height: 140%;
     color: var(--blue);
+
+    * {
+      cursor: pointer;
+    }
+  }
+
+  &-link {
+    display: block;
+    padding: 0rem 2rem 0rem 2rem;
+    pointer-events: none;
+
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 140%;
+    color: var(--blue);
+
+    * {
+      cursor: pointer;
+    }
   }
 
   &-file {
@@ -360,7 +386,6 @@
       top: 1.3rem;
       right: 2rem;
       z-index: 1;
-      // transform: translateY(-50%);
 
       .form-input.filled+.form-label+& {
         pointer-events: all;
@@ -372,7 +397,6 @@
 
       &.visible svg g path {
         fill: #35AFDA !important;
-        /* Цвет для открытого глаза */
       }
 
       &:hover svg g {
@@ -382,6 +406,22 @@
 
     .form-link {
       margin-top: 1rem;
+      pointer-events: all;
     }
+  }
+}
+
+.error-text {
+  display: none;
+  margin-top: 0.5rem;
+
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 140%;
+  color: var(--error-color);
+
+  .form-input.invalid+&,
+  .form-input.invalid+.form-label+& {
+    display: block;
   }
 }

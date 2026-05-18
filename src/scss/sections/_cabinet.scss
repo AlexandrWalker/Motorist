@@ -61,6 +61,10 @@
 
       * {
         font-weight: 700;
+
+        @include sm {
+          font-size: 1.4rem;
+        }
       }
     }
 

@@ -27,11 +27,18 @@
     }
   }
 
+  &.border-opacity::after {
+    border-radius: 1.5rem;
+  }
+
   &__head {
 
     .popup--success & {
       display: flex;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
+      gap: 3rem;
 
       text-align: center;
     }
@@ -41,6 +48,7 @@
       font-weight: 700;
       font-size: 2.5rem;
       line-height: 100%;
+      line-height: 120%;
 
       @include md {
         font-size: 2.5rem;
@@ -49,6 +57,7 @@
       .popup--form & {
         padding-right: 2rem;
 
+        font-weight: 400;
         font-size: 3.5rem;
 
         @include md {
@@ -57,7 +66,26 @@
       }
 
       .popup--success & {
-        max-width: 29.4rem;
+        // max-width: 29.4rem;
+        max-width: 40.2rem;
+
+        font-weight: 400;
+        font-size: 3.5rem;
+
+        @include md {
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 40.2rem;
+
+      p {
+        font-size: 1.6rem;
       }
     }
   }
