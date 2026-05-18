@@ -2507,7 +2507,7 @@
   </div>
 </div>
     <!-- Попап -->
-    <div id="popup-1" class="popup lenis" data-lenis-prevent>
+    <div id="popup-1" class="popup border-opacity lenis" data-lenis-prevent>
   <div class="popup__inner">
     <div class="popup__head">
       <div class="popup__head-title">
@@ -2539,7 +2539,7 @@
   </div>
 </div>
 
-<div id="popup-2" class="popup popup-filter lenis" data-lenis-prevent>
+<div id="popup-2" class="popup popup-filter border-opacity lenis" data-lenis-prevent>
   <div class="popup__inner">
     <div class="popup__head">
       <div class="popup__head-title">
@@ -2819,8 +2819,8 @@
   </div>
 </div>
 
-<div id="popup-auth" class="popup popup--form ajax-page lenis" data-lenis-prevent>
-  <div class="popup__inner popup__auth">
+<div id="popup-auth" class="popup popup--form border-opacity popup__auth ajax-page lenis" data-lenis-prevent>
+  <div class="popup__inner">
     <div class="popup__head">
       <div class="popup__head-title">
         Авторизация на сайте
@@ -2828,10 +2828,10 @@
     </div>
     <div class="popup__body">
       <div class="general__tabs ajax-btns">
-        <button class="general__tabs-btn ajax-btn ajax-btn-active" data-auth="fiz-auth">
+        <button class="general__tabs-btn ajax-btn ajax-btn-active" data-popup="fiz-auth">
           Физическое лицо
         </button>
-        <button class="general__tabs-btn ajax-btn" data-auth="yur-auth">
+        <button class="general__tabs-btn ajax-btn" data-popup="yur-auth">
           Юридическое лицо
         </button>
       </div>
@@ -2871,8 +2871,8 @@
       Войти
     </button>
     <div class="form-group">
-      <input id="reg-yur-checkbox-1" class="form-checkbox" type="checkbox" required>
-      <label for="reg-yur-checkbox-1">
+      <input id="auth-fiz-checkbox-1" class="form-checkbox" type="checkbox" required>
+      <label for="auth-fiz-checkbox-1">
         <div class="form-checkbox--item">
         </div>
         <p>
@@ -2881,8 +2881,8 @@
       </label>
     </div>
     <div class="form-group">
-      <input id="reg-yur-checkbox-2" class="form-checkbox" type="checkbox" required>
-      <label for="reg-yur-checkbox-2">
+      <input id="auth-fiz-checkbox-2" class="form-checkbox" type="checkbox" required>
+      <label for="auth-fiz-checkbox-2">
         <div class="form-checkbox--item">
         </div>
         <p>
@@ -2903,7 +2903,103 @@
   </div>
 </div>
 
-<div id="popup-recovered-success" class="popup popup--success lenis" data-lenis-prevent>
+<div id="popup-auth-success" class="popup popup--success border-opacity lenis" data-lenis-prevent>
+  <div class="popup__inner">
+    <div class="popup__head">
+      <div class="popup__head-title">
+        Вы авторизованы на&nbsp;сайте!
+      </div>
+    </div>
+    <div class="popup__body">
+      <a class="btn btn--blue" href="/Motorist">
+        На главную
+      </a>
+    </div>
+  </div>
+</div>
+
+<div id="popup-recovery" class="popup popup--form border-opacity lenis" data-lenis-prevent>
+  <div class="popup__inner">
+    <div class="popup__head">
+      <div class="popup__head-title">
+        Восстановление пароля
+      </div>
+    </div>
+    <div class="popup__body">
+      <form class="form__content" action="#">
+        <div class="form__body form__row-1">
+          <div class="form-group">
+            <input id="recovery-email" class="form-input" name="recovery-email" type="email" required>
+            <label for="recovery-email" class="form-label">
+              Почта <span>*</span>
+            </label>
+          </div>
+        </div>
+        <div class="form__mid">
+          <div class="form-captcha">
+            <img src="./images/temp/captcha.png" alt="">
+          </div>
+        </div>
+        <div class="form-foot">
+          <button class="btn btn--blue" data-fancybox href="#popup-recovery-link">
+            Отправить
+          </button>
+          <div class="form-group">
+            <input id="recovery-checkbox-1" class="form-checkbox" type="checkbox" required>
+            <label for="recovery-checkbox-1">
+              <div class="form-checkbox--item">
+              </div>
+              <p>
+                Я согласен на <a href="/Motorist">обработку персональных данных</a>
+              </p>
+            </label>
+          </div>
+          <div class="form-group">
+            <input id="recovery-checkbox-2" class="form-checkbox" type="checkbox" required>
+            <label for="recovery-checkbox-2">
+              <div class="form-checkbox--item">
+              </div>
+              <p>
+                Я согласен на <a href="/Motorist">рекламные уведомления</a>
+              </p>
+            </label>
+          </div>
+          <div class="form-text">
+            <p>
+              Нажимая на кнопку «Отправить» вы соглашаетесь с <a href="/Motorist">Политикой обработки персональных
+                данных</a>
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div id="popup-recovery-link" class="popup popup--success border-opacity lenis" data-lenis-prevent>
+  <div class="popup__inner">
+    <div class="popup__head">
+      <div class="popup__head-title">
+        Ссылка отправлена
+      </div>
+      <div class="popup__head-text">
+        <p>
+          Ссылка для восстановления пароля отправлена на&nbsp;вашу электронную почту.
+        </p>
+        <p>
+          Перейдите по ней, чтобы задать новый пароль.
+        </p>
+      </div>
+    </div>
+    <div class="popup__body">
+      <a class="btn btn--blue" href="/Motorist">
+        На главную
+      </a>
+    </div>
+  </div>
+</div>
+
+<div id="popup-recovery-success" class="popup popup--success border-opacity lenis" data-lenis-prevent>
   <div class="popup__inner">
     <div class="popup__head">
       <div class="popup__head-title">
@@ -2918,11 +3014,64 @@
   </div>
 </div>
 
-<div id="popup-auth-success" class="popup popup--success lenis" data-lenis-prevent>
+<div id="popup-password" class="popup popup--form border-opacity lenis" data-lenis-prevent>
   <div class="popup__inner">
     <div class="popup__head">
       <div class="popup__head-title">
-        Вы авторизованы на сайте!
+        Придумайте новый пароль
+      </div>
+    </div>
+    <div class="popup__body">
+      <div class="popup__content">
+        <form class="form__content" action="#">
+          <div class="form__body form__row-1">
+            <div class="form-group form-password">
+              <input id="recovery-password" class="form-input" name="recovery-password" type="password" autocomplete="new-password">
+              <label for="recovery-password" class="form-label">
+                Введите пароль
+              </label>
+              <div class="form-password-toggle" title="Показать/скрыть пароль" aria-label="Показать пароль">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
+                  <g opacity="0.5">
+                    <path
+                      d="M12 4C4.86536 4 0.256791 11.3689 0.173438 11.5031C0.0612427 11.6445 0.000121298 11.8196 0 12C0.000141923 12.1548 0.045192 12.3062 0.129688 12.4359C0.130724 12.4375 0.131765 12.4391 0.132813 12.4406C0.146567 12.469 4.01507 20 12 20C19.9511 20 23.8139 12.543 23.8609 12.4516C23.8641 12.4464 23.8672 12.4412 23.8703 12.4359C23.9548 12.3062 23.9999 12.1548 24 12C24 11.8203 23.9394 11.6458 23.8281 11.5047C23.8276 11.5042 23.8271 11.5036 23.8266 11.5031C23.7432 11.3689 19.1346 4 12 4ZM12 6.4C15.0928 6.4 17.6 8.9072 17.6 12C17.6 15.0928 15.0928 17.6 12 17.6C8.9072 17.6 6.4 15.0928 6.4 12C6.4 8.9072 8.9072 6.4 12 6.4ZM12 9.6C11.3635 9.6 10.753 9.85286 10.3029 10.3029C9.85286 10.753 9.6 11.3635 9.6 12C9.6 12.6365 9.85286 13.247 10.3029 13.6971C10.753 14.1471 11.3635 14.4 12 14.4C12.6365 14.4 13.247 14.1471 13.6971 13.6971C14.1471 13.247 14.4 12.6365 14.4 12C14.4 11.3635 14.1471 10.753 13.6971 10.3029C13.247 9.85286 12.6365 9.6 12 9.6Z"
+                      fill="#718595" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div class="form-group form-password">
+              <input id="recovery-repassword" class="form-input" name="recovery-repassword" type="password" autocomplete="new-password">
+              <label for="recovery-repassword" class="form-label">
+                Подтвердите пароль
+              </label>
+              <div class="form-password-toggle" title="Показать/скрыть пароль" aria-label="Показать пароль">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
+                  <g opacity="0.5">
+                    <path
+                      d="M12 4C4.86536 4 0.256791 11.3689 0.173438 11.5031C0.0612427 11.6445 0.000121298 11.8196 0 12C0.000141923 12.1548 0.045192 12.3062 0.129688 12.4359C0.130724 12.4375 0.131765 12.4391 0.132813 12.4406C0.146567 12.469 4.01507 20 12 20C19.9511 20 23.8139 12.543 23.8609 12.4516C23.8641 12.4464 23.8672 12.4412 23.8703 12.4359C23.9548 12.3062 23.9999 12.1548 24 12C24 11.8203 23.9394 11.6458 23.8281 11.5047C23.8276 11.5042 23.8271 11.5036 23.8266 11.5031C23.7432 11.3689 19.1346 4 12 4ZM12 6.4C15.0928 6.4 17.6 8.9072 17.6 12C17.6 15.0928 15.0928 17.6 12 17.6C8.9072 17.6 6.4 15.0928 6.4 12C6.4 8.9072 8.9072 6.4 12 6.4ZM12 9.6C11.3635 9.6 10.753 9.85286 10.3029 10.3029C9.85286 10.753 9.6 11.3635 9.6 12C9.6 12.6365 9.85286 13.247 10.3029 13.6971C10.753 14.1471 11.3635 14.4 12 14.4C12.6365 14.4 13.247 14.1471 13.6971 13.6971C14.1471 13.247 14.4 12.6365 14.4 12C14.4 11.3635 14.1471 10.753 13.6971 10.3029C13.247 9.85286 12.6365 9.6 12 9.6Z"
+                      fill="#718595" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="form-foot">
+            <button class="btn btn--blue" data-fancybox href="#popup-password-success">
+              Отправить
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup-password-success" class="popup popup--success border-opacity lenis" data-lenis-prevent>
+  <div class="popup__inner">
+    <div class="popup__head">
+      <div class="popup__head-title">
+        Пароль успешно восстановлен!
       </div>
     </div>
     <div class="popup__body">

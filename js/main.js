@@ -1544,6 +1544,7 @@ document.addEventListener('DOMContentLoaded', () => {
    * Инициализация Fabcybox
    */
   Fancybox.bind('[data-fancybox]', {
+    closeExisting: true,
     Html: {
       autoSize: false,
     },
@@ -1592,53 +1593,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /**
-   * Инициализация формы набора символов
-   */
-  function initFormInputs() {
-    const inputElements = document.querySelectorAll('.form-input');
-    const textareaElements = document.querySelectorAll('.form-textarea');
-    const className = 'filled';
-
-    inputElements.forEach(element => {
-      // Удаляем старый обработчик, чтобы избежать дублирования
-      element.replaceWith(element.cloneNode(true));
-      const newElement = document.querySelector(`[name="${element.name}"]`) || element;
-
-      newElement.addEventListener('input', function () {
-        if (this.value.trim() !== '') {
-          newElement.classList.add(className);
-        } else {
-          newElement.classList.remove(className);
-        }
-      });
-
-      // Инициализация текущего состояния
-      if (newElement.value.trim() !== '') {
-        newElement.classList.add(className);
-      }
-    });
-
-    textareaElements.forEach(element => {
-      element.replaceWith(element.cloneNode(true));
-      const newElement = document.querySelector(`[name="${element.name}"]`) || element;
-
-      newElement.addEventListener('input', function () {
-        if (this.value.trim() !== '') {
-          newElement.classList.add(className);
-        } else {
-          newElement.classList.remove(className);
-        }
-      });
-
-      if (newElement.value.trim() !== '') {
-        newElement.classList.add(className);
-      }
-    });
-  }
-
-  initFormInputs();
-
   // (function () {
   //   const passwordFields = document.querySelectorAll('.form-password');
 
@@ -1665,93 +1619,125 @@ document.addEventListener('DOMContentLoaded', () => {
   //   });
   // })();
 
+
+  /**
+   * Инициализация filled-класса для полей формы
+   */
+  function initFormInputs() {
+    const elements = document.querySelectorAll('.form-input, .form-textarea');
+
+    elements.forEach(element => {
+      if (!element._filledInit) {
+        element._filledInit = true;
+
+        element.addEventListener('input', function () {
+          this.classList.toggle('filled', this.value.trim() !== '');
+        });
+      }
+
+      element.classList.toggle('filled', element.value.trim() !== '');
+    });
+  }
+
+  /**
+   * Инициализация показа/скрытия пароля
+   */
   function passwordToggles() {
     const passwordFields = document.querySelectorAll('.form-password');
 
     passwordFields.forEach(field => {
-      const passwordInput = field.querySelector('input[type="password"]');
+      if (field._passwordInit) return;
+      field._passwordInit = true;
+
+      const passwordInput = field.querySelector('input[type="password"], input[type="text"]');
       const toggleButton = field.querySelector('.form-password-toggle');
 
-      // Синхронизируем начальное состояние
-      if (passwordInput.type === 'password') {
-        toggleButton.classList.remove('visible');
-        toggleButton.setAttribute('aria-label', 'Показать пароль');
-      }
+      if (!passwordInput || !toggleButton) return;
 
       toggleButton.addEventListener('click', function () {
-        const currentType = passwordInput.getAttribute('type');
+        const isPassword = passwordInput.getAttribute('type') === 'password';
 
-        if (currentType === 'password') {
-          // Показываем пароль
-          passwordInput.setAttribute('type', 'text');
-          toggleButton.classList.add('visible');
-          toggleButton.setAttribute('aria-label', 'Скрыть пароль');
-        } else {
-          // Скрываем пароль
-          passwordInput.setAttribute('type', 'password');
-          toggleButton.classList.remove('visible');
-          toggleButton.setAttribute('aria-label', 'Показать пароль');
-        }
+        passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
+        toggleButton.classList.toggle('visible', isPassword);
+        toggleButton.setAttribute('aria-label', isPassword ? 'Скрыть пароль' : 'Показать пароль');
 
         passwordInput.focus();
       });
     });
-  };
-
-  passwordToggles();
+  }
 
   /**
-   * Смена отзывов через фильтр
+   * Конфиги для каждого типа ajax-page
    */
-  const ajaxPage = document.querySelector('.ajax-page');
-  if (ajaxPage) {
-    const page__cabinet = $('.page__cabinet');
-    const page__reg = $('.page__reg');
-    const popup__auth = $('.popup__auth');
-
-    if (page__cabinet.length) {
-      const ajaxBtn = page__cabinet.find('.ajax-btn');
-
-      ajaxBtn.on('click', function () {
-        ajaxBtn.removeClass('ajax-btn-active');
-        $(this).addClass('ajax-btn-active');
-        const attr = $(this).data('cabinet');
-        $.get('./ajax/cabinet-' + attr + '.html', function (data) {
-          $('.cabinet__body').html(data);
-          initFormInputs();
-          passwordToggles();
-        });
-      });
-    } else if (page__reg.length) {
-      const ajaxBtn = page__reg.find('.ajax-btn');
-
-      ajaxBtn.on('click', function () {
-        ajaxBtn.removeClass('ajax-btn-active');
-        $(this).addClass('ajax-btn-active');
-        const attr = $(this).data('reg');
-        $.get('./ajax/reg-' + attr + '.html', function (data) {
-          $('.registration__inner').html(data);
-          initFormInputs();
-          passwordToggles();
-        });
-      });
+  const ajaxConfigs = [
+    {
+      containerSelector: '.page__cabinet',
+      btnSelector: '.ajax-btn',
+      dataAttr: 'cabinet',
+      targetSelector: '.cabinet__body'
+    },
+    {
+      containerSelector: '.page__reg',
+      btnSelector: '.ajax-btn',
+      dataAttr: 'reg',
+      targetSelector: '.registration__inner'
+    },
+    {
+      containerSelector: '.popup__auth',
+      btnSelector: '.ajax-btn',
+      dataAttr: 'popup',
+      targetSelector: '.popup__content'
     }
+  ];
 
-    if (popup__auth.length) {
-      const ajaxBtn = popup__auth.find('.ajax-btn');
+  /**
+   * Инициализация Ajax вкладок для конкретного контейнера
+   */
+  function initAjaxTabs(container, config) {
+    // Пропускаем уже инициализированные
+    if (container._ajaxInit) return;
+    container._ajaxInit = true;
 
-      ajaxBtn.on('click', function () {
-        ajaxBtn.removeClass('ajax-btn-active');
-        $(this).addClass('ajax-btn-active');
-        const attr = $(this).data('auth');
-        $.get('./ajax/popup-' + attr + '.html', function (data) {
-          $('.popup__content').html(data);
-          initFormInputs();
-          passwordToggles();
-        });
+    const $container = $(container);
+    const ajaxBtns = $container.find(config.btnSelector);
+
+    ajaxBtns.on('click', function () {
+      $container.find(config.btnSelector).removeClass('ajax-btn-active');
+      $(this).addClass('ajax-btn-active');
+
+      const attr = $(this).data(config.dataAttr);
+      console.log(attr);
+      if (!attr) return;
+
+      $.get('./ajax/' + config.dataAttr + '-' + attr + '.html', function (data) {
+        $container.find(config.targetSelector).html(data);
+        initFormInputs();
+        passwordToggles();
+        // Переинициализируем вложенные ajax-page если они появились в новом контенте
+        initAllAjaxPages();
+      }).fail(function () {
+        console.warn('Не удалось загрузить: ./ajax/' + config.dataAttr + '-' + attr + '.html');
       });
-    }
+    });
   }
+
+  /**
+   * Инициализация всех ajax-page на странице (включая вложенные)
+   */
+  function initAllAjaxPages() {
+    ajaxConfigs.forEach(config => {
+      const containers = document.querySelectorAll(config.containerSelector);
+
+      containers.forEach(container => {
+        initAjaxTabs(container, config);
+      });
+    });
+  }
+
+  // Запуск
+  initFormInputs();
+  passwordToggles();
+  initAllAjaxPages();
 
   (function quantityFunc() {
 
