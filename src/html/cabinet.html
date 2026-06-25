@@ -42,23 +42,66 @@
       <section class="cabinet">
         <div class="container">
           <div class="cabinet__inner">
-            <div class="cabinet__head ajax-btns">
-              <button class="cabinet__head-item ajax-btn ajax-btn-active" data-cabinet="yur-setting">
-                Настройки профиля
-              </button>
-              <button class="cabinet__head-item ajax-btn" data-cabinet="history">
-                История заказов
-              </button>
-              <button class="cabinet__head-item ajax-btn" data-cabinet="cart">
-                Корзина
-              </button>
-              <button class="cabinet__head-item ajax-btn" data-cabinet="personal-offers">
+            <div class="cabinet__head ajax-btns accordion-parent">
+              <div class="cabinet__head-wrap accordion">
+                <button class="cabinet__head-item ajax-btn ajax-btn-active accordion-head" data-cabinet="yur-setting">
+                  <span>
+                    Настройки профиля
+                  </span>
+                  <i class="icon-chevron-min"></i>
+                </button>
+                <div class="cabinet__head-block accordion-body">
+                  <div class="cabinet__head-content">
+                    @@include('ajax/cabinet-yur-setting.html')
+                  </div>
+                </div>
+              </div>
+              <div class="cabinet__head-wrap accordion">
+                <button class="cabinet__head-item ajax-btn accordion-head" data-cabinet="history">
+                  <span>
+                    История заказов
+                  </span>
+                  <i class="icon-chevron-min"></i>
+                </button>
+                <div class="cabinet__head-block accordion-body">
+                  <div class="cabinet__head-content">
+                    @@include('ajax/cabinet-history.html')
+                  </div>
+                </div>
+              </div>
+              <div class="cabinet__head-wrap accordion">
+                <button class="cabinet__head-item ajax-btn accordion-head" data-cabinet="cart">
+                  <span>
+                    Корзина
+                  </span>
+                  <i class="icon-chevron-min"></i>
+                </button>
+                <div class="cabinet__head-block accordion-body">
+                  <div class="cabinet__head-content">
+                    @@include('ajax/cabinet-cart.html')
+                  </div>
+                </div>
+              </div>
+              <div class="cabinet__head-wrap accordion">
+                <button class="cabinet__head-item ajax-btn accordion-head" data-cabinet="discount">
+                  <span>
+                    Дисконтная карта
+                  </span>
+                  <i class="icon-chevron-min"></i>
+                </button>
+                <div class="cabinet__head-block accordion-body">
+                  <div class="cabinet__head-content">
+                    @@include('ajax/cabinet-discount.html')
+                  </div>
+                </div>
+              </div>
+              <!-- <button class="cabinet__head-item ajax-btn" data-cabinet="personal-offers">
                 Персональные предложения
-              </button>
+              </button> -->
             </div>
             <form class="cabinet__body">
 
-              @@include('ajax/cabinet-fiz-setting.html')
+              @@include('ajax/cabinet-yur-setting.html')
 
             </form>
           </div>

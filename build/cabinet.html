@@ -218,12 +218,12 @@
               </div>
             </div>
           </div>
-          <a class="header__navbar-item" href="/Motorist/sravnenie.html">
+          <!-- <a class="header__navbar-item" href="/Motorist/sravnenie.html">
             <i class="icon-compare"></i>
             <span>
               Сравнить
             </span>
-          </a>
+          </a> -->
           <a class="header__navbar-item" href="/Motorist/favorites.html">
             <div class="header__navbar-count">
               20
@@ -2143,19 +2143,640 @@
       <section class="cabinet">
         <div class="container">
           <div class="cabinet__inner">
-            <div class="cabinet__head ajax-btns">
-              <button class="cabinet__head-item ajax-btn ajax-btn-active" data-cabinet="yur-setting">
-                Настройки профиля
-              </button>
-              <button class="cabinet__head-item ajax-btn" data-cabinet="history">
-                История заказов
-              </button>
-              <button class="cabinet__head-item ajax-btn" data-cabinet="cart">
-                Корзина
-              </button>
-              <button class="cabinet__head-item ajax-btn" data-cabinet="personal-offers">
+            <div class="cabinet__head ajax-btns accordion-parent">
+              <div class="cabinet__head-wrap accordion">
+                <button class="cabinet__head-item ajax-btn ajax-btn-active accordion-head" data-cabinet="yur-setting">
+                  <span>
+                    Настройки профиля
+                  </span>
+                  <i class="icon-chevron-min"></i>
+                </button>
+                <div class="cabinet__head-block accordion-body">
+                  <div class="cabinet__head-content">
+                    <div class="cabinet__block">
+  <div class="cabinet__block-head">
+    <div class="cabinet__block-title h5">
+      Ваши данные
+    </div>
+  </div>
+  <div class="cabinet__block-body">
+    <div class="form__body form__row-2">
+      <div class="form-group">
+        <input id="lk-yur-company-name" class="form-input" name="lk-yur-company-name" type="text" required>
+        <label for="lk-yur-company-name" class="form-label">
+          Наименование компании <span>*</span>
+        </label>
+      </div>
+      <div class="form-group">
+        <input id="lk-yur-name" class="form-input" name="lk-yur-name" type="text" required>
+        <label for="lk-yur-name" class="form-label">
+          Имя <span>*</span>
+        </label>
+      </div>
+      <div class="form-group">
+        <input id="lk-yur-mail" class="form-input" name="lk-yur-mail" type="email" required>
+        <label for="lk-yur-mail" class="form-label">
+          Эл.почта <span>*</span>
+        </label>
+        <div class="form-link">
+          <a href="javascript:void(0)">
+            Подтвердить почту
+          </a>
+        </div>
+      </div>
+      <div class="form-group">
+        <input id="lk-yur-tel" class="form-input" name="lk-yur-tel" type="tel" required>
+        <label for="lk-yur-tel" class="form-label">
+          Телефон <span>*</span>
+        </label>
+      </div>
+    </div>
+    <div class="form__foot">
+      <button class="btn btn--arrow-gray" disabled>
+        Редактировать
+        <i class="icon-arrow"></i>
+      </button>
+      <button class="btn btn--arrow-blue" disabled>
+        Сохранить
+        <i class="icon-arrow"></i>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="cabinet__block">
+  <div class="cabinet__block-head">
+    <div class="cabinet__block-title h5">
+      Реквизиты компании
+    </div>
+  </div>
+  <div class="cabinet__block-body">
+    <div class="form__body form__row-2">
+      <div class="form-group">
+        <input id="lk-yur-inn" class="form-input" name="lk-yur-inn" type="text" required>
+        <label for="lk-yur-inn" class="form-label">
+          ИНН <span>*</span>
+        </label>
+      </div>
+      <div class="form-group">
+        <input id="lk-yur-kpp" class="form-input" name="lk-yur-kpp" type="text" required>
+        <label for="lk-yur-kpp" class="form-label">
+          КПП <span>*</span>
+        </label>
+      </div>
+    </div>
+    <div class="form__foot">
+      <button class="btn btn--arrow-gray" disabled>
+        Редактировать
+        <i class="icon-arrow"></i>
+      </button>
+      <button class="btn btn--arrow-blue" disabled>
+        Сохранить
+        <i class="icon-arrow"></i>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="cabinet__block">
+  <div class="cabinet__block-head">
+    <div class="cabinet__block-title h5">
+      Карточка компании
+    </div>
+  </div>
+  <div class="cabinet__block-body">
+    <div class="form__body">
+      <div class="form-group">
+        <input id="lk-yur-card" class="form-file form-input" name="lk-yur-card" type="file">
+        <label for="lk-yur-card" class="form-file-label">
+          <i class="icon-form-photo-camera"></i>
+          <div class="form-file-text">
+            <p>Загрузить файл</p> <span>(не более 1 мб)</span>
+          </div>
+        </label>
+      </div>
+    </div>
+    <div class="form-foot">
+      <button class="btn btn--arrow-blue" disabled>
+        Загрузить
+        <i class="icon-arrow"></i>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="cabinet__block">
+  <div class="cabinet__block-head">
+    <div class="cabinet__block-title h5">
+      Сменить пароль
+    </div>
+  </div>
+  <div class="cabinet__block-body">
+    <div class="form__body form__row-2">
+      <div class="form-group">
+        <input id="lk-yur-password" class="form-input" name="lk-yur-password" type="password" autocomplete="new-password">
+        <label for="lk-yur-password" class="form-label">
+          Пароль <span>*</span>
+        </label>
+      </div>
+      <div class="form-group">
+        <input id="lk-yur-repassword" class="form-input" name="lk-yur-repassword" type="password" autocomplete="new-password">
+        <label for="lk-yur-repassword" class="form-label">
+          Подтверждение пароля <span>*</span>
+        </label>
+      </div>
+    </div>
+    <div class="form__foot">
+      <button class="btn btn--arrow-gray" disabled>
+        Редактировать
+        <i class="icon-arrow"></i>
+      </button>
+      <button class="btn btn--arrow-blue" disabled>
+        Сохранить
+        <i class="icon-arrow"></i>
+      </button>
+    </div>
+  </div>
+</div>
+                  </div>
+                </div>
+              </div>
+              <div class="cabinet__head-wrap accordion">
+                <button class="cabinet__head-item ajax-btn accordion-head" data-cabinet="history">
+                  <span>
+                    История заказов
+                  </span>
+                  <i class="icon-chevron-min"></i>
+                </button>
+                <div class="cabinet__head-block accordion-body">
+                  <div class="cabinet__head-content">
+                    <div class="cabinet__block-head">
+  <div class="cabinet__block-title h5">
+    История заказов
+  </div>
+</div>
+<div class="cabinet__list">
+  <div class="cabinet__list-head">
+    <div class="cabinet__list-items">
+      <div class="cabinet__list-item">
+        <div class="h6">
+          Заказ 2139019301 от 21.10.2024
+        </div>
+      </div>
+      <div class="cabinet__list-item">
+        <div class="h6">
+          Сумма
+        </div>
+      </div>
+      <div class="cabinet__list-item">
+        <div class="h6">
+          Статус
+        </div>
+      </div>
+      <div class="cabinet__list-item">
+        <div class="h6">
+          Документы
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cabinet__list-body">
+    <div class="cabinet__list-items">
+      <div class="cabinet__list-item cabinet__list-item--zakaz">
+        <a href="/Motorist">
+          2139019301 от 21.10.2024
+        </a>
+      </div>
+      <div class="cabinet__list-item cabinet__list-item--summ">
+        <div class="h6">
+          750 000 ₽
+        </div>
+      </div>
+      <div class="cabinet__list-item cabinet__list-item--status success">
+        <div class="h6">
+          Доставлен
+        </div>
+      </div>
+      <div class="cabinet__list-item cabinet__list-item--docs">
+        <div class="cabinet__list-links">
+          <a href="/Motorist" download="#">
+            <i class="icon-doc"></i>
+            <p>
+              Счет фактура от 12.12.12
+            </p>
+          </a>
+          <a href="/Motorist" download="#">
+            <i class="icon-doc"></i>
+            <p>
+              Акт сверки
+            </p>
+          </a>
+          <a href="/Motorist" download="#">
+            <i class="icon-doc"></i>
+            <p>
+              Договор поставки
+            </p>
+          </a>
+          <a href="/Motorist" download="#">
+            <i class="icon-doc"></i>
+            <p>
+              Дилерский договор
+            </p>
+          </a>
+          <a href="/Motorist" download="#">
+            <i class="icon-doc"></i>
+            <p>
+              Информационное письмо
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="cabinet__list-wrap">
+      <div class="cabinet__list-title">
+        <div class="h5">
+          Состав заказа
+        </div>
+      </div>
+      <div class="cabinet__list-text">
+        <div class="h6">
+          договор поставки
+        </div>
+      </div>
+    </div>
+    <div class="cabinet__list-items cabinet__list-items--sostav">
+      <div class="cabinet__list-item">
+        <a href="/Motorist/product.html">
+          Трубка соединительная прямая L 300 мм
+        </a>
+        <div class="h6">
+          10 шт
+        </div>
+      </div>
+      <div class="cabinet__list-item">
+        <div class="h6">
+          750 ₽
+        </div>
+      </div>
+    </div>
+    <div class="cabinet__list-items cabinet__list-items--sostav">
+      <div class="cabinet__list-item">
+        <a href="/Motorist/product.html">
+          Трубка соединительная прямая L 300 мм
+        </a>
+        <div class="h6">
+          10 шт
+        </div>
+      </div>
+      <div class="cabinet__list-item">
+        <div class="h6">
+          750 ₽
+        </div>
+      </div>
+    </div>
+    <div class="cabinet__list-items cabinet__list-items--sostav">
+      <div class="cabinet__list-item">
+        <a href="/Motorist/product.html">
+          Трубка соединительная прямая L 300 мм
+        </a>
+        <div class="h6">
+          10 шт
+        </div>
+      </div>
+      <div class="cabinet__list-item">
+        <div class="h6">
+          750 ₽
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="cabinet__list-body process">
+  <div class="cabinet__list-items">
+    <div class="cabinet__list-item cabinet__list-item--zakaz">
+      <a href="/Motorist">
+        2139019301 от 21.10.2024
+      </a>
+    </div>
+    <div class="cabinet__list-item cabinet__list-item--summ">
+      <div class="h6">
+        750 000 ₽
+      </div>
+    </div>
+    <div class="cabinet__list-item cabinet__list-item--status process">
+      <div class="h6">
+        В работе
+      </div>
+    </div>
+    <div class="cabinet__list-item cancellation">
+      <div class="h6">
+        Отменить
+      </div>
+    </div>
+  </div>
+</div>
+<div class="cabinet__list-body process">
+  <div class="cabinet__list-items">
+    <div class="cabinet__list-item cabinet__list-item--zakaz">
+      <a href="/Motorist">
+        2139019301 от 21.10.2024
+      </a>
+    </div>
+    <div class="cabinet__list-item cabinet__list-item--summ">
+      <div class="h6">
+        750 000 ₽
+      </div>
+    </div>
+    <div class="cabinet__list-item cabinet__list-item--status process">
+      <div class="h6">
+        В работе
+      </div>
+    </div>
+    <div class="cabinet__list-item cancellation">
+      <div class="h6">
+        Отменить
+      </div>
+    </div>
+  </div>
+</div>
+                  </div>
+                </div>
+              </div>
+              <div class="cabinet__head-wrap accordion">
+                <button class="cabinet__head-item ajax-btn accordion-head" data-cabinet="cart">
+                  <span>
+                    Корзина
+                  </span>
+                  <i class="icon-chevron-min"></i>
+                </button>
+                <div class="cabinet__head-block accordion-body">
+                  <div class="cabinet__head-content">
+                    <div class="block cabinet-cart">
+  <div class="cart__items">
+    <div class="cart__item">
+      <div class="cart__item-img">
+        <img src="./images/temp/cart-item-1.png" alt="">
+      </div>
+      <div class="cart__item-text cart__item-text--name">
+        <div class="card__item-tags">
+          <div class="card__item-tag sale">
+            Акция %
+          </div>
+        </div>
+        <div class="cart__item-name">
+          <div class="h6">
+            Рукав пневматический Г Ф 16 мм (10 атм) ТУ 22.19.30.131-108-05800952-2020
+          </div>
+        </div>
+        <div class="card__item-art">
+          Артикул <span>2321421412414</span>
+        </div>
+        <div class="card__item-material">
+          Материал <span>Армированный силикон</span>
+        </div>
+        <div class="card__item-diameter">
+          Диаметр, мм <span>34</span>
+        </div>
+      </div>
+      <div class="cart__item-text cart__item-text--price h6">
+        20 ₽
+      </div>
+      <div class="cart__item-text cart__item-text--sum">
+        <div class="card__item-sale h6">
+          3700 ₽
+        </div>
+        <div class="card__item-price h3">
+          4000 ₽
+        </div>
+      </div>
+      <div class="cart__item-text cart__item-text--weight h6">
+        0.33 кг
+      </div>
+
+      <div class="cart__item-quantity">
+        <div class="quantity" data-min="1" data-max="1000">
+          <button class="quantity__btn quantity__btn--minus" type="button">
+            <i class="icon-minus"></i>
+          </button>
+          <div class="quantity__text">
+            <input type="text" value="10 шт">
+          </div>
+          <button class="quantity__btn quantity__btn--plus" type="button">
+            <i class="icon-plus"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="cart__economy">
+        <div class="cart__economy-text h6">
+          Экономия
+        </div>
+        <div class="cart__economy-wrap h5">
+          100 000₽
+        </div>
+      </div>
+      <div class="cart__item-check">
+        <div class="check">
+          <input class="check-input" id="cart-product-10" type="checkbox">
+          <label class="check-label" for="cart-product-10">
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="cart__item">
+      <div class="cart__item-img">
+        <img src="./images/temp/cart-item-1.png" alt="">
+      </div>
+      <div class="cart__item-text cart__item-text--name">
+        <div class="card__item-tags">
+          <div class="card__item-tag sale">
+            Акция %
+          </div>
+        </div>
+        <div class="cart__item-name">
+          <div class="h6">
+            Рукав пневматический Г Ф 16 мм (10 атм) ТУ 22.19.30.131-108-05800952-2020
+          </div>
+        </div>
+        <div class="card__item-art">
+          Артикул <span>2321421412414</span>
+        </div>
+        <div class="card__item-material">
+          Материал <span>Армированный силикон</span>
+        </div>
+        <div class="card__item-diameter">
+          Диаметр, мм <span>34</span>
+        </div>
+      </div>
+      <div class="cart__item-text cart__item-text--price h6">
+        20 ₽
+      </div>
+      <div class="cart__item-text cart__item-text--sum">
+        <div class="card__item-sale h6">
+          3700 ₽
+        </div>
+        <div class="card__item-price h3">
+          4000 ₽
+        </div>
+      </div>
+      <div class="cart__item-text cart__item-text--weight h6">
+        0.33 кг
+      </div>
+      <div class="cart__economy">
+        <div class="cart__economy-text h6">
+          Экономия
+        </div>
+        <div class="cart__economy-wrap h5">
+          100 000₽
+        </div>
+      </div>
+      <div class="cart__item-check">
+        <div class="check">
+          <input class="check-input" id="cart-product-11" type="checkbox">
+          <label class="check-label" for="cart-product-11">
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="cart__item">
+      <div class="cart__item-img">
+        <img src="./images/temp/cart-item-1.png" alt="">
+      </div>
+      <div class="cart__item-text cart__item-text--name">
+        <div class="card__item-tags">
+          <div class="card__item-tag sale">
+            Акция %
+          </div>
+        </div>
+        <div class="cart__item-name">
+          <div class="h6">
+            Рукав пневматический Г Ф 16 мм (10 атм) ТУ 22.19.30.131-108-05800952-2020
+          </div>
+        </div>
+        <div class="card__item-art">
+          Артикул <span>2321421412414</span>
+        </div>
+        <div class="card__item-material">
+          Материал <span>Армированный силикон</span>
+        </div>
+        <div class="card__item-diameter">
+          Диаметр, мм <span>34</span>
+        </div>
+      </div>
+      <div class="cart__item-text cart__item-text--price h6">
+        20 ₽
+      </div>
+      <div class="cart__item-text cart__item-text--sum">
+        <div class="card__item-sale h6">
+          3700 ₽
+        </div>
+        <div class="card__item-price h3">
+          4000 ₽
+        </div>
+      </div>
+      <div class="cart__item-text cart__item-text--weight h6">
+        0.33 кг
+      </div>
+      <div class="cart__economy">
+        <div class="cart__economy-text h6">
+          Экономия
+        </div>
+        <div class="cart__economy-wrap h5">
+          100 000₽
+        </div>
+      </div>
+      <div class="cart__item-check">
+        <div class="check">
+          <input class="check-input" id="cart-product-12" type="checkbox">
+          <label class="check-label" for="cart-product-12">
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+                  </div>
+                </div>
+              </div>
+              <div class="cabinet__head-wrap accordion">
+                <button class="cabinet__head-item ajax-btn accordion-head" data-cabinet="discount">
+                  <span>
+                    Дисконтная карта
+                  </span>
+                  <i class="icon-chevron-min"></i>
+                </button>
+                <div class="cabinet__head-block accordion-body">
+                  <div class="cabinet__head-content">
+                    <div class="cabinet__block">
+  <div class="cabinet__block-head">
+    <div class="cabinet__block-title h5">
+      Виртуальная карта
+    </div>
+  </div>
+  <div class="cabinet__block-body">
+    <div class="cabinet__card">
+      <div class="cabinet__card-item">
+        <div class="cabinet__card-logo">
+          <img src="./images/logo/logo-card.svg" alt="">
+        </div>
+        <div class="cabinet__card-wrap">
+          <div class="cabinet__card-text">
+            ТД РТИ Сибирь ООО
+          </div>
+          <div class="cabinet__card-text--2">
+            1111 0392 9090 5657
+          </div>
+        </div>
+      </div>
+      <div class="cabinet__card-item">
+        <div class="cabinet__card-title">
+          Операции по карте
+        </div>
+        <div class="cabinet__card-blocks">
+          <div class="cabinet__card-block">
+            <div class="cabinet__card-wrapper">
+              <p>
+                Сумма продаж:
+              </p>
+              <span>
+                750 000 ₽
+              </span>
+            </div>
+            <div class="cabinet__card-wrapper">
+              <p>
+                Начислено:
+              </p>
+              <span>
+                5 000 ₽
+              </span>
+            </div>
+          </div>
+          <div class="cabinet__card-block cabinet__card-block--color">
+            <div class="cabinet__card-wrapper">
+              <p>
+                Списано:
+              </p>
+              <span>
+                100 000 ₽
+              </span>
+            </div>
+            <div class="cabinet__card-wrapper">
+              <p>
+                Остаток бонусных баллов
+              </p>
+              <span>
+                100 000 ₽
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+                  </div>
+                </div>
+              </div>
+              <!-- <button class="cabinet__head-item ajax-btn" data-cabinet="personal-offers">
                 Персональные предложения
-              </button>
+              </button> -->
             </div>
             <form class="cabinet__body">
 
@@ -2168,27 +2789,125 @@
   <div class="cabinet__block-body">
     <div class="form__body form__row-2">
       <div class="form-group">
-        <input id="lk-fiz-name" class="form-input" name="lk-fiz-name" type="text">
-        <label for="lk-fiz-name" class="form-label">
-          Имя
+        <input id="lk-yur-company-name" class="form-input" name="lk-yur-company-name" type="text" required>
+        <label for="lk-yur-company-name" class="form-label">
+          Наименование компании <span>*</span>
         </label>
       </div>
       <div class="form-group">
-        <input id="lk-fiz-tel" class="form-input" name="lk-fiz-tel" type="tel" required>
-        <label for="lk-fiz-tel" class="form-label">
-          Телефон <span>*</span>
+        <input id="lk-yur-name" class="form-input" name="lk-yur-name" type="text" required>
+        <label for="lk-yur-name" class="form-label">
+          Имя <span>*</span>
         </label>
       </div>
       <div class="form-group">
-        <input id="lk-fiz-mail" class="form-input" name="lk-fiz-mail" type="email">
-        <label for="lk-fiz-mail" class="form-label">
-          Эл.почта
+        <input id="lk-yur-mail" class="form-input" name="lk-yur-mail" type="email" required>
+        <label for="lk-yur-mail" class="form-label">
+          Эл.почта <span>*</span>
         </label>
         <div class="form-link">
           <a href="javascript:void(0)">
             Подтвердить почту
           </a>
         </div>
+      </div>
+      <div class="form-group">
+        <input id="lk-yur-tel" class="form-input" name="lk-yur-tel" type="tel" required>
+        <label for="lk-yur-tel" class="form-label">
+          Телефон <span>*</span>
+        </label>
+      </div>
+    </div>
+    <div class="form__foot">
+      <button class="btn btn--arrow-gray" disabled>
+        Редактировать
+        <i class="icon-arrow"></i>
+      </button>
+      <button class="btn btn--arrow-blue" disabled>
+        Сохранить
+        <i class="icon-arrow"></i>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="cabinet__block">
+  <div class="cabinet__block-head">
+    <div class="cabinet__block-title h5">
+      Реквизиты компании
+    </div>
+  </div>
+  <div class="cabinet__block-body">
+    <div class="form__body form__row-2">
+      <div class="form-group">
+        <input id="lk-yur-inn" class="form-input" name="lk-yur-inn" type="text" required>
+        <label for="lk-yur-inn" class="form-label">
+          ИНН <span>*</span>
+        </label>
+      </div>
+      <div class="form-group">
+        <input id="lk-yur-kpp" class="form-input" name="lk-yur-kpp" type="text" required>
+        <label for="lk-yur-kpp" class="form-label">
+          КПП <span>*</span>
+        </label>
+      </div>
+    </div>
+    <div class="form__foot">
+      <button class="btn btn--arrow-gray" disabled>
+        Редактировать
+        <i class="icon-arrow"></i>
+      </button>
+      <button class="btn btn--arrow-blue" disabled>
+        Сохранить
+        <i class="icon-arrow"></i>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="cabinet__block">
+  <div class="cabinet__block-head">
+    <div class="cabinet__block-title h5">
+      Карточка компании
+    </div>
+  </div>
+  <div class="cabinet__block-body">
+    <div class="form__body">
+      <div class="form-group">
+        <input id="lk-yur-card" class="form-file form-input" name="lk-yur-card" type="file">
+        <label for="lk-yur-card" class="form-file-label">
+          <i class="icon-form-photo-camera"></i>
+          <div class="form-file-text">
+            <p>Загрузить файл</p> <span>(не более 1 мб)</span>
+          </div>
+        </label>
+      </div>
+    </div>
+    <div class="form-foot">
+      <button class="btn btn--arrow-blue" disabled>
+        Загрузить
+        <i class="icon-arrow"></i>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="cabinet__block">
+  <div class="cabinet__block-head">
+    <div class="cabinet__block-title h5">
+      Сменить пароль
+    </div>
+  </div>
+  <div class="cabinet__block-body">
+    <div class="form__body form__row-2">
+      <div class="form-group">
+        <input id="lk-yur-password" class="form-input" name="lk-yur-password" type="password" autocomplete="new-password">
+        <label for="lk-yur-password" class="form-label">
+          Пароль <span>*</span>
+        </label>
+      </div>
+      <div class="form-group">
+        <input id="lk-yur-repassword" class="form-input" name="lk-yur-repassword" type="password" autocomplete="new-password">
+        <label for="lk-yur-repassword" class="form-label">
+          Подтверждение пароля <span>*</span>
+        </label>
       </div>
     </div>
     <div class="form__foot">
@@ -2223,14 +2942,14 @@
             Связаться
           </span>
         </a>
-        <a class="plate__item" href="/Motorist/sravnenie.html">
+        <!-- <a class="plate__item" href="/Motorist/sravnenie.html">
           <div class="plate__item-icon">
             <i class="icon-compare"></i>
           </div>
           <span class="plate__item-text">
             Сравнить
           </span>
-        </a>
+        </a> -->
         <a class="plate__item" href="/Motorist/favorites.html">
           <div class="plate__item-icon">
             <span>20</span>
@@ -2299,6 +3018,32 @@
     <div class="popup__body">
       <div class="filter">
   <form action="#">
+    <div class="filter__group">
+      <div class="filter__item-head">
+        <div class="filter__item-title">
+          Наличие товара
+        </div>
+        <i class="icon-chevron"></i>
+      </div>
+      <div class="filter__subgroup">
+        <div class="filter__subgroup-content">
+          <label class="filter__item filter__item--availability">
+            <input type="checkbox" name="sub0-1" />
+            <span class="filter__check border-opacity"></span>
+            <div class="filter__subgroup-title">
+              В наличии
+            </div>
+          </label>
+          <label class="filter__item filter__item--expected">
+            <input type="checkbox" name="sub0-1" />
+            <span class="filter__check border-opacity"></span>
+            <div class="filter__subgroup-title">
+              Ожидается поступление
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
     <div class="filter__group">
       <div class="filter__item-head">
         <div class="filter__item-title">

@@ -25,7 +25,7 @@
   &__content {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
 
     @include md {
       gap: 2rem;
@@ -84,34 +84,139 @@
     border-radius: 1.5rem;
     border: 0.1rem solid var(--white);
     background-color: var(--white-50);
-    padding: 2rem 2rem 2rem 0;
+    padding: 2rem 5.5rem 2rem 4.6rem;
 
     position: relative;
 
     @include md {
       align-items: flex-start;
-      padding: 2rem 1.5rem 2rem 1.5rem;
+      padding: 2rem 5.2rem 2.5rem 3rem;
+      border-radius: 0.8rem;
     }
 
     @include xs {
       gap: 1rem;
     }
 
-    &:last-child {
+    &--hidden {
       opacity: 0.5;
+      pointer-events: none;
     }
 
-    &-wrap {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
+    .check {
+      top: 1rem;
+      right: 1rem;
+      left: unset;
+    }
+
+    &-status {
+      display: block;
+      width: 1.6rem;
+      height: 1.6rem;
+      border-radius: 50%;
+      background-color: var(--green-light-2);
+
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+      z-index: 1;
+
+      @include md {
+        width: 1.2rem;
+        height: 1.2rem;
+
+        top: 1rem;
+        left: 1rem;
+      }
+
+      &.status-availability {
+        background-color: var(--green-light-2);
+      }
+
+      &.status-expected {
+        background-color: var(--orange);
+      }
+    }
+
+    &-block {
+      display: grid;
+      grid-template-columns: 25rem auto 1fr;
       gap: 3rem;
       width: 100%;
 
       @include md {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    &-head {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      @include md {
+        gap: 1rem;
+      }
+    }
+
+    &-desc {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      color: var(--gray);
+
+      @include md {
+        gap: 0.5rem;
+      }
+    }
+
+    &-body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .quantity {
+
+        @include md {
+          width: fit-content;
+          margin-left: -0.5rem;
+        }
+      }
+    }
+
+    &-action {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 16.5rem;
+      width: 100%;
+      padding: 1rem 1.5rem;
+      border-radius: 0.4rem;
+      background-color: var(--bg);
+
+      font-size: 1rem;
+
+      span {
+        color: #F14E4E;
+      }
+
+      p {
+        font-size: 1rem;
+        color: var(--gray);
+      }
+    }
+
+    &-foot {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      gap: 2rem;
+
+      @include md {
+        justify-content: flex-start;
+        gap: 3rem;
       }
     }
 
@@ -135,28 +240,54 @@
     }
 
     &-title {
-      max-width: 23rem;
+      // max-width: 23rem;
 
       font-weight: 700;
 
       @include md {
-        margin-bottom: 3rem;
+        // margin-bottom: 3rem;
+      }
+    }
+
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      min-width: 8.5rem;
+
+      @include md {
+        gap: 0.5rem;
+        min-width: auto;
       }
     }
 
     &-price {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 1rem;
-      margin-left: auto;
+      font-weight: 700;
+    }
 
-      @include md {
-        flex-direction: column-reverse;
-        align-items: flex-start;
-        gap: 0.5rem;
-        margin-top: 1.5rem;
-        margin-left: 0;
+    &-weight {
+      font-weight: 700;
+    }
+
+    &-sum {
+      color: var(--gray);
+
+      p {
+
+        @include md {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    &-opt {
+      color: var(--gray);
+
+      p {
+
+        @include md {
+          font-size: 1rem;
+        }
       }
     }
   }
@@ -237,16 +368,18 @@
     }
 
     &-body {
-      display: grid;
-      grid-template-rows: 0fr;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      padding-top: 0;
+      padding-top: 3rem;
 
-      .accordion-active & {
-        grid-template-rows: 1fr;
-        padding-top: 3rem;
-      }
+      // display: grid;
+      // grid-template-rows: 0fr;
+      // overflow: hidden;
+      // transition: all 0.3s ease;
+      // padding-top: 0;
+
+      // .accordion-active & {
+      //   grid-template-rows: 1fr;
+      //   padding-top: 3rem;
+      // }
     }
 
     &-content {
@@ -308,7 +441,7 @@
 
     &-title {
       font-weight: 700;
-      color: var(--gray-50);
+      color: var(--black);
 
       @include md {
         color: var(--black);
@@ -321,7 +454,7 @@
     }
 
     &-price {
-      color: var(--gray-50);
+      color: var(--black);
 
       @include md {
         font-size: 1.4rem;
@@ -334,7 +467,7 @@
     }
 
     &-text {
-      color: var(--gray-50);
+      color: var(--gray);
       max-width: 28.6rem;
 
       @include md {
@@ -370,20 +503,22 @@
     top: var(--header-height);
 
     @include md {
+      gap: 2rem;
       padding: 2rem;
       position: static;
     }
 
     &-suptitle {
-
-      @include md {
-        font-size: 1.4rem;
-      }
-    }
-
-    &-title {
       font-weight: 400;
+      font-size: 1.2rem;
+      line-height: 100%;
+      color: var(--gray);
+
+      order: 1;
+      flex-shrink: 0;
     }
+
+    &-title {}
 
     &-wrapper {
       display: flex;
@@ -391,19 +526,25 @@
       gap: 2rem;
 
       @include md {
-        display: inline;
-        column-count: 2;
+        gap: 1rem;
       }
     }
 
     &-wrap {
       display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 0.2rem;
 
-      @include md {
-        break-inside: avoid;
-        margin-bottom: 1.5rem;
+      &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        border-bottom: 0.1rem dotted var(--gray);
+        margin-bottom: 0.1rem;
+
+        order: 2;
       }
 
       &:nth-child(even) {
@@ -413,17 +554,14 @@
 
     &-count {
       font-weight: 700;
+      font-size: 1.6rem;
+      line-height: 100%;
+
+      order: 3;
+      flex-shrink: 0;
 
       @include md {
-        font-size: 2.5rem;
-      }
-    }
-
-    &-profit {
-      color: var(--blue);
-
-      @include md {
-        font-size: 2.5rem;
+        font-size: 1.4rem;
       }
     }
 
@@ -440,6 +578,16 @@
       }
     }
 
+    &-foot {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      @include md {
+        display: none;
+      }
+    }
+
     &-btn {
       --btn-height: 4rem;
       --btn-color: var(--white);
@@ -451,12 +599,56 @@
       padding: 0 0.9rem 0 2rem;
       font-size: 1.2rem;
 
+      @include md {}
+
       i {
         --font-size: 2.2rem;
 
         background-color: var(--white);
         color: var(--gray);
       }
+
+      &--mobile {
+
+        @include domd {
+          display: none;
+        }
+
+        @include md {
+          position: sticky;
+          bottom: 3rem;
+        }
+
+        @include sm {
+          bottom: 8rem;
+        }
+      }
+    }
+
+    &-text {
+      font-weight: 400;
+      font-size: 1.2rem;
+      line-height: 140%;
+
+      a {
+        font-weight: 700;
+        color: var(--blue);
+      }
+    }
+  }
+
+  &__foot {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: -1rem;
+
+    @include domd {
+      display: none;
+    }
+
+    .placing__info-text {
+      padding: 0 1.5rem;
     }
   }
 }

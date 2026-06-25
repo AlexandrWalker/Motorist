@@ -379,6 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     resizeObserver.observe(form);
   })();
+
   /**
    * Код для раскрытия меню кталога и бургер меню
    * Смена мегаменю и бургер-меню внутри раскрытой обертки
@@ -678,7 +679,7 @@ document.addEventListener('DOMContentLoaded', () => {
         edgeTracker: false,
         swiperOptions: {
           slidesPerGroup: 1,
-          slidesPerView: 1,
+          slidesPerView: 'auto',
           spaceBetween: 10,
           speed: 500,
           grabCursor: true,
@@ -721,8 +722,8 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             601: {
               slidesPerGroup: 1,
-              slidesPerView: 2,
-              spaceBetween: 20,
+              slidesPerView: 'auto',
+              spaceBetween: 10,
             },
             835: {
               slidesPerGroup: 1,
@@ -1541,6 +1542,108 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /**
+   * ВЫПАДАЮЩИЙ СПИСОК (dropdown--js)
+   *    
+   * Кастомный select на основе radio-инпутов.
+   * Открывается кликом, закрывается кликом вне или выбором опции.
+   */
+  (function () {
+    const html = document.documentElement;
+
+    const dropdowns = document.querySelectorAll('.dropdown--js');
+    if (!dropdowns.length) return;
+
+    dropdowns.forEach(dropdown => {
+      const isCityDropdown = dropdown.classList.contains('js-city-dropdown');
+
+      const selectedJs = dropdown.querySelector('.dropdown__selected--js');
+      const selectedInputJs = dropdown.querySelector('.dropdown__selected-input--js');
+      const selectedLabelJs = dropdown.querySelector('.dropdown__selected-label--js');
+      const dropdownRadios = dropdown.querySelectorAll('.dropdown__radio');
+      const dropdownValue = dropdown.querySelector('.dropdown__value');
+
+      if (!selectedJs) return;
+
+      selectedJs.addEventListener('click', e => {
+        e.stopPropagation();
+        dropdown.classList.toggle('is-active');
+      });
+
+      document.addEventListener('click', e => {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('is-active');
+        }
+      });
+
+      dropdownRadios.forEach(radio => {
+        radio.addEventListener('change', () => {
+          if (!radio.checked) return;
+
+          const dataValue = radio.dataset.city;
+          const value = radio.value;
+
+          // Обновляем UI в текущем dropdown
+          if (selectedLabelJs) selectedLabelJs.textContent = value;
+          if (selectedInputJs) selectedInputJs.value = value;
+          if (dropdownValue) dropdownValue.value = value;
+
+          // Только для dropdown с городами
+          if (isCityDropdown) {
+            // 1) Синхронизируем ВСЕ js-city-dropdown:
+            // меняем текст и input, а также отмечаем нужную радиокнопку в каждом dropdown
+            const allCityDropdowns = document.querySelectorAll('.dropdown--js.js-city-dropdown');
+
+            allCityDropdowns.forEach(cityDropdown => {
+              const label = cityDropdown.querySelector('.dropdown__selected-label--js');
+              const input = cityDropdown.querySelector('.dropdown__selected-input--js');
+              const hiddenValue = cityDropdown.querySelector('.dropdown__value');
+
+              if (label) label.textContent = value;
+              if (input) input.value = value;
+              if (hiddenValue) hiddenValue.value = value;
+
+              // Отмечаем нужную радиокнопку в каждом dropdown по data-city
+              const cityRadios = cityDropdown.querySelectorAll('.dropdown__radio');
+              cityRadios.forEach(r => {
+                // dataset.city хранит код города, который мы и используем для синхронизации
+                if (r.dataset.city === dataValue) {
+                  r.checked = true;
+                }
+              });
+            });
+
+            // 2) Обновляем лэйауты по data-city
+            const dataDropdowns = document.querySelectorAll('[data-dropdown]');
+            dataDropdowns.forEach(dataDropdown => {
+              const layoutBody = dataDropdown.querySelector('.layout__body');
+              if (!layoutBody) return;
+
+              // Находим все блоки внутри layoutBody
+              const allBlocks = layoutBody.querySelectorAll('.layout__block');
+
+              // Скрываем все блоки
+              allBlocks.forEach(block => {
+                block.style.display = 'none';
+              });
+
+              // Находим нужный блок по data-city
+              const thisLayoutBlock = layoutBody.querySelector(`[data-city="${dataValue}"]`);
+
+              if (thisLayoutBlock) {
+                layoutBody.classList.add('checked');
+                thisLayoutBlock.style.display = 'flex';
+              }
+            });
+          }
+
+          dropdown.classList.remove('is-active');
+          dropdown.classList.add('filled');
+        });
+      });
+    });
+  })();
+
+  /**
    * Инициализация Fabcybox
    */
   Fancybox.bind('[data-fancybox]', {
@@ -1752,7 +1855,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const min = Number(quantity.dataset.min) || 1;
       const max = Number(quantity.dataset.max) || 1000;
-      const suffix = ' шт';
+      // const suffix = ' шт';
+      const suffix = ' пог. м';
 
       function parse(value) {
         const number = parseInt(value, 10);

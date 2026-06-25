@@ -22,11 +22,6 @@
                   </a>
                 </li>
                 <li>
-                  <a href="/Motorist/cart">
-                    Корзина
-                  </a>
-                </li>
-                <li>
                   Оформление заказа
                 </li>
               </ul>
@@ -52,11 +47,12 @@
 
               <div class="control">
                 <div class="control__body">
-                  <div class="control__title">
-                    <div class="h5">
-                      Ваш заказ
+                  <button class="control__link">
+                    <i class="icon-download"></i>
+                    <div class="control__link-text">
+                      Экспортировать в Excel
                     </div>
-                  </div>
+                  </button>
                   <button class="control__link">
                     <i class="icon-trash"></i>
                     <div class="control__link-text">
@@ -66,55 +62,31 @@
                 </div>
               </div>
 
-              <div class="placing__body">
-                <div class="placing__items">
-                  <div class="placing__item">
-                    <div class="check">
+              <!-- <div class="placing__body"> -->
+              <div class="placing__items">
+                <div class="placing__item">
+                  <div class="check border-opacity">
+                    <label class="check-label" for="cart-product-1">
                       <input class="check-input" id="cart-product-1" type="checkbox">
-                      <label class="check-label" for="cart-product-1">
-                      </label>
-                    </div>
-                    <div class="placing__item-img">
-                      <img src="./../images/temp/placing-item-1.png" alt="">
-                    </div>
-                    <div class="placing__item-wrap">
-                      <div class="placing__item-title h5">
-                        Трубка соединительная прямая L 300 мм
-                      </div>
-                      <div class="quantity" data-min="1" data-max="100">
-                        <button class="quantity__btn quantity__btn--minus" type="button">
-                          <i class="icon-minus"></i>
-                        </button>
-                        <div class="quantity__text">
-                          <input type="text" value="10 шт">
-                        </div>
-                        <button class="quantity__btn quantity__btn--plus" type="button">
-                          <i class="icon-plus"></i>
-                        </button>
-                      </div>
-                      <div class="placing__item-price">
-                        <div class="card__item-sale h6">
-                          350 000 ₽
-                        </div>
-                        <div class="card__item-price h3">
-                          250 000 ₽
-                        </div>
-                      </div>
-                    </div>
+                    </label>
                   </div>
-                  <div class="placing__item">
-                    <div class="check">
-                      <input class="check-input" id="cart-product-2" type="checkbox">
-                      <label class="check-label" for="cart-product-2">
-                      </label>
-                    </div>
-                    <div class="placing__item-img">
-                      <img src="./../images/temp/placing-item-1.png" alt="">
-                    </div>
-                    <div class="placing__item-wrap">
+                  <div class="placing__item-status status-availability"></div>
+                  <div class="placing__item-block">
+                    <div class="placing__item-head">
                       <div class="placing__item-title h5">
-                        Трубка соединительная прямая L 300 мм
+                        Патрубок силиконовый для Китайской техники, радиатора SHAANXI / Shacman
+                        WP10 верхний длинный
                       </div>
+                      <div class="placing__item-desc">
+                        <p>
+                          Внутренний диаметр: 76 мм
+                        </p>
+                        <p>
+                          EHR.12/2/40-20
+                        </p>
+                      </div>
+                    </div>
+                    <div class="placing__item-body">
                       <div class="quantity" data-min="1" data-max="100">
                         <button class="quantity__btn quantity__btn--minus" type="button">
                           <i class="icon-minus"></i>
@@ -126,96 +98,355 @@
                           <i class="icon-plus"></i>
                         </button>
                       </div>
-                      <div class="placing__item-price">
-                        <div class="card__item-sale h6">
-                          350 000 ₽
+                    </div>
+                    <div class="placing__item-foot">
+                      <div class="placing__item-wrap">
+                        <div class="placing__item-price h5">
+                          1 350 ₽
                         </div>
-                        <div class="card__item-price h3">
-                          250 000 ₽
+                        <div class="placing__item-sum">
+                          <p>
+                            1 шт.
+                          </p>
+                        </div>
+                        <div class="placing__item-opt">
+                          <p>
+                            опт. 1 230.45 ₽
+                          </p>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="placing__item">
-                    <div class="check">
-                      <input class="check-input" id="cart-product-3" type="checkbox">
-                      <label class="check-label" for="cart-product-3">
-                      </label>
-                    </div>
-                    <div class="placing__item-img">
-                      <img src="./../images/temp/placing-item-1.png" alt="">
-                    </div>
-                    <div class="placing__item-wrap">
-                      <div class="placing__item-title h5">
-                        Трубка соединительная прямая L 300 мм
-                      </div>
-                      <div class="quantity" data-min="1" data-max="100">
-                        <button class="quantity__btn quantity__btn--minus" type="button">
-                          <i class="icon-minus"></i>
-                        </button>
-                        <div class="quantity__text">
-                          <input type="text" value="10 шт">
-                        </div>
-                        <button class="quantity__btn quantity__btn--plus" type="button">
-                          <i class="icon-plus"></i>
-                        </button>
-                      </div>
-                      <div class="placing__item-price">
-                        <div class="card__item-sale h6">
-                          350 000 ₽
-                        </div>
-                        <div class="card__item-price h3">
-                          250 000 ₽
+                      <div class="placing__item-wrap">
+                        <div class="placing__item-price h5">
+                          1 350 ₽
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="placing__item">
-                    <div class="check">
-                      <input class="check-input" id="cart-product-4" type="checkbox">
-                      <label class="check-label" for="cart-product-4">
-                      </label>
-                    </div>
-                    <div class="placing__item-img">
-                      <img src="./../images/temp/placing-item-1.png" alt="">
-                    </div>
-                    <div class="placing__item-wrap">
-                      <div class="placing__item-title h5">
-                        Трубка соединительная прямая L 300 мм
-                      </div>
-                      <div class="quantity" data-min="1" data-max="100">
-                        <button class="quantity__btn quantity__btn--minus" type="button">
-                          <i class="icon-minus"></i>
-                        </button>
-                        <div class="quantity__text">
-                          <input type="text" value="10 шт">
-                        </div>
-                        <button class="quantity__btn quantity__btn--plus" type="button">
-                          <i class="icon-plus"></i>
-                        </button>
-                      </div>
-                      <div class="placing__item-price">
-                        <div class="card__item-sale h6">
-                          350 000 ₽
-                        </div>
-                        <div class="card__item-price h3">
-                          250 000 ₽
+                      <div class="placing__item-wrap">
+                        <div class="placing__item-weight h5">
+                          0,33 кг
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <a class="placing__body-btn btn btn--arrow" href="javascript:void(0)">
+                <div class="placing__item">
+                  <div class="check border-opacity">
+                    <label class="check-label" for="cart-product-2">
+                      <input class="check-input" id="cart-product-2" type="checkbox">
+                    </label>
+                  </div>
+                  <div class="placing__item-status status-expected"></div>
+                  <div class="placing__item-block">
+                    <div class="placing__item-head">
+                      <div class="placing__item-title h5">
+                        Патрубок силиконовый для Китайской техники, радиатора SHAANXI / Shacman
+                        WP10 верхний длинный
+                      </div>
+                      <div class="placing__item-desc">
+                        <p>
+                          Внутренний диаметр: 76 мм
+                        </p>
+                        <p>
+                          EHR.12/2/40-20
+                        </p>
+                      </div>
+                    </div>
+                    <div class="placing__item-body">
+                      <div class="quantity" data-min="1" data-max="100">
+                        <button class="quantity__btn quantity__btn--minus" type="button">
+                          <i class="icon-minus"></i>
+                        </button>
+                        <div class="quantity__text">
+                          <input type="text" value="10 шт">
+                        </div>
+                        <button class="quantity__btn quantity__btn--plus" type="button">
+                          <i class="icon-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="placing__item-foot">
+                      <div class="placing__item-wrap">
+                        <div class="placing__item-price h5">
+                          1 350 ₽
+                        </div>
+                        <div class="placing__item-sum">
+                          <p>
+                            1 шт.
+                          </p>
+                        </div>
+                        <div class="placing__item-opt">
+                          <p>
+                            опт. 1 230.45 ₽
+                          </p>
+                        </div>
+                      </div>
+                      <div class="placing__item-wrap">
+                        <div class="placing__item-price h5">
+                          1 350 ₽
+                        </div>
+                      </div>
+                      <div class="placing__item-wrap">
+                        <div class="placing__item-weight h5">
+                          0,33 кг
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="placing__item">
+                  <div class="check border-opacity">
+                    <label class="check-label" for="cart-product-3">
+                      <input class="check-input" id="cart-product-3" type="checkbox">
+                    </label>
+                  </div>
+                  <div class="placing__item-status status-availability"></div>
+                  <div class="placing__item-block">
+                    <div class="placing__item-head">
+                      <div class="placing__item-title h5">
+                        Патрубок силиконовый для Китайской техники, радиатора SHAANXI / Shacman
+                        WP10 верхний длинный
+                      </div>
+                      <div class="placing__item-desc">
+                        <p>
+                          Внутренний диаметр: 76 мм
+                        </p>
+                        <p>
+                          EHR.12/2/40-20
+                        </p>
+                      </div>
+                    </div>
+                    <div class="placing__item-body">
+                      <div class="quantity" data-min="1" data-max="100">
+                        <button class="quantity__btn quantity__btn--minus" type="button">
+                          <i class="icon-minus"></i>
+                        </button>
+                        <div class="quantity__text">
+                          <input type="text" value="10 шт">
+                        </div>
+                        <button class="quantity__btn quantity__btn--plus" type="button">
+                          <i class="icon-plus"></i>
+                        </button>
+                      </div>
+                      <div class="placing__item-action">
+                        <span>
+                          Доступный остаток: 15 шт
+                        </span>
+                        <p>
+                          Вы можете предзаказать нужное количество товара
+                        </p>
+                      </div>
+                    </div>
+                    <div class="placing__item-foot">
+                      <div class="placing__item-wrap">
+                        <div class="placing__item-price h5">
+                          1 350 ₽
+                        </div>
+                        <div class="placing__item-sum">
+                          <p>
+                            1 шт.
+                          </p>
+                        </div>
+                        <div class="placing__item-opt">
+                          <p>
+                            опт. 1 230.45 ₽
+                          </p>
+                        </div>
+                      </div>
+                      <div class="placing__item-wrap">
+                        <div class="placing__item-price h5">
+                          1 350 ₽
+                        </div>
+                      </div>
+                      <div class="placing__item-wrap">
+                        <div class="placing__item-weight h5">
+                          0,33 кг
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="placing__item placing__item--hidden">
+
+                  <div class="check check--hidden border-opacity">
+                    <label class="check-label" for="cart-product-4">
+                      <input class="check-input" id="cart-product-4" type="checkbox">
+                      <span>
+                        Вернуть
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="placing__item-status status-availability"></div>
+                  <div class="placing__item-block">
+                    <div class="placing__item-head">
+                      <div class="placing__item-title h5">
+                        Патрубок силиконовый для Китайской техники, радиатора SHAANXI / Shacman
+                        WP10 верхний длинный
+                      </div>
+                      <div class="placing__item-desc">
+                        <p>
+                          Внутренний диаметр: 76 мм
+                        </p>
+                        <p>
+                          EHR.12/2/40-20
+                        </p>
+                      </div>
+                    </div>
+                    <div class="placing__item-body">
+                      <div class="quantity" data-min="1" data-max="100">
+                        <button class="quantity__btn quantity__btn--minus" type="button">
+                          <i class="icon-minus"></i>
+                        </button>
+                        <div class="quantity__text">
+                          <input type="text" value="10 шт">
+                        </div>
+                        <button class="quantity__btn quantity__btn--plus" type="button">
+                          <i class="icon-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="placing__item-foot">
+                      <div class="placing__item-wrap">
+                        <div class="placing__item-price h5">
+                          1 350 ₽
+                        </div>
+                        <div class="placing__item-sum">
+                          <p>
+                            1 шт.
+                          </p>
+                        </div>
+                        <div class="placing__item-opt">
+                          <p>
+                            опт. 1 230.45 ₽
+                          </p>
+                        </div>
+                      </div>
+                      <div class="placing__item-wrap">
+                        <div class="placing__item-price h5">
+                          1 350 ₽
+                        </div>
+                      </div>
+                      <div class="placing__item-wrap">
+                        <div class="placing__item-weight h5">
+                          0,33 кг
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="placing__item">
+                  <div class="check">
+                    <input class="check-input" id="cart-product-2" type="checkbox">
+                    <label class="check-label" for="cart-product-2">
+                    </label>
+                  </div>
+                  <div class="placing__item-img">
+                    <img src="./../images/temp/placing-item-1.png" alt="">
+                  </div>
+                  <div class="placing__item-wrap">
+                    <div class="placing__item-title h5">
+                      Трубка соединительная прямая L 300 мм
+                    </div>
+                    <div class="quantity" data-min="1" data-max="100">
+                      <button class="quantity__btn quantity__btn--minus" type="button">
+                        <i class="icon-minus"></i>
+                      </button>
+                      <div class="quantity__text">
+                        <input type="text" value="10 шт">
+                      </div>
+                      <button class="quantity__btn quantity__btn--plus" type="button">
+                        <i class="icon-plus"></i>
+                      </button>
+                    </div>
+                    <div class="placing__item-price">
+                      <div class="card__item-sale h6">
+                        350 000 ₽
+                      </div>
+                      <div class="card__item-price h3">
+                        250 000 ₽
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="placing__item">
+                  <div class="check">
+                    <input class="check-input" id="cart-product-3" type="checkbox">
+                    <label class="check-label" for="cart-product-3">
+                    </label>
+                  </div>
+                  <div class="placing__item-img">
+                    <img src="./../images/temp/placing-item-1.png" alt="">
+                  </div>
+                  <div class="placing__item-wrap">
+                    <div class="placing__item-title h5">
+                      Трубка соединительная прямая L 300 мм
+                    </div>
+                    <div class="quantity" data-min="1" data-max="100">
+                      <button class="quantity__btn quantity__btn--minus" type="button">
+                        <i class="icon-minus"></i>
+                      </button>
+                      <div class="quantity__text">
+                        <input type="text" value="10 шт">
+                      </div>
+                      <button class="quantity__btn quantity__btn--plus" type="button">
+                        <i class="icon-plus"></i>
+                      </button>
+                    </div>
+                    <div class="placing__item-price">
+                      <div class="card__item-sale h6">
+                        350 000 ₽
+                      </div>
+                      <div class="card__item-price h3">
+                        250 000 ₽
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="placing__item">
+                  <div class="check">
+                    <input class="check-input" id="cart-product-4" type="checkbox">
+                    <label class="check-label" for="cart-product-4">
+                    </label>
+                  </div>
+                  <div class="placing__item-img">
+                    <img src="./../images/temp/placing-item-1.png" alt="">
+                  </div>
+                  <div class="placing__item-wrap">
+                    <div class="placing__item-title h5">
+                      Трубка соединительная прямая L 300 мм
+                    </div>
+                    <div class="quantity" data-min="1" data-max="100">
+                      <button class="quantity__btn quantity__btn--minus" type="button">
+                        <i class="icon-minus"></i>
+                      </button>
+                      <div class="quantity__text">
+                        <input type="text" value="10 шт">
+                      </div>
+                      <button class="quantity__btn quantity__btn--plus" type="button">
+                        <i class="icon-plus"></i>
+                      </button>
+                    </div>
+                    <div class="placing__item-price">
+                      <div class="card__item-sale h6">
+                        350 000 ₽
+                      </div>
+                      <div class="card__item-price h3">
+                        250 000 ₽
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+              <!-- <a class="placing__body-btn btn btn--arrow" href="javascript:void(0)">
                   Продолжить
                   <i class="icon-arrow"></i>
                 </a>
-              </div>
+              </div> -->
 
-              <div class="placing__block placing__block--recipient accordion">
-                <div class="placing__block-head accordion-head h5">
-                  Получатель
+              <div class="placing__block placing__block--recipient">
+                <div class="placing__block-head h5">
+                  Ваши данные
                 </div>
-                <div class="placing__block-body accordion-body">
+                <div class="placing__block-body">
                   <div class="placing__block-content">
                     <div class="form__body form-row-3">
                       <div class="form-group">
@@ -247,28 +478,46 @@
                       </div>
                     </div>
 
-                    <button class="btn btn--arrow">
+                    <!-- <button class="btn btn--arrow">
                       Продолжить
                       <i class="icon-arrow"></i>
-                    </button>
+                    </button> -->
                   </div>
                 </div>
               </div>
 
-              <div class="placing__block accordion">
-                <div class="placing__block-head accordion-head h5">
+              <div class="placing__block">
+                <div class="placing__block-head h5">
                   <!-- Выберите доставку в <a href="/Motorist">Новосибирск</a> -->
-                   Доставка
+                  Доставка
                 </div>
-                <div class="placing__block-body accordion-body">
+                <div class="placing__block-body">
                   <div class="placing__block-content">
 
-                    <div class="placing__block-notice">
+                    <!-- <div class="placing__block-notice">
                       Оптимальный способ доставки будет предложен менеджером после обсуждения заказа
-                    </div>
+                    </div> -->
 
-                    <!-- <div class="placing__block-items">
+                    <div class="placing__block-items">
                       <div class="placing__block-item check-block">
+                        <!-- <div class="check">
+                          <input class="check-input" id="cart-delivery-4" name="cart-delivery" type="radio">
+                          <label class="check-label" for="cart-delivery-4">
+                          </label>
+                        </div> -->
+                        <div class="placing__block-wrap">
+                          <div class="placing__block-title h5">
+                            Условия доставки
+                          </div>
+                          <div class="placing__block-price h5">
+                            Бесплатно
+                          </div>
+                        </div>
+                        <div class="placing__block-text h6">
+                          Доставка осуществляется в течение дня в удобное для вас время
+                        </div>
+                      </div>
+                      <!-- <div class="placing__block-item check-block">
                         <div class="check">
                           <input class="check-input" id="cart-delivery-1" name="cart-delivery" type="radio">
                           <label class="check-label" for="cart-delivery-1">
@@ -318,10 +567,10 @@
                             Бесплатно
                           </div>
                         </div>
-                      </div>
+                      </div> -->
                     </div>
 
-                    <div class="placing__block-head h5">
+                    <!-- <div class="placing__block-head h5">
                       Адрес доставки
                     </div>
 
@@ -341,15 +590,15 @@
                       </div>
                     </div> -->
 
-                    <button class="btn btn--arrow">
+                    <!-- <button class="btn btn--arrow">
                       Продолжить
                       <i class="icon-arrow"></i>
-                    </button>
+                    </button> -->
                   </div>
                 </div>
               </div>
 
-              <div class="placing__block placing__block--pays accordion">
+              <!-- <div class="placing__block placing__block--pays accordion">
                 <div class="placing__block-head accordion-head h5">
                   Способы оплаты
                 </div>
@@ -411,54 +660,59 @@
                     </button>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
 
             <div class="placing__info">
               <div class="placing__info-title h3">
-                Информация
-                о заказе
+                Ваш заказ
               </div>
               <div class="placing__info-wrapper">
                 <div class="placing__info-wrap">
-                  <div class="placing__info-suptitle h5">
-                    Товаров на
+                  <div class="placing__info-suptitle">
+                    Всего товаров:
                   </div>
-                  <div class="placing__info-count h3">
-                    750 000 ₽
-                  </div>
-                </div>
-                <div class="placing__info-wrap">
-                  <div class="placing__info-suptitle h5">
-                    Стоимость доставки:
-                  </div>
-                  <div class="placing__info-count h3">
-                    5 000 ₽
+                  <div class="placing__info-count">
+                    148
                   </div>
                 </div>
                 <div class="placing__info-wrap">
-                  <div class="placing__info-suptitle h5">
-                    Ваша выгода:
+                  <div class="placing__info-suptitle">
+                    Общая сумма:
                   </div>
-                  <div class="placing__info-profit h3">
-                    100 000 ₽
+                  <div class="placing__info-count">
+                    350 000 ₽
                   </div>
                 </div>
                 <div class="placing__info-wrap">
-                  <div class="placing__info-suptitle h5">
-                    Доставка:
+                  <div class="placing__info-suptitle">
+                    Общий вес:
                   </div>
-                  <div class="placing__info-link">
-                    <a href="/Motorist">
-                      Почтой
-                    </a>
+                  <div class="placing__info-count">
+                    38 кг
                   </div>
                 </div>
               </div>
-              <button class="placing__info-btn btn btn--orange">
-                Оформить заказ
-                <i class="icon-arrow"></i>
-              </button>
+              <div class="placing__info-foot">
+                <button class="placing__info-btn btn btn--orange">
+                  Оформить заказ
+                  <i class="icon-arrow"></i>
+                </button>
+                <div class="placing__info-text">
+                  Для продолжения оформления заказа вам необходимо <a data-fancybox
+                    href="#popup-auth">авторизоваться</a>
+                </div>
+              </div>
+            </div>
+
+            <button class="placing__info-btn placing__info-btn--mobile btn btn--orange">
+              <div>Оформить заказ на <span>350 000</span> ₽</div>
+              <i class="icon-arrow"></i>
+            </button>
+            <div class="placing__foot">
+              <div class="placing__info-text">
+                Для продолжения оформления заказа вам необходимо <a data-fancybox href="#popup-auth">авторизоваться</a>
+              </div>
             </div>
 
           </div>

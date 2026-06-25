@@ -178,16 +178,27 @@
 .quantity {
   display: flex;
   flex-direction: row;
-  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  width: fit-content;
+  border-radius: 10rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--gray-10);
+
+  @include md {
+    width: 100%;
+    margin-bottom: 0;
+  }
 
   &__btn {
     width: 4rem;
     height: 4rem;
-    background-color: var(--gray);
     border-radius: 50%;
+    flex-shrink: 0;
 
+    color: var(--gray);
     cursor: pointer;
-    color: var(--white);
 
     i {
       --font-size: 4rem;
@@ -199,20 +210,32 @@
     justify-content: center;
     align-items: center;
     gap: 0.2rem;
-    width: 8rem;
-    height: 4rem;
-    border: 0.1rem solid var(--gray-50);
-    border-radius: 5rem;
+    // width: fit-content;
+    width: min-content;
+    min-width: 8.5rem;
+    height: 3.6rem;
+    padding: 0 0.5rem;
+    border: 0.1rem solid var(--gray-10);
+    border-radius: 0.4rem;
+    background-color: var(--white);
 
     font-weight: 400;
     font-size: 1.2rem;
     line-height: 100%;
     text-align: center;
 
+    @include md {
+      min-width: 5.5rem;
+    }
+
     input {
       width: 100%;
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       text-align: center;
+
+      @include md {
+        font-size: 1.2rem;
+      }
     }
 
     .page__product & {

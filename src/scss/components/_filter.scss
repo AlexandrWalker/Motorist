@@ -33,6 +33,24 @@
     padding: 1rem 1.5rem;
     cursor: pointer;
 
+    &.filter__item--availability {
+      align-items: center;
+
+      .filter__subgroup-title {
+        line-height: 100%;
+        color: var(--green-light);
+      }
+    }
+
+    &.filter__item--expected {
+      align-items: center;
+
+      .filter__subgroup-title {
+        line-height: 100%;
+        color: var(--orange);
+      }
+    }
+
     input {
       display: none;
 
