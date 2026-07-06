@@ -365,6 +365,10 @@
         top: calc(100% - 1.5rem) !important;
       }
     }
+
+    &-min {
+      border-radius: unset;
+    }
   }
 
   &__slide {

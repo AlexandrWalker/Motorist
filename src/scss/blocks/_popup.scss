@@ -199,6 +199,10 @@
 
     color: var(--white);
 
+    &::after {
+      display: none;
+    }
+
     .f-button.is-close-button {
       right: 0;
       top: 0;
