@@ -34,6 +34,10 @@
         flex-direction: column;
       }
 
+      @include xsm {
+        width: 100%;
+      }
+
       &-controls {
 
         @include domd {
@@ -492,7 +496,7 @@
         padding: 3rem 1rem 1rem 1rem;
       }
 
-      @include xxs {
+      @include xsm {
         width: 100%;
       }
 

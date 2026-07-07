@@ -226,6 +226,10 @@
 
     @include md {
       min-width: 5.5rem;
+
+      &:not(.placing .quantity__text) {
+        width: 100%;
+      }
     }
 
     input {

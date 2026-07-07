@@ -132,6 +132,22 @@
     color: var(--white);
     white-space: nowrap;
 
+    &:hover {
+
+      i {
+        color: var(--blue);
+
+        .header__navbar & {
+          background-color: var(--white);
+        }
+      }
+
+      .popup__link-text {
+        padding-right: 0;
+        padding-left: 1rem;
+      }
+    }
+
     &-telegram {
       background-color: var(--blue);
 
@@ -153,6 +169,24 @@
     &-phone {
       background-color: var(--black);
 
+      &:hover {
+        color: var(--white);
+        background-color: var(--gray);
+
+        .header__navbar & {
+          color: var(--white);
+          background-color: var(--gray);
+
+          i {
+            color: var(--blue);
+          }
+        }
+
+        i {
+          background-color: var(--white);
+        }
+      }
+
       .header__navbar & {
         color: var(--black);
 
@@ -165,7 +199,7 @@
         background-color: var(--gray);
 
         .header__navbar & {
-          color: var(--blue);
+          color: var(--gray);
 
           background-color: var(--gray-10);
         }
@@ -174,6 +208,10 @@
 
     &-mail {
 
+      &:hover {
+        background-color: var(--blue);
+      }
+
       i {
         color: var(--gray);
 
@@ -181,7 +219,10 @@
       }
     }
 
-    &-text {}
+    &-text {
+      padding-right: 1rem;
+      transition: all 0.3s ease;
+    }
 
     i {
       --font-size: 4.2rem;
