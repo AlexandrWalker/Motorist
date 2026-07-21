@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="page__inner placing__page">
+<html lang="ru" class="page__inner block">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
@@ -2129,15 +2129,15 @@
                   </a>
                 </li>
                 <li>
-                  Оформление заказа
+                  Поиск
                 </li>
               </ul>
             </div>
 
             <div class="general__head">
-              <div class="general__head-title">
+              <div class="general__head-title" data-split="lines">
                 <h1>
-                  Оформление заказа
+                  Поиск
                 </h1>
               </div>
             </div>
@@ -2146,680 +2146,1691 @@
         </div>
       </section>
 
-      <section class="placing">
+      <section class="search">
         <div class="container">
-          <div class="placing__inner">
+          <div class="search__inner">
 
-            <div class="placing__content accordion-parent accordion-multiple">
-
+            <div class="search__head">
+              <form class="search__form" method="get" action="/search/">
+                <div class="form-group">
+                  <input class="form-input filled" name="q" type="text" placeholder="Артикул, толщина, название"
+                    value="123">
+                </div>
+                <button class="btn btn--blue" type="submit">Найти</button>
+              </form>
               <div class="control">
-                <div class="control__body">
-                  <button class="control__link">
-                    <i class="icon-download"></i>
-                    <div class="control__link-text">
-                      Экспортировать в Excel
-                    </div>
+                <div class="control__btns">
+                  <button class="control__btn btn control__btn--active" data-view="block">
+                    <i class="icon-bento-menu"></i>
                   </button>
-                  <button class="control__link">
-                    <i class="icon-trash"></i>
-                    <div class="control__link-text">
-                      Удалить выбранные
-                    </div>
+                  <button class="control__btn btn" data-view="list">
+                    <i class="icon-kebab-menu"></i>
                   </button>
-                </div>
-              </div>
-
-              <!-- <div class="placing__body"> -->
-              <div class="placing__items">
-                <div class="placing__item">
-                  <div class="check border-opacity">
-                    <label class="check-label" for="cart-product-1">
-                      <input class="check-input" id="cart-product-1" type="checkbox">
-                    </label>
-                  </div>
-                  <div class="placing__item-status status-availability"></div>
-                  <div class="placing__item-block">
-                    <div class="placing__item-head">
-                      <div class="placing__item-title h5">
-                        Патрубок силиконовый для Китайской техники, радиатора SHAANXI / Shacman
-                        WP10 верхний длинный
-                      </div>
-                      <div class="placing__item-desc">
-                        <p>
-                          Внутренний диаметр: 76 мм
-                        </p>
-                        <p>
-                          EHR.12/2/40-20
-                        </p>
-                      </div>
-                    </div>
-                    <div class="placing__item-body">
-                      <div class="quantity" data-min="1" data-max="100">
-                        <button class="quantity__btn quantity__btn--minus" type="button">
-                          <i class="icon-minus"></i>
-                        </button>
-                        <div class="quantity__text">
-                          <input type="text" value="10 шт">
-                        </div>
-                        <button class="quantity__btn quantity__btn--plus" type="button">
-                          <i class="icon-plus"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="placing__item-foot">
-                      <div class="placing__item-wrap">
-                        <div class="placing__item-price h5">
-                          1 350 ₽
-                        </div>
-                        <div class="placing__item-sum">
-                          <p>
-                            1 шт.
-                          </p>
-                        </div>
-                        <div class="placing__item-opt">
-                          <p>
-                            опт. 1 230.45 ₽
-                          </p>
-                        </div>
-                      </div>
-                      <div class="placing__item-wrap">
-                        <div class="placing__item-price h5">
-                          1 350 ₽
-                        </div>
-                      </div>
-                      <div class="placing__item-wrap">
-                        <div class="placing__item-weight h5">
-                          0,33 кг
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="placing__item">
-                  <div class="check border-opacity">
-                    <label class="check-label" for="cart-product-2">
-                      <input class="check-input" id="cart-product-2" type="checkbox">
-                    </label>
-                  </div>
-                  <div class="placing__item-status status-expected"></div>
-                  <div class="placing__item-block">
-                    <div class="placing__item-head">
-                      <div class="placing__item-title h5">
-                        Патрубок силиконовый для Китайской техники, радиатора SHAANXI / Shacman
-                        WP10 верхний длинный
-                      </div>
-                      <div class="placing__item-desc">
-                        <p>
-                          Внутренний диаметр: 76 мм
-                        </p>
-                        <p>
-                          EHR.12/2/40-20
-                        </p>
-                      </div>
-                    </div>
-                    <div class="placing__item-body">
-                      <div class="quantity" data-min="1" data-max="100">
-                        <button class="quantity__btn quantity__btn--minus" type="button">
-                          <i class="icon-minus"></i>
-                        </button>
-                        <div class="quantity__text">
-                          <input type="text" value="10 шт">
-                        </div>
-                        <button class="quantity__btn quantity__btn--plus" type="button">
-                          <i class="icon-plus"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="placing__item-foot">
-                      <div class="placing__item-wrap">
-                        <div class="placing__item-price h5">
-                          1 350 ₽
-                        </div>
-                        <div class="placing__item-sum">
-                          <p>
-                            1 шт.
-                          </p>
-                        </div>
-                        <div class="placing__item-opt">
-                          <p>
-                            опт. 1 230.45 ₽
-                          </p>
-                        </div>
-                      </div>
-                      <div class="placing__item-wrap">
-                        <div class="placing__item-price h5">
-                          1 350 ₽
-                        </div>
-                      </div>
-                      <div class="placing__item-wrap">
-                        <div class="placing__item-weight h5">
-                          0,33 кг
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="placing__item">
-                  <div class="check border-opacity">
-                    <label class="check-label" for="cart-product-3">
-                      <input class="check-input" id="cart-product-3" type="checkbox">
-                    </label>
-                  </div>
-                  <div class="placing__item-status status-availability"></div>
-                  <div class="placing__item-block">
-                    <div class="placing__item-head">
-                      <div class="placing__item-title h5">
-                        Патрубок силиконовый для Китайской техники, радиатора SHAANXI / Shacman
-                        WP10 верхний длинный
-                      </div>
-                      <div class="placing__item-desc">
-                        <p>
-                          Внутренний диаметр: 76 мм
-                        </p>
-                        <p>
-                          EHR.12/2/40-20
-                        </p>
-                      </div>
-                    </div>
-                    <div class="placing__item-body">
-                      <div class="quantity" data-min="1" data-max="100">
-                        <button class="quantity__btn quantity__btn--minus" type="button">
-                          <i class="icon-minus"></i>
-                        </button>
-                        <div class="quantity__text">
-                          <input type="text" value="10 шт">
-                        </div>
-                        <button class="quantity__btn quantity__btn--plus" type="button">
-                          <i class="icon-plus"></i>
-                        </button>
-                      </div>
-                      <div class="placing__item-action">
-                        <span>
-                          Доступный остаток: 15 шт
-                        </span>
-                        <p>
-                          Вы можете предзаказать нужное количество товара
-                        </p>
-                      </div>
-                    </div>
-                    <div class="placing__item-foot">
-                      <div class="placing__item-wrap">
-                        <div class="placing__item-price h5">
-                          1 350 ₽
-                        </div>
-                        <div class="placing__item-sum">
-                          <p>
-                            1 шт.
-                          </p>
-                        </div>
-                        <div class="placing__item-opt">
-                          <p>
-                            опт. 1 230.45 ₽
-                          </p>
-                        </div>
-                      </div>
-                      <div class="placing__item-wrap">
-                        <div class="placing__item-price h5">
-                          1 350 ₽
-                        </div>
-                      </div>
-                      <div class="placing__item-wrap">
-                        <div class="placing__item-weight h5">
-                          0,33 кг
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="placing__item placing__item--hidden">
-
-                  <div class="check check--hidden border-opacity">
-                    <label class="check-label" for="cart-product-4">
-                      <input class="check-input" id="cart-product-4" type="checkbox">
-                      <span>
-                        Вернуть
-                      </span>
-                    </label>
-                  </div>
-
-                  <div class="placing__item-status status-availability"></div>
-                  <div class="placing__item-block">
-                    <div class="placing__item-head">
-                      <div class="placing__item-title h5">
-                        Патрубок силиконовый для Китайской техники, радиатора SHAANXI / Shacman
-                        WP10 верхний длинный
-                      </div>
-                      <div class="placing__item-desc">
-                        <p>
-                          Внутренний диаметр: 76 мм
-                        </p>
-                        <p>
-                          EHR.12/2/40-20
-                        </p>
-                      </div>
-                    </div>
-                    <div class="placing__item-body">
-                      <div class="quantity" data-min="1" data-max="100">
-                        <button class="quantity__btn quantity__btn--minus" type="button">
-                          <i class="icon-minus"></i>
-                        </button>
-                        <div class="quantity__text">
-                          <input type="text" value="10 шт">
-                        </div>
-                        <button class="quantity__btn quantity__btn--plus" type="button">
-                          <i class="icon-plus"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="placing__item-foot">
-                      <div class="placing__item-wrap">
-                        <div class="placing__item-price h5">
-                          1 350 ₽
-                        </div>
-                        <div class="placing__item-sum">
-                          <p>
-                            1 шт.
-                          </p>
-                        </div>
-                        <div class="placing__item-opt">
-                          <p>
-                            опт. 1 230.45 ₽
-                          </p>
-                        </div>
-                      </div>
-                      <div class="placing__item-wrap">
-                        <div class="placing__item-price h5">
-                          1 350 ₽
-                        </div>
-                      </div>
-                      <div class="placing__item-wrap">
-                        <div class="placing__item-weight h5">
-                          0,33 кг
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- <div class="placing__item">
-                  <div class="check">
-                    <input class="check-input" id="cart-product-2" type="checkbox">
-                    <label class="check-label" for="cart-product-2">
-                    </label>
-                  </div>
-                  <div class="placing__item-img">
-                    <img src="./images/temp/placing-item-1.png" alt="">
-                  </div>
-                  <div class="placing__item-wrap">
-                    <div class="placing__item-title h5">
-                      Трубка соединительная прямая L 300 мм
-                    </div>
-                    <div class="quantity" data-min="1" data-max="100">
-                      <button class="quantity__btn quantity__btn--minus" type="button">
-                        <i class="icon-minus"></i>
-                      </button>
-                      <div class="quantity__text">
-                        <input type="text" value="10 шт">
-                      </div>
-                      <button class="quantity__btn quantity__btn--plus" type="button">
-                        <i class="icon-plus"></i>
-                      </button>
-                    </div>
-                    <div class="placing__item-price">
-                      <div class="card__item-sale h6">
-                        350 000 ₽
-                      </div>
-                      <div class="card__item-price h3">
-                        250 000 ₽
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="placing__item">
-                  <div class="check">
-                    <input class="check-input" id="cart-product-3" type="checkbox">
-                    <label class="check-label" for="cart-product-3">
-                    </label>
-                  </div>
-                  <div class="placing__item-img">
-                    <img src="./images/temp/placing-item-1.png" alt="">
-                  </div>
-                  <div class="placing__item-wrap">
-                    <div class="placing__item-title h5">
-                      Трубка соединительная прямая L 300 мм
-                    </div>
-                    <div class="quantity" data-min="1" data-max="100">
-                      <button class="quantity__btn quantity__btn--minus" type="button">
-                        <i class="icon-minus"></i>
-                      </button>
-                      <div class="quantity__text">
-                        <input type="text" value="10 шт">
-                      </div>
-                      <button class="quantity__btn quantity__btn--plus" type="button">
-                        <i class="icon-plus"></i>
-                      </button>
-                    </div>
-                    <div class="placing__item-price">
-                      <div class="card__item-sale h6">
-                        350 000 ₽
-                      </div>
-                      <div class="card__item-price h3">
-                        250 000 ₽
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="placing__item">
-                  <div class="check">
-                    <input class="check-input" id="cart-product-4" type="checkbox">
-                    <label class="check-label" for="cart-product-4">
-                    </label>
-                  </div>
-                  <div class="placing__item-img">
-                    <img src="./images/temp/placing-item-1.png" alt="">
-                  </div>
-                  <div class="placing__item-wrap">
-                    <div class="placing__item-title h5">
-                      Трубка соединительная прямая L 300 мм
-                    </div>
-                    <div class="quantity" data-min="1" data-max="100">
-                      <button class="quantity__btn quantity__btn--minus" type="button">
-                        <i class="icon-minus"></i>
-                      </button>
-                      <div class="quantity__text">
-                        <input type="text" value="10 шт">
-                      </div>
-                      <button class="quantity__btn quantity__btn--plus" type="button">
-                        <i class="icon-plus"></i>
-                      </button>
-                    </div>
-                    <div class="placing__item-price">
-                      <div class="card__item-sale h6">
-                        350 000 ₽
-                      </div>
-                      <div class="card__item-price h3">
-                        250 000 ₽
-                      </div>
-                    </div>
-                  </div>
-                </div> -->
-              </div>
-              <!-- <a class="placing__body-btn btn btn--arrow" href="javascript:void(0)">
-                  Продолжить
-                  <i class="icon-arrow"></i>
-                </a>
-              </div> -->
-
-              <div class="placing__block placing__block--recipient">
-                <div class="placing__block-head h5">
-                  Ваши данные
-                </div>
-                <div class="placing__block-body">
-                  <div class="placing__block-content">
-                    <div class="form__body form-row-3">
-                      <div class="form-group">
-                        <input id="placing-name" class="form-input" name="name" type="text">
-                        <label for="placing-name" class="form-label">
-                          <i class="icon-form-user"></i>
-                          Имя <span>*</span>
-                        </label>
-                      </div>
-                      <div class="form-group">
-                        <input id="placing-tel" class="form-input" name="tel" type="tel">
-                        <label for="placing-tel" class="form-label">
-                          <i class="icon-form-phone"></i>
-                          Телефон <span>*</span>
-                        </label>
-                      </div>
-                      <div class="form-group">
-                        <input id="placing-mail" class="form-input" name="mail" type="email">
-                        <label for="placing-mail" class="form-label">
-                          <i class="icon-form-mail"></i>
-                          Эл.почта <span>*</span>
-                        </label>
-                      </div>
-                      <div class="form-group form-group--textarea">
-                        <textarea class="form-textarea" name="comments" rows="4"></textarea>
-                        <label class="form-label">
-                          Комментарий
-                        </label>
-                      </div>
-                    </div>
-
-                    <!-- <button class="btn btn--arrow">
-                      Продолжить
-                      <i class="icon-arrow"></i>
-                    </button> -->
-                  </div>
-                </div>
-              </div>
-
-              <div class="placing__block">
-                <div class="placing__block-head h5">
-                  <!-- Выберите доставку в <a href="/Motorist">Новосибирск</a> -->
-                  Доставка
-                </div>
-                <div class="placing__block-body">
-                  <div class="placing__block-content">
-
-                    <!-- <div class="placing__block-notice">
-                      Оптимальный способ доставки будет предложен менеджером после обсуждения заказа
-                    </div> -->
-
-                    <div class="placing__block-items">
-                      <div class="placing__block-item check-block">
-                        <!-- <div class="check">
-                          <input class="check-input" id="cart-delivery-4" name="cart-delivery" type="radio">
-                          <label class="check-label" for="cart-delivery-4">
-                          </label>
-                        </div> -->
-                        <div class="placing__block-wrap">
-                          <div class="placing__block-title h5">
-                            Условия доставки
-                          </div>
-                          <div class="placing__block-price h5">
-                            Бесплатно
-                          </div>
-                        </div>
-                        <div class="placing__block-text h6">
-                          Доставка осуществляется в течение дня в удобное для вас время
-                        </div>
-                      </div>
-                      <!-- <div class="placing__block-item check-block">
-                        <div class="check">
-                          <input class="check-input" id="cart-delivery-1" name="cart-delivery" type="radio">
-                          <label class="check-label" for="cart-delivery-1">
-                          </label>
-                        </div>
-                        <div class="placing__block-wrap">
-                          <div class="placing__block-title h5">
-                            Доставка CDEK
-                          </div>
-                          <div class="placing__block-price h5">
-                            5 000 ₽
-                          </div>
-                        </div>
-                        <div class="placing__block-text h6">
-                          Доставка осуществляется в течение дня в удобное для вас время
-                        </div>
-                      </div>
-                      <div class="placing__block-item check-block">
-                        <div class="check">
-                          <input class="check-input" id="cart-delivery-2" name="cart-delivery" type="radio">
-                          <label class="check-label" for="cart-delivery-2">
-                          </label>
-                        </div>
-                        <div class="placing__block-wrap">
-                          <div class="placing__block-title h5">
-                            Доставка Деловые линии
-                          </div>
-                          <div class="placing__block-price h5">
-                            3 000 ₽
-                          </div>
-                        </div>
-                        <div class="placing__block-text h6">
-                          Доставка осуществляется в течение дня в удобное для вас время
-                        </div>
-                      </div>
-                      <div class="placing__block-item check-block">
-                        <div class="check">
-                          <input class="check-input" id="cart-delivery-3" name="cart-delivery" type="radio">
-                          <label class="check-label" for="cart-delivery-3">
-                          </label>
-                        </div>
-                        <div class="placing__block-wrap">
-                          <div class="placing__block-title h5">
-                            Самовывоз
-                          </div>
-                          <div class="placing__block-price h5">
-                            Бесплатно
-                          </div>
-                        </div>
-                      </div> -->
-                    </div>
-
-                    <!-- <div class="placing__block-head h5">
-                      Адрес доставки
-                    </div>
-
-                    <div class="form__body">
-                      <div class="form-group">
-                        <input id="placing-address" class="form-input" name="address" type="text">
-                        <label for="placing-address" class="form-label">
-                          <i class="icon-form-user"></i>
-                          Адрес доставки <span>*</span>
-                        </label>
-                      </div>
-                      <div class="form-group form-group--textarea">
-                        <textarea class="form-textarea" name="comments" rows="4"></textarea>
-                        <label class="form-label">
-                          Комментарий
-                        </label>
-                      </div>
-                    </div> -->
-
-                    <!-- <button class="btn btn--arrow">
-                      Продолжить
-                      <i class="icon-arrow"></i>
-                    </button> -->
-                  </div>
-                </div>
-              </div>
-
-              <!-- <div class="placing__block placing__block--pays accordion">
-                <div class="placing__block-head accordion-head h5">
-                  Способы оплаты
-                </div>
-                <div class="placing__block-body accordion-body">
-                  <div class="placing__block-content">
-                    <div class="placing__block-items">
-                      <div class="placing__block-item check-block">
-                        <div class="check">
-                          <input class="check-input" id="cart-pay-1" name="cart-pay" type="radio">
-                          <label class="check-label" for="cart-pay-1">
-                          </label>
-                        </div>
-                        <div class="placing__block-wrap">
-                          <div class="placing__block-title h5">
-                            Оплата картой
-                          </div>
-                        </div>
-                      </div>
-                      <div class="placing__block-item check-block">
-                        <div class="check">
-                          <input class="check-input" id="cart-pay-2" name="cart-pay" type="radio">
-                          <label class="check-label" for="cart-pay-2">
-                          </label>
-                        </div>
-                        <div class="placing__block-wrap">
-                          <div class="placing__block-title h5">
-                            Оплата по QR-коду
-                          </div>
-                        </div>
-                      </div>
-                      <div class="placing__block-item check-block">
-                        <div class="check">
-                          <input class="check-input" id="cart-pay-3" name="cart-pay" type="radio">
-                          <label class="check-label" for="cart-pay-3">
-                          </label>
-                        </div>
-                        <div class="placing__block-wrap">
-                          <div class="placing__block-title h5">
-                            Банковский перевод (для юр. лиц)
-                          </div>
-                        </div>
-                      </div>
-                      <div class="placing__block-item check-block">
-                        <div class="check">
-                          <input class="check-input" id="cart-pay-4" name="cart-pay" type="radio">
-                          <label class="check-label" for="cart-pay-4">
-                          </label>
-                        </div>
-                        <div class="placing__block-wrap">
-                          <div class="placing__block-title h5">
-                            Оплата наличными
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <button class="btn btn--arrow">
-                      Оформить заказ
-                      <i class="icon-arrow"></i>
-                    </button>
-                  </div>
-                </div>
-              </div> -->
-            </div>
-
-            <div class="placing__info">
-              <div class="placing__info-title h3">
-                Ваш заказ
-              </div>
-              <div class="placing__info-wrapper">
-                <div class="placing__info-wrap">
-                  <div class="placing__info-suptitle">
-                    Всего товаров:
-                  </div>
-                  <div class="placing__info-count">
-                    148
-                  </div>
-                </div>
-                <div class="placing__info-wrap">
-                  <div class="placing__info-suptitle">
-                    Общая сумма:
-                  </div>
-                  <div class="placing__info-count">
-                    350 000 ₽
-                  </div>
-                </div>
-                <div class="placing__info-wrap">
-                  <div class="placing__info-suptitle">
-                    Общий вес:
-                  </div>
-                  <div class="placing__info-count">
-                    38 кг
-                  </div>
-                </div>
-              </div>
-              <div class="placing__info-foot">
-                <button class="placing__info-btn btn btn--orange">
-                  Оформить заказ
-                  <i class="icon-arrow"></i>
-                </button>
-                <div class="placing__info-text">
-                  Для продолжения оформления заказа вам необходимо <a data-fancybox
-                    href="#popup-auth">авторизоваться</a>
                 </div>
               </div>
             </div>
 
-            <button class="placing__info-btn placing__info-btn--mobile btn btn--orange">
-              <div>Оформить заказ на <span>350 000</span> ₽</div>
-              <i class="icon-arrow"></i>
-            </button>
-            <div class="placing__foot">
-              <div class="placing__info-text">
-                Для продолжения оформления заказа вам необходимо <a data-fancybox href="#popup-auth">авторизоваться</a>
+            <div class="search__body">
+
+              <div class="catalog catalog__block">
+                <div class="card__item border-opacity">
+
+  <div class="card__item-tags">
+    <div class="card__item-tag new">Новинка</div><div class="card__item-tag hit">Хиты прподаж</div><div class="card__item-tag sale">Акция %</div>
+  </div>
+
+  <div class="card__item-controls">
+    <button class="card__item-control"><i class="icon-compare"></i></button><button class="card__item-control favorite-btn"><i class="icon-favorite-min"></i></button>
+  </div>
+
+  <a class="card__item-img" href="/Motorist/product.html">
+    <img src="./images/temp/catalog-item-cover-1.png" alt="">
+  </a>
+
+  <div class="card__item-content">
+
+    <div class="card__item-wrap">
+      <a class="card__item-name h5" href="/Motorist/product.html">
+        Патрубок силиконовый для Китайской техники, радиатора SHAANXI / Shacman WP10 верхний длинный
+      </a>
+      <div class="card__item-lists">
+        <div class="card__item-list articul">
+          <span>EHR.12/2/40-20</span>
+        </div>
+      </div>
+      <div class="card__item-status status-availability">
+        В наличии
+      </div>
+      <div class="card__item-block">
+        <div class="card__item-block--title">
+          Внутренний диаметр, мм
+        </div>
+        <div class="card__item-block--wrap">
+
+          <div class="card__item-block--head"></div>
+          <div class="card__item-block--body">
+            <div class="card__item-block--content">
+              <div class="card__item-block--items">
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-1" type="radio" value="068" checked>
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-1" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-1" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-1" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-1" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-1" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-1" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-1" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-1" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-1" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-1" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-1" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-1" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-1" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-1" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-1" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-1" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-1" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-1" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-1" type="radio" value="068">
+                    068
+                  </label>
+                </div>
               </div>
+            </div>
+          </div>
+
+          <!-- <div class="dropdown dropdown--js">
+            <div class="dropdown__selected dropdown__selected--js">
+              <input class="dropdown__input dropdown__selected-input--js" type="hidden" value="">
+              <label class="dropdown__label dropdown__selected-label--js">068</label>
+              <i class="icon-chevron"></i>
+            </div>
+            <div class="dropdown__container">
+              <div class="dropdown__content">
+                <div class="dropdown__option">
+                  <input id="dim_068" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068" checked>
+                  <label for="dim_068" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_069" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_069" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_070" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_070" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_071" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_071" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_072" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_072" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_073" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_073" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_074" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_074" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_075" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_075" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_076" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_076" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_077" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_077" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_078" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_078" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_079" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_079" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_080" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_080" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_081" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_081" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_082" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_082" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_083" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_083" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_084" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_084" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_085" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_085" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_086" class="dropdown__radio" name="carddropdown--dim" type="radio" value="068">
+                  <label for="dim_086" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_087" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_087" class="dropdown__label">068</label>
+                </div>
+              </div>
+            </div>
+            <input class="dropdown__value" type="hidden">
+          </div> -->
+        </div>
+
+        <div class="card__item-selected">
+          <select id="dim-select" class="card__item-select" name="city">
+            <option value="068" selected>068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+          </select>
+          <i class="icon-chevron"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="card__item-wrap card__item-foot">
+      <div class="card__item-value">
+        <div class="card__item-price">
+          104 ₽
+        </div>
+        <div class="card__item-opt">
+          Опт. 98.75 ₽ 1 пог. м
+        </div>
+      </div>
+
+      <div class="card__item-quantity">
+        <div class="quantity" data-min="1" data-max="1000">
+          <button class="quantity__btn quantity__btn--minus" type="button">
+            <i class="icon-minus"></i>
+          </button>
+          <div class="quantity__text">
+            <input type="text" min="1" value="10 пог. м">
+          </div>
+          <button class="quantity__btn quantity__btn--plus" type="button">
+            <i class="icon-plus"></i>
+          </button>
+        </div>
+        <button class="btn btn--blue">
+          <i class="icon-cart-min"></i>
+        </button>
+      </div>
+
+      <div class="card__item-wrapper">
+        <button class="card__item-btn--favorite">
+          <i class="icon-favorite-fill-min"></i>
+        </button>
+        <button class="card__item-btn card__item-btn--cart btn btn--blue">
+          В корзину
+          <span>
+            <!-- <i class="icon-cart-min"></i> -->
+            <i class="icon-arrow"></i>
+          </span>
+        </button>
+      </div>
+
+      <button class="card__item-plus">
+        <i class="icon-plus"></i>
+      </button>
+
+    </div>
+  </div>
+</div><div class="card__item border-opacity">
+
+  <div class="card__item-tags">
+    <div class="card__item-tag new">Новинка</div><div class="card__item-tag hit">Хиты прподаж</div><div class="card__item-tag sale">Акция %</div>
+  </div>
+
+  <div class="card__item-controls">
+    <button class="card__item-control"><i class="icon-compare"></i></button><button class="card__item-control favorite-btn"><i class="icon-favorite-min"></i></button>
+  </div>
+
+  <a class="card__item-img" href="/Motorist/product.html">
+    <img src="./images/temp/catalog-item-cover-1.png" alt="">
+  </a>
+
+  <div class="card__item-content">
+
+    <div class="card__item-wrap">
+      <a class="card__item-name h5" href="/Motorist/product.html">
+        Рукав силиконовый 2 слоя арм., RU (Премиум) (20 м/б)
+      </a>
+      <div class="card__item-lists">
+        <div class="card__item-list articul">
+          <span>EHR.12/2/40-20</span>
+        </div>
+      </div>
+      <div class="card__item-status status-availability">
+        В наличии
+      </div>
+      <div class="card__item-block">
+        <div class="card__item-block--title">
+          Внутренний диаметр, мм
+        </div>
+        <div class="card__item-block--wrap">
+
+          <div class="card__item-block--head"></div>
+          <div class="card__item-block--body">
+            <div class="card__item-block--content">
+              <div class="card__item-block--items">
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-2" type="radio" value="068" checked>
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-2" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-2" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-2" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-2" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-2" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-2" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-2" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-2" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-2" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-2" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-2" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-2" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-2" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-2" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-2" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-2" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-2" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-2" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-2" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="dropdown dropdown--js">
+            <div class="dropdown__selected dropdown__selected--js">
+              <input class="dropdown__input dropdown__selected-input--js" type="hidden" value="">
+              <label class="dropdown__label dropdown__selected-label--js">068</label>
+              <i class="icon-chevron"></i>
+            </div>
+            <div class="dropdown__container">
+              <div class="dropdown__content">
+                <div class="dropdown__option">
+                  <input id="dim_068" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068" checked>
+                  <label for="dim_068" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_069" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_069" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_070" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_070" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_071" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_071" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_072" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_072" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_073" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_073" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_074" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_074" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_075" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_075" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_076" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_076" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_077" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_077" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_078" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_078" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_079" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_079" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_080" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_080" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_081" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_081" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_082" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_082" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_083" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_083" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_084" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_084" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_085" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_085" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_086" class="dropdown__radio" name="carddropdown--dim" type="radio" value="068">
+                  <label for="dim_086" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_087" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_087" class="dropdown__label">068</label>
+                </div>
+              </div>
+            </div>
+            <input class="dropdown__value" type="hidden">
+          </div> -->
+        </div>
+
+        <div class="card__item-selected">
+          <select id="dim-select" class="card__item-select" name="city">
+            <option value="068" selected>068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+          </select>
+          <i class="icon-chevron"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="card__item-wrap card__item-foot">
+      <div class="card__item-value">
+        <div class="card__item-price">
+          104 ₽
+        </div>
+        <div class="card__item-opt">
+          Опт. 98.75 ₽ 1 пог. м
+        </div>
+      </div>
+
+      <div class="card__item-quantity">
+        <div class="quantity" data-min="1" data-max="1000">
+          <button class="quantity__btn quantity__btn--minus" type="button">
+            <i class="icon-minus"></i>
+          </button>
+          <div class="quantity__text">
+            <input type="text" min="1" value="10 пог. м">
+          </div>
+          <button class="quantity__btn quantity__btn--plus" type="button">
+            <i class="icon-plus"></i>
+          </button>
+        </div>
+        <button class="btn btn--blue">
+          <i class="icon-cart-min"></i>
+        </button>
+      </div>
+
+      <div class="card__item-wrapper">
+        <button class="card__item-btn--favorite">
+          <i class="icon-favorite-fill-min"></i>
+        </button>
+        <button class="card__item-btn card__item-btn--cart btn btn--blue">
+          В корзину
+          <span>
+            <!-- <i class="icon-cart-min"></i> -->
+            <i class="icon-arrow"></i>
+          </span>
+        </button>
+      </div>
+
+      <button class="card__item-plus">
+        <i class="icon-plus"></i>
+      </button>
+
+    </div>
+  </div>
+</div><div class="card__item border-opacity">
+
+  <div class="card__item-tags">
+    <div class="card__item-tag new">Новинка</div><div class="card__item-tag hit">Хиты прподаж</div><div class="card__item-tag sale">Акция %</div>
+  </div>
+
+  <div class="card__item-controls">
+    <button class="card__item-control"><i class="icon-compare"></i></button><button class="card__item-control favorite-btn"><i class="icon-favorite-min"></i></button>
+  </div>
+
+  <a class="card__item-img" href="/Motorist/product.html">
+    <img src="./images/temp/catalog-item-cover-1.png" alt="">
+  </a>
+
+  <div class="card__item-content">
+
+    <div class="card__item-wrap">
+      <a class="card__item-name h5" href="/Motorist/product.html">
+        Рукав силиконовый 2 слоя арм., RU (Премиум) (20 м/б)
+      </a>
+      <div class="card__item-lists">
+        <div class="card__item-list articul">
+          <span>EHR.12/2/40-20</span>
+        </div>
+      </div>
+      <div class="card__item-status status-expected">
+        Ожидается поступление
+      </div>
+      <div class="card__item-block">
+        <div class="card__item-block--title">
+          Внутренний диаметр, мм
+        </div>
+        <div class="card__item-block--wrap">
+
+          <div class="card__item-block--head"></div>
+          <div class="card__item-block--body">
+            <div class="card__item-block--content">
+              <div class="card__item-block--items">
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-3" type="radio" value="068" checked>
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-3" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-3" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-3" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-3" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-3" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-3" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-3" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-3" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-3" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-3" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-3" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-3" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-3" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-3" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-3" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-3" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-3" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-3" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-3" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="dropdown dropdown--js">
+            <div class="dropdown__selected dropdown__selected--js">
+              <input class="dropdown__input dropdown__selected-input--js" type="hidden" value="">
+              <label class="dropdown__label dropdown__selected-label--js">068</label>
+              <i class="icon-chevron"></i>
+            </div>
+            <div class="dropdown__container">
+              <div class="dropdown__content">
+                <div class="dropdown__option">
+                  <input id="dim_068" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068" checked>
+                  <label for="dim_068" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_069" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_069" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_070" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_070" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_071" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_071" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_072" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_072" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_073" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_073" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_074" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_074" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_075" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_075" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_076" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_076" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_077" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_077" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_078" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_078" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_079" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_079" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_080" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_080" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_081" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_081" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_082" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_082" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_083" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_083" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_084" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_084" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_085" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_085" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_086" class="dropdown__radio" name="carddropdown--dim" type="radio" value="068">
+                  <label for="dim_086" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_087" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_087" class="dropdown__label">068</label>
+                </div>
+              </div>
+            </div>
+            <input class="dropdown__value" type="hidden">
+          </div> -->
+        </div>
+
+        <div class="card__item-selected">
+          <select id="dim-select" class="card__item-select" name="city">
+            <option value="068" selected>068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+          </select>
+          <i class="icon-chevron"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="card__item-wrap card__item-foot">
+      <div class="card__item-value">
+        <div class="card__item-price">
+          104 ₽
+        </div>
+        <div class="card__item-opt">
+          Опт. 98.75 ₽ 1 пог. м
+        </div>
+      </div>
+
+      <div class="card__item-quantity">
+        <div class="quantity" data-min="1" data-max="1000">
+          <button class="quantity__btn quantity__btn--minus" type="button">
+            <i class="icon-minus"></i>
+          </button>
+          <div class="quantity__text">
+            <input type="text" min="1" value="10 пог. м">
+          </div>
+          <button class="quantity__btn quantity__btn--plus" type="button">
+            <i class="icon-plus"></i>
+          </button>
+        </div>
+        <button class="btn btn--blue">
+          <i class="icon-cart-min"></i>
+        </button>
+      </div>
+
+      <div class="card__item-wrapper">
+        <button class="card__item-btn--favorite">
+          <i class="icon-favorite-fill-min"></i>
+        </button>
+        <button class="card__item-btn card__item-btn--cart btn btn--blue">
+          В корзину
+          <span>
+            <!-- <i class="icon-cart-min"></i> -->
+            <i class="icon-arrow"></i>
+          </span>
+        </button>
+      </div>
+
+      <button class="card__item-plus">
+        <i class="icon-plus"></i>
+      </button>
+
+    </div>
+  </div>
+</div><div class="card__item border-opacity">
+
+  <div class="card__item-tags">
+    <div class="card__item-tag new">Новинка</div><div class="card__item-tag hit">Хиты прподаж</div><div class="card__item-tag sale">Акция %</div>
+  </div>
+
+  <div class="card__item-controls">
+    <button class="card__item-control"><i class="icon-compare"></i></button><button class="card__item-control favorite-btn"><i class="icon-favorite-min"></i></button>
+  </div>
+
+  <a class="card__item-img" href="/Motorist/product.html">
+    <img src="./images/temp/catalog-item-cover-1.png" alt="">
+  </a>
+
+  <div class="card__item-content">
+
+    <div class="card__item-wrap">
+      <a class="card__item-name h5" href="/Motorist/product.html">
+        Рукав силиконовый 2 слоя арм., RU (Премиум) (20 м/б)
+      </a>
+      <div class="card__item-lists">
+        <div class="card__item-list articul">
+          <span>EHR.12/2/40-20</span>
+        </div>
+      </div>
+      <div class="card__item-status status-availability">
+        В наличии
+      </div>
+      <div class="card__item-block">
+        <div class="card__item-block--title">
+          Внутренний диаметр, мм
+        </div>
+        <div class="card__item-block--wrap">
+
+          <div class="card__item-block--head"></div>
+          <div class="card__item-block--body">
+            <div class="card__item-block--content">
+              <div class="card__item-block--items">
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-4" type="radio" value="068" checked>
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-4" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-4" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-4" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-4" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-4" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-4" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-4" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-4" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-4" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-4" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-4" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-4" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-4" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-4" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-4" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-4" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-4" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-4" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-4" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="dropdown dropdown--js">
+            <div class="dropdown__selected dropdown__selected--js">
+              <input class="dropdown__input dropdown__selected-input--js" type="hidden" value="">
+              <label class="dropdown__label dropdown__selected-label--js">068</label>
+              <i class="icon-chevron"></i>
+            </div>
+            <div class="dropdown__container">
+              <div class="dropdown__content">
+                <div class="dropdown__option">
+                  <input id="dim_068" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068" checked>
+                  <label for="dim_068" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_069" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_069" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_070" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_070" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_071" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_071" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_072" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_072" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_073" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_073" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_074" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_074" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_075" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_075" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_076" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_076" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_077" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_077" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_078" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_078" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_079" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_079" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_080" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_080" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_081" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_081" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_082" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_082" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_083" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_083" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_084" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_084" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_085" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_085" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_086" class="dropdown__radio" name="carddropdown--dim" type="radio" value="068">
+                  <label for="dim_086" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_087" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_087" class="dropdown__label">068</label>
+                </div>
+              </div>
+            </div>
+            <input class="dropdown__value" type="hidden">
+          </div> -->
+        </div>
+
+        <div class="card__item-selected">
+          <select id="dim-select" class="card__item-select" name="city">
+            <option value="068" selected>068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+          </select>
+          <i class="icon-chevron"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="card__item-wrap card__item-foot">
+      <div class="card__item-value">
+        <div class="card__item-price">
+          104 ₽
+        </div>
+        <div class="card__item-opt">
+          Опт. 98.75 ₽ 1 пог. м
+        </div>
+      </div>
+
+      <div class="card__item-quantity">
+        <div class="quantity" data-min="1" data-max="1000">
+          <button class="quantity__btn quantity__btn--minus" type="button">
+            <i class="icon-minus"></i>
+          </button>
+          <div class="quantity__text">
+            <input type="text" min="1" value="10 пог. м">
+          </div>
+          <button class="quantity__btn quantity__btn--plus" type="button">
+            <i class="icon-plus"></i>
+          </button>
+        </div>
+        <button class="btn btn--blue">
+          <i class="icon-cart-min"></i>
+        </button>
+      </div>
+
+      <div class="card__item-wrapper">
+        <button class="card__item-btn--favorite">
+          <i class="icon-favorite-fill-min"></i>
+        </button>
+        <button class="card__item-btn card__item-btn--cart btn btn--blue">
+          В корзину
+          <span>
+            <!-- <i class="icon-cart-min"></i> -->
+            <i class="icon-arrow"></i>
+          </span>
+        </button>
+      </div>
+
+      <button class="card__item-plus">
+        <i class="icon-plus"></i>
+      </button>
+
+    </div>
+  </div>
+</div><div class="card__item border-opacity">
+
+  <div class="card__item-tags">
+    <div class="card__item-tag new">Новинка</div><div class="card__item-tag hit">Хиты прподаж</div><div class="card__item-tag sale">Акция %</div>
+  </div>
+
+  <div class="card__item-controls">
+    <button class="card__item-control"><i class="icon-compare"></i></button><button class="card__item-control favorite-btn"><i class="icon-favorite-min"></i></button>
+  </div>
+
+  <a class="card__item-img" href="/Motorist/product.html">
+    <img src="./images/temp/catalog-item-cover-1.png" alt="">
+  </a>
+
+  <div class="card__item-content">
+
+    <div class="card__item-wrap">
+      <a class="card__item-name h5" href="/Motorist/product.html">
+        Рукав силиконовый 2 слоя арм., RU (Премиум) (20 м/б)
+      </a>
+      <div class="card__item-lists">
+        <div class="card__item-list articul">
+          <span>EHR.12/2/40-20</span>
+        </div>
+      </div>
+      <div class="card__item-status status-availability">
+        В наличии
+      </div>
+      <div class="card__item-block">
+        <div class="card__item-block--title">
+          Внутренний диаметр, мм
+        </div>
+        <div class="card__item-block--wrap">
+
+          <div class="card__item-block--head"></div>
+          <div class="card__item-block--body">
+            <div class="card__item-block--content">
+              <div class="card__item-block--items">
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-5" type="radio" value="068" checked>
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-5" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-5" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-5" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-5" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-5" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-5" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-5" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-5" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-5" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-5" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-5" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-5" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-5" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-5" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-5" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-5" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-5" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-5" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+                <div class="card__item-block--item">
+                  <label class="card__item-block--label">
+                    <input class="card__item-block--input" name="card-dim-5" type="radio" value="068">
+                    068
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="dropdown dropdown--js">
+            <div class="dropdown__selected dropdown__selected--js">
+              <input class="dropdown__input dropdown__selected-input--js" type="hidden" value="">
+              <label class="dropdown__label dropdown__selected-label--js">068</label>
+              <i class="icon-chevron"></i>
+            </div>
+            <div class="dropdown__container">
+              <div class="dropdown__content">
+                <div class="dropdown__option">
+                  <input id="dim_068" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068" checked>
+                  <label for="dim_068" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_069" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_069" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_070" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_070" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_071" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_071" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_072" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_072" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_073" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_073" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_074" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_074" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_075" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_075" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_076" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_076" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_077" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_077" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_078" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_078" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_079" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_079" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_080" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_080" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_081" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_081" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_082" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_082" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_083" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_083" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_084" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_084" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_085" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_085" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_086" class="dropdown__radio" name="carddropdown--dim" type="radio" value="068">
+                  <label for="dim_086" class="dropdown__label">068</label>
+                </div>
+                <div class="dropdown__option">
+                  <input id="dim_087" class="dropdown__radio" name="dropdown-card-dim" type="radio" value="068">
+                  <label for="dim_087" class="dropdown__label">068</label>
+                </div>
+              </div>
+            </div>
+            <input class="dropdown__value" type="hidden">
+          </div> -->
+        </div>
+
+        <div class="card__item-selected">
+          <select id="dim-select" class="card__item-select" name="city">
+            <option value="068" selected>068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+            <option value="068">068</option>
+          </select>
+          <i class="icon-chevron"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="card__item-wrap card__item-foot">
+      <div class="card__item-value">
+        <div class="card__item-price">
+          104 ₽
+        </div>
+        <div class="card__item-opt">
+          Опт. 98.75 ₽ 1 пог. м
+        </div>
+      </div>
+
+      <div class="card__item-quantity">
+        <div class="quantity" data-min="1" data-max="1000">
+          <button class="quantity__btn quantity__btn--minus" type="button">
+            <i class="icon-minus"></i>
+          </button>
+          <div class="quantity__text">
+            <input type="text" min="1" value="10 пог. м">
+          </div>
+          <button class="quantity__btn quantity__btn--plus" type="button">
+            <i class="icon-plus"></i>
+          </button>
+        </div>
+        <button class="btn btn--blue">
+          <i class="icon-cart-min"></i>
+        </button>
+      </div>
+
+      <div class="card__item-wrapper">
+        <button class="card__item-btn--favorite">
+          <i class="icon-favorite-fill-min"></i>
+        </button>
+        <button class="card__item-btn card__item-btn--cart btn btn--blue">
+          В корзину
+          <span>
+            <!-- <i class="icon-cart-min"></i> -->
+            <i class="icon-arrow"></i>
+          </span>
+        </button>
+      </div>
+
+      <button class="card__item-plus">
+        <i class="icon-plus"></i>
+      </button>
+
+    </div>
+  </div>
+</div>
+              </div>
+              
             </div>
 
           </div>
