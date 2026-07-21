@@ -7,11 +7,12 @@
   min-width: 39.5rem;
 
   position: absolute;
-  top: calc(100% - 0.5rem);
+  top: calc(100% + 3.2rem);
   left: -2rem;
   z-index: 10;
 
   &--auth {
+    top: calc(100% + 1.5rem);
 
     .btn {
       --btn-height: 5rem;

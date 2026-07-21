@@ -116,3 +116,10 @@
   background: rgba(214, 214, 214, 0.65);
   backdrop-filter: blur(15px);
 }
+
+.fancybox__container:has(.popup-filter) {
+
+  .fancybox__backdrop {
+    background-color: var(--black-80);
+  }
+}

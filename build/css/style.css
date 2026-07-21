@@ -119,18 +119,18 @@ img {
 }
 
 @font-face {
-  font-family: HelveticaNeue;
-  font-display: swap;
-  src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
   font-family: Inter;
   font-display: swap;
   src: url("../fonts/Inter-Black.woff2") format("woff2"), url("../fonts/Inter-Black.woff") format("woff");
   font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: HelveticaNeue;
+  font-display: swap;
+  src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -147,6 +147,14 @@ img {
   font-display: swap;
   src: url("../fonts/Inter-ExtraBold.woff2") format("woff2"), url("../fonts/Inter-ExtraBold.woff") format("woff");
   font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Inter;
+  font-display: swap;
+  src: url("../fonts/Inter-ExtraLight.woff2") format("woff2"), url("../fonts/Inter-ExtraLight.woff") format("woff");
+  font-weight: 200;
   font-style: normal;
 }
 
@@ -185,8 +193,8 @@ img {
 @font-face {
   font-family: Inter;
   font-display: swap;
-  src: url("../fonts/Inter-ExtraLight.woff2") format("woff2"), url("../fonts/Inter-ExtraLight.woff") format("woff");
-  font-weight: 200;
+  src: url("../fonts/Inter-Thin.woff2") format("woff2"), url("../fonts/Inter-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -199,10 +207,26 @@ img {
 }
 
 @font-face {
-  font-family: Inter;
+  font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Inter-Thin.woff2") format("woff2"), url("../fonts/Inter-Thin.woff") format("woff");
-  font-weight: 100;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
+  font-weight: 200;
   font-style: normal;
 }
 
@@ -225,8 +249,8 @@ img {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -235,22 +259,6 @@ img {
   font-display: swap;
   src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
   font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
-  font-weight: 600;
   font-style: normal;
 }
 
@@ -279,14 +287,6 @@ img {
 }
 
 @font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
   font-family: OpenSans;
   font-display: swap;
   src: url("../fonts/OpenSans-Light.woff2") format("woff2"), url("../fonts/OpenSans-Light.woff") format("woff");
@@ -303,22 +303,6 @@ img {
 }
 
 @font-face {
-  font-family: TeXGyreHeros;
-  font-display: swap;
-  src: url("../fonts/TeXGyreHeros-bold.woff2") format("woff2"), url("../fonts/TeXGyreHeros-bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: TeXGyreHeros;
-  font-display: swap;
-  src: url("../fonts/TeXGyreHeros-regular.woff2") format("woff2"), url("../fonts/TeXGyreHeros-regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
   font-family: OpenSans;
   font-display: swap;
   src: url("../fonts/OpenSans-Regular.woff2") format("woff2"), url("../fonts/OpenSans-Regular.woff") format("woff");
@@ -331,6 +315,22 @@ img {
   font-display: swap;
   src: url("../fonts/OpenSans-SemiBold.woff2") format("woff2"), url("../fonts/OpenSans-SemiBold.woff") format("woff");
   font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: TeXGyreHeros;
+  font-display: swap;
+  src: url("../fonts/TeXGyreHeros-bold.woff2") format("woff2"), url("../fonts/TeXGyreHeros-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: TeXGyreHeros;
+  font-display: swap;
+  src: url("../fonts/TeXGyreHeros-regular.woff2") format("woff2"), url("../fonts/TeXGyreHeros-regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -704,6 +704,10 @@ img {
   background: rgba(214, 214, 214, 0.65);
   -webkit-backdrop-filter: blur(15px);
           backdrop-filter: blur(15px);
+}
+
+.fancybox__container:has(.popup-filter) .fancybox__backdrop {
+  background-color: var(--black-80);
 }
 
 /* Reset and base styles  */
@@ -1434,9 +1438,13 @@ body {
   pointer-events: none;
   min-width: 39.5rem;
   position: absolute;
-  top: calc(100% - 0.5rem);
+  top: calc(100% + 3.2rem);
   left: -2rem;
   z-index: 10;
+}
+
+.dropout--auth {
+  top: calc(100% + 1.5rem);
 }
 
 .dropout--auth .btn {
@@ -1565,6 +1573,12 @@ body {
   margin-bottom: 3rem;
 }
 
+.filter {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .filter form {
   position: relative;
 }
@@ -1685,10 +1699,13 @@ body {
 
 .filter__item-title {
   font-family: var(--font-family);
-  font-weight: 700;
+  font-weight: 400;
   font-size: 1.4rem;
   line-height: 120%;
   pointer-events: none;
+  -webkit-transition: font-weight 0.3s ease;
+  -o-transition: font-weight 0.3s ease;
+  transition: font-weight 0.3s ease;
   margin-right: 2rem;
 }
 
@@ -1851,6 +1868,30 @@ body {
 
 .filter__drop-btn {
   --btn-height: 3rem;
+}
+
+.filter__clear {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 2rem auto;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 120%;
+  color: var(--red);
+}
+
+.filter__clear svg {
+  width: 1.8rem;
+  height: 1.8rem;
 }
 
 .form__row-1 {
@@ -2776,6 +2817,7 @@ body {
 
 .card__item-quantity .quantity {
   width: 100%;
+  margin-bottom: 1rem;
 }
 
 .card__item-wrapper {
@@ -3681,7 +3723,6 @@ p {
           backdrop-filter: blur(2px);
   padding: 1rem 1rem 1rem 2rem;
   border-radius: 1.5rem;
-  border: 0.1rem solid var(--white);
   background-color: rgba(113, 133, 149, 0.15);
   z-index: 2;
 }
@@ -3727,6 +3768,7 @@ p {
 
 .header__geo + .dropout {
   min-width: 27.1rem;
+  top: calc(100% + 1.8rem);
 }
 
 .header__geo + .dropout__inner {
@@ -4875,7 +4917,10 @@ p {
 .popup-filter {
   max-width: unset;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   padding: 0;
   background-color: transparent;
   padding: 4rem 0;
@@ -4927,6 +4972,10 @@ p {
   width: 100%;
 }
 
+.sample:not(.offers-inner__page .sample) {
+  color: var(--gray);
+}
+
 .sample .general__head {
   margin-bottom: 2rem;
 }
@@ -4963,6 +5012,25 @@ p {
   position: absolute;
   top: 0.9rem;
   left: 0.75rem;
+}
+
+.sample__content h2 {
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.sample__content h3 {
+  font-size: 1.6rem;
+  line-height: 120%;
+  margin-bottom: 2rem;
+}
+
+.sample__list-mb0 {
+  margin-bottom: 2rem;
+}
+
+.sample__list-mb0 li {
+  margin-bottom: 0;
 }
 
 .social {
@@ -6906,7 +6974,7 @@ p {
   flex-direction: row;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
@@ -6995,6 +7063,34 @@ p {
   -ms-flex-pack: justify;
   justify-content: space-between;
   font-weight: 700;
+}
+
+.category-mini__slider .category__item {
+  min-height: 10.4rem;
+}
+
+.category-mini__slider .category__item-content {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 2.2rem 2rem 2.2rem 1rem;
+}
+
+.category-mini__slider .category__item-img {
+  height: 3.4rem;
+}
+
+.category-mini__slider .category__item-name * {
+  font-weight: 400;
+  line-height: 140%;
 }
 
 .category .general__head-title h2 {
@@ -7711,9 +7807,6 @@ p {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -7904,6 +7997,13 @@ p {
   margin-bottom: 0;
   position: relative;
   z-index: 2;
+}
+
+.offers-inner__banner .general__head-title * {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 120%;
 }
 
 .offers-inner__banner .general__head-text * {
@@ -9074,6 +9174,16 @@ p {
   color: var(--blue);
 }
 
+.product__foot-property img {
+  max-width: 2rem;
+  width: auto;
+  height: 2rem;
+  -o-object-fit: contain;
+  object-fit: contain;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
 .product__foot-title {
   font-weight: 700;
 }
@@ -9455,6 +9565,8 @@ p {
   height: 6rem;
   border-radius: 50%;
   overflow: hidden;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .reviews__item-avatar img {
@@ -9559,6 +9671,55 @@ p {
   -ms-grid-columns: 1fr 2rem 1fr 2rem 1fr;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  width: 100%;
+}
+
+.search__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.search__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1rem 2rem;
+}
+
+.search__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 1.6rem;
+  width: 100%;
+}
+
+.search__form .form-group {
+  max-width: 60rem;
+  width: 100%;
+}
+
+.block .search .catalog__block .card__item {
   width: 100%;
 }
 
@@ -9743,11 +9904,28 @@ p {
   .block .catalog__block .card__item-img {
     border-radius: 1.2rem;
   }
+
+  .block .search .catalog__block .card__item {
+    width: calc(50% - 0.5rem);
+  }
 }
 
 @media (min-width: 835px) {
   .swiper-pagination {
     display: none;
+  }
+
+  .filter {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-row: 1/3;
+  }
+
+  .filter__item-head.active .filter__item-title {
+    font-weight: 700;
   }
 
   .card__item-quantity .btn {
@@ -9796,6 +9974,20 @@ p {
 
   .list .catalog .card__item-controls {
     display: none;
+  }
+
+  .catalog__body {
+    -ms-grid-rows: 1fr auto;
+    grid-template-rows: 1fr auto;
+  }
+
+  .catalog__content {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
   }
 
   .catalog__btn {
@@ -9898,6 +10090,10 @@ p {
     -webkit-transform: translateX(1rem);
     -ms-transform: translateX(1rem);
     transform: translateX(1rem);
+  }
+
+  .block .search .catalog__block .card__item {
+    width: calc(25% - 0.75rem);
   }
 }
 
@@ -10017,6 +10213,10 @@ p {
 
   .control__link-text {
     font-size: 1.2rem;
+  }
+
+  .filter__item-title {
+    font-weight: 700;
   }
 
   .filter__drop {
@@ -10477,6 +10677,22 @@ p {
 
   .sample li {
     margin-bottom: 1.5rem;
+  }
+
+  .sample__content h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .sample__content h3 {
+    margin-bottom: 1.5rem;
+  }
+
+  .sample__list-mb0 {
+    margin-bottom: 1.5rem;
+  }
+
+  .sample__list-mb0 li {
+    margin-bottom: 0;
   }
 
   .template .general__head-title h1 {
@@ -10989,10 +11205,6 @@ p {
     display: none;
   }
 
-  .catalog__block {
-    gap: 1rem;
-  }
-
   .catalog__block .card__item {
     width: calc(50% - 1rem);
     gap: 1.5rem;
@@ -11205,6 +11417,10 @@ p {
 
   .offers-inner__banner {
     padding: 3rem 2rem;
+  }
+
+  .offers-inner__banner .general__head-title * {
+    font-size: 2.5rem;
   }
 
   .offers-form__inner {

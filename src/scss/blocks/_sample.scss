@@ -2,9 +2,11 @@
 
 .sample {
 
-  &__inner {}
+  &:not(.offers-inner__page .sample) {
+    color: var(--gray);
+  }
 
-  &__content {}
+  &__inner {}
 
   .general {
 
@@ -55,6 +57,49 @@
       position: absolute;
       top: 0.9rem;
       left: 0.75rem;
+    }
+  }
+
+  &__content {
+
+    h2 {
+      font-weight: 400;
+
+      margin-bottom: 2rem;
+
+      @include md {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    h3 {
+      font-size: 1.6rem;
+      line-height: 120%;
+
+      margin-bottom: 2rem;
+
+      @include md {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  &__list {
+
+    &-mb0 {
+      margin-bottom: 2rem;
+
+      @include md {
+        margin-bottom: 1.5rem;
+      }
+
+      li {
+        margin-bottom: 0;
+
+        @include md {
+          margin-bottom: 0;
+        }
+      }
     }
   }
 }

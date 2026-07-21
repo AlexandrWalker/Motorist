@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ru" class="page__inner block">
+@@include('blocks/head.html', {"title": "Motorist"})
+
+<body>
+  <div class="wrapper">
+    <!-- Шапка -->
+    @@include('./blocks/header.html')
+    <!-- Мега меню каталога -->
+    @@include('./blocks/megamenu.html')
+    <main class="main">
+
+      <section class="template">
+        <div class="container">
+          <div class="template__inner">
+
+            <div class="breadcrumbs">
+              <ul>
+                <li>
+                  <a href="/Motorist">
+                    Главная
+                  </a>
+                </li>
+                <li>
+                  Камлоки
+                </li>
+              </ul>
+            </div>
+
+            <div class="general__head">
+              <div class="general__head-title" data-split="lines">
+                <h1>
+                  Камлоки
+                </h1>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog">
+        <div class="container">
+          <div class="catalog__inner">
+
+            <div class="catalog__head" data-transform="fade">
+              <div class="swiper category-mini__slider">
+                <div class="swiper-wrapper">
+                  @@loop('./elements/catalog-category-item.html', './data/catalog-category-items.json')
+                </div>
+              </div>
+              <div class="swiper-button-prev category-mini-button-prev">
+                <i class="icon-slider-arrow"></i>
+              </div>
+              <div class="swiper-button-next category-mini-button-next">
+                <i class="icon-slider-arrow"></i>
+              </div>
+            </div>
+
+            <button class="catalog__btn btn btn--gray h6" data-fancybox href="#popup-2">
+              Фильтр товаров
+              <i class="icon-filter"></i>
+            </button>
+
+            <div class="catalog__body">
+
+              @@include('./blocks/filter-category.html')
+
+              <div class="control">
+                <div class="control__btns">
+                  <button class="control__btn btn control__btn--active" data-view="block">
+                    <i class="icon-bento-menu"></i>
+                  </button>
+                  <button class="control__btn btn" data-view="list">
+                    <i class="icon-kebab-menu"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="catalog__content">
+                <div class="catalog__block">
+                  <!-- @@loop('./elements/card-item.html', './data/card-items.json') -->
+                  @@loop('./elements/catalog-card-item.html', './data/catalog-card-items.json')
+                </div>
+
+                <div class="pagination">
+                  <div class="pagination__inner">
+                    <div class="pagination__items">
+                      <div class="pagination__item pagination__item--active">
+                        <span class="pagination__item-text">
+                          1
+                        </span>
+                      </div>
+                      <div class="pagination__item">
+                        <span class="pagination__item-text">
+                          2
+                        </span>
+                      </div>
+                      <div class="pagination__item">
+                        <span class="pagination__item-text">
+                          3
+                        </span>
+                      </div>
+                      <div class="pagination__item">
+                        <span class="pagination__item-text">
+                          4
+                        </span>
+                      </div>
+                      <div class="pagination__null">
+                        <span class="pagination__null-text">
+                          ...
+                        </span>
+                      </div>
+                      <div class="pagination__item">
+                        <span class="pagination__item-text">
+                          10
+                        </span>
+                      </div>
+                      <div class="pagination__item">
+                        <span class="pagination__item-text">
+                          11
+                        </span>
+                      </div>
+                      <div class="pagination__btn">
+                        <span class="pagination__btn-icon">
+                          <i class="icon-slider-arrow"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="popular">
+        <div class="container">
+          <div class="popular__inner">
+
+            <div class="general__head">
+              <div class="general__head-title" data-split="lines">
+                <h2>
+                  Популярные товары
+                </h2>
+              </div>
+            </div>
+
+            <div class="general__btns">
+              <a class="btn" href="/Motorist/catalog.html">
+                Все товары
+                <i class="icon-arrow"></i>
+              </a>
+            </div>
+
+            @@include('./repeating-blocks/popular-block.html')
+
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews">
+        <div class="container">
+          <div class="reviews__inner">
+
+            <div class="general__head">
+              <div class="general__head-title" data-split="lines">
+                <h2>
+                  Отзывы
+                </h2>
+              </div>
+            </div>
+
+            <div class="general__btns">
+              <a class="btn" href="/Motorist/reviews.html">
+                Все отзывы
+                <i class="icon-arrow"></i>
+              </a>
+            </div>
+
+            @@include('./repeating-blocks/reviews-block.html')
+
+          </div>
+        </div>
+      </section>
+
+      <section class="faq">
+        <div class="container">
+          <div class="faq__inner">
+
+            <div class="general__head">
+              <div class="general__head-title" data-split="lines">
+                <h2>
+                  Вопросы и ответы
+                </h2>
+              </div>
+            </div>
+
+            <div class="faq__items accordion-parent">
+              <div class="faq__item border accordion">
+                <div class="faq__item-head accordion-head">
+                  <div class="faq__item-title">
+                    Как правильно подобрать камлок по диаметру?
+                  </div>
+                  <i class="icon-arrow"></i>
+                </div>
+                <div class="faq__item-body accordion-body">
+                  <div class="faq__item-content">
+                    <p>
+                      Камлоки маркируются по номинальному диаметру в дюймах: 1/2", 3/4", 1", 1-1/4", 1-1/2", 2", 3", 4".
+                      Этот размер соответствует условному проходу соединения. Для точного подбора измерьте внутренний
+                      диаметр вашего шланга и подберите камлок с таким же или ближайшим большим номиналом. Например, для
+                      шланга с внутренним диаметром 25 мм подойдёт камлок размером 1" (25,4 мм). Важно: типы A, B, C
+                      одного номинала совместимы между собой — это международный стандарт.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="faq__item border accordion">
+                <div class="faq__item-head accordion-head">
+                  <div class="faq__item-title">
+                    Какой материал камлока выбрать для дизельного топлива?
+                  </div>
+                  <i class="icon-arrow"></i>
+                </div>
+                <div class="faq__item-body accordion-body">
+                  <div class="faq__item-content">
+                    <p>
+                      Двухслойное армирование полиэфирной или полиамидной нитью создает более
+                      прочный силовой каркас, который позволяет рукаву выдерживать более высокое рабочее
+                      давление без деформации и раздувания. Такая конструкция увеличивает срок службы
+                      изделия, особенно в системах с частыми гидроударами или пульсациями давления. Кроме
+                      того, два слоя армирования обеспечивают лучшую защиту от механических повреждений и
+                      перегибов.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="faq__item border accordion">
+                <div class="faq__item-head accordion-head">
+                  <div class="faq__item-title">
+                    Какое максимальное давление выдерживают камлоки?
+                  </div>
+                  <i class="icon-arrow"></i>
+                </div>
+                <div class="faq__item-body accordion-body">
+                  <div class="faq__item-content">
+                    <p>
+                      Двухслойное армирование полиэфирной или полиамидной нитью создает более
+                      прочный силовой каркас, который позволяет рукаву выдерживать более высокое рабочее
+                      давление без деформации и раздувания. Такая конструкция увеличивает срок службы
+                      изделия, особенно в системах с частыми гидроударами или пульсациями давления. Кроме
+                      того, два слоя армирования обеспечивают лучшую защиту от механических повреждений и
+                      перегибов.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="sample">
+        <div class="container">
+          <div class="sample__inner">
+            <div class="sample__content" data-transform="fade">
+              <h2>
+                Камлоки
+              </h2>
+              <p>
+                Камлоки (Camlock) — это быстроразъёмные соединения кулачкового типа, предназначенные для оперативного
+                подключения и отключения гибких шлангов в системах перекачки жидкостей, сыпучих материалов и газов под
+                низким давлением. Механизм камлока основан на двух эксцентриковых рычагах (кулачках), которые при
+                повороте прижимают ответную часть к уплотнению, обеспечивая герметичное соединение за одно движение без
+                использования инструмента.
+              </p>
+              <p>
+                Камлоки широко применяются в нефтехимической, пищевой, сельскохозяйственной и строительной отраслях —
+                везде, где требуется частое переподключение шлангов и скорость монтажа критична. В ассортименте
+                представлены камлоки из алюминия, латуни, нержавеющей стали и полипропилена, что позволяет подобрать
+                материал под перекачиваемую среду: от воды и пищевых жидкостей до дизельного топлива и химических
+                реагентов.
+              </p>
+              <h3>
+                Типы соединений камлок
+              </h3>
+              <p>
+                <b>Тип A — штуцер с наружной резьбой и пазом</b> — Наиболее универсальный тип: вкручивается в резьбовой
+                порт
+                или муфту и служит ответной частью для адаптеров типов B, C, D. Используется как стационарный порт на
+                насосе, ёмкости или трубопроводе.
+              </p>
+              <p>
+                <b>Тип B — муфта с внутренней резьбой и кулачками</b> — Навинчивается на шланг с наружной резьбой (или
+                через штуцер) и служит активной частью соединения: кулачки набрасываются на паз адаптера типа A, E или F
+                и зажимаются рычагами.
+              </p>
+              <p>
+                <b>Тип C — муфта со штуцером «ёлочка» и кулачками</b> — Аналог типа B, но вместо резьбы имеет штуцер
+                «ёлочку» для прямого надевания шланга с фиксацией хомутом. Самый популярный тип для оперативного
+                подключения шлангов.
+              </p>
+              <p>
+                <b>Тип E — заглушка с кулачками</b> — Герметичная заглушка, которая фиксируется на адаптере типа A для
+                перекрытия магистрали, когда шланг не подключён. Предотвращает вытекание жидкости и попадание грязи.
+              </p>
+              <p>
+                <b>Тип F — муфта с наружной резьбой и пазом</b> — Ответная часть с наружной резьбой: вкручивается в
+                муфту или порт и принимает кулачки адаптера типа B или C. Используется там, где нужен резьбовой монтаж
+                ответной части.
+              </p>
+              <h3>
+                Области применения
+              </h3>
+              <ul class="sample__list-mb0">
+                <li>
+                  Нефтехимия — перекачка топлива, масел, растворителей и других нефтепродуктов
+                </li>
+                <li>
+                  Сельское хозяйство — заправка техники, внесение удобрений, ирригационные системы
+                </li>
+                <li>
+                  Пищевая промышленность — перекачка пищевых жидкостей (вода, молоко, масло, сиропы) через камлоки из
+                  нержавейки или полипропилена
+                </li>
+                <li>
+                  Строительство — подача воды, цементных растворов, химических добавок
+                </li>
+                <li>
+                  Пожарное оборудование — быстроразъёмные соединения пожарных рукавов
+                </li>
+                <li>
+                  Водоотведение — подключение насосов к временным трубопроводам для откачки воды
+                </li>
+              </ul>
+              <h3>
+                Доставка по всей России
+              </h3>
+              <p>
+                Мы организуем отправку заказов в любую точку Российской Федерации, а также в Казахстан и Республику
+                Беларусь. Обработка и передача груза в транспортную компанию осуществляется в день оформления заказа. Вы
+                можете выбрать любого перевозчика с учетом удобных для вас сроков и тарифов. Ниже указаны города, жители
+                которых чаще всего обращаются к нам, — здесь доставка налажена особенно оперативно.
+              </p>
+              <p>
+                <b>Сибирь:</b> Новосибирск, Омск, Красноярск, Иркутск, Томск, Кемерово, Новокузнецк, Барнаул, Улан-Удэ,
+                Чита <br>
+                <b>Урал:</b> Екатеринбург, Челябинск, Тюмень, Пермь, Курган, Магнитогорск, Нижний Тагил, Сургут,
+                Ханты-Мансийск <br>
+                <b>Дальний Восток:</b> Владивосток, Хабаровск, Благовещенск, Якутск, Южно-Сахалинск,
+                Петропавловск-Камчатский,
+                Комсомольск-на-Амуре, Магадан, Анадырь
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <!-- Плашка -->
+    @@include('blocks/plate.html')
+    <!-- Попап -->
+    @@include('blocks/popup.html')
+    <!-- Подвал -->
+    @@include('blocks/footer.html')

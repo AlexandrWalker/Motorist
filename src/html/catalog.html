@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="page__inner list">
+<html lang="ru" class="page__inner block">
 @@include('blocks/head.html', {"title": "Motorist"})
 
 <body>
@@ -38,23 +38,6 @@
                   Список товаров
                 </h1>
               </div>
-              <div class="control">
-                <!-- <div class="control__search">
-                  <input class="control__search-input" name="catalog-search" type="text"
-                    placeholder="Поиск по артикулу">
-                  <button class="control__search-btn">
-                    <i class="icon-search"></i>
-                  </button>
-                </div> -->
-                <div class="control__btns">
-                  <button class="control__btn btn" data-view="block">
-                    <i class="icon-bento-menu"></i>
-                  </button>
-                  <button class="control__btn btn control__btn--active" data-view="list">
-                    <i class="icon-kebab-menu"></i>
-                  </button>
-                </div>
-              </div>
             </div>
 
           </div>
@@ -66,15 +49,15 @@
           <div class="catalog__inner">
 
             <div class="catalog__head" data-transform="fade">
-              <div class="swiper category__slider">
+              <div class="swiper category-mini__slider">
                 <div class="swiper-wrapper">
                   @@loop('./elements/catalog-category-item.html', './data/catalog-category-items.json')
                 </div>
               </div>
-              <div class="swiper-button-prev category-button-prev">
+              <div class="swiper-button-prev category-mini-button-prev">
                 <i class="icon-slider-arrow"></i>
               </div>
-              <div class="swiper-button-next category-button-next">
+              <div class="swiper-button-next category-mini-button-next">
                 <i class="icon-slider-arrow"></i>
               </div>
               <div class="category__dropdowns">
@@ -5465,6 +5448,24 @@
             <div class="catalog__body">
 
               @@include('./blocks/filter.html')
+
+              <div class="control">
+                <!-- <div class="control__search">
+                  <input class="control__search-input" name="catalog-search" type="text"
+                    placeholder="Поиск по артикулу">
+                  <button class="control__search-btn">
+                    <i class="icon-search"></i>
+                  </button>
+                </div> -->
+                <div class="control__btns">
+                  <button class="control__btn btn control__btn--active" data-view="block">
+                    <i class="icon-bento-menu"></i>
+                  </button>
+                  <button class="control__btn btn" data-view="list">
+                    <i class="icon-kebab-menu"></i>
+                  </button>
+                </div>
+              </div>
 
               <div class="catalog__content">
                 <div class="catalog__block">

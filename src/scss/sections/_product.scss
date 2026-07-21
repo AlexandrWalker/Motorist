@@ -260,6 +260,14 @@
 
         color: var(--blue);
       }
+
+      img {
+        max-width: 2rem;
+        width: auto;
+        height: 2rem;
+        object-fit: contain;
+        flex-shrink: 0;
+      }
     }
 
     &-title {

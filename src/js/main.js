@@ -665,8 +665,66 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             835: {
               slidesPerGroup: 1,
-              slidesPerView: 6,
+              slidesPerView: 5,
               spaceBetween: 20,
+            },
+          },
+        },
+      },
+      {
+        sliderSelector: '.category-mini__slider',
+        prevSelector: '.category-mini-button-prev',
+        nextSelector: '.category-mini-button-next',
+        highlight: false,
+        edgeTracker: false,
+        swiperOptions: {
+          slidesPerGroup: 1,
+          slidesPerView: 1,
+          spaceBetween: 10,
+          speed: 500,
+          grabCursor: true,
+          loop: false,
+          touchRatio: 1.6,
+          resistance: true,
+          resistanceRatio: 0.4,
+          centeredSlides: false,
+          centeredSlidesBounds: true,
+          simulateTouch: true,
+          direction: 'horizontal',
+          touchStartPreventDefault: true,
+          touchMoveStopPropagation: true,
+          threshold: 8,
+          touchAngle: 25,
+          watchOverflow: true,
+          freeMode: {
+            enabled: true,
+            momentum: true,
+            momentumRatio: 0.85,
+            momentumVelocityRatio: 1,
+            momentumBounce: false,
+            sticky: true,
+          },
+          mousewheel: {
+            forceToAxis: true,
+            sensitivity: 1,
+            releaseOnEdges: true,
+          },
+          navigation: false,
+          breakpoints: {
+            0: {
+              slidesPerGroup: 1,
+              slidesPerView: 'auto',
+              spaceBetween: 10,
+            },
+            601: {
+              slidesPerGroup: 1,
+              slidesPerView: 4,
+              spaceBetween: 10,
+            },
+            835: {
+              slidesPerGroup: 1,
+              slidesPerView: 5,
+              spaceBetween: 10,
             },
           },
         },
@@ -1969,41 +2027,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  (function () {
-    const categorySlides = document.querySelectorAll('.category__slide');
-    const categoryItems = document.querySelectorAll('.catalog__item');
+  // (function () {
+  //   const categorySlides = document.querySelectorAll('.category__slide');
+  //   const categoryItems = document.querySelectorAll('.catalog__item');
 
-    let hideTimeout = null;
+  //   let hideTimeout = null;
 
-    categorySlides.forEach(slide => {
-      slide.addEventListener('mouseenter', () => {
-        clearTimeout(hideTimeout);
+  //   categorySlides.forEach(slide => {
+  //     slide.addEventListener('mouseenter', () => {
+  //       clearTimeout(hideTimeout);
 
-        categoryItems.forEach(item => {
-          item.classList.remove('active');
-          if (item.dataset.slide === slide.dataset.slide) {
-            item.classList.add('active');
-          }
-        });
-      });
+  //       categoryItems.forEach(item => {
+  //         item.classList.remove('active');
+  //         if (item.dataset.slide === slide.dataset.slide) {
+  //           item.classList.add('active');
+  //         }
+  //       });
+  //     });
 
-      slide.addEventListener('mouseleave', () => {
-        hideTimeout = setTimeout(() => {
-          categoryItems.forEach(item => item.classList.remove('active'));
-        }, 150);
-      });
-    });
+  //     slide.addEventListener('mouseleave', () => {
+  //       hideTimeout = setTimeout(() => {
+  //         categoryItems.forEach(item => item.classList.remove('active'));
+  //       }, 150);
+  //     });
+  //   });
 
-    categoryItems.forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        clearTimeout(hideTimeout);
-      });
+  //   categoryItems.forEach(item => {
+  //     item.addEventListener('mouseenter', () => {
+  //       clearTimeout(hideTimeout);
+  //     });
 
-      item.addEventListener('mouseleave', () => {
-        hideTimeout = setTimeout(() => {
-          categoryItems.forEach(i => i.classList.remove('active'));
-        }, 150);
-      });
-    });
-  })();
+  //     item.addEventListener('mouseleave', () => {
+  //       hideTimeout = setTimeout(() => {
+  //         categoryItems.forEach(i => i.classList.remove('active'));
+  //       }, 150);
+  //     });
+  //   });
+  // })();
+
 });

@@ -1,6 +1,12 @@
 @use './../mixins' as *;
 
 .filter {
+  height: fit-content;
+
+  @include domd {
+    grid-column: 1/2;
+    grid-row: 1/3;
+  }
 
   form {
     position: relative;
@@ -94,6 +100,13 @@
       &.active {
         margin-bottom: 1rem;
 
+        .filter__item-title {
+
+          @include domd {
+            font-weight: 700;
+          }
+        }
+
         i {
           transform: rotate(180deg);
         }
@@ -102,12 +115,17 @@
 
     &-title {
       font-family: var(--font-family);
-      font-weight: 700;
+      font-weight: 400;
       font-size: 1.4rem;
       line-height: 120%;
       pointer-events: none;
 
+      transition: font-weight 0.3s ease;
       margin-right: 2rem;
+
+      @include md {
+        font-weight: 700;
+      }
     }
   }
 
@@ -249,6 +267,24 @@
 
     &-btn {
       --btn-height: 3rem;
+    }
+  }
+
+  &__clear {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.3rem;
+    margin: 2rem auto;
+
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 120%;
+    color: var(--red);
+
+    svg {
+      width: 1.8rem;
+      height: 1.8rem;
     }
   }
 }

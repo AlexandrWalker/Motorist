@@ -132,6 +132,7 @@
         &:hover {
 
           i::before {
+            // icon-favorite-fill-min
             content: "\e90f";
           }
         }
@@ -412,6 +413,7 @@
 
       .quantity {
         width: 100%;
+        margin-bottom: 1rem;
       }
     }
 
@@ -717,6 +719,7 @@
   &.favorite-active {
 
     i::before {
+      // icon-favorite-fill-min
       content: "\e90f";
     }
   }

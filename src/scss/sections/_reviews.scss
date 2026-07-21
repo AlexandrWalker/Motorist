@@ -67,6 +67,7 @@
       height: 6rem;
       border-radius: 50%;
       overflow: hidden;
+      flex-shrink: 0;
 
       @include md {
         width: 4rem;

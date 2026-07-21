@@ -1,0 +1,49 @@
+@use './../mixins' as *;
+
+.search {
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem 2rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: row;
+    gap: 1.6rem;
+    width: 100%;
+
+    .form-group {
+      max-width: 60rem;
+      width: 100%;
+    }
+  }
+
+  &__body {}
+
+  &__items {}
+
+  .catalog__block .card__item {
+
+    .block & {
+      width: 100%;
+
+      @include dosm {
+        width: calc(50% - 0.5rem);
+      }
+
+      @include domd {
+        width: calc(25% - (3rem / 4));
+      }
+    }
+  }
+}

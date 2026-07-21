@@ -453,6 +453,10 @@
     // gap: 2rem;
     gap: 1.61%;
 
+    @include domd {
+      grid-template-rows: 1fr auto;
+    }
+
     @include md {
       display: flex;
       flex-direction: column;
@@ -471,18 +475,19 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
+
+    @include domd {
+      grid-column: 2/3;
+      grid-row: 2/3;
+    }
   }
 
   &__block {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1rem;
     transition: all 0.5s ease;
-
-    @include md {
-      gap: 1rem;
-    }
 
     .card__item {
       width: calc((100% / 3) - (4rem / 3));

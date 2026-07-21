@@ -43,7 +43,6 @@
     backdrop-filter: blur(2px);
     padding: 1rem 1rem 1rem 2rem;
     border-radius: 1.5rem;
-    border: 0.1rem solid var(--white);
     background-color: rgba(113, 133, 149, 0.15);
 
     z-index: 2;
@@ -80,6 +79,8 @@
 
     &+.dropout {
       min-width: 27.1rem;
+
+      top: calc(100% + 1.8rem);
 
       &__inner {
         padding: 3rem 4rem 3rem 3rem;

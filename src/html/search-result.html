@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru" class="page__inner block">
+@@include('blocks/head.html', {"title": "Motorist"})
+
+<body>
+  <div class="wrapper">
+    <!-- Шапка -->
+    @@include('./blocks/header.html')
+    <!-- Мега меню каталога -->
+    @@include('./blocks/megamenu.html')
+    <main class="main">
+
+      <section class="template">
+        <div class="container">
+          <div class="template__inner">
+
+            <div class="breadcrumbs">
+              <ul>
+                <li>
+                  <a href="/Motorist">
+                    Главная
+                  </a>
+                </li>
+                <li>
+                  Поиск
+                </li>
+              </ul>
+            </div>
+
+            <div class="general__head">
+              <div class="general__head-title" data-split="lines">
+                <h1>
+                  Поиск
+                </h1>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="search">
+        <div class="container">
+          <div class="search__inner">
+
+            <div class="search__head">
+              <form class="search__form" method="get" action="/search/">
+                <div class="form-group">
+                  <input class="form-input filled" name="q" type="text" placeholder="Артикул, толщина, название"
+                    value="123">
+                </div>
+                <button class="btn btn--blue" type="submit">Найти</button>
+              </form>
+              <div class="control">
+                <div class="control__btns">
+                  <button class="control__btn btn control__btn--active" data-view="block">
+                    <i class="icon-bento-menu"></i>
+                  </button>
+                  <button class="control__btn btn" data-view="list">
+                    <i class="icon-kebab-menu"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="search__body">
+
+              <div class="catalog catalog__block">
+                @@loop('./elements/catalog-card-item.html', './data/catalog-card-items.json')
+              </div>
+              
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <!-- Плашка -->
+    @@include('blocks/plate.html')
+    <!-- Попап -->
+    @@include('blocks/popup.html')
+    <!-- Подвал -->
+    @@include('blocks/footer.html')
