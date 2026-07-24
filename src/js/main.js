@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isMobile) {
           // Мобильная логика
           if (isActive) {
-            // Повторный клик — снять активный класс
+            // Повторный клик - снять активный класс
             item.classList.remove('megamenu__item-active');
           } else {
             // Назначить активный, снять у остальных
@@ -308,13 +308,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!catalogBody) return;
 
     const filter = catalogBody.querySelector('.filter');
-    const form = filter.querySelector('form');
+    const filterInner = filter.querySelector('.filter__inner');
+    const filterDrop = filter.querySelector('.filter__drop');
 
-    let filterDrop = filter.querySelector('.filter__drop');
-    form.appendChild(filterDrop);
+    if (!filterDrop) return;
 
     const checkedOrder = [];
     const DESKTOP_BREAKPOINT = 834;
+
+    let currentTop = 0;
+    let targetTop = 0;
+    let isAnimating = false;
+    let isScrollPending = false; // Флаг для оптимизации скролла
 
     function isDesktop() {
       return window.innerWidth > DESKTOP_BREAKPOINT;
@@ -325,38 +330,96 @@ document.addEventListener('DOMContentLoaded', () => {
       return checkedOrder[checkedOrder.length - 1];
     }
 
-    function updateDropPosition() {
+    // Основная тяжелая функция расчетов
+    function calculateTargetPosition() {
       const lastChecked = getLastCheckedItem();
 
-      if (!lastChecked) {
+      if (!lastChecked || !isDesktop()) {
         filterDrop.classList.remove('active');
-        filterDrop.style.top = '';
+        isAnimating = false;
+        return;
+      }
+
+      const labelEl = lastChecked.closest('.filter__item');
+      if (!labelEl || labelEl.offsetParent === null) {
+        filterDrop.classList.remove('active');
+        isAnimating = false;
+        return;
+      }
+
+      const filterRect = filter.getBoundingClientRect();
+      const bodyRect = catalogBody.getBoundingClientRect();
+      const labelRect = labelEl.getBoundingClientRect();
+      const dropHeight = filterDrop.offsetHeight;
+
+      const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+      const stickyTopOffset = 18 * rem;
+      const stickyBottomOffset = 1 * rem;
+
+      if (bodyRect.bottom < stickyTopOffset || bodyRect.top > window.innerHeight) {
+        filterDrop.classList.remove('active');
+        isAnimating = false;
         return;
       }
 
       filterDrop.classList.add('active');
 
-      const labelEl = lastChecked.closest('.filter__item');
-      const formRect = form.getBoundingClientRect();
-      const labelRect = labelEl.getBoundingClientRect();
+      const absoluteMinTop = bodyRect.top - filterRect.top;
+      const absoluteMaxTop = bodyRect.bottom - filterRect.top - dropHeight;
 
-      const topOffset = labelRect.top - formRect.top;
-      const dropHeight = filterDrop.offsetHeight;
-      const labelCenter = topOffset + labelRect.height / 2;
+      const windowMinTop = Math.max(absoluteMinTop, stickyTopOffset - filterRect.top);
+      const windowMaxTop = Math.min(absoluteMaxTop, window.innerHeight - filterRect.top - dropHeight - stickyBottomOffset);
 
-      const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+      const labelCenterY = (labelRect.top - filterRect.top) + (labelRect.height / 2);
+      const dropHalfHeight = dropHeight / 2;
+      let calculatedTop = labelCenterY - dropHalfHeight;
 
-      const finalTop = labelCenter - dropHeight / 3.6;
+      if (calculatedTop < windowMinTop) {
+        targetTop = windowMinTop;
+      } else if (calculatedTop > windowMaxTop) {
+        targetTop = windowMaxTop;
+      } else {
+        targetTop = calculatedTop;
+      }
 
-      filterDrop.style.top = finalTop + 'px';
+      if (!isAnimating) {
+        isAnimating = true;
+        smoothTick();
+      }
     }
 
-    form.addEventListener('change', (e) => {
+    // Оптимизированный триггер для событий скролла (Защита от микролагов)
+    function requestPositionUpdate() {
+      if (!isScrollPending) {
+        isScrollPending = true;
+        requestAnimationFrame(() => {
+          calculateTargetPosition();
+          isScrollPending = false;
+        });
+      }
+    }
+
+    function smoothTick() {
+      if (!isAnimating) return;
+
+      currentTop = currentTop + (targetTop - currentTop) * 0.15;
+      filterDrop.style.top = `${currentTop}px`;
+
+      if (Math.abs(targetTop - currentTop) < 0.1) {
+        currentTop = targetTop;
+        filterDrop.style.top = `${currentTop}px`;
+        isAnimating = false;
+        return;
+      }
+
+      requestAnimationFrame(smoothTick);
+    }
+
+    filterInner.addEventListener('change', (e) => {
       if (e.target.type !== 'checkbox') return;
       if (e.target.closest('.filter__nested')) return;
 
       const input = e.target;
-
       if (input.checked) {
         checkedOrder.push(input);
       } else {
@@ -364,20 +427,27 @@ document.addEventListener('DOMContentLoaded', () => {
         if (idx !== -1) checkedOrder.splice(idx, 1);
       }
 
-      updateDropPosition();
+      calculateTargetPosition();
     });
 
-    window.addEventListener('resize', () => {
-      updateDropPosition();
+    filterInner.addEventListener('click', (e) => {
+      if (e.target.closest('.filter__item-head')) {
+        const interval = setInterval(calculateTargetPosition, 16);
+        setTimeout(() => clearInterval(interval), 400);
+      }
     });
 
-    // Пересчитываем позицию когда форма меняет высоту
-    // (раскрытие/закрытие групп фильтра)
+    // Заменяем прямой вызов тяжелой функции на легкий requestPositionUpdate
+    window.addEventListener('scroll', requestPositionUpdate, { passive: true });
+    filterInner.addEventListener('scroll', requestPositionUpdate, { passive: true });
+
+    window.addEventListener('resize', () => calculateTargetPosition());
+
     const resizeObserver = new ResizeObserver(() => {
-      updateDropPosition();
+      // ResizeObserver тоже может спамить при анимациях раскрытия — оптимизируем его
+      requestPositionUpdate();
     });
-
-    resizeObserver.observe(form);
+    resizeObserver.observe(filterInner);
   })();
 
   /**
@@ -536,7 +606,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // desktop логика — разрешаем переход
+      // desktop логика - разрешаем переход
       isClickNavigation = true;
       clearTimeout(openTimeout);
     });
@@ -964,7 +1034,7 @@ document.addEventListener('DOMContentLoaded', () => {
           spaceBetween: 0,
           speed: 500,
           grabCursor: true,
-          loop: false,
+          loop: true,
           touchRatio: 1.6,
           resistance: true,
           resistanceRatio: 0.4,
@@ -978,14 +1048,15 @@ document.addEventListener('DOMContentLoaded', () => {
           touchAngle: 25,
           watchOverflow: true,
           watchSlidesProgress: true,
-          freeMode: {
-            enabled: true,
-            momentum: true,
-            momentumRatio: 0.85,
-            momentumVelocityRatio: 1,
-            momentumBounce: false,
-            sticky: true,
-          },
+          // freeMode: {
+          //   enabled: true,
+          //   momentum: true,
+          //   momentumRatio: 0.85,
+          //   momentumVelocityRatio: 1,
+          //   momentumBounce: false,
+          //   sticky: true,
+          // },
+          freemode: false,
           mousewheel: {
             forceToAxis: true,
             sensitivity: 1,
@@ -1948,17 +2019,17 @@ document.addEventListener('DOMContentLoaded', () => {
         setFormatted(value + 1);
       });
 
-      // Фокус — убираем суффикс
+      // Фокус - убираем суффикс
       input.addEventListener('focus', () => {
         setRaw(parse(input.value.replace(/\D/g, '')));
       });
 
-      // Ввод — только цифры
+      // Ввод - только цифры
       input.addEventListener('input', () => {
         input.value = input.value.replace(/\D/g, '');
       });
 
-      // Blur — нормализуем и добавляем суффикс
+      // Blur - нормализуем и добавляем суффикс
       input.addEventListener('blur', () => {
         const value = clamp(parse(input.value));
         setFormatted(value);
@@ -2026,6 +2097,78 @@ document.addEventListener('DOMContentLoaded', () => {
       el.classList.toggle(activeClass, el === btn);
     });
   });
+
+  (function () {
+    const copyButtons = document.querySelectorAll('.article--js');
+
+    copyButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const spanText = button.querySelector('span');
+        if (!spanText) return;
+
+        const textToCopy = spanText.innerText;
+
+        navigator.clipboard.writeText(textToCopy)
+          .then(() => {
+            // Создаем элемент для всплывающего текста
+            const toast = document.createElement('div');
+            toast.className = 'copy-toast';
+            toast.textContent = 'Скопировано!';
+
+            // Добавляем его внутрь кнопки
+            button.appendChild(toast);
+
+            // Удаляем элемент из DOM после завершения анимации (через 800 мс)
+            setTimeout(() => {
+              toast.remove();
+            }, 800);
+          })
+          .catch(err => {
+            console.error('Ошибка копирования: ', err);
+          });
+      });
+    });
+  })();
+
+  (function () {
+    const cartButtons = document.querySelectorAll('.cart-btn');
+    const notification = document.querySelector('.notif');
+
+    if (!cartButtons.length || !notification) return;
+
+    const notifCloseBtn = notification.querySelector('.notif__btn');
+
+    let notifTimeoutId = null;
+
+    function hideNotification() {
+      notification.classList.remove('notif--show');
+      if (notifTimeoutId) {
+        clearTimeout(notifTimeoutId);
+        notifTimeoutId = null;
+      }
+    }
+
+    cartButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        notification.classList.add('notif--show');
+
+        if (notifTimeoutId) {
+          clearTimeout(notifTimeoutId);
+        }
+
+        notifTimeoutId = setTimeout(() => {
+          notification.classList.remove('notif--show');
+          notifTimeoutId = null;
+        }, 5000);
+      });
+    });
+
+    if (notifCloseBtn) {
+      notifCloseBtn.addEventListener('click', () => {
+        hideNotification();
+      });
+    }
+  })();
 
   // (function () {
   //   const categorySlides = document.querySelectorAll('.category__slide');

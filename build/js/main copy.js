@@ -3321,3 +3321,85 @@ document.addEventListener('DOMContentLoaded', () => {
             </div> -->
 
 */
+
+
+// Всплывашка у фильтра
+  // (function () {
+  //   const catalogBody = document.querySelector('.catalog__body');
+  //   if (!catalogBody) return;
+
+  //   const filter = catalogBody.querySelector('.filter');
+  //   const form = filter.querySelector('form');
+
+  //   let filterDrop = filter.querySelector('.filter__drop');
+
+  //   if (!filterDrop) return;
+
+  //   form.appendChild(filterDrop);
+
+  //   const checkedOrder = [];
+  //   const DESKTOP_BREAKPOINT = 834;
+
+  //   function isDesktop() {
+  //     return window.innerWidth > DESKTOP_BREAKPOINT;
+  //   }
+
+  //   function getLastCheckedItem() {
+  //     if (!checkedOrder.length) return null;
+  //     return checkedOrder[checkedOrder.length - 1];
+  //   }
+
+  //   function updateDropPosition() {
+  //     const lastChecked = getLastCheckedItem();
+
+  //     if (!lastChecked) {
+  //       filterDrop.classList.remove('active');
+  //       filterDrop.style.top = '';
+  //       return;
+  //     }
+
+  //     filterDrop.classList.add('active');
+
+  //     const labelEl = lastChecked.closest('.filter__item');
+  //     const formRect = form.getBoundingClientRect();
+  //     const labelRect = labelEl.getBoundingClientRect();
+
+  //     const topOffset = labelRect.top - formRect.top;
+  //     const dropHeight = filterDrop.offsetHeight;
+  //     const labelCenter = topOffset + labelRect.height / 2;
+
+  //     const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+
+  //     const finalTop = labelCenter - dropHeight / 3.6;
+
+  //     filterDrop.style.top = finalTop + 'px';
+  //   }
+
+  //   form.addEventListener('change', (e) => {
+  //     if (e.target.type !== 'checkbox') return;
+  //     if (e.target.closest('.filter__nested')) return;
+
+  //     const input = e.target;
+
+  //     if (input.checked) {
+  //       checkedOrder.push(input);
+  //     } else {
+  //       const idx = checkedOrder.indexOf(input);
+  //       if (idx !== -1) checkedOrder.splice(idx, 1);
+  //     }
+
+  //     updateDropPosition();
+  //   });
+
+  //   window.addEventListener('resize', () => {
+  //     updateDropPosition();
+  //   });
+
+  //   // Пересчитываем позицию когда форма меняет высоту
+  //   // (раскрытие/закрытие групп фильтра)
+  //   const resizeObserver = new ResizeObserver(() => {
+  //     updateDropPosition();
+  //   });
+
+  //   resizeObserver.observe(form);
+  // })();

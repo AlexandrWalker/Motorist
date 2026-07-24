@@ -2443,6 +2443,16 @@
     </div>
   </div>
 </div>
+
+<div class="notif">
+  <div class="notif__inner">
+    <div class="notif__text">
+      Товар добавлен в корзину
+    </div>
+    <div class="notif__btn">
+    </div>
+  </div>
+</div>
     <!-- Попап -->
     <div id="popup-1" class="popup border-opacity lenis" data-lenis-prevent>
   <div class="popup__inner">
@@ -2486,85 +2496,86 @@
     <div class="popup__body">
       <div class="filter">
   <form action="#">
-    <div class="filter__group">
-      <div class="filter__item-head">
-        <div class="filter__item-title">
-          Наличие товара
-        </div>
-        <i class="icon-chevron"></i>
-      </div>
-      <div class="filter__subgroup">
-        <div class="filter__subgroup-content">
-          <label class="filter__item filter__item--availability">
-            <input type="checkbox" name="sub0-1" />
-            <span class="filter__check border-opacity"></span>
-            <div class="filter__subgroup-title">
-              В наличии
-            </div>
-          </label>
-          <label class="filter__item filter__item--expected">
-            <input type="checkbox" name="sub0-1" />
-            <span class="filter__check border-opacity"></span>
-            <div class="filter__subgroup-title">
-              Ожидается поступление
-            </div>
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="filter__group">
-      <div class="filter__item-head">
-        <div class="filter__item-title">
-          Рукава силиконовые (тосол)
-        </div>
-        <i class="icon-chevron"></i>
-      </div>
-      <div class="filter__subgroup">
-        <div class="filter__subgroup-content">
-          <label class="filter__item">
-            <input type="checkbox" name="sub1" />
-            <span class="filter__check border-opacity"></span>
-            <div class="filter__subgroup-title">
-              Армированный
-            </div>
-            <i class="icon-chevron"></i>
-          </label>
-          <div class="filter__nested">
-            <div class="filter__nested-content">
-              <label class="filter__item">
-                <input type="checkbox" name="sub1-1" />
-                <span class="filter__check border-opacity"></span>
-                <div class="h6">
-                  2 слоя
-                </div>
-              </label>
-              <label class="filter__item">
-                <input type="checkbox" name="sub1-3" />
-                <span class="filter__check border-opacity"></span>
-                <div class="h6">
-                  1 слой
-                </div>
-              </label>
-              <label class="filter__item">
-                <input type="checkbox" name="sub1-4" />
-                <span class="filter__check border-opacity"></span>
-                <div class="h6">
-                  2 слоя, усиленный
-                </div>
-              </label>
-            </div>
+    <div class="filter__inner" data-lenis-prevent>
+      <div class="filter__group">
+        <div class="filter__item-head">
+          <div class="filter__item-title">
+            Наличие товара
           </div>
-          <label class="filter__item">
-            <input type="checkbox" name="sub2" />
-            <span class="filter__check border-opacity"></span>
-            <div class="filter__subgroup-title">
-              Вакуумный
-            </div>
-            <!-- <i class="icon-chevron"></i> -->
-          </label>
+          <i class="icon-chevron"></i>
+        </div>
+        <div class="filter__subgroup">
+          <div class="filter__subgroup-content">
+            <label class="filter__item filter__item--availability">
+              <input type="checkbox" name="sub0-1" />
+              <span class="filter__check border-opacity"></span>
+              <div class="filter__subgroup-title">
+                В наличии
+              </div>
+            </label>
+            <label class="filter__item filter__item--expected">
+              <input type="checkbox" name="sub0-1" />
+              <span class="filter__check border-opacity"></span>
+              <div class="filter__subgroup-title">
+                Ожидается поступление
+              </div>
+            </label>
+          </div>
         </div>
       </div>
-      <!-- <div class="filter__subgroup">
+      <div class="filter__group">
+        <div class="filter__item-head">
+          <div class="filter__item-title">
+            Рукава силиконовые (тосол)
+          </div>
+          <i class="icon-chevron"></i>
+        </div>
+        <div class="filter__subgroup">
+          <div class="filter__subgroup-content">
+            <label class="filter__item">
+              <input type="checkbox" name="sub1" />
+              <span class="filter__check border-opacity"></span>
+              <div class="filter__subgroup-title">
+                Армированный
+              </div>
+              <i class="icon-chevron"></i>
+            </label>
+            <div class="filter__nested">
+              <div class="filter__nested-content">
+                <label class="filter__item">
+                  <input type="checkbox" name="sub1-1" />
+                  <span class="filter__check border-opacity"></span>
+                  <div class="h6">
+                    2 слоя
+                  </div>
+                </label>
+                <label class="filter__item">
+                  <input type="checkbox" name="sub1-3" />
+                  <span class="filter__check border-opacity"></span>
+                  <div class="h6">
+                    1 слой
+                  </div>
+                </label>
+                <label class="filter__item">
+                  <input type="checkbox" name="sub1-4" />
+                  <span class="filter__check border-opacity"></span>
+                  <div class="h6">
+                    2 слоя, усиленный
+                  </div>
+                </label>
+              </div>
+            </div>
+            <label class="filter__item">
+              <input type="checkbox" name="sub2" />
+              <span class="filter__check border-opacity"></span>
+              <div class="filter__subgroup-title">
+                Вакуумный
+              </div>
+              <!-- <i class="icon-chevron"></i> -->
+            </label>
+          </div>
+        </div>
+        <!-- <div class="filter__subgroup">
         <div class="filter__subgroup-content">
           <label class="filter__item">
             <input type="checkbox" name="sub1" />
@@ -2609,183 +2620,184 @@
           </a>
         </div>
       </div> -->
-    </div>
-    <div class="filter__group">
-      <div class="filter__item-head">
-        <div class="filter__item-title">
-          Патрубки силиконовые универсальные
-        </div>
-        <i class="icon-chevron"></i>
       </div>
-      <div class="filter__subgroup">
-        <div class="filter__subgroup-content">
-          <label class="filter__item">
-            <input type="checkbox" name="sub1" />
-            <span class="filter__check border-opacity"></span>
-            <div class="filter__subgroup-title">
-              Трубки соединительные прямые
-            </div>
-            <i class="icon-chevron"></i>
-          </label>
-          <div class="filter__nested">
-            <div class="filter__nested-content">
-              <label class="filter__item">
-                <input type="checkbox" name="sub1-1" />
-                <span class="filter__check border-opacity"></span>
-                <div class="h6">
-                  Камаз
-                </div>
-              </label>
-            </div>
+      <div class="filter__group">
+        <div class="filter__item-head">
+          <div class="filter__item-title">
+            Патрубки силиконовые универсальные
           </div>
-          <label class="filter__item">
-            <input type="checkbox" name="sub2" />
-            <span class="filter__check border-opacity"></span>
-            <div class="filter__subgroup-title">
-              Трубки соединительные, угол 90
-            </div>
-            <i class="icon-chevron"></i>
-          </label>
-          <div class="filter__nested">
-            <div class="filter__nested-content">
-              <label class="filter__item">
-                <input type="checkbox" name="sub2-1" />
-                <span class="filter__check border-opacity"></span>
-                <div class="h6">
-                  Патрубки демпферные
-                </div>
-              </label>
-            </div>
-          </div>
+          <i class="icon-chevron"></i>
         </div>
-      </div>
-    </div>
-    <div class="filter__group">
-      <div class="filter__item-head">
-        <div class="filter__item-title">
-          Хомуты
-        </div>
-        <i class="icon-chevron"></i>
-      </div>
-      <div class="filter__subgroup">
-        <div class="filter__subgroup-content">
-          <label class="filter__item">
-            <input type="checkbox" name="sub1" />
-            <span class="filter__check border-opacity"></span>
-            <div class="filter__subgroup-title">
-              Трубки соединительные прямые
+        <div class="filter__subgroup">
+          <div class="filter__subgroup-content">
+            <label class="filter__item">
+              <input type="checkbox" name="sub1" />
+              <span class="filter__check border-opacity"></span>
+              <div class="filter__subgroup-title">
+                Трубки соединительные прямые
+              </div>
+              <i class="icon-chevron"></i>
+            </label>
+            <div class="filter__nested">
+              <div class="filter__nested-content">
+                <label class="filter__item">
+                  <input type="checkbox" name="sub1-1" />
+                  <span class="filter__check border-opacity"></span>
+                  <div class="h6">
+                    Камаз
+                  </div>
+                </label>
+              </div>
             </div>
-            <i class="icon-chevron"></i>
-          </label>
-          <div class="filter__nested">
-            <div class="filter__nested-content">
-              <label class="filter__item">
-                <input type="checkbox" name="sub1-1" />
-                <span class="filter__check border-opacity"></span>
-                <div class="h6">
-                  Камаз
-                </div>
-              </label>
-            </div>
-          </div>
-          <label class="filter__item">
-            <input type="checkbox" name="sub2" />
-            <span class="filter__check border-opacity"></span>
-            <div class="filter__subgroup-title">
-              Трубки соединительные, угол 90
-            </div>
-            <i class="icon-chevron"></i>
-          </label>
-          <div class="filter__nested">
-            <div class="filter__nested-content">
-              <label class="filter__item">
-                <input type="checkbox" name="sub2-1" />
-                <span class="filter__check border-opacity"></span>
-                <div class="h6">
-                  Патрубки демпферные
-                </div>
-              </label>
+            <label class="filter__item">
+              <input type="checkbox" name="sub2" />
+              <span class="filter__check border-opacity"></span>
+              <div class="filter__subgroup-title">
+                Трубки соединительные, угол 90
+              </div>
+              <i class="icon-chevron"></i>
+            </label>
+            <div class="filter__nested">
+              <div class="filter__nested-content">
+                <label class="filter__item">
+                  <input type="checkbox" name="sub2-1" />
+                  <span class="filter__check border-opacity"></span>
+                  <div class="h6">
+                    Патрубки демпферные
+                  </div>
+                </label>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="filter__group">
-      <div class="filter__item-head">
-        <div class="filter__item-title">
-          Силиконовая резиносмесь
+      <div class="filter__group">
+        <div class="filter__item-head">
+          <div class="filter__item-title">
+            Хомуты
+          </div>
+          <i class="icon-chevron"></i>
         </div>
-        <i class="icon-chevron"></i>
-      </div>
-      <div class="filter__subgroup">
-        <div class="filter__subgroup-content">
-          <label class="filter__item">
-            <input type="checkbox" name="sub1" />
-            <span class="filter__check border-opacity"></span>
-            <div class="filter__subgroup-title">
-              Трубки соединительные прямые
+        <div class="filter__subgroup">
+          <div class="filter__subgroup-content">
+            <label class="filter__item">
+              <input type="checkbox" name="sub1" />
+              <span class="filter__check border-opacity"></span>
+              <div class="filter__subgroup-title">
+                Трубки соединительные прямые
+              </div>
+              <i class="icon-chevron"></i>
+            </label>
+            <div class="filter__nested">
+              <div class="filter__nested-content">
+                <label class="filter__item">
+                  <input type="checkbox" name="sub1-1" />
+                  <span class="filter__check border-opacity"></span>
+                  <div class="h6">
+                    Камаз
+                  </div>
+                </label>
+              </div>
             </div>
-            <i class="icon-chevron"></i>
-          </label>
-          <div class="filter__nested">
-            <div class="filter__nested-content">
-              <label class="filter__item">
-                <input type="checkbox" name="sub1-1" />
-                <span class="filter__check border-opacity"></span>
-                <div class="h6">
-                  Камаз
-                </div>
-              </label>
+            <label class="filter__item">
+              <input type="checkbox" name="sub2" />
+              <span class="filter__check border-opacity"></span>
+              <div class="filter__subgroup-title">
+                Трубки соединительные, угол 90
+              </div>
+              <i class="icon-chevron"></i>
+            </label>
+            <div class="filter__nested">
+              <div class="filter__nested-content">
+                <label class="filter__item">
+                  <input type="checkbox" name="sub2-1" />
+                  <span class="filter__check border-opacity"></span>
+                  <div class="h6">
+                    Патрубки демпферные
+                  </div>
+                </label>
+              </div>
             </div>
           </div>
-          <label class="filter__item">
-            <input type="checkbox" name="sub2" />
-            <span class="filter__check border-opacity"></span>
-            <div class="filter__subgroup-title">
-              Трубки соединительные, угол 90
+        </div>
+      </div>
+      <div class="filter__group">
+        <div class="filter__item-head">
+          <div class="filter__item-title">
+            Силиконовая резиносмесь
+          </div>
+          <i class="icon-chevron"></i>
+        </div>
+        <div class="filter__subgroup">
+          <div class="filter__subgroup-content">
+            <label class="filter__item">
+              <input type="checkbox" name="sub1" />
+              <span class="filter__check border-opacity"></span>
+              <div class="filter__subgroup-title">
+                Трубки соединительные прямые
+              </div>
+              <i class="icon-chevron"></i>
+            </label>
+            <div class="filter__nested">
+              <div class="filter__nested-content">
+                <label class="filter__item">
+                  <input type="checkbox" name="sub1-1" />
+                  <span class="filter__check border-opacity"></span>
+                  <div class="h6">
+                    Камаз
+                  </div>
+                </label>
+              </div>
             </div>
-            <i class="icon-chevron"></i>
-          </label>
-          <div class="filter__nested">
-            <div class="filter__nested-content">
-              <label class="filter__item">
-                <input type="checkbox" name="sub2-1" />
-                <span class="filter__check border-opacity"></span>
-                <div class="h6">
-                  Патрубки демпферные
-                </div>
-              </label>
+            <label class="filter__item">
+              <input type="checkbox" name="sub2" />
+              <span class="filter__check border-opacity"></span>
+              <div class="filter__subgroup-title">
+                Трубки соединительные, угол 90
+              </div>
+              <i class="icon-chevron"></i>
+            </label>
+            <div class="filter__nested">
+              <div class="filter__nested-content">
+                <label class="filter__item">
+                  <input type="checkbox" name="sub2-1" />
+                  <span class="filter__check border-opacity"></span>
+                  <div class="h6">
+                    Патрубки демпферные
+                  </div>
+                </label>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <button class="filter__clear">
-      <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="13.1719" y="4.02136" width="1.625" height="12.9403" transform="rotate(45 13.1719 4.02136)"
-          fill="#EE5956" />
-        <rect x="14.3398" y="13.1954" width="1.61754" height="13" transform="rotate(135 14.3398 13.1954)"
-          fill="#EE5956" />
-      </svg>
-      Сбросить фильтр
-    </button>
-    <a class="filter__btn btn btn--blue" href="#" download="Прайс-лист">
-      <div class="h6">
-        Скачать прайс-лист
-      </div>
-      <i class="icon-doc"></i>
-    </a>
-    <div class="filter__drop">
-      <div class="filter__drop-content">
-        <div class="filter__drop-text">
-          Найдено <span>20 товаров</span>
+      <button class="filter__clear">
+        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="13.1719" y="4.02136" width="1.625" height="12.9403" transform="rotate(45 13.1719 4.02136)"
+            fill="#EE5956" />
+          <rect x="14.3398" y="13.1954" width="1.61754" height="13" transform="rotate(135 14.3398 13.1954)"
+            fill="#EE5956" />
+        </svg>
+        Сбросить фильтр
+      </button>
+      <a class="filter__btn btn btn--blue" href="#" download="Прайс-лист">
+        <div class="h6">
+          Скачать прайс-лист
         </div>
-        <!-- <button class="filter__drop-btn btn btn--blue">
-          Показать
-        </button> -->
-      </div>
+        <i class="icon-doc"></i>
+      </a>
     </div>
   </form>
+  <div class="filter__drop">
+    <div class="filter__drop-content">
+      <div class="filter__drop-text">
+        Найдено <span>20 товаров</span>
+      </div>
+      <!-- <button class="filter__drop-btn btn btn--blue">
+          Показать
+        </button> -->
+    </div>
+  </div>
 </div>
     </div>
   </div>

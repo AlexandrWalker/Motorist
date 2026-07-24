@@ -465,8 +465,23 @@
 
     .filter {
 
+      @include domd {
+        transition: top 0.3s ease;
+
+        position: sticky;
+        top: 17.5rem;
+        z-index: 2;
+      }
+
       @include md {
         display: none;
+      }
+
+      .header-fixed & {
+
+        @include dosm {
+          top: 14.5rem;
+        }
       }
     }
   }

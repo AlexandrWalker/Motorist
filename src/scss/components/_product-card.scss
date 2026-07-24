@@ -133,7 +133,7 @@
 
           i::before {
             // icon-favorite-fill-min
-            content: "\e90f";
+            content: "\e91e";
           }
         }
       }
@@ -715,12 +715,26 @@
 }
 
 .favorite-btn {
+  i::before {
+    transition: content 0.3s ease;
+  }
+
+  &:hover {
+
+    @include domd {
+      
+      i::before {
+        // icon-favorite-fill-min
+        content: "\e91e";
+      }
+    }
+  }
 
   &.favorite-active {
 
     i::before {
       // icon-favorite-fill-min
-      content: "\e90f";
+      content: "\e91e";
     }
   }
 }

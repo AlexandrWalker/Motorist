@@ -245,15 +245,25 @@
     .page__product & {
 
       @include md {
-        width: 100%;
+        width: fit-content !important;
+        max-width: 10rem;
+      }
+
+      @include sm {
+        width: 100% !important;
+        max-width: 100%;
       }
     }
   }
 
   .page__product & {
 
-    @include md {
+    @include sm {
       width: calc(50% - 0.5rem);
+    }
+
+    @include xs {
+      // width: 100%;
     }
   }
 }

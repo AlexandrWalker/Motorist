@@ -77,3 +77,38 @@ img {
   height: 100%;
   object-fit: cover;
 }
+
+.article--js {
+  cursor: pointer;
+
+  position: relative;
+}
+
+/* Стили для всплывающего текста */
+.copy-toast {
+  position: absolute;
+  // left: 50%;
+  top: 0;
+  left: 0;
+  // transform: translateX(-50%);
+  color: var(--gray-50); /* Зеленый цвет текста, можно изменить */
+  font-size: 1.4rem;
+  font-weight: bold;
+  white-space: nowrap;
+  pointer-events: none; /* Чтобы текст не мешал кликам */
+  animation: floatUp 0.8s ease-out forwards; /* Запуск анимации */
+}
+
+/* Анимация: подъем вверх и растворение */
+@keyframes floatUp {
+  0% {
+    opacity: 1;
+    // transform: translate(-50%, 0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    // transform: translate(-50%, -3rem); /* Высота подъема */
+    transform: translateY(-3rem); /* Высота подъема */
+  }
+}
