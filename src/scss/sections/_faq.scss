@@ -19,7 +19,8 @@
     transition: all 0.5s ease;
 
     @include md {
-      padding: 2rem;
+      // padding: 2rem;
+      padding: 2rem 1.5rem;
     }
 
     &.accordion-active {
@@ -59,7 +60,10 @@
       line-height: 120%;
 
       @include md {
-        font-size: 1.6rem;
+        // font-size: 1.6rem;
+
+        font-weight: 400;
+        font-size: 1.4rem;
       }
     }
 
@@ -69,6 +73,10 @@
       overflow: hidden;
       transition: all 0.5s ease;
       padding: 0 1rem 0 0;
+
+      @include md {
+        padding: 0 3.5rem 0 0;
+      }
 
       .accordion-active & {
         grid-template-rows: 1fr;

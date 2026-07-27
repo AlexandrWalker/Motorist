@@ -24,6 +24,7 @@
     position: relative;
 
     @include md {
+      min-height: 17.6rem;
       padding: 2rem;
     }
 

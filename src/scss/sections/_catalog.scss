@@ -505,19 +505,15 @@
     transition: all 0.5s ease;
 
     .card__item {
-      width: calc((100% / 3) - (4rem / 3));
+      width: calc((100% / 3) - (2rem / 3));
       height: fit-content;
       transition: all 0.5s ease;
       padding: 2rem;
 
       @include md {
-        width: calc((100% / 2) - 1rem);
+        width: calc((100% / 2) - 0.5rem);
         gap: 1.5rem;
         padding: 3rem 1rem 1rem 1rem;
-      }
-
-      @include xsm {
-        width: 100%;
       }
 
       .block & {
@@ -537,7 +533,7 @@
         .block & {
           justify-content: space-between;
           height: 100%;
-          padding: 0 1rem 1rem 1rem;
+          padding: 0 0.5rem 0.7rem 0.5rem;
 
           @include dosm {
             padding: 0 2rem 2rem 2rem;
@@ -641,6 +637,13 @@
         @include md {
           top: 1rem;
           right: 1rem;
+        }
+      }
+
+      &-quantity {
+
+        @include xsm {
+          margin-bottom: 0;
         }
       }
     }

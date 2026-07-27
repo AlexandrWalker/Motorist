@@ -15,7 +15,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem 0 1.4rem;
+    padding: 0 1rem 0 calc(100vw / (440 / 40));
     height: 6rem;
     border-radius: 0.8rem;
     background-color: var(--black-60);
@@ -69,6 +69,8 @@
     --btn-background: var(--blue);
     --btn-height: 4rem;
     --btn-padding-x: 1.2rem;
+
+    min-width: 10.6rem;
 
     font-size: 1.2rem;
   }

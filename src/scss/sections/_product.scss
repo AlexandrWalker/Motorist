@@ -601,6 +601,13 @@
       @include sm {
         height: 3.7rem;
       }
+
+      input {
+        
+        @include sm {
+          font-size: 1.2rem;
+        }
+      }
     }
   }
 }

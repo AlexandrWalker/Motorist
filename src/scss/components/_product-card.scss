@@ -518,6 +518,8 @@
       i {
         --font-size: 2rem;
 
+        pointer-events: none;
+
         color: var(--gray);
 
         position: absolute;
