@@ -168,8 +168,8 @@ img {
 @font-face {
   font-family: Inter;
   font-display: swap;
-  src: url("../fonts/Inter-Bold.woff2") format("woff2"), url("../fonts/Inter-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Inter-Black.woff2") format("woff2"), url("../fonts/Inter-Black.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -178,6 +178,14 @@ img {
   font-display: swap;
   src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
   font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Inter;
+  font-display: swap;
+  src: url("../fonts/Inter-ExtraLight.woff2") format("woff2"), url("../fonts/Inter-ExtraLight.woff") format("woff");
+  font-weight: 200;
   font-style: normal;
 }
 
@@ -192,32 +200,8 @@ img {
 @font-face {
   font-family: Inter;
   font-display: swap;
-  src: url("../fonts/Inter-Black.woff2") format("woff2"), url("../fonts/Inter-Black.woff") format("woff");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Inter;
-  font-display: swap;
-  src: url("../fonts/Inter-ExtraBold.woff2") format("woff2"), url("../fonts/Inter-ExtraBold.woff") format("woff");
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Inter;
-  font-display: swap;
-  src: url("../fonts/Inter-ExtraLight.woff2") format("woff2"), url("../fonts/Inter-ExtraLight.woff") format("woff");
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Inter;
-  font-display: swap;
-  src: url("../fonts/Inter-Light.woff2") format("woff2"), url("../fonts/Inter-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Inter-Bold.woff2") format("woff2"), url("../fonts/Inter-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -226,6 +210,14 @@ img {
   font-display: swap;
   src: url("../fonts/Inter-Medium.woff2") format("woff2"), url("../fonts/Inter-Medium.woff") format("woff");
   font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Inter;
+  font-display: swap;
+  src: url("../fonts/Inter-ExtraBold.woff2") format("woff2"), url("../fonts/Inter-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -242,6 +234,14 @@ img {
   font-display: swap;
   src: url("../fonts/Inter-SemiBold.woff2") format("woff2"), url("../fonts/Inter-SemiBold.woff") format("woff");
   font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Inter;
+  font-display: swap;
+  src: url("../fonts/Inter-Light.woff2") format("woff2"), url("../fonts/Inter-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -272,16 +272,16 @@ img {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
-  font-weight: 200;
+  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
+  font-weight: 200;
   font-style: normal;
 }
 
@@ -1222,6 +1222,9 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   gap: 2rem;
 }
 
@@ -2988,6 +2991,7 @@ body {
 
 .card__item-selected i {
   --font-size: 2rem;
+  pointer-events: none;
   color: var(--gray);
   position: absolute;
   top: 50%;
@@ -4698,7 +4702,7 @@ p {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 0 1rem 0 1.4rem;
+  padding: 0 1rem 0 9.0909090909vw;
   height: 6rem;
   border-radius: 0.8rem;
   background-color: var(--black-60);
@@ -4756,6 +4760,7 @@ p {
   --btn-background: var(--blue);
   --btn-height: 4rem;
   --btn-padding-x: 1.2rem;
+  min-width: 10.6rem;
   font-size: 1.2rem;
 }
 
@@ -7167,7 +7172,7 @@ p {
 }
 
 .catalog__block .card__item {
-  width: calc(33.3333333333% - 1.3333333333rem);
+  width: calc(33.3333333333% - 0.6666666667rem);
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -7191,7 +7196,7 @@ p {
   -ms-flex-pack: justify;
   justify-content: space-between;
   height: 100%;
-  padding: 0 1rem 1rem 1rem;
+  padding: 0 0.5rem 0.7rem 0.5rem;
 }
 
 .catalog__block .card__item-tags {
@@ -7317,6 +7322,7 @@ p {
   border-radius: 1.5rem;
   overflow: hidden;
   height: 100%;
+  min-height: 19.1rem;
   background-color: var(--white);
   -webkit-box-shadow: 0px 0px 10px 0px rgba(113, 133, 149, 0.1);
   box-shadow: 0px 0px 10px 0px rgba(113, 133, 149, 0.1);
@@ -7365,9 +7371,13 @@ p {
 }
 
 .category__item-img {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  width: 7rem;
   height: 7rem;
 }
 
@@ -7883,6 +7893,22 @@ p {
   position: absolute;
   bottom: 0;
   right: 0;
+  z-index: 2;
+}
+
+.find__content-link--address::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0.1rem;
+  background-color: var(--black);
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
 }
 
 .find__content-social {
@@ -10653,6 +10679,7 @@ p {
 
   .h2,
   h2 {
+    font-weight: 400;
     font-size: 2.5rem;
   }
 
@@ -10990,6 +11017,7 @@ p {
   }
 
   .banners__item {
+    min-height: 17.6rem;
     padding: 2rem;
   }
 
@@ -11477,7 +11505,7 @@ p {
   }
 
   .catalog__block .card__item {
-    width: calc(50% - 1rem);
+    width: calc(50% - 0.5rem);
     gap: 1.5rem;
     padding: 3rem 1rem 1rem 1rem;
   }
@@ -11540,8 +11568,23 @@ p {
     background-color: var(--white);
   }
 
+  .category__item {
+    min-height: 14.6rem;
+  }
+
   .category__item-content {
-    padding: 2rem 5.5rem 3.7rem 2rem;
+    padding: 1.5rem 2.8rem 1.5rem 1.5rem;
+  }
+
+  .category__item-img {
+    width: 3.4rem;
+    height: 3.4rem;
+  }
+
+  .category__item i {
+    top: 1.5rem;
+    right: 1.5rem;
+    bottom: unset;
   }
 
   .comparison__items {
@@ -11549,7 +11592,7 @@ p {
   }
 
   .faq__item {
-    padding: 2rem;
+    padding: 2rem 1.5rem;
   }
 
   .faq__item.accordion-active {
@@ -11557,7 +11600,12 @@ p {
   }
 
   .faq__item-title {
-    font-size: 1.6rem;
+    font-weight: 400;
+    font-size: 1.4rem;
+  }
+
+  .faq__item-body {
+    padding: 0 3.5rem 0 0;
   }
 
   .faq__item-content {
@@ -11582,6 +11630,10 @@ p {
 
   .find__content-link {
     font-size: 1.2rem;
+  }
+
+  .find__content-link--address::after {
+    bottom: 0.2rem;
   }
 
   .guarantees__items {
@@ -12144,6 +12196,10 @@ p {
 }
 
 @media (max-width: 600px) {
+  .quantity__text input {
+    font-size: 1rem;
+  }
+
   .page__product .quantity__text {
     width: 100% !important;
     max-width: 100%;
@@ -12282,6 +12338,10 @@ p {
   .product .quantity__text {
     height: 3.7rem;
   }
+
+  .product .quantity__text input {
+    font-size: 1.2rem;
+  }
 }
 
 @media (max-width: 430px) {
@@ -12297,8 +12357,8 @@ p {
     display: none;
   }
 
-  .catalog__block .card__item {
-    width: 100%;
+  .catalog__block .card__item-quantity {
+    margin-bottom: 0;
   }
 }
 
