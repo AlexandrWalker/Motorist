@@ -453,6 +453,8 @@
         right: unset;
         left: 50%;
         transform: translate(-50%, -50%);
+
+        display: none;
       }
 
       .header__search:hover & {
@@ -605,4 +607,16 @@
       z-index: 2;
     }
   }
+}
+
+#headerCatalogBtn {
+  /* Отключает появление системного окна iOS/Android при долгом нажатии */
+  -webkit-touch-callout: none !important;
+
+  /* Запрещает выделение текста/иконок внутри кнопки */
+  -webkit-user-select: none !important;
+  user-select: none !important;
+
+  /* Измените на manipulation, чтобы разрешить клики мыши и обычный скролл */
+  touch-action: manipulation !important; 
 }

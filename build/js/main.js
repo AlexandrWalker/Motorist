@@ -460,14 +460,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const burgerBtn = document.getElementById('burger-btn');
     const megaMenuContainer = document.querySelector('.megamenu__wrapper');
 
+    // Безопасная проверка существования главных кнопок управления
+    if (!catalogBtn && !burgerBtn) return;
+
     const isMobile = () => window.innerWidth <= 834;
 
-    const OPEN_DELAY = 200; // задержка открытия (мс)
-    const CLOSE_DELAY = 100; // задержка закрытия
+    const OPEN_DELAY = 200;
+    const CLOSE_DELAY = 100;
 
     let openTimeout = null;
     let closeTimeout = null;
     let isClickNavigation = false;
+
+    // Безопасный вызов Lenis
+    const toggleLenis = (action) => {
+      if (typeof lenis !== 'undefined' && typeof lenis[action] === 'function') {
+        lenis[action]();
+      }
+    };
 
     const removeMegaItemActive = () => {
       document
@@ -490,11 +500,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (type === 'burger') {
         html.classList.add('burger--active');
         html.classList.remove('megamenu--active');
-
-        removeMegaItemActive(); // УДАЛЕНИЕ ТОЛЬКО ПРИ ОТКРЫТИИ БУРГЕРА
+        removeMegaItemActive();
       }
 
-      lenis.stop();
+      toggleLenis('stop');
     };
 
     const closeMenu = () => {
@@ -508,7 +517,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'menu--switching'
       );
 
-      lenis.start();
+      toggleLenis('start');
     };
 
     const toggleMenu = (type) => {
@@ -517,27 +526,23 @@ document.addEventListener('DOMContentLoaded', () => {
         (type === 'mega' && html.classList.contains('megamenu--active')) ||
         (type === 'burger' && html.classList.contains('burger--active'));
 
-      // Переключение типа меню
       if (isOpen && !isSameType) {
         html.classList.add('menu--switching');
         openMenu(type, true);
         return;
       }
 
-      // Закрытие по повторному клику
       if (isOpen && isSameType) {
         closeMenu();
         return;
       }
 
-      // Обычное открытие
       openMenu(type);
     };
 
     /* HOVER ЛОГИКА */
     const scheduleOpen = () => {
-      if (isMobile()) return; // отключаем hover на мобилке
-      if (isClickNavigation) return;
+      if (isMobile() || isClickNavigation) return;
       if (html.classList.contains('megamenu--active')) return;
 
       clearTimeout(closeTimeout);
@@ -569,52 +574,71 @@ document.addEventListener('DOMContentLoaded', () => {
       }, CLOSE_DELAY);
     };
 
-    catalogBtn.addEventListener('mouseenter', scheduleOpen);
-    catalogBtn.addEventListener('mouseleave', scheduleClose);
+    // Привязываем события только если элементы существуют
+    if (catalogBtn) {
+      catalogBtn.addEventListener('mouseenter', scheduleOpen);
+      catalogBtn.addEventListener('mouseleave', scheduleClose);
 
-    if (megaMenuContainer) {
-      megaMenuContainer.addEventListener('mouseenter', () => {
-        clearTimeout(closeTimeout);
-      });
+      // Единая функция для переключения меню на мобильном разрешении
+      const handleMobileAction = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
 
-      megaMenuContainer.addEventListener('mouseleave', scheduleClose);
-    }
-    // catalogBtn.addEventListener('mouseenter', (e) => {
-    //   const isActive = html.classList.contains('megamenu--active');
-    //   if (!isActive) {
-    //     toggleMenu('mega');
-    //   }
-    //   // e.preventDefault();
-    //   // toggleMenu('mega');
-    // });
-
-    catalogBtn.addEventListener('click', (e) => {
-      if (isMobile()) {
-        e.preventDefault(); // запрещаем переход
-
-        const isActive = html.classList.contains('megamenu--active');
-
+        // Полностью очищаем десктопные hover-таймауты
         clearTimeout(openTimeout);
         clearTimeout(closeTimeout);
+        openTimeout = null;
+        closeTimeout = null;
+
+        const isActive = html.classList.contains('megamenu--active');
 
         if (isActive) {
           closeMenu();
         } else {
           openMenu('mega');
         }
+      };
 
-        return;
-      }
+      // 1. ДЛЯ РЕАЛЬНЫХ СМАРТФОНОВ: Срабатывает мгновенно от тача
+      catalogBtn.addEventListener('touchstart', (e) => {
+        if (isMobile()) {
+          handleMobileAction(e);
+        }
+      }, { passive: false });
 
-      // desktop логика - разрешаем переход
-      isClickNavigation = true;
-      clearTimeout(openTimeout);
-    });
+      // 2. ДЛЯ УМЕНЬШЕННОГО ОКНА НА ПК: Срабатывает от клика мыши
+      catalogBtn.addEventListener('click', (e) => {
+        if (isMobile()) {
+          // Защита: если это реальный тач-скрин, событие touchstart уже запустило handleMobileAction
+          // и вызвало preventDefault(), поэтому этот click сработает ТОЛЬКО от мышки на ПК
+          handleMobileAction(e);
+          return;
+        }
 
-    burgerBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      toggleMenu('burger');
-    });
+        // Стандартная десктопная логика (широкий экран) — разрешаем переход по ссылке
+        isClickNavigation = true;
+        clearTimeout(openTimeout);
+      });
+
+      // Отключаем системное контекстное меню при зажатии
+      catalogBtn.addEventListener('contextmenu', (e) => {
+        if (isMobile()) e.preventDefault();
+      });
+    }
+
+    if (megaMenuContainer) {
+      megaMenuContainer.addEventListener('mouseenter', () => {
+        clearTimeout(closeTimeout);
+      });
+      megaMenuContainer.addEventListener('mouseleave', scheduleClose);
+    }
+
+    if (burgerBtn) {
+      burgerBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleMenu('burger');
+      });
+    }
 
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
@@ -631,16 +655,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const isMegaOpen = html.classList.contains('megamenu--active');
       if (!isMegaOpen) return;
 
-      const clickInsideContainer =
-        megaMenuContainer && megaMenuContainer.contains(e.target);
-
-      const clickOnCatalogBtn =
-        catalogBtn && catalogBtn.contains(e.target);
+      const clickInsideContainer = megaMenuContainer && megaMenuContainer.contains(e.target);
+      const clickOnCatalogBtn = catalogBtn && catalogBtn.contains(e.target);
 
       if (!clickInsideContainer && !clickOnCatalogBtn) {
         closeMenu();
       }
     });
+
+    // Экспортируем функцию закрытия наружу для интеграции с другими скриптами (например, поиском)
+    window.unifiedMenu = { close: closeMenu };
   })();
 
   /**
@@ -1479,12 +1503,39 @@ document.addEventListener('DOMContentLoaded', () => {
         updateDisabled();
       }
 
+      // Привязываем обработчики кликов
       nextEl.addEventListener('click', (e) => { e.preventDefault(); handle('next'); });
       prevEl.addEventListener('click', (e) => { e.preventDefault(); handle('prev'); });
 
+      // Сброс импульса при таче
       swiper.on('touchStart', resetImpulse);
-      swiper.on('slideChange', updateDisabled);
-      swiper.on('resize', updateDisabled);
+
+      // Массив событий для мгновенного обновления состояния кнопок
+      const updateEvents = [
+        'slideChange',
+        'resize',
+        'setTranslate',   // Важно для тачпадов и скролла мыши в реальном времени
+        'transitionEnd',  // Важно для фиксации состояния после инерции (momentum)
+        'reachBeginning', // Гарантия срабатывания на левом краю
+        'reachEnd'        // Гарантия срабатывания на правом краю
+      ];
+
+      // Подписываемся на все события сразу
+      updateEvents.forEach(event => {
+        swiper.on(event, updateDisabled);
+      });
+
+      // Очистка при уничтожении слайдера
+      swiper.on('destroy', () => {
+        if (decayTimer) clearInterval(decayTimer);
+        updateEvents.forEach(event => {
+          swiper.off(event, updateDisabled);
+        });
+      });
+
+      // Первоначальный вызов при инициализации
+      updateDisabled();
+
 
       swiper.on('destroy', () => {
         if (decayTimer) clearInterval(decayTimer);
@@ -2166,6 +2217,39 @@ document.addEventListener('DOMContentLoaded', () => {
     if (notifCloseBtn) {
       notifCloseBtn.addEventListener('click', () => {
         hideNotification();
+      });
+    }
+  })();
+
+  (function () {
+    const openButton = document.querySelector('.searchMobile__btn-open');
+    const closeButton = document.querySelector('.searchMobile__btn-close');
+    const htmlElement = document.documentElement;
+
+    // Проверяем наличие кнопки открытия, чтобы избежать ошибок
+    if (openButton) {
+      openButton.addEventListener('click', () => {
+        // Удаляем ненужные классы (дубликат menu-wrapper--open убран)
+        htmlElement.classList.remove(
+          'menu-wrapper--open',
+          'megamenu--active',
+          'menu--switching',
+          'burger--active'
+        );
+
+        // Добавляем класс мобильного поиска
+        htmlElement.classList.add('searchMobile--open');
+
+        // Останавливаем скролл, если lenis доступен
+        if (typeof lenis !== 'undefined') lenis.stop();
+      });
+    }
+
+    // Проверяем наличие кнопки закрытия
+    if (closeButton) {
+      closeButton.addEventListener('click', () => {
+        htmlElement.classList.remove('searchMobile--open');
+        if (typeof lenis !== 'undefined') lenis.start();
       });
     }
   })();

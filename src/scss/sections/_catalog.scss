@@ -35,7 +35,6 @@
       }
 
       @include xsm {
-        width: 100%;
       }
 
       &-controls {
@@ -147,7 +146,7 @@
           height: 100%;
           gap: 1.5rem;
           grid-template-columns: 1fr;
-          padding: 0 1rem 1rem 1rem;
+          padding: 0 0.5rem 0.7rem 0.5rem;
         }
       }
 
@@ -641,6 +640,10 @@
       }
 
       &-quantity {
+
+        @include sm {
+          margin-bottom: 0;
+        }
 
         @include xsm {
           margin-bottom: 0;

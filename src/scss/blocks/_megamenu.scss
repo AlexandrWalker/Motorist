@@ -40,20 +40,26 @@
   &__inner {
     padding: var(--megamenu-padding-top) 0 0 0;
     overflow: hidden;
-    transition: 0s;
+    // transition: 0s;
+    transition: all 0.5s ease;
     width: 100%;
+    opacity: 0;
 
-    transform: translateX(-100vw);
+    // transform: translateX(-100vw);
+    transform: translateX(0);
     pointer-events: none;
 
+    .menu-wrapper--open &,
     .megamenu--active & {
       transform: translateX(0);
       pointer-events: all;
+      opacity: 1;
     }
 
     .burger--active & {
       transform: translateX(-100vw);
       pointer-events: none;
+      opacity: 0;
     }
 
     .menu--switching & {

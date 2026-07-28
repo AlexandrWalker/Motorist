@@ -402,10 +402,6 @@
           display: none;
         }
 
-        @include xsm {
-          // display: none;
-        }
-
         i {
           --font-size: 2rem;
         }
@@ -414,6 +410,10 @@
       .quantity {
         width: 100%;
         margin-bottom: 1rem;
+
+        @include md {
+          margin-bottom: 0;
+        }
       }
     }
 
@@ -712,6 +712,47 @@
           }
         }
       }
+
+
+      .card__item-quantity {
+
+        @include dosm {
+          grid-column: 1/2;
+          grid-row: 2/3;
+        }
+
+        .quantity {
+          margin-bottom: 0;
+
+          &__text {
+            min-width: 5.5rem;
+            width: 100%;
+          }
+
+          &__btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 3.3rem;
+          }
+        }
+      }
+
+      .card__item-quantity {
+
+        .quantity {
+
+          &__btn {
+
+            .list & {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 3.3rem;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -724,7 +765,7 @@
   &:hover {
 
     @include domd {
-      
+
       i::before {
         // icon-favorite-fill-min
         content: "\e91e";
