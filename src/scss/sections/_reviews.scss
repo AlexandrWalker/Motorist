@@ -18,6 +18,13 @@
     width: 100%;
   }
 
+  &__slider {
+
+    @include md {
+      overflow: visible;
+    }
+  }
+
   &__slide {
 
     @include md {

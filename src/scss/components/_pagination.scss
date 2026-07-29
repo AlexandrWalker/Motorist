@@ -28,6 +28,8 @@
     overflow: hidden;
     flex-shrink: 0;
 
+    cursor: pointer;
+
     &.pagination__item--active,
     &:hover {
       background-color: var(--blue);

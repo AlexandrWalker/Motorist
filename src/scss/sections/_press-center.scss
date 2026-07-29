@@ -10,6 +10,13 @@
     position: relative;
   }
 
+  &__slider {
+
+    @include md {
+      overflow: visible;
+    }
+  }
+
   &__slide {
 
     @include md {

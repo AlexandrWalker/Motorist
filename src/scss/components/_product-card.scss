@@ -724,6 +724,14 @@
         .quantity {
           margin-bottom: 0;
 
+          .list & {
+            margin-bottom: 1rem;
+
+            @include md {
+              margin-bottom: 0;
+            }
+          }
+
           &__text {
             min-width: 5.5rem;
             width: 100%;
