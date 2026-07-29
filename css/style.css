@@ -184,8 +184,8 @@ img {
 @font-face {
   font-family: Inter;
   font-display: swap;
-  src: url("../fonts/Inter-ExtraLight.woff2") format("woff2"), url("../fonts/Inter-ExtraLight.woff") format("woff");
-  font-weight: 200;
+  src: url("../fonts/Inter-Black.woff2") format("woff2"), url("../fonts/Inter-Black.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -194,14 +194,6 @@ img {
   font-display: swap;
   src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
   font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Inter;
-  font-display: swap;
-  src: url("../fonts/Inter-ExtraBold.woff2") format("woff2"), url("../fonts/Inter-ExtraBold.woff") format("woff");
-  font-weight: 800;
   font-style: normal;
 }
 
@@ -238,10 +230,10 @@ img {
 }
 
 @font-face {
-  font-family: Inter;
+  font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Inter-Light.woff2") format("woff2"), url("../fonts/Inter-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -254,26 +246,42 @@ img {
 }
 
 @font-face {
-  font-family: Inter;
-  font-display: swap;
-  src: url("../fonts/Inter-Black.woff2") format("woff2"), url("../fonts/Inter-Black.woff") format("woff");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
   font-family: Montserrat;
   font-display: swap;
   src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
   font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Inter;
+  font-display: swap;
+  src: url("../fonts/Inter-Light.woff2") format("woff2"), url("../fonts/Inter-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Inter;
+  font-display: swap;
+  src: url("../fonts/Inter-ExtraBold.woff2") format("woff2"), url("../fonts/Inter-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Inter;
+  font-display: swap;
+  src: url("../fonts/Inter-ExtraLight.woff2") format("woff2"), url("../fonts/Inter-ExtraLight.woff") format("woff");
+  font-weight: 200;
   font-style: normal;
 }
 
@@ -288,16 +296,8 @@ img {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -310,14 +310,6 @@ img {
 }
 
 @font-face {
-  font-family: OpenSans;
-  font-display: swap;
-  src: url("../fonts/OpenSans-Bold.woff2") format("woff2"), url("../fonts/OpenSans-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
   font-family: Montserrat;
   font-display: swap;
   src: url("../fonts/Montserrat-Thin.woff2") format("woff2"), url("../fonts/Montserrat-Thin.woff") format("woff");
@@ -326,18 +318,18 @@ img {
 }
 
 @font-face {
-  font-family: OpenSans;
+  font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/OpenSans-ExtraBold.woff2") format("woff2"), url("../fonts/OpenSans-ExtraBold.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: Montserrat;
+  font-family: OpenSans;
   font-display: swap;
-  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/OpenSans-ExtraBold.woff2") format("woff2"), url("../fonts/OpenSans-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -352,6 +344,14 @@ img {
 @font-face {
   font-family: OpenSans;
   font-display: swap;
+  src: url("../fonts/OpenSans-Bold.woff2") format("woff2"), url("../fonts/OpenSans-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-display: swap;
   src: url("../fonts/OpenSans-Medium.woff2") format("woff2"), url("../fonts/OpenSans-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
@@ -360,16 +360,16 @@ img {
 @font-face {
   font-family: OpenSans;
   font-display: swap;
-  src: url("../fonts/OpenSans-SemiBold.woff2") format("woff2"), url("../fonts/OpenSans-SemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/OpenSans-Regular.woff2") format("woff2"), url("../fonts/OpenSans-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: OpenSans;
   font-display: swap;
-  src: url("../fonts/OpenSans-Regular.woff2") format("woff2"), url("../fonts/OpenSans-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/OpenSans-SemiBold.woff2") format("woff2"), url("../fonts/OpenSans-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -2488,6 +2488,7 @@ body {
   overflow: hidden;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  cursor: pointer;
 }
 
 .pagination__item.pagination__item--active,
@@ -3134,6 +3135,10 @@ body {
 
 .card__item-foot .card__item-quantity .quantity {
   margin-bottom: 0;
+}
+
+.list .card__item-foot .card__item-quantity .quantity {
+  margin-bottom: 1rem;
 }
 
 .card__item-foot .card__item-quantity .quantity__text {
@@ -9143,11 +9148,42 @@ p {
   flex-shrink: unset;
 }
 
+.popular .card__item-btn--favorite {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .popular .card__item-plus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   display: none;
+}
+
+.recommended__block .card__item-tags {
+  top: 2rem;
+  left: 2rem;
+}
+
+.recommended__block .card__item-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 2.3rem;
+  right: 2rem;
+}
+
+.recommended__block .card__item-content {
+  gap: 2.7rem;
+}
+
+.recommended__block .card__item-btn--favorite {
+  display: none;
+}
+
+.recommended__block .card__item-text span {
+  color: var(--blue);
 }
 
 .press-center__body {
@@ -10895,6 +10931,10 @@ p {
     display: none;
   }
 
+  .list .card__item-foot .card__item-quantity .quantity {
+    margin-bottom: 0;
+  }
+
   .h1,
   h1 {
     font-size: 3rem;
@@ -12146,6 +12186,10 @@ p {
     padding-bottom: 5rem;
   }
 
+  .popular__slider {
+    overflow: visible;
+  }
+
   .popular .card__item {
     padding: 0.5rem 0.5rem 1rem 0.5rem;
   }
@@ -12174,8 +12218,16 @@ p {
     --btn-height: 4rem;
   }
 
+  .recommended__block .card__item-content {
+    gap: 2rem;
+  }
+
   .press-center {
     padding-bottom: 5rem;
+  }
+
+  .press-center__slider {
+    overflow: visible;
   }
 
   .press-center__slide {
@@ -12309,6 +12361,10 @@ p {
 
   .reviews {
     padding-bottom: 5rem;
+  }
+
+  .reviews__slider {
+    overflow: visible;
   }
 
   .reviews__slide {
@@ -12522,6 +12578,25 @@ p {
 
   .placing__info-btn--mobile {
     bottom: 8rem;
+  }
+
+  .popular .card__item-tags {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .recommended__block .card__item-tags {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .recommended__block .card__item-controls {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .recommended__block .card__item-content {
+    gap: 1rem;
   }
 
   .product__body {
