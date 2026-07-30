@@ -105,16 +105,55 @@
   }
 
   &__link {
+    --link-color: var(--black);
+    --icon-color: var(--blue);
+
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 1rem;
+    transition: color 0.3s ease;
+
+    color: var(--link-color);
+
+    &:hover {
+
+      @include dosm {
+        --link-color: var(--blue);
+      }
+    }
+
+    &--delete {
+
+      &:hover {
+
+        @include dosm {
+          --link-color: var(--blue);
+        }
+      }
+
+      .placing--state-delete-selected &,
+      .placing--state-delete-all & {
+
+        &:hover {
+
+          @include dosm {
+            --link-color: var(--error-color);
+            --icon-color: var(--error-color);
+          }
+        }
+      }
+    }
 
     i {
       --font-size: 1.6rem;
 
       font-weight: 700;
-      color: var(--blue);
+      color: var(--icon-color);
+
+      .placing--state-restore-all & {
+        display: none;
+      }
     }
 
     &-text {

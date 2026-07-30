@@ -242,7 +242,7 @@
               Избранное
             </span>
           </a>
-          <a class="header__navbar-item" href="/Motorist/cart.html">
+          <a class="header__navbar-item header__navbar-item--cart" href="/Motorist/cart.html">
             <div class="header__navbar-count">
               143
             </div>
@@ -333,7 +333,14 @@
     <div class="social">
       <div class="social__items">
         <a class="social__item" href="/Motorist">
-          <i class="icon-plate-mail"></i>
+          <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12.25 19.05C12.25 17.6615 12.25 16.9673 12.5279 16.437C12.7724 15.9705 13.1625 15.5912 13.6423 15.3535C14.1878 15.0833 14.9019 15.0833 16.33 15.0833H33.67C35.0981 15.0833 35.8122 15.0833 36.3577 15.3535C36.8375 15.5912 37.2276 15.9705 37.4721 16.437C37.75 16.9673 37.75 17.6615 37.75 19.05V30.95C37.75 32.3384 37.75 33.0327 37.4721 33.563C37.2276 34.0295 36.8375 34.4087 36.3577 34.6464C35.8122 34.9166 35.0981 34.9166 33.67 34.9166H16.33C14.9019 34.9166 14.1878 34.9166 13.6423 34.6464C13.1625 34.4087 12.7724 34.0295 12.5279 33.563C12.25 33.0327 12.25 32.3384 12.25 30.95V19.05Z"
+              fill="white" />
+            <path
+              d="M13.525 16.3229L23.4345 23.8162C24.3553 24.5125 25.6447 24.5125 26.5655 23.8162L36.475 16.3229M16.33 34.9166H33.67C35.0981 34.9166 35.8122 34.9166 36.3577 34.6464C36.8375 34.4087 37.2276 34.0295 37.4721 33.563C37.75 33.0327 37.75 32.3384 37.75 30.95V19.05C37.75 17.6615 37.75 16.9673 37.4721 16.437C37.2276 15.9705 36.8375 15.5912 36.3577 15.3535C35.8122 15.0833 35.0981 15.0833 33.67 15.0833H16.33C14.9019 15.0833 14.1878 15.0833 13.6423 15.3535C13.1625 15.5912 12.7724 15.9705 12.5279 16.437C12.25 16.9673 12.25 17.6615 12.25 19.05V30.95C12.25 32.3384 12.25 33.0327 12.5279 33.563C12.7724 34.0295 13.1625 34.4087 13.6423 34.6464C14.1878 34.9166 14.9019 34.9166 16.33 34.9166Z"
+              stroke="#718595" stroke-width="1.5" />
+          </svg>
         </a>
         <a class="social__item" href="/Motorist">
           <i class="icon-plate-phone-fill"></i>
@@ -2428,144 +2435,146 @@
 
               <div class="filter">
   <form action="#">
-    <div class="filter__group">
-      <div class="filter__item-head">
-        <div class="filter__item-title">
-          Наличие товара
-        </div>
-        <i class="icon-chevron"></i>
-      </div>
-      <div class="filter__subgroup">
-        <div class="filter__subgroup-content">
-          <label class="filter__item filter__item--availability">
-            <input type="checkbox" name="sub0-1" />
-            <span class="filter__check border-opacity"></span>
-            <div class="filter__subgroup-title">
-              В наличии
-            </div>
-          </label>
-          <label class="filter__item filter__item--expected">
-            <input type="checkbox" name="sub0-1" />
-            <span class="filter__check border-opacity"></span>
-            <div class="filter__subgroup-title">
-              Ожидается поступление
-            </div>
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="filter__group">
-      <div class="filter__item-head">
-        <div class="filter__item-title">
-          Камлоки
-        </div>
-        <i class="icon-chevron"></i>
-      </div>
-      <div class="filter__subgroup">
-        <div class="filter__subgroup-content">
-          <label class="filter__item">
-            <input type="checkbox" name="sub1" />
-            <span class="filter__check border-opacity"></span>
-            <div class="filter__subgroup-title">
-              Рукав силиконовый
-            </div>
-            <i class="icon-chevron"></i>
-          </label>
-          <div class="filter__nested">
-            <div class="filter__nested-content">
-              <label class="filter__item">
-                <input type="checkbox" name="sub1-1" />
-                <span class="filter__check border-opacity"></span>
-                <div class="h6">
-                  2 слоя
-                </div>
-              </label>
-              <label class="filter__item">
-                <input type="checkbox" name="sub1-3" />
-                <span class="filter__check border-opacity"></span>
-                <div class="h6">
-                  1 слой
-                </div>
-              </label>
-              <label class="filter__item">
-                <input type="checkbox" name="sub1-4" />
-                <span class="filter__check border-opacity"></span>
-                <div class="h6">
-                  2 слоя, усиленный
-                </div>
-              </label>
-            </div>
+    <div class="filter__inner" data-lenis-prevent>
+      <div class="filter__group">
+        <div class="filter__item-head">
+          <div class="filter__item-title">
+            Наличие товара
           </div>
-          <label class="filter__item">
-            <input type="checkbox" name="sub1" />
-            <span class="filter__check border-opacity"></span>
-            <div class="filter__subgroup-title">
-              Патрубки прямые
-            </div>
-            <i class="icon-chevron"></i>
-          </label>
-          <div class="filter__nested">
-            <div class="filter__nested-content">
-              <label class="filter__item">
-                <input type="checkbox" name="sub1-1" />
-                <span class="filter__check border-opacity"></span>
-                <div class="h6">
-                  2 слоя
-                </div>
-              </label>
-              <label class="filter__item">
-                <input type="checkbox" name="sub1-3" />
-                <span class="filter__check border-opacity"></span>
-                <div class="h6">
-                  1 слой
-                </div>
-              </label>
-              <label class="filter__item">
-                <input type="checkbox" name="sub1-4" />
-                <span class="filter__check border-opacity"></span>
-                <div class="h6">
-                  2 слоя, усиленный
-                </div>
-              </label>
-            </div>
+          <i class="icon-chevron"></i>
+        </div>
+        <div class="filter__subgroup">
+          <div class="filter__subgroup-content">
+            <label class="filter__item filter__item--availability">
+              <input type="checkbox" name="sub0-1" />
+              <span class="filter__check border-opacity"></span>
+              <div class="filter__subgroup-title">
+                В наличии
+              </div>
+            </label>
+            <label class="filter__item filter__item--expected">
+              <input type="checkbox" name="sub0-1" />
+              <span class="filter__check border-opacity"></span>
+              <div class="filter__subgroup-title">
+                Ожидается поступление
+              </div>
+            </label>
           </div>
-          <label class="filter__item">
-            <input type="checkbox" name="sub2" />
-            <span class="filter__check border-opacity"></span>
-            <div class="filter__subgroup-title">
-              Патрубки угловые
+        </div>
+      </div>
+      <div class="filter__group">
+        <div class="filter__item-head">
+          <div class="filter__item-title">
+            Камлоки
+          </div>
+          <i class="icon-chevron"></i>
+        </div>
+        <div class="filter__subgroup">
+          <div class="filter__subgroup-content">
+            <label class="filter__item">
+              <input type="checkbox" name="sub1" />
+              <span class="filter__check border-opacity"></span>
+              <div class="filter__subgroup-title">
+                Рукав силиконовый
+              </div>
+              <i class="icon-chevron"></i>
+            </label>
+            <div class="filter__nested">
+              <div class="filter__nested-content">
+                <label class="filter__item">
+                  <input type="checkbox" name="sub1-1" />
+                  <span class="filter__check border-opacity"></span>
+                  <div class="h6">
+                    2 слоя
+                  </div>
+                </label>
+                <label class="filter__item">
+                  <input type="checkbox" name="sub1-3" />
+                  <span class="filter__check border-opacity"></span>
+                  <div class="h6">
+                    1 слой
+                  </div>
+                </label>
+                <label class="filter__item">
+                  <input type="checkbox" name="sub1-4" />
+                  <span class="filter__check border-opacity"></span>
+                  <div class="h6">
+                    2 слоя, усиленный
+                  </div>
+                </label>
+              </div>
             </div>
-            <!-- <i class="icon-chevron"></i> -->
-          </label>
+            <label class="filter__item">
+              <input type="checkbox" name="sub1" />
+              <span class="filter__check border-opacity"></span>
+              <div class="filter__subgroup-title">
+                Патрубки прямые
+              </div>
+              <i class="icon-chevron"></i>
+            </label>
+            <div class="filter__nested">
+              <div class="filter__nested-content">
+                <label class="filter__item">
+                  <input type="checkbox" name="sub1-1" />
+                  <span class="filter__check border-opacity"></span>
+                  <div class="h6">
+                    2 слоя
+                  </div>
+                </label>
+                <label class="filter__item">
+                  <input type="checkbox" name="sub1-3" />
+                  <span class="filter__check border-opacity"></span>
+                  <div class="h6">
+                    1 слой
+                  </div>
+                </label>
+                <label class="filter__item">
+                  <input type="checkbox" name="sub1-4" />
+                  <span class="filter__check border-opacity"></span>
+                  <div class="h6">
+                    2 слоя, усиленный
+                  </div>
+                </label>
+              </div>
+            </div>
+            <label class="filter__item">
+              <input type="checkbox" name="sub2" />
+              <span class="filter__check border-opacity"></span>
+              <div class="filter__subgroup-title">
+                Патрубки угловые
+              </div>
+              <!-- <i class="icon-chevron"></i> -->
+            </label>
+          </div>
         </div>
       </div>
-    </div>
-    <button class="filter__clear">
-      <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="13.1719" y="4.02136" width="1.625" height="12.9403" transform="rotate(45 13.1719 4.02136)"
-          fill="#EE5956" />
-        <rect x="14.3398" y="13.1954" width="1.61754" height="13" transform="rotate(135 14.3398 13.1954)"
-          fill="#EE5956" />
-      </svg>
-      Сбросить фильтр
-    </button>
-    <a class="filter__btn btn btn--blue" href="#" download="Прайс-лист">
-      <div class="h6">
-        Скачать прайс-лист
-      </div>
-      <i class="icon-doc"></i>
-    </a>
-    <div class="filter__drop">
-      <div class="filter__drop-content">
-        <div class="filter__drop-text">
-          Найдено <span>20 товаров</span>
+      <button class="filter__clear">
+        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="13.1719" y="4.02136" width="1.625" height="12.9403" transform="rotate(45 13.1719 4.02136)"
+            fill="#EE5956" />
+          <rect x="14.3398" y="13.1954" width="1.61754" height="13" transform="rotate(135 14.3398 13.1954)"
+            fill="#EE5956" />
+        </svg>
+        Сбросить фильтр
+      </button>
+      <a class="filter__btn btn btn--blue" href="#" download="Прайс-лист">
+        <div class="h6">
+          Скачать прайс-лист
         </div>
-        <!-- <button class="filter__drop-btn btn btn--blue">
-          Показать
-        </button> -->
-      </div>
+        <i class="icon-doc"></i>
+      </a>
     </div>
   </form>
+  <div class="filter__drop">
+    <div class="filter__drop-content">
+      <div class="filter__drop-text">
+        Найдено <span>20 товаров</span>
+      </div>
+      <!-- <button class="filter__drop-btn btn btn--blue">
+          Показать
+        </button> -->
+    </div>
+  </div>
 </div>
 
               <div class="control">
@@ -2581,551 +2590,6 @@
 
               <div class="catalog__content">
                 <div class="catalog__block">
-                  <!-- <div class="card__item border-opacity">
-
-  <div class="card__item-tags">
-    <div class="card__item-tag new">Новинка</div><div class="card__item-tag hit">Хиты прподаж</div><div class="card__item-tag sale">Акция %</div>
-  </div>
-
-  <div class="card__item-controls">
-    <button class="card__item-control"><i class="icon-compare"></i></button><button class="card__item-control favorite-btn"><i class="icon-favorite-min"></i></button>
-  </div>
-
-  <a class="card__item-img" href="/Motorist/product.html">
-    <img src="./images/temp/popular-item-2.png" alt="">
-  </a>
-
-  <div class="card__item-content">
-
-    <div class="card__item-wrap">
-      <a class="card__item-name h5" href="/Motorist/product.html">
-        Трубка соединительная прямая L 300 мм
-      </a>
-      <div class="card__item-text">
-        <p>
-          Идейные соображения высшего порядка, а также консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Р
-        </p>
-      </div>
-      <div class="card__item-lists">
-        <div class="card__item-list articul">
-          Артикул <span>2321421412414</span>
-        </div>
-        <div class="card__item-list material">
-          Материал <span>Армированный силикон</span>
-        </div>
-        <div class="card__item-list diameter">
-          Диаметр, мм <span>34</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="card__item-wrap">
-      <div class="card__item-value">
-        <div class="card__item-price">
-          250 ₽
-        </div>
-        <div class="card__item-sale">
-          350 ₽
-        </div>
-      </div>
-
-      <button class="card__item-btn card__item-btn--cart btn btn--blue cart-btn">
-        В корзину
-        <span>
-          <i class="icon-cart-min"></i>
-        </span>
-      </button>
-
-      <button class="card__item-btn btn btn--gray">
-        Купить в один клик
-        <span>
-          <i class="icon-arrow"></i>
-        </span>
-      </button>
-
-      <button class="card__item-plus">
-        <i class="icon-plus"></i>
-      </button>
-
-    </div>
-  </div>
-</div><div class="card__item border-opacity">
-
-  <div class="card__item-tags">
-    <div class="card__item-tag new">Новинка</div><div class="card__item-tag hit">Хиты прподаж</div><div class="card__item-tag sale">Акция %</div>
-  </div>
-
-  <div class="card__item-controls">
-    <button class="card__item-control"><i class="icon-compare"></i></button><button class="card__item-control favorite-btn"><i class="icon-favorite-min"></i></button>
-  </div>
-
-  <a class="card__item-img" href="/Motorist/product.html">
-    <img src="./images/temp/popular-item-2.png" alt="">
-  </a>
-
-  <div class="card__item-content">
-
-    <div class="card__item-wrap">
-      <a class="card__item-name h5" href="/Motorist/product.html">
-        Трубка соединительная прямая L 300 мм
-      </a>
-      <div class="card__item-text">
-        <p>
-          Идейные соображения высшего порядка, а также консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Р
-        </p>
-      </div>
-      <div class="card__item-lists">
-        <div class="card__item-list articul">
-          Артикул <span>2321421412414</span>
-        </div>
-        <div class="card__item-list material">
-          Материал <span>Армированный силикон</span>
-        </div>
-        <div class="card__item-list diameter">
-          Диаметр, мм <span>34</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="card__item-wrap">
-      <div class="card__item-value">
-        <div class="card__item-price">
-          250 ₽
-        </div>
-        <div class="card__item-sale">
-          350 ₽
-        </div>
-      </div>
-
-      <button class="card__item-btn card__item-btn--cart btn btn--blue cart-btn">
-        В корзину
-        <span>
-          <i class="icon-cart-min"></i>
-        </span>
-      </button>
-
-      <button class="card__item-btn btn btn--gray">
-        Купить в один клик
-        <span>
-          <i class="icon-arrow"></i>
-        </span>
-      </button>
-
-      <button class="card__item-plus">
-        <i class="icon-plus"></i>
-      </button>
-
-    </div>
-  </div>
-</div><div class="card__item border-opacity">
-
-  <div class="card__item-tags">
-    <div class="card__item-tag new">Новинка</div>
-  </div>
-
-  <div class="card__item-controls">
-    <button class="card__item-control"><i class="icon-compare"></i></button><button class="card__item-control favorite-btn"><i class="icon-favorite-min"></i></button>
-  </div>
-
-  <a class="card__item-img" href="/Motorist/product.html">
-    <img src="./images/temp/popular-item-2.png" alt="">
-  </a>
-
-  <div class="card__item-content">
-
-    <div class="card__item-wrap">
-      <a class="card__item-name h5" href="/Motorist/product.html">
-        Трубка соединительная прямая L 300 мм
-      </a>
-      <div class="card__item-text">
-        <p>
-          Идейные соображения высшего порядка, а также консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Р
-        </p>
-      </div>
-      <div class="card__item-lists">
-        <div class="card__item-list articul">
-          Артикул <span>2321421412414</span>
-        </div>
-        <div class="card__item-list material">
-          Материал <span>Армированный силикон</span>
-        </div>
-        <div class="card__item-list diameter">
-          Диаметр, мм <span>34</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="card__item-wrap">
-      <div class="card__item-value">
-        <div class="card__item-price">
-          250 ₽
-        </div>
-        <div class="card__item-sale">
-          350 ₽
-        </div>
-      </div>
-
-      <button class="card__item-btn card__item-btn--cart btn btn--blue cart-btn">
-        В корзину
-        <span>
-          <i class="icon-cart-min"></i>
-        </span>
-      </button>
-
-      <button class="card__item-btn btn btn--gray">
-        Купить в один клик
-        <span>
-          <i class="icon-arrow"></i>
-        </span>
-      </button>
-
-      <button class="card__item-plus">
-        <i class="icon-plus"></i>
-      </button>
-
-    </div>
-  </div>
-</div><div class="card__item border-opacity">
-
-  <div class="card__item-tags">
-    <div class="card__item-tag new">Новинка</div>
-  </div>
-
-  <div class="card__item-controls">
-    <button class="card__item-control"><i class="icon-compare"></i></button><button class="card__item-control favorite-btn"><i class="icon-favorite-min"></i></button>
-  </div>
-
-  <a class="card__item-img" href="/Motorist/product.html">
-    <img src="./images/temp/popular-item-2.png" alt="">
-  </a>
-
-  <div class="card__item-content">
-
-    <div class="card__item-wrap">
-      <a class="card__item-name h5" href="/Motorist/product.html">
-        Трубка соединительная прямая L 300 мм
-      </a>
-      <div class="card__item-text">
-        <p>
-          Идейные соображения высшего порядка, а также консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Р
-        </p>
-      </div>
-      <div class="card__item-lists">
-        <div class="card__item-list articul">
-          Артикул <span>2321421412414</span>
-        </div>
-        <div class="card__item-list material">
-          Материал <span>Армированный силикон</span>
-        </div>
-        <div class="card__item-list diameter">
-          Диаметр, мм <span>34</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="card__item-wrap">
-      <div class="card__item-value">
-        <div class="card__item-price">
-          250 ₽
-        </div>
-        <div class="card__item-sale">
-          350 ₽
-        </div>
-      </div>
-
-      <button class="card__item-btn card__item-btn--cart btn btn--blue cart-btn">
-        В корзину
-        <span>
-          <i class="icon-cart-min"></i>
-        </span>
-      </button>
-
-      <button class="card__item-btn btn btn--gray">
-        Купить в один клик
-        <span>
-          <i class="icon-arrow"></i>
-        </span>
-      </button>
-
-      <button class="card__item-plus">
-        <i class="icon-plus"></i>
-      </button>
-
-    </div>
-  </div>
-</div><div class="card__item border-opacity">
-
-  <div class="card__item-tags">
-    <div class="card__item-tag new">Новинка</div><div class="card__item-tag hit">Хиты прподаж</div>
-  </div>
-
-  <div class="card__item-controls">
-    <button class="card__item-control"><i class="icon-compare"></i></button><button class="card__item-control favorite-btn"><i class="icon-favorite-min"></i></button>
-  </div>
-
-  <a class="card__item-img" href="/Motorist/product.html">
-    <img src="./images/temp/popular-item-2.png" alt="">
-  </a>
-
-  <div class="card__item-content">
-
-    <div class="card__item-wrap">
-      <a class="card__item-name h5" href="/Motorist/product.html">
-        Трубка соединительная прямая L 300 мм
-      </a>
-      <div class="card__item-text">
-        <p>
-          Идейные соображения высшего порядка, а также консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Р
-        </p>
-      </div>
-      <div class="card__item-lists">
-        <div class="card__item-list articul">
-          Артикул <span>2321421412414</span>
-        </div>
-        <div class="card__item-list material">
-          Материал <span>Армированный силикон</span>
-        </div>
-        <div class="card__item-list diameter">
-          Диаметр, мм <span>34</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="card__item-wrap">
-      <div class="card__item-value">
-        <div class="card__item-price">
-          250 ₽
-        </div>
-        <div class="card__item-sale">
-          350 ₽
-        </div>
-      </div>
-
-      <button class="card__item-btn card__item-btn--cart btn btn--blue cart-btn">
-        В корзину
-        <span>
-          <i class="icon-cart-min"></i>
-        </span>
-      </button>
-
-      <button class="card__item-btn btn btn--gray">
-        Купить в один клик
-        <span>
-          <i class="icon-arrow"></i>
-        </span>
-      </button>
-
-      <button class="card__item-plus">
-        <i class="icon-plus"></i>
-      </button>
-
-    </div>
-  </div>
-</div><div class="card__item border-opacity">
-
-  <div class="card__item-tags">
-    <div class="card__item-tag new">Новинка</div><div class="card__item-tag hit">Хиты прподаж</div>
-  </div>
-
-  <div class="card__item-controls">
-    <button class="card__item-control"><i class="icon-compare"></i></button><button class="card__item-control favorite-btn"><i class="icon-favorite-min"></i></button>
-  </div>
-
-  <a class="card__item-img" href="/Motorist/product.html">
-    <img src="./images/temp/popular-item-2.png" alt="">
-  </a>
-
-  <div class="card__item-content">
-
-    <div class="card__item-wrap">
-      <a class="card__item-name h5" href="/Motorist/product.html">
-        Трубка соединительная прямая L 300 мм
-      </a>
-      <div class="card__item-text">
-        <p>
-          Идейные соображения высшего порядка, а также консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Р
-        </p>
-      </div>
-      <div class="card__item-lists">
-        <div class="card__item-list articul">
-          Артикул <span>2321421412414</span>
-        </div>
-        <div class="card__item-list material">
-          Материал <span>Армированный силикон</span>
-        </div>
-        <div class="card__item-list diameter">
-          Диаметр, мм <span>34</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="card__item-wrap">
-      <div class="card__item-value">
-        <div class="card__item-price">
-          250 ₽
-        </div>
-        <div class="card__item-sale">
-          350 ₽
-        </div>
-      </div>
-
-      <button class="card__item-btn card__item-btn--cart btn btn--blue cart-btn">
-        В корзину
-        <span>
-          <i class="icon-cart-min"></i>
-        </span>
-      </button>
-
-      <button class="card__item-btn btn btn--gray">
-        Купить в один клик
-        <span>
-          <i class="icon-arrow"></i>
-        </span>
-      </button>
-
-      <button class="card__item-plus">
-        <i class="icon-plus"></i>
-      </button>
-
-    </div>
-  </div>
-</div><div class="card__item border-opacity">
-
-  <div class="card__item-tags">
-    <div class="card__item-tag new">Новинка</div><div class="card__item-tag sale">Акция %</div>
-  </div>
-
-  <div class="card__item-controls">
-    <button class="card__item-control"><i class="icon-compare"></i></button><button class="card__item-control favorite-btn"><i class="icon-favorite-min"></i></button>
-  </div>
-
-  <a class="card__item-img" href="/Motorist/product.html">
-    <img src="./images/temp/popular-item-2.png" alt="">
-  </a>
-
-  <div class="card__item-content">
-
-    <div class="card__item-wrap">
-      <a class="card__item-name h5" href="/Motorist/product.html">
-        Трубка соединительная прямая L 300 мм
-      </a>
-      <div class="card__item-text">
-        <p>
-          Идейные соображения высшего порядка, а также консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Р
-        </p>
-      </div>
-      <div class="card__item-lists">
-        <div class="card__item-list articul">
-          Артикул <span>2321421412414</span>
-        </div>
-        <div class="card__item-list material">
-          Материал <span>Армированный силикон</span>
-        </div>
-        <div class="card__item-list diameter">
-          Диаметр, мм <span>34</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="card__item-wrap">
-      <div class="card__item-value">
-        <div class="card__item-price">
-          250 ₽
-        </div>
-        <div class="card__item-sale">
-          350 ₽
-        </div>
-      </div>
-
-      <button class="card__item-btn card__item-btn--cart btn btn--blue cart-btn">
-        В корзину
-        <span>
-          <i class="icon-cart-min"></i>
-        </span>
-      </button>
-
-      <button class="card__item-btn btn btn--gray">
-        Купить в один клик
-        <span>
-          <i class="icon-arrow"></i>
-        </span>
-      </button>
-
-      <button class="card__item-plus">
-        <i class="icon-plus"></i>
-      </button>
-
-    </div>
-  </div>
-</div><div class="card__item border-opacity">
-
-  <div class="card__item-tags">
-    <div class="card__item-tag new">Новинка</div><div class="card__item-tag sale">Акция %</div>
-  </div>
-
-  <div class="card__item-controls">
-    <button class="card__item-control"><i class="icon-compare"></i></button><button class="card__item-control favorite-btn"><i class="icon-favorite-min"></i></button>
-  </div>
-
-  <a class="card__item-img" href="/Motorist/product.html">
-    <img src="./images/temp/popular-item-2.png" alt="">
-  </a>
-
-  <div class="card__item-content">
-
-    <div class="card__item-wrap">
-      <a class="card__item-name h5" href="/Motorist/product.html">
-        Трубка соединительная прямая L 300 мм
-      </a>
-      <div class="card__item-text">
-        <p>
-          Идейные соображения высшего порядка, а также консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Р
-        </p>
-      </div>
-      <div class="card__item-lists">
-        <div class="card__item-list articul">
-          Артикул <span>2321421412414</span>
-        </div>
-        <div class="card__item-list material">
-          Материал <span>Армированный силикон</span>
-        </div>
-        <div class="card__item-list diameter">
-          Диаметр, мм <span>34</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="card__item-wrap">
-      <div class="card__item-value">
-        <div class="card__item-price">
-          250 ₽
-        </div>
-        <div class="card__item-sale">
-          350 ₽
-        </div>
-      </div>
-
-      <button class="card__item-btn card__item-btn--cart btn btn--blue cart-btn">
-        В корзину
-        <span>
-          <i class="icon-cart-min"></i>
-        </span>
-      </button>
-
-      <button class="card__item-btn btn btn--gray">
-        Купить в один клик
-        <span>
-          <i class="icon-arrow"></i>
-        </span>
-      </button>
-
-      <button class="card__item-plus">
-        <i class="icon-plus"></i>
-      </button>
-
-    </div>
-  </div>
-</div> -->
                   <div class="card__item border-opacity">
 
   <div class="card__item-tags">
@@ -4931,7 +4395,7 @@
     <div class="card__item-content">
       <div class="card__item-wrap">
         <a class="card__item-name h5" href="/Motorist/product.html">
-          Трубка соединительная прямая L 300 мм
+          Трубка соединительная прямая L 300 мм Трубка соединительная прямая L 300 мм
         </a>
         <div class="card__item-text">
           <p>
@@ -5420,7 +4884,7 @@
     <div class="reviews__item-body">
       <div class="reviews__item-text">
         <p>
-          Хороший патрубок. На Рено Лагуну отлично подошёл. 
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, repudiandae quaerat vero consequatur perferendis aperiam incidunt, voluptatibus, fuga saepe unde ipsam! Ut, nam quidem placeat quae odit autem dolor iste.
         </p>
       </div>
       <div class="reviews__item-gallery">

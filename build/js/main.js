@@ -1823,6 +1823,261 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
+  (function () {
+    // Настройки классов и селекторов
+    const HIDDEN_ITEM_CLASS = 'placing__item--hidden';
+    const HIDDEN_CHECK_CLASS = 'check--hidden';
+
+    const PARENT_CLASSES = {
+      state1: 'placing--state-delete-selected', // Удалить выбранные
+      state2: 'placing--state-delete-all',      // Удалить всё
+      state3: 'placing--state-restore-all'      // Вернуть всё
+    };
+
+    const BUTTON_TEXTS = {
+      state1: 'Удалить выбранные',
+      state2: 'Удалить всё',
+      state3: 'Вернуть всё'
+    };
+
+    function updatePlacingState(placingBlock) {
+      if (!placingBlock || !(placingBlock instanceof HTMLElement)) return;
+
+      const items = placingBlock.querySelectorAll('.placing__item');
+      // Ищем блок с текстом внутри кнопки удаления
+      const btnTextNode = placingBlock.querySelector('.control__link--delete .control__link-text');
+      // ДОБАВЛЕНО: Ищем кнопку внутри информационного блока .placing__info
+      const infoBtn = placingBlock.querySelector('.placing__info .placing__info-btn');
+
+      if (items.length === 0 || !btnTextNode) return;
+
+      let activeCount = 0;
+      let hiddenCount = 0;
+
+      items.forEach(item => {
+        const checkBlock = item.querySelector('.check');
+        const isItemHidden = item.classList.contains(HIDDEN_ITEM_CLASS);
+
+        // Синхронизация класса скрытия для блока .check внутри карточки
+        if (checkBlock) {
+          if (isItemHidden) {
+            checkBlock.classList.add(HIDDEN_CHECK_CLASS);
+          } else {
+            checkBlock.classList.remove(HIDDEN_CHECK_CLASS);
+          }
+        }
+
+        // Считаем скрытые элементы
+        if (isItemHidden) {
+          hiddenCount++;
+        }
+
+        // Проверяем, выбран ли чекбокс внутри этого элемента
+        const checkbox = item.querySelector('.check-input');
+        if (checkbox && checkbox.checked) {
+          activeCount++;
+        }
+      });
+
+      let currentState = 'state2'; // По умолчанию: Удалить всё
+
+      if (hiddenCount === items.length) {
+        currentState = 'state3'; // Вернуть всё
+      } else if (activeCount > 0) {
+        currentState = 'state1'; // Удалить выбранные
+      }
+
+      // 1. Переключаем классы на корневом блоке .placing
+      Object.values(PARENT_CLASSES).forEach(cls => placingBlock.classList.remove(cls));
+      placingBlock.classList.add(PARENT_CLASSES[currentState]);
+
+      // 2. Меняем текст строго внутри блока .control__link-text
+      if (btnTextNode.textContent.trim() !== BUTTON_TEXTS[currentState]) {
+        btnTextNode.textContent = BUTTON_TEXTS[currentState];
+      }
+
+      // 3. ДОБАВЛЕНО: Управление атрибутом disabled для .placing__info-btn
+      if (infoBtn) {
+        if (currentState === 'state3') {
+          // Если состояние "Вернуть всё" (placing--state-restore-all), блокируем кнопку
+          infoBtn.setAttribute('disabled', 'disabled');
+        } else {
+          // В любых других состояниях разблокируем кнопку обратно
+          infoBtn.removeAttribute('disabled');
+        }
+      }
+    }
+
+    // Находим все блоки .placing на странице
+    const placings = document.querySelectorAll('.placing');
+
+    if (placings.length > 0) {
+      placings.forEach(placing => {
+        // 1. Первичный расчет состояний при загрузке страницы
+        updatePlacingState(placing);
+
+        // 2. Живое отслеживание кликов по чекбоксам внутри этого блока
+        placing.addEventListener('change', (event) => {
+          if (event.target.classList.contains('check-input')) {
+            updatePlacingState(placing);
+          }
+        });
+      });
+    }
+
+    // Экспортируем функцию в глобальное окружение
+    window.updatePlacingState = updatePlacingState;
+  })();
+
+  (function () {
+    const changeButtons = document.querySelectorAll('.btn--change');
+
+    if (changeButtons.length > 0) {
+      changeButtons.forEach(btn => {
+
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const span = this.querySelector('span');
+          const icon = this.querySelector('i');
+          if (!span || !icon) return;
+
+          const isChanged = this.classList.contains('btn--red');
+
+          if (!isChanged) {
+            this.setAttribute('data-original-text', span.textContent.trim());
+
+            const newText = this.getAttribute('data-label');
+            if (newText) span.textContent = newText;
+
+            this.classList.add('btn--red');
+            icon.classList.remove('icon-arrow');
+            icon.classList.add('icon-x');
+          } else {
+            const originalText = this.getAttribute('data-original-text');
+            if (originalText) span.textContent = originalText;
+
+            this.classList.remove('btn--red');
+            icon.classList.remove('icon-x');
+            icon.classList.add('icon-arrow');
+          }
+        });
+
+      });
+    }
+  })();
+
+  /* TIMER */
+  (function () {
+    const htmlTag = document.documentElement;
+    const INITIAL_SECONDS = 30;
+
+    function startCountdown(timerBlock, duration) {
+      let timer = duration;
+      clearInterval(timerBlock.countdownInterval);
+      timerBlock.classList.remove('is-clickable');
+      timerBlock.innerHTML = 'Получить новый код через <span>00:30</span>';
+
+      timerBlock.countdownInterval = setInterval(() => {
+        let minutes = parseInt(timer / 60, 10);
+        let seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+
+        const span = timerBlock.querySelector('span');
+        if (span) span.textContent = `${minutes}:${seconds}`;
+
+        if (--timer < 0) {
+          clearInterval(timerBlock.countdownInterval);
+          timerBlock.innerHTML = 'Получить новый код';
+          timerBlock.classList.add('is-clickable');
+        }
+      }, 1000);
+    }
+
+    function initInputObserver(timerInput, timerBtn, timerBlock) {
+      if (!timerInput || timerInput._hasObserver) return;
+      timerInput._hasObserver = true;
+
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.attributeName === 'class') {
+            const hasFilled = timerInput.classList.contains('filled');
+            if (hasFilled) {
+              timerBtn.removeAttribute('disabled');
+              timerBtn.textContent = 'Подтвердить';
+            } else {
+              if (!timerBlock.classList.contains('is-clickable') && timerBlock.classList.contains('form-timer-active')) {
+                timerBtn.setAttribute('disabled', 'disabled');
+              }
+              timerBtn.textContent = 'Получить код';
+            }
+          }
+        });
+      });
+
+      observer.observe(timerInput, { attributes: true });
+    }
+
+    document.addEventListener('click', function (e) {
+      const timerBlock = e.target.closest('.form-timer');
+      if (timerBlock && timerBlock.classList.contains('is-clickable')) {
+        startCountdown(timerBlock, INITIAL_SECONDS);
+        return;
+      }
+
+      const timerBtn = e.target.closest('.timer-btn');
+      if (timerBtn) {
+        e.preventDefault();
+
+        const parentBody = timerBtn.closest('.registration__body');
+        if (!parentBody) return;
+
+        const currentTimerBlock = parentBody.querySelector('.form-timer');
+        const currentTimerInput = parentBody.querySelector('.timer-input');
+
+        if (!currentTimerBlock) return;
+
+        if (currentTimerInput) {
+          initInputObserver(currentTimerInput, timerBtn, currentTimerBlock);
+        }
+
+        const isConfirmState = timerBtn.textContent.trim() === 'Подтвердить';
+
+        if (!isConfirmState) {
+          currentTimerBlock.classList.add('form-timer-active');
+          timerBtn.setAttribute('disabled', 'disabled');
+          startCountdown(currentTimerBlock, INITIAL_SECONDS);
+        } else {
+          htmlTag.classList.add('code-aproove');
+          currentTimerBlock.classList.remove('form-timer-active');
+          clearInterval(currentTimerBlock.countdownInterval);
+
+          const targetButtons = document.querySelectorAll('.registration__btn');
+          targetButtons.forEach(targetBtn => {
+            targetBtn.removeAttribute('disabled');
+          });
+        }
+      }
+    });
+
+    document.addEventListener('focusin', function (e) {
+      const timerInput = e.target.closest('.timer-input');
+      if (timerInput && !timerInput._hasObserver) {
+        const parentBody = timerInput.closest('.registration__body');
+        if (!parentBody) return;
+
+        const timerBtn = parentBody.querySelector('.timer-btn');
+        const timerBlock = parentBody.querySelector('.form-timer');
+
+        if (timerBtn && timerBlock) {
+          initInputObserver(timerInput, timerBtn, timerBlock);
+        }
+      }
+    });
+  })();
+
   /**
    * Инициализация Fabcybox
    */

@@ -44,7 +44,6 @@
           <div class="placing__inner">
 
             <div class="placing__content accordion-parent accordion-multiple">
-
               <div class="control">
                 <div class="control__body">
                   <button class="control__link">
@@ -53,7 +52,7 @@
                       Экспортировать в Excel
                     </div>
                   </button>
-                  <button class="control__link">
+                  <button class="control__link control__link--delete">
                     <i class="icon-trash"></i>
                     <div class="control__link-text">
                       Удалить выбранные
@@ -61,13 +60,14 @@
                   </button>
                 </div>
               </div>
-
-              <!-- <div class="placing__body"> -->
               <div class="placing__items">
                 <div class="placing__item">
                   <div class="check border-opacity">
                     <label class="check-label" for="cart-product-1">
                       <input class="check-input" id="cart-product-1" type="checkbox">
+                      <span>
+                        Вернуть
+                      </span>
                     </label>
                   </div>
                   <div class="placing__item-status status-availability"></div>
@@ -132,6 +132,9 @@
                   <div class="check border-opacity">
                     <label class="check-label" for="cart-product-2">
                       <input class="check-input" id="cart-product-2" type="checkbox">
+                      <span>
+                        Вернуть
+                      </span>
                     </label>
                   </div>
                   <div class="placing__item-status status-expected"></div>
@@ -196,6 +199,9 @@
                   <div class="check border-opacity">
                     <label class="check-label" for="cart-product-3">
                       <input class="check-input" id="cart-product-3" type="checkbox">
+                      <span>
+                        Вернуть
+                      </span>
                     </label>
                   </div>
                   <div class="placing__item-status status-availability"></div>
@@ -265,7 +271,6 @@
                   </div>
                 </div>
                 <div class="placing__item placing__item--hidden">
-
                   <div class="check check--hidden border-opacity">
                     <label class="check-label" for="cart-product-4">
                       <input class="check-input" id="cart-product-4" type="checkbox">
@@ -274,7 +279,6 @@
                       </span>
                     </label>
                   </div>
-
                   <div class="placing__item-status status-availability"></div>
                   <div class="placing__item-block">
                     <div class="placing__item-head">
@@ -333,114 +337,7 @@
                     </div>
                   </div>
                 </div>
-                <!-- <div class="placing__item">
-                  <div class="check">
-                    <input class="check-input" id="cart-product-2" type="checkbox">
-                    <label class="check-label" for="cart-product-2">
-                    </label>
-                  </div>
-                  <div class="placing__item-img">
-                    <img src="./../images/temp/placing-item-1.png" alt="">
-                  </div>
-                  <div class="placing__item-wrap">
-                    <div class="placing__item-title h5">
-                      Трубка соединительная прямая L 300 мм
-                    </div>
-                    <div class="quantity" data-min="1" data-max="100">
-                      <button class="quantity__btn quantity__btn--minus" type="button">
-                        <i class="icon-minus"></i>
-                      </button>
-                      <div class="quantity__text">
-                        <input type="text" value="10 шт">
-                      </div>
-                      <button class="quantity__btn quantity__btn--plus" type="button">
-                        <i class="icon-plus"></i>
-                      </button>
-                    </div>
-                    <div class="placing__item-price">
-                      <div class="card__item-sale h6">
-                        350 000 ₽
-                      </div>
-                      <div class="card__item-price h3">
-                        250 000 ₽
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="placing__item">
-                  <div class="check">
-                    <input class="check-input" id="cart-product-3" type="checkbox">
-                    <label class="check-label" for="cart-product-3">
-                    </label>
-                  </div>
-                  <div class="placing__item-img">
-                    <img src="./../images/temp/placing-item-1.png" alt="">
-                  </div>
-                  <div class="placing__item-wrap">
-                    <div class="placing__item-title h5">
-                      Трубка соединительная прямая L 300 мм
-                    </div>
-                    <div class="quantity" data-min="1" data-max="100">
-                      <button class="quantity__btn quantity__btn--minus" type="button">
-                        <i class="icon-minus"></i>
-                      </button>
-                      <div class="quantity__text">
-                        <input type="text" value="10 шт">
-                      </div>
-                      <button class="quantity__btn quantity__btn--plus" type="button">
-                        <i class="icon-plus"></i>
-                      </button>
-                    </div>
-                    <div class="placing__item-price">
-                      <div class="card__item-sale h6">
-                        350 000 ₽
-                      </div>
-                      <div class="card__item-price h3">
-                        250 000 ₽
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="placing__item">
-                  <div class="check">
-                    <input class="check-input" id="cart-product-4" type="checkbox">
-                    <label class="check-label" for="cart-product-4">
-                    </label>
-                  </div>
-                  <div class="placing__item-img">
-                    <img src="./../images/temp/placing-item-1.png" alt="">
-                  </div>
-                  <div class="placing__item-wrap">
-                    <div class="placing__item-title h5">
-                      Трубка соединительная прямая L 300 мм
-                    </div>
-                    <div class="quantity" data-min="1" data-max="100">
-                      <button class="quantity__btn quantity__btn--minus" type="button">
-                        <i class="icon-minus"></i>
-                      </button>
-                      <div class="quantity__text">
-                        <input type="text" value="10 шт">
-                      </div>
-                      <button class="quantity__btn quantity__btn--plus" type="button">
-                        <i class="icon-plus"></i>
-                      </button>
-                    </div>
-                    <div class="placing__item-price">
-                      <div class="card__item-sale h6">
-                        350 000 ₽
-                      </div>
-                      <div class="card__item-price h3">
-                        250 000 ₽
-                      </div>
-                    </div>
-                  </div>
-                </div> -->
               </div>
-              <!-- <a class="placing__body-btn btn btn--arrow" href="javascript:void(0)">
-                  Продолжить
-                  <i class="icon-arrow"></i>
-                </a>
-              </div> -->
 
               <div class="placing__block placing__block--recipient">
                 <div class="placing__block-head h5">
@@ -477,34 +374,18 @@
                         </label>
                       </div>
                     </div>
-
-                    <!-- <button class="btn btn--arrow">
-                      Продолжить
-                      <i class="icon-arrow"></i>
-                    </button> -->
                   </div>
                 </div>
               </div>
 
               <div class="placing__block">
                 <div class="placing__block-head h5">
-                  <!-- Выберите доставку в <a href="/Motorist">Новосибирск</a> -->
                   Доставка
                 </div>
                 <div class="placing__block-body">
                   <div class="placing__block-content">
-
-                    <!-- <div class="placing__block-notice">
-                      Оптимальный способ доставки будет предложен менеджером после обсуждения заказа
-                    </div> -->
-
                     <div class="placing__block-items">
                       <div class="placing__block-item check-block">
-                        <!-- <div class="check">
-                          <input class="check-input" id="cart-delivery-4" name="cart-delivery" type="radio">
-                          <label class="check-label" for="cart-delivery-4">
-                          </label>
-                        </div> -->
                         <div class="placing__block-wrap">
                           <div class="placing__block-title h5">
                             Условия доставки
@@ -517,150 +398,10 @@
                           Доставка осуществляется в течение дня в удобное для вас время
                         </div>
                       </div>
-                      <!-- <div class="placing__block-item check-block">
-                        <div class="check">
-                          <input class="check-input" id="cart-delivery-1" name="cart-delivery" type="radio">
-                          <label class="check-label" for="cart-delivery-1">
-                          </label>
-                        </div>
-                        <div class="placing__block-wrap">
-                          <div class="placing__block-title h5">
-                            Доставка CDEK
-                          </div>
-                          <div class="placing__block-price h5">
-                            5 000 ₽
-                          </div>
-                        </div>
-                        <div class="placing__block-text h6">
-                          Доставка осуществляется в течение дня в удобное для вас время
-                        </div>
-                      </div>
-                      <div class="placing__block-item check-block">
-                        <div class="check">
-                          <input class="check-input" id="cart-delivery-2" name="cart-delivery" type="radio">
-                          <label class="check-label" for="cart-delivery-2">
-                          </label>
-                        </div>
-                        <div class="placing__block-wrap">
-                          <div class="placing__block-title h5">
-                            Доставка Деловые линии
-                          </div>
-                          <div class="placing__block-price h5">
-                            3 000 ₽
-                          </div>
-                        </div>
-                        <div class="placing__block-text h6">
-                          Доставка осуществляется в течение дня в удобное для вас время
-                        </div>
-                      </div>
-                      <div class="placing__block-item check-block">
-                        <div class="check">
-                          <input class="check-input" id="cart-delivery-3" name="cart-delivery" type="radio">
-                          <label class="check-label" for="cart-delivery-3">
-                          </label>
-                        </div>
-                        <div class="placing__block-wrap">
-                          <div class="placing__block-title h5">
-                            Самовывоз
-                          </div>
-                          <div class="placing__block-price h5">
-                            Бесплатно
-                          </div>
-                        </div>
-                      </div> -->
                     </div>
-
-                    <!-- <div class="placing__block-head h5">
-                      Адрес доставки
-                    </div>
-
-                    <div class="form__body">
-                      <div class="form-group">
-                        <input id="placing-address" class="form-input" name="address" type="text">
-                        <label for="placing-address" class="form-label">
-                          <i class="icon-form-user"></i>
-                          Адрес доставки <span>*</span>
-                        </label>
-                      </div>
-                      <div class="form-group form-group--textarea">
-                        <textarea class="form-textarea" name="comments" rows="4"></textarea>
-                        <label class="form-label">
-                          Комментарий
-                        </label>
-                      </div>
-                    </div> -->
-
-                    <!-- <button class="btn btn--arrow">
-                      Продолжить
-                      <i class="icon-arrow"></i>
-                    </button> -->
                   </div>
                 </div>
               </div>
-
-              <!-- <div class="placing__block placing__block--pays accordion">
-                <div class="placing__block-head accordion-head h5">
-                  Способы оплаты
-                </div>
-                <div class="placing__block-body accordion-body">
-                  <div class="placing__block-content">
-                    <div class="placing__block-items">
-                      <div class="placing__block-item check-block">
-                        <div class="check">
-                          <input class="check-input" id="cart-pay-1" name="cart-pay" type="radio">
-                          <label class="check-label" for="cart-pay-1">
-                          </label>
-                        </div>
-                        <div class="placing__block-wrap">
-                          <div class="placing__block-title h5">
-                            Оплата картой
-                          </div>
-                        </div>
-                      </div>
-                      <div class="placing__block-item check-block">
-                        <div class="check">
-                          <input class="check-input" id="cart-pay-2" name="cart-pay" type="radio">
-                          <label class="check-label" for="cart-pay-2">
-                          </label>
-                        </div>
-                        <div class="placing__block-wrap">
-                          <div class="placing__block-title h5">
-                            Оплата по QR-коду
-                          </div>
-                        </div>
-                      </div>
-                      <div class="placing__block-item check-block">
-                        <div class="check">
-                          <input class="check-input" id="cart-pay-3" name="cart-pay" type="radio">
-                          <label class="check-label" for="cart-pay-3">
-                          </label>
-                        </div>
-                        <div class="placing__block-wrap">
-                          <div class="placing__block-title h5">
-                            Банковский перевод (для юр. лиц)
-                          </div>
-                        </div>
-                      </div>
-                      <div class="placing__block-item check-block">
-                        <div class="check">
-                          <input class="check-input" id="cart-pay-4" name="cart-pay" type="radio">
-                          <label class="check-label" for="cart-pay-4">
-                          </label>
-                        </div>
-                        <div class="placing__block-wrap">
-                          <div class="placing__block-title h5">
-                            Оплата наличными
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <button class="btn btn--arrow">
-                      Оформить заказ
-                      <i class="icon-arrow"></i>
-                    </button>
-                  </div>
-                </div>
-              </div> -->
             </div>
 
             <div class="placing__info">

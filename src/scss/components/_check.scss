@@ -37,14 +37,13 @@
   }
 
   &-label {
-    display: block;
-    width: 1.4rem;
-    height: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
-    background-color: var(--gray);
     flex-shrink: 0;
-    transition: opacity 0.3s ease;
-    opacity: 0;
 
     position: absolute;
     top: 50%;
@@ -53,7 +52,10 @@
     transform: translate(-50%, -50%);
 
     &:has(.check-input:checked) {
-      opacity: 1;
+
+      &::before {
+        opacity: 1;
+      }
     }
 
     span {
@@ -67,6 +69,42 @@
       .check--hidden & {
         display: block;
       }
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: 50%;
+      background-color: var(--gray);
+      flex-shrink: 0;
+      transition: opacity 0.3s ease;
+      opacity: 0;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+      transform: translate(-50%, -50%);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background-color: var(--gray-20);
+      flex-shrink: 0;
+      transition: opacity 0.3s ease;
+      opacity: 0;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 1;
+      transform: translate(-50%, -50%);
     }
   }
 

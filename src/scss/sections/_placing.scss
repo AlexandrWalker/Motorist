@@ -299,9 +299,16 @@
     border-radius: 1.5rem;
     border: 0.1rem solid var(--white);
     background-color: var(--white-50);
+    transition: opacity 0.3s ease;
+    opacity: 1;
 
     @include md {
       padding: 2rem 1.5rem 2.3rem;
+    }
+
+    .placing--state-restore-all & {
+      opacity: 0.5;
+      pointer-events: none;
     }
 
     &--recipient {

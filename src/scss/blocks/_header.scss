@@ -343,6 +343,7 @@
     &+.dropout {
       right: -1rem;
       left: unset;
+      min-width: 31rem;
 
       &::before {
         right: 2.6rem;
@@ -422,6 +423,13 @@
       &::placeholder {
         // color: var(--white-50);
         color: var(--white);
+      }
+
+      &:hover {
+
+        @include domd {
+          border-color: transparent;
+        }
       }
 
       @include md {
@@ -531,6 +539,10 @@
       left: -2.5rem;
       right: unset;
 
+      .header-fixed & {
+        top: calc(100% + 1.7rem);
+      }
+
       &::before {
         right: unset;
         left: 3rem;
@@ -605,6 +617,10 @@
       top: 0.3rem;
       right: 0;
       z-index: 2;
+
+      .header__navbar-item--cart & {
+        background-color: var(--orange);
+      }
     }
   }
 }
@@ -618,5 +634,5 @@
   user-select: none !important;
 
   /* Измените на manipulation, чтобы разрешить клики мыши и обычный скролл */
-  touch-action: manipulation !important; 
+  touch-action: manipulation !important;
 }

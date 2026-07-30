@@ -73,7 +73,8 @@
     <div class="registration__block-body">
       <div class="form__body form__row-2">
         <div class="form-group form-password">
-          <input id="reg-yur-password" class="form-input" name="reg-yur-password" type="password" autocomplete="new-password">
+          <input id="reg-yur-password" class="form-input" name="reg-yur-password" type="password"
+            autocomplete="new-password">
           <label for="reg-yur-password" class="form-label">
             Пароль <span>*</span>
           </label>
@@ -88,7 +89,8 @@
           </div>
         </div>
         <div class="form-group form-password">
-          <input id="reg-yur-repassword" class="form-input" name="reg-yur-repassword" type="password" autocomplete="new-password">
+          <input id="reg-yur-repassword" class="form-input" name="reg-yur-repassword" type="password"
+            autocomplete="new-password">
           <label for="reg-yur-repassword" class="form-label">
             Подтверждение пароля <span>*</span>
           </label>
@@ -105,11 +107,39 @@
       </div>
     </div>
   </div>
+  <div class="registration__block">
+    <div class="registration__block-head">
+      <div class="registration__block-title h5">
+        Подтверждение почты
+      </div>
+    </div>
+    <div class="registration__block-body">
+      <div class="form__body form__row-3">
+        <div class="form-group">
+          <input id="reg-fiz-code" class="form-input timer-input" name="reg-fiz-code" type="text">
+          <label for="reg-fiz-code" class="form-label">
+            Введите код из письма
+          </label>
+          <!-- <div class="form-under-link">
+            <a href="javascript:void(0)">
+              Выслать код подтверждения
+            </a>
+          </div> -->
+          <div class="form-timer">Получить новый код через <span>00:30</span></div>
+        </div>
+        <div class="form-group">
+          <button class="registration__btn registration__btn--change timer-btn btn btn--blue">
+            Выслать код подтверждения
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="form-captcha">
     <img src="./images/temp/captcha.png" alt="">
   </div>
   <div class="form-foot">
-    <button class="registration__btn btn btn--blue">
+    <button class="registration__btn btn btn--blue" disabled>
       Регистрация
     </button>
     <div class="form-group">

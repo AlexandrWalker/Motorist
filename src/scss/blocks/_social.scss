@@ -5,7 +5,9 @@
   opacity: 0;
 
   position: fixed;
-  top: 26.2rem;
+  // top: 26.2rem;
+  top: 50%;
+  transform: translateY(-50%);
   right: 2rem;
   z-index: 20;
 
@@ -18,7 +20,7 @@
   .active {
     pointer-events: all;
   }
-в
+
   .menu-wrapper--open & {
     opacity: 0;
     pointer-events: none;
@@ -46,14 +48,22 @@
     color: var(--white);
     opacity: 0;
     pointer-events: none;
-    transform: translateY(20px);
+    transform: translateY(2rem);
     transition: 0.3s ease;
 
     &:hover {
 
+      svg,
       i {
         transform: scale(1.1);
       }
+    }
+
+    svg {
+      width: auto;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
     }
 
     i {
@@ -68,9 +78,6 @@
       pointer-events: auto;
       transform: translateY(0);
       cursor: pointer;
-
-      position: absolute;
-      top: 0;
     }
   }
 }
@@ -79,7 +86,7 @@
 .social.active {
 
   .social__item-btn {
-    top: 16.5rem;
+    // top: 16.5rem;
   }
 
   .social__item:not(.social__item-btn) {

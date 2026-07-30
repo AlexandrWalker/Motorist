@@ -96,14 +96,25 @@
     padding: 0 2rem;
     border-radius: 0.8rem;
     background-color: var(--white);
+    border: 0.1rem solid transparent;
+    transition: border-color 0.3s ease, color 0.3s ease;
 
-    font-weight: 700;
+    font-weight: 400;
     font-size: 1.4rem;
+
+    &:hover {
+
+      @include domd {
+        border-color: var(--blue-50);
+      }
+    }
 
     &.filled,
     &:focus,
     &:active,
     &:checked {
+      color: var(--black);
+      border-color: var(--blue-50);
 
       &+.form-label {
         opacity: 0;
@@ -111,6 +122,10 @@
     }
 
     &.filled {
+
+      &:not(:focus, :active) {
+        color: var(--black-50);
+      }
 
       &+.form-label+.form-link,
       &+.form-label+.form-under-link {
@@ -407,6 +422,34 @@
     .form-link {
       margin-top: 1rem;
       pointer-events: all;
+    }
+  }
+
+  &-text {
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 143%;
+
+    .invalid & {
+      color: var(--error-color);
+    }
+  }
+
+  &-timer {
+    display: none;
+    padding: 1rem 0 0 2rem;
+
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 140%;
+    color: var(--blue);
+
+    &.form-timer-active {
+      display: block;
+    }
+
+    &.is-clickable {
+      cursor: pointer;
     }
   }
 }

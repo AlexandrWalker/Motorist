@@ -27,6 +27,7 @@
   --black-80: rgba(4, 29, 44, 0.8);
   --second-black: #1E2327;
   --blue: #35AFDA;
+  --blue-50: rgba(53, 175, 218, 0.5);
   --green: #52BB79;
   --green-light: #52BB79;
   --green-light-2: #25D366;
@@ -40,12 +41,14 @@
   --gray-20: rgba(113, 133, 149, 0.20);
   --gray-21: rgba(113, 133, 149, 0.21);
   --gray-25: rgba(113, 133, 149, 0.25);
+  --gray-30: rgba(113, 133, 149, 0.30);
   --gray-48: rgba(113, 133, 149, 0.48);
   --gray-50: rgba(113, 133, 149, 0.5);
   --gray-60: rgba(113, 133, 149, 0.6);
   --white-gray: #D9D9D9;
   --white-gray-50: rgba(217, 217, 217, 0.5);
   --error-color: #FF3021;
+  --error-color-20: rgba(255, 48, 33, 0.2);
 
   @include md {
     --container-padding: 1rem;

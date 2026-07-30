@@ -127,28 +127,29 @@
       }
 
       a {
-        border: 0.1rem solid var(--gray);
+        // border: 0.1rem solid var(--gray);
         border-radius: 50%;
         overflow: hidden;
         transition: all 0.5s ease;
-        background-color: transparent;
+        // background-color: transparent;
+        background-color: var(--blue);
 
         position: relative;
 
-        &::before {
-          content: "";
-          display: block;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(180deg, rgba(152, 209, 255, 0.7) 0%, rgba(113, 133, 149, 0.7) 100%), #718595;
-          opacity: 1;
-          transition: all 0.5s ease;
+        // &::before {
+        //   content: "";
+        //   display: block;
+        //   width: 100%;
+        //   height: 100%;
+        //   background: linear-gradient(180deg, rgba(152, 209, 255, 0.7) 0%, rgba(113, 133, 149, 0.7) 100%), #718595;
+        //   opacity: 1;
+        //   transition: all 0.5s ease;
 
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: -1;
-        }
+        //   position: absolute;
+        //   top: 0;
+        //   left: 0;
+        //   z-index: -1;
+        // }
 
         &:hover {
 

@@ -179,6 +179,7 @@
       justify-content: flex-start;
       width: 7rem;
       height: 7rem;
+      flex-shrink: 0;
 
       @include md {
         width: 3.4rem;
