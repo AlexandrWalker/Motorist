@@ -37,19 +37,20 @@
     <div class="registration__block-body">
       <div class="form__body form__row-3">
         <div class="form-group">
-          <input id="reg-fiz-code" class="form-input" name="reg-fiz-code" type="text">
+          <input id="reg-fiz-code" class="form-input timer-input" name="reg-fiz-code" type="text">
           <label for="reg-fiz-code" class="form-label">
             Введите код
           </label>
-          <div class="form-under-link">
+          <!-- <div class="form-under-link">
             <a href="javascript:void(0)">
               Выслать код подтверждения
             </a>
-          </div>
+          </div> -->
+          <div class="form-timer">Получить новый код через <span>00:30</span></div>
         </div>
         <div class="form-group">
-          <button class="registration__btn btn btn--blue" disabled>
-            Подтвердить
+          <button class="registration__btn registration__btn--change timer-btn btn btn--blue">
+            Выслать код подтверждения
           </button>
         </div>
       </div>
@@ -59,7 +60,7 @@
     <img src="./images/temp/captcha.png" alt="">
   </div>
   <div class="form-foot">
-    <button class="registration__btn btn btn--blue">
+    <button class="registration__btn btn btn--blue" disabled>
       Регистрация
     </button>
     <div class="form-group">
