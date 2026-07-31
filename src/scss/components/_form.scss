@@ -77,6 +77,35 @@
   &-group {
     position: relative;
 
+    &:has(.form-link) {
+
+      input[type="email"] {
+        padding-right: 16rem;
+      }
+
+      .error-text {
+        color: var(--orange);
+      }
+    }
+
+    &:has(.invalid) {
+
+      .form-link {
+        color: var(--orange);
+
+        top: 1.4rem !important;
+        transform: translateY(0) !important;
+      }
+
+      .form-input {
+        border-color: var(--orange-30) !important;
+      }
+
+      .error-text {
+        display: block;
+      }
+    }
+
     &--textarea {
       grid-column: 1/4;
 
@@ -318,16 +347,33 @@
 
   &-link {
     display: block;
-    padding: 0rem 2rem 0rem 2rem;
+    // padding: 0rem 2rem 0rem 2rem;
     pointer-events: none;
 
-    font-weight: 700;
+    // font-weight: 700;
+    font-weight: 400;
     font-size: 1.4rem;
     line-height: 140%;
     color: var(--blue);
 
     * {
       cursor: pointer;
+    }
+
+    &-confirm {
+
+      .mail-aproove & {
+        display: none;
+      }
+    }
+
+    &-aproove {
+
+      display: none;
+
+      .mail-aproove & {
+        display: block;
+      }
     }
   }
 

@@ -475,10 +475,21 @@
       }
 
       * {
-        
+
         .block & {
           font-size: 1.6rem;
           font-weight: 700;
+        }
+
+        .cabinet__head-block & {
+
+          @include md {
+            font-size: 1.4rem;
+          }
+
+          @include sm {
+            font-size: 1.2rem;
+          }
         }
       }
 

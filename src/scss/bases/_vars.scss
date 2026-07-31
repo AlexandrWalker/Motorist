@@ -33,6 +33,7 @@
   --green-light-2: #25D366;
   --red: #EE5956;
   --orange: #FF6421;
+  --orange-30: rgba(255, 100, 33, 0.3);
   --yellow: #EDA74C;
   --gray-light: #EDEDED;
   --gray: #718595;
@@ -49,6 +50,7 @@
   --white-gray-50: rgba(217, 217, 217, 0.5);
   --error-color: #FF3021;
   --error-color-20: rgba(255, 48, 33, 0.2);
+  --error-color-30: rgba(255, 48, 33, 0.3);
 
   @include md {
     --container-padding: 1rem;

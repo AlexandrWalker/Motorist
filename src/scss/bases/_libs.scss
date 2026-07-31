@@ -123,3 +123,27 @@
     background-color: var(--black-80);
   }
 }
+
+.f-panzoom__wrapper {
+  border-radius: 1.5rem;
+  overflow: hidden;
+
+  @include md {
+    margin: 0 1rem;
+  }
+}
+
+.fancybox__carousel {
+
+  .f-button.is-arrow {
+
+    @include md {}
+  }
+}
+
+.fancybox__container {
+
+  @include md {
+    --f-arrow-pos: 1.5rem;
+  }
+}

@@ -2079,6 +2079,73 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   /**
+   * Проверка на required
+   */
+  (function () {
+    function checkBlockValidity(block) {
+      if (!block) return;
+
+      const requiredInputs = block.querySelectorAll('input[required]');
+      if (requiredInputs.length === 0) return;
+
+      const buttons = block.querySelectorAll('button, input[type="submit"]');
+      if (buttons.length === 0) return;
+
+      let isAllValid = true;
+
+      requiredInputs.forEach(input => {
+        if (input.type === 'checkbox' || input.type === 'radio') {
+          if (!input.checked) isAllValid = false;
+        } else {
+          if (!input.value.trim()) isAllValid = false;
+        }
+      });
+
+      buttons.forEach(btn => {
+        if (isAllValid) {
+          btn.removeAttribute('disabled');
+        } else {
+          btn.setAttribute('disabled', 'disabled');
+        }
+      });
+    }
+
+    function initAllBlocks() {
+      const blocks = document.querySelectorAll('.cabinet__block-body');
+      blocks.forEach(block => {
+        const requiredInputs = block.querySelectorAll('input[required]');
+        if (requiredInputs.length > 0) {
+          checkBlockValidity(block);
+        }
+      });
+    }
+
+    initAllBlocks();
+
+    document.addEventListener('input', function (e) {
+      const input = e.target.closest('.cabinet__block-body input[required]');
+      if (input) {
+        const block = input.closest('.cabinet__block-body');
+        checkBlockValidity(block);
+      }
+    });
+
+    document.addEventListener('change', function (e) {
+      const input = e.target.closest('.cabinet__block-body input[required]');
+      if (input && (input.type === 'checkbox' || input.type === 'radio')) {
+        const block = input.closest('.cabinet__block-body');
+        checkBlockValidity(block);
+      }
+    });
+
+    const observer = new MutationObserver(() => {
+      initAllBlocks();
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  })();
+
+  /**
    * Инициализация Fabcybox
    */
   Fancybox.bind('[data-fancybox]', {

@@ -160,16 +160,16 @@ img {
 @font-face {
   font-family: HelveticaNeue;
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/HelveticaNeue-Regilar.woff2") format("woff2"), url("../fonts/HelveticaNeue-Regilar.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: HelveticaNeue;
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Regilar.woff2") format("woff2"), url("../fonts/HelveticaNeue-Regilar.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -304,6 +304,14 @@ img {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
+  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
   src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -314,14 +322,6 @@ img {
   font-display: swap;
   src: url("../fonts/Montserrat-Thin.woff2") format("woff2"), url("../fonts/Montserrat-Thin.woff") format("woff");
   font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
-  font-weight: 600;
   font-style: normal;
 }
 
@@ -376,16 +376,16 @@ img {
 @font-face {
   font-family: TeXGyreHeros;
   font-display: swap;
-  src: url("../fonts/TeXGyreHeros-bold.woff2") format("woff2"), url("../fonts/TeXGyreHeros-bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/TeXGyreHeros-regular.woff2") format("woff2"), url("../fonts/TeXGyreHeros-regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: TeXGyreHeros;
   font-display: swap;
-  src: url("../fonts/TeXGyreHeros-regular.woff2") format("woff2"), url("../fonts/TeXGyreHeros-regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/TeXGyreHeros-bold.woff2") format("woff2"), url("../fonts/TeXGyreHeros-bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -766,6 +766,11 @@ img {
   background-color: var(--black-80);
 }
 
+.f-panzoom__wrapper {
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
 /* Reset and base styles  */
 
 * {
@@ -950,6 +955,7 @@ body {
   --green-light-2: #25D366;
   --red: #EE5956;
   --orange: #FF6421;
+  --orange-30: rgba(255, 100, 33, 0.3);
   --yellow: #EDA74C;
   --gray-light: #EDEDED;
   --gray: #718595;
@@ -966,6 +972,7 @@ body {
   --white-gray-50: rgba(217, 217, 217, 0.5);
   --error-color: #FF3021;
   --error-color-20: rgba(255, 48, 33, 0.2);
+  --error-color-30: rgba(255, 48, 33, 0.3);
 }
 
 /* Components */
@@ -2161,6 +2168,30 @@ body {
   position: relative;
 }
 
+.form-group:has(.form-link) input[type=email] {
+  padding-right: 16rem;
+}
+
+.form-group:has(.form-link) .error-text {
+  color: var(--orange);
+}
+
+.form-group:has(.invalid) .form-link {
+  color: var(--orange);
+  top: 1.4rem !important;
+  -webkit-transform: translateY(0) !important;
+  -ms-transform: translateY(0) !important;
+  transform: translateY(0) !important;
+}
+
+.form-group:has(.invalid) .form-input {
+  border-color: var(--orange-30) !important;
+}
+
+.form-group:has(.invalid) .error-text {
+  display: block;
+}
+
 .form-group--textarea {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
@@ -2416,9 +2447,8 @@ body {
 
 .form-link {
   display: block;
-  padding: 0rem 2rem 0rem 2rem;
   pointer-events: none;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 1.4rem;
   line-height: 140%;
   color: var(--blue);
@@ -2426,6 +2456,18 @@ body {
 
 .form-link * {
   cursor: pointer;
+}
+
+.mail-aproove .form-link-confirm {
+  display: none;
+}
+
+.form-link-aproove {
+  display: none;
+}
+
+.mail-aproove .form-link-aproove {
+  display: block;
 }
 
 .form-file {
@@ -2818,7 +2860,7 @@ body {
 }
 
 .card__item-control.favorite-btn:hover i::before {
-  content: "\e91e";
+  content: "\e924";
 }
 
 .card__item-control i {
@@ -3339,7 +3381,7 @@ body {
 }
 
 .favorite-btn.favorite-active i::before {
-  content: "\e91e";
+  content: "\e924";
 }
 
 /* Главный заголовок страницы */
@@ -7355,8 +7397,25 @@ p {
 }
 
 .catalog__head {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2rem 5fr;
+  grid-template-columns: 1fr 5fr;
+  gap: 0 2rem;
   position: relative;
   z-index: 12;
+}
+
+.catalog__head-btn .category__item:hover i {
+  background-color: transparent;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  color: var(--white);
+}
+
+.catalog__head-btn .category__item-content {
+  padding: 2rem 5.5rem 3.7rem 2rem;
 }
 
 .catalog__items {
@@ -7652,33 +7711,20 @@ p {
   font-weight: 700;
 }
 
-.category-mini__slider .category__item {
-  min-height: 10.4rem;
+.category-mini__slider .category__item:hover i {
+  -webkit-transform: rotate(0deg) translateX(1rem);
+  -ms-transform: rotate(0deg) translateX(1rem);
+  transform: rotate(0deg) translateX(1rem);
 }
 
 .category-mini__slider .category__item-content {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 1.6rem;
-  padding: 2.2rem 2rem 2.2rem 1rem;
+  padding: 2rem 5.5rem 3.7rem 2rem;
 }
 
-.category-mini__slider .category__item-img {
-  width: 3.4rem;
-  height: 3.4rem;
-}
-
-.category-mini__slider .category__item-name * {
-  font-weight: 400;
-  line-height: 140%;
+.category-mini__slider .category__item-content i {
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
 .category .general__head-title h2 {
@@ -7765,6 +7811,16 @@ p {
   height: 100%;
   position: relative;
   z-index: 2;
+}
+
+.catalog__head-btn .category__item-cover i {
+  --font-size: 6.6rem;
+  background-color: transparent;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  color: var(--blue);
+  position: static;
 }
 
 .category__item-img {
@@ -10703,7 +10759,7 @@ p {
   }
 
   .favorite-btn:hover i::before {
-    content: "\e91e";
+    content: "\e924";
   }
 
   .burger {
@@ -10970,6 +11026,14 @@ p {
   [class^=swiper-button-],
   [class*=" swiper-button-"] {
     display: none;
+  }
+
+  .f-panzoom__wrapper {
+    margin: 0 1rem;
+  }
+
+  .fancybox__container {
+    --f-arrow-pos: 1.5rem;
   }
 
   :root {
@@ -11896,6 +11960,10 @@ p {
     flex-direction: column;
   }
 
+  .cabinet__head-block .cart__item-name * {
+    font-size: 1.4rem;
+  }
+
   .cabinet-cart .cart__item-quantity {
     display: block;
     -ms-grid-column: 2;
@@ -12783,6 +12851,10 @@ p {
   .cabinet__card-blocks {
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cabinet__head-block .cart__item-name * {
+    font-size: 1.2rem;
   }
 
   .block .catalog .card__item-value {
