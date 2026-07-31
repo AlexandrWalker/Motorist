@@ -2224,7 +2224,7 @@
                   </div>
                 </a>
               </div>
-              <div class="swiper category__slider">
+              <div class="swiper swiper-side-block category-mini__slider">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide category__slide">
   <a class="category__item" href="/Motorist/category.html">
@@ -2453,10 +2453,10 @@
 </div>
                 </div>
               </div>
-              <div class="swiper-button-prev category-button-prev">
+              <div class="swiper-button-prev category-mini-button-prev">
                 <i class="icon-slider-arrow"></i>
               </div>
-              <div class="swiper-button-next category-button-next">
+              <div class="swiper-button-next category-mini-button-next">
                 <i class="icon-slider-arrow"></i>
               </div>
             </div>
@@ -2933,7 +2933,7 @@
             </div>
 
             <div class="popular__body" data-transform="fade">
-  <div class="swiper popular__slider">
+  <div class="swiper swiper-side-block popular__slider">
     <div class="swiper-wrapper">
       <div class="swiper-slide card__slide">
   <div class="card__item">
@@ -2975,7 +2975,7 @@
           </div>
         </div>
         <div class="card__item-wrapper">
-          <button class="card__item-btn btn btn--blue cart-btn">
+          <button class="card__item-btn btn btn--blue" data-notif="notif-cart">
             В корзину
             <span>
               <i class="icon-cart-min"></i>
@@ -3031,7 +3031,7 @@
           </div>
         </div>
         <div class="card__item-wrapper">
-          <button class="card__item-btn btn btn--blue cart-btn">
+          <button class="card__item-btn btn btn--blue" data-notif="notif-cart">
             В корзину
             <span>
               <i class="icon-cart-min"></i>
@@ -3087,7 +3087,7 @@
           </div>
         </div>
         <div class="card__item-wrapper">
-          <button class="card__item-btn btn btn--blue cart-btn">
+          <button class="card__item-btn btn btn--blue" data-notif="notif-cart">
             В корзину
             <span>
               <i class="icon-cart-min"></i>
@@ -3143,7 +3143,7 @@
           </div>
         </div>
         <div class="card__item-wrapper">
-          <button class="card__item-btn btn btn--blue cart-btn">
+          <button class="card__item-btn btn btn--blue" data-notif="notif-cart">
             В корзину
             <span>
               <i class="icon-cart-min"></i>
@@ -3199,7 +3199,7 @@
           </div>
         </div>
         <div class="card__item-wrapper">
-          <button class="card__item-btn btn btn--blue cart-btn">
+          <button class="card__item-btn btn btn--blue" data-notif="notif-cart">
             В корзину
             <span>
               <i class="icon-cart-min"></i>
@@ -3255,7 +3255,7 @@
           </div>
         </div>
         <div class="card__item-wrapper">
-          <button class="card__item-btn btn btn--blue cart-btn">
+          <button class="card__item-btn btn btn--blue" data-notif="notif-cart">
             В корзину
             <span>
               <i class="icon-cart-min"></i>
@@ -3311,7 +3311,7 @@
           </div>
         </div>
         <div class="card__item-wrapper">
-          <button class="card__item-btn btn btn--blue cart-btn">
+          <button class="card__item-btn btn btn--blue" data-notif="notif-cart">
             В корзину
             <span>
               <i class="icon-cart-min"></i>
@@ -3367,7 +3367,7 @@
           </div>
         </div>
         <div class="card__item-wrapper">
-          <button class="card__item-btn btn btn--blue cart-btn">
+          <button class="card__item-btn btn btn--blue" data-notif="notif-cart">
             В корзину
             <span>
               <i class="icon-cart-min"></i>
@@ -3419,7 +3419,7 @@
             </div>
 
             <div class="reviews__body" data-transform="fade">
-  <div class="swiper reviews__slider">
+  <div class="swiper swiper-side-block reviews__slider">
     <div class="swiper-wrapper">
       <div class="swiper-slide reviews__slide">
   <div class="reviews__item border-opacity">
@@ -3761,10 +3761,20 @@
   </div>
 </div>
 
-<div class="notif">
+<div class="notif" id="notif-cart">
   <div class="notif__inner">
     <div class="notif__text">
       Товар добавлен в корзину
+    </div>
+    <div class="notif__btn">
+    </div>
+  </div>
+</div>
+
+<div class="notif" id="notif-mail">
+  <div class="notif__inner">
+    <div class="notif__text">
+      Почта изменена
     </div>
     <div class="notif__btn">
     </div>

@@ -1,7 +1,7 @@
 @use './../mixins' as *;
 
 .catalog {
-  overflow: unset;
+  overflow-x: clip;
 
   .category {
 
@@ -287,6 +287,17 @@
     @include md {
       gap: 1rem;
     }
+
+    &:has(.swiper-side-block) {
+
+      .catalog__head {
+        z-index: 1;
+      }
+
+      .catalog__body {
+        z-index: 2;
+      }
+    }
   }
 
   &__head {
@@ -302,6 +313,8 @@
     }
 
     &-btn {
+      position: relative;
+      z-index: 2;
 
       .category__item:hover {
 

@@ -43,6 +43,8 @@
     background-color: var(--white);
     transition: all 0.5s ease;
 
+    box-shadow: 5px 12px 23px rgba(113, 133, 149, 0.1);
+
     @include md {
       gap: 1rem;
       min-height: 25.6rem;

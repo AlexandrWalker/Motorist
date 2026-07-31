@@ -754,7 +754,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             601: {
               slidesPerGroup: 1,
-              slidesPerView: 4,
+              slidesPerView: 'auto',
               spaceBetween: 20,
             },
             835: {
@@ -812,13 +812,13 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             601: {
               slidesPerGroup: 1,
-              slidesPerView: 4,
+              slidesPerView: 'auto',
               spaceBetween: 10,
             },
             835: {
               slidesPerGroup: 1,
               slidesPerView: 5,
-              spaceBetween: 10,
+              spaceBetween: 20,
             },
           },
         },
@@ -936,7 +936,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             601: {
               slidesPerGroup: 1,
-              slidesPerView: 2,
+              slidesPerView: 'auto',
               spaceBetween: 20,
             },
             835: {
@@ -998,7 +998,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             601: {
               slidesPerGroup: 1,
-              slidesPerView: 2,
+              slidesPerView: 'auto',
               spaceBetween: 20,
             },
             835: {
@@ -2504,43 +2504,49 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   (function () {
-    const cartButtons = document.querySelectorAll('.cart-btn');
-    const notification = document.querySelector('.notif');
+    const notifButtons = document.querySelectorAll('[data-notif]');
 
-    if (!cartButtons.length || !notification) return;
+    if (!notifButtons.length) return;
 
-    const notifCloseBtn = notification.querySelector('.notif__btn');
-
-    let notifTimeoutId = null;
-
-    function hideNotification() {
+    function hideNotification(notification) {
+      if (!notification) return;
       notification.classList.remove('notif--show');
-      if (notifTimeoutId) {
-        clearTimeout(notifTimeoutId);
-        notifTimeoutId = null;
+      if (notification.notifTimeoutId) {
+        clearTimeout(notification.notifTimeoutId);
+        notification.notifTimeoutId = null;
       }
     }
 
-    cartButtons.forEach(button => {
+    notifButtons.forEach(button => {
       button.addEventListener('click', () => {
-        notification.classList.add('notif--show');
+        const notifId = button.getAttribute('data-notif');
+        if (!notifId) return;
 
-        if (notifTimeoutId) {
-          clearTimeout(notifTimeoutId);
+        const targetNotification = document.getElementById(notifId);
+        if (!targetNotification) return;
+
+        targetNotification.classList.add('notif--show');
+
+        if (targetNotification.notifTimeoutId) {
+          clearTimeout(targetNotification.notifTimeoutId);
         }
 
-        notifTimeoutId = setTimeout(() => {
-          notification.classList.remove('notif--show');
-          notifTimeoutId = null;
+        targetNotification.notifTimeoutId = setTimeout(() => {
+          targetNotification.classList.remove('notif--show');
+          targetNotification.notifTimeoutId = null;
         }, 5000);
       });
     });
 
-    if (notifCloseBtn) {
-      notifCloseBtn.addEventListener('click', () => {
-        hideNotification();
-      });
-    }
+    document.addEventListener('click', (e) => {
+      const closeBtn = e.target.closest('.notif__btn');
+      if (closeBtn) {
+        const notification = closeBtn.closest('.notif');
+        if (notification) {
+          hideNotification(notification);
+        }
+      }
+    });
   })();
 
   (function () {

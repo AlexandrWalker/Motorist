@@ -10,6 +10,23 @@
     @include md {
       gap: 1rem;
     }
+
+    .catalog__block {
+
+      @include domd {
+        gap: 2rem;
+      }
+
+      .card__item {
+
+        .block & {
+
+          @include domd {
+            width: calc(25% - (6rem / 4));
+          }
+        }
+      }
+    }
   }
 
   &__block {
@@ -24,7 +41,7 @@
 
     .card__item {
       width: calc((100% / 4) - (6rem / 4));
-      height: fit-content;
+      height: auto;
       transition: all 0.5s ease;
 
       @include md {

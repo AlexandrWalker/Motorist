@@ -166,6 +166,14 @@ img {
 }
 
 @font-face {
+  font-family: Inter;
+  font-display: swap;
+  src: url("../fonts/Inter-Black.woff2") format("woff2"), url("../fonts/Inter-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
   font-family: HelveticaNeue;
   font-display: swap;
   src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
@@ -184,16 +192,8 @@ img {
 @font-face {
   font-family: Inter;
   font-display: swap;
-  src: url("../fonts/Inter-Black.woff2") format("woff2"), url("../fonts/Inter-Black.woff") format("woff");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Inter;
-  font-display: swap;
-  src: url("../fonts/Inter-Bold.woff2") format("woff2"), url("../fonts/Inter-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Inter-Light.woff2") format("woff2"), url("../fonts/Inter-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -208,24 +208,8 @@ img {
 @font-face {
   font-family: Inter;
   font-display: swap;
-  src: url("../fonts/Inter-ExtraLight.woff2") format("woff2"), url("../fonts/Inter-ExtraLight.woff") format("woff");
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Inter;
-  font-display: swap;
-  src: url("../fonts/Inter-Light.woff2") format("woff2"), url("../fonts/Inter-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Inter;
-  font-display: swap;
-  src: url("../fonts/Inter-Medium.woff2") format("woff2"), url("../fonts/Inter-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Inter-Bold.woff2") format("woff2"), url("../fonts/Inter-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -240,8 +224,8 @@ img {
 @font-face {
   font-family: Inter;
   font-display: swap;
-  src: url("../fonts/Inter-SemiBold.woff2") format("woff2"), url("../fonts/Inter-SemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/Inter-ExtraLight.woff2") format("woff2"), url("../fonts/Inter-ExtraLight.woff") format("woff");
+  font-weight: 200;
   font-style: normal;
 }
 
@@ -250,6 +234,14 @@ img {
   font-display: swap;
   src: url("../fonts/Inter-Thin.woff2") format("woff2"), url("../fonts/Inter-Thin.woff") format("woff");
   font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Inter;
+  font-display: swap;
+  src: url("../fonts/Inter-SemiBold.woff2") format("woff2"), url("../fonts/Inter-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -266,6 +258,14 @@ img {
   font-display: swap;
   src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
   font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Inter;
+  font-display: swap;
+  src: url("../fonts/Inter-Medium.woff2") format("woff2"), url("../fonts/Inter-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -288,14 +288,6 @@ img {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
   src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
@@ -304,16 +296,16 @@ img {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -330,6 +322,14 @@ img {
   font-display: swap;
   src: url("../fonts/OpenSans-Bold.woff2") format("woff2"), url("../fonts/OpenSans-Bold.woff") format("woff");
   font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -376,16 +376,16 @@ img {
 @font-face {
   font-family: TeXGyreHeros;
   font-display: swap;
-  src: url("../fonts/TeXGyreHeros-regular.woff2") format("woff2"), url("../fonts/TeXGyreHeros-regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/TeXGyreHeros-bold.woff2") format("woff2"), url("../fonts/TeXGyreHeros-bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: TeXGyreHeros;
   font-display: swap;
-  src: url("../fonts/TeXGyreHeros-bold.woff2") format("woff2"), url("../fonts/TeXGyreHeros-bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/TeXGyreHeros-regular.woff2") format("woff2"), url("../fonts/TeXGyreHeros-regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -669,7 +669,35 @@ img {
 
 .swiper {
   max-width: 100%;
+  min-width: 0;
+  overflow: visible;
   border-radius: 1.5rem;
+}
+
+.swiper-side-block::before {
+  content: "";
+  display: block;
+  width: var(--container-padding);
+  height: calc(100% + 6rem);
+  background-color: var(--bg);
+  pointer-events: none;
+  position: absolute;
+  top: -3rem;
+  left: calc((var(--container-padding) + 1rem) * -1);
+  z-index: 3;
+}
+
+.swiper-side-block::after {
+  content: "";
+  display: block;
+  width: var(--container-padding);
+  height: calc(100% + 6rem);
+  background-color: var(--bg);
+  pointer-events: none;
+  position: absolute;
+  top: -3rem;
+  right: calc((var(--container-padding) + 1rem) * -1);
+  z-index: 3;
 }
 
 .swiper-slide {
@@ -724,6 +752,9 @@ img {
   background-color: var(--white);
   border-radius: 50%;
   margin: 0;
+  -webkit-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -2752,8 +2783,8 @@ body {
   gap: 2rem;
   padding: 2rem;
   background-color: var(--white-50);
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(113, 133, 149, 0.1);
-  box-shadow: 0px 0px 10px 0px rgba(113, 133, 149, 0.1);
+  -webkit-box-shadow: 5px 12px 23px rgba(113, 133, 149, 0.1);
+  box-shadow: 5px 12px 23px rgba(113, 133, 149, 0.1);
   border-radius: 1.5rem;
   height: 100%;
   overflow: hidden;
@@ -7201,7 +7232,7 @@ p {
 }
 
 .catalog {
-  overflow: unset;
+  overflow-x: clip;
 }
 
 .catalog .category__item:hover i {
@@ -7396,6 +7427,14 @@ p {
   gap: 3rem;
 }
 
+.catalog__inner:has(.swiper-side-block) .catalog__head {
+  z-index: 1;
+}
+
+.catalog__inner:has(.swiper-side-block) .catalog__body {
+  z-index: 2;
+}
+
 .catalog__head {
   display: -ms-grid;
   display: grid;
@@ -7404,6 +7443,11 @@ p {
   gap: 0 2rem;
   position: relative;
   z-index: 12;
+}
+
+.catalog__head-btn {
+  position: relative;
+  z-index: 2;
 }
 
 .catalog__head-btn .category__item:hover i {
@@ -7711,6 +7755,11 @@ p {
   font-weight: 700;
 }
 
+.category-mini__slider.swiper-side-block::before {
+  width: calc(var(--container-padding) + 22rem);
+  left: calc((var(--container-padding) + 23rem) * -1);
+}
+
 .category-mini__slider .category__item:hover i {
   -webkit-transform: rotate(0deg) translateX(1rem);
   -ms-transform: rotate(0deg) translateX(1rem);
@@ -7767,8 +7816,8 @@ p {
   height: 100%;
   min-height: 19.1rem;
   background-color: var(--white);
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(113, 133, 149, 0.1);
-  box-shadow: 0px 0px 10px 0px rgba(113, 133, 149, 0.1);
+  -webkit-box-shadow: 5px 12px 23px rgba(113, 133, 149, 0.1);
+  box-shadow: 5px 12px 23px rgba(113, 133, 149, 0.1);
   position: relative;
 }
 
@@ -8213,9 +8262,7 @@ p {
 
 .favorites__block .card__item {
   width: calc(25% - 1.5rem);
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: auto;
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
@@ -9605,6 +9652,14 @@ p {
   gap: 2rem;
 }
 
+.product__inner:has(.swiper-side-block) .catalog__head {
+  z-index: 1;
+}
+
+.product__inner:has(.swiper-side-block) .product__content {
+  z-index: 2;
+}
+
 .product__content {
   display: -ms-grid;
   display: grid;
@@ -10015,6 +10070,10 @@ p {
   transition: all 0.5s ease;
 }
 
+.product__slider-big {
+  overflow: hidden;
+}
+
 .product__slider-big .swiper-pagination {
   top: calc(100% - 1.5rem) !important;
 }
@@ -10281,6 +10340,8 @@ p {
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  -webkit-box-shadow: 5px 12px 23px rgba(113, 133, 149, 0.1);
+  box-shadow: 5px 12px 23px rgba(113, 133, 149, 0.1);
 }
 
 .reviews__item.border-opacity::after {
@@ -10717,6 +10778,11 @@ p {
     display: none;
   }
 
+  [class^=swiper-button-]:hover,
+  [class*=" swiper-button-"]:hover {
+    background-color: var(--blue);
+  }
+
   .filter {
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
@@ -10864,6 +10930,14 @@ p {
     transform: translateX(1rem);
   }
 
+  .favorites__inner .catalog__block {
+    gap: 2rem;
+  }
+
+  .block .favorites__inner .catalog__block .card__item {
+    width: calc(25% - 1.5rem);
+  }
+
   .find__content {
     gap: 2rem;
     padding: 3rem 9.9rem 3rem 3rem;
@@ -10946,12 +11020,6 @@ p {
   }
 }
 
-@media (min-width: 1441px) {
-  html {
-    font-size: calc(10px + 0 * (100vw - var(--refRes) * 1px) / var(--refRes));
-  }
-}
-
 @media (max-width: 834px) {
   html {
     font-size: 62.5%;
@@ -11021,6 +11089,14 @@ p {
     margin-left: calc(var(--container-padding) * -1);
     padding: 0 var(--container-padding);
     border-radius: 0;
+  }
+
+  .swiper-side-block::before {
+    display: none;
+  }
+
+  .swiper-side-block::after {
+    display: none;
   }
 
   [class^=swiper-button-],

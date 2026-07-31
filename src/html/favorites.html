@@ -40,7 +40,8 @@
                   </h1>
                 </div>
                 <div class="general__head-text">
-                  <a href="/Motorist">Авторизуйтесь,</a> чтобы сохранить список понравившихся товаров для просмотра на ваших
+                  <a href="/Motorist">Авторизуйтесь,</a> чтобы сохранить список понравившихся товаров для просмотра на
+                  ваших
                   устройствах
                 </div>
               </div>
@@ -60,14 +61,17 @@
         </div>
       </section>
 
-      <section class="favorites">
+      <section class="favorites catalog">
         <div class="container">
           <div class="favorites__inner">
 
             <div class="favorites__body">
 
-              <div class="favorites__block">
-                @@loop('./elements/card-item.html', './data/card-items.json')
+              <!-- <div class="favorites__block">
+              </div> -->
+
+              <div class="catalog__block">
+                @@loop('./elements/catalog-card-item.html', './data/catalog-card-items.json')
               </div>
 
             </div>

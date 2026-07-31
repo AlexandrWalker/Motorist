@@ -7,6 +7,17 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    &:has(.swiper-side-block) {
+
+      .catalog__head {
+        z-index: 1;
+      }
+
+      .product__content {
+        z-index: 2;
+      }
+    }
   }
 
   &__content {
@@ -398,6 +409,7 @@
   &__slider {
 
     &-big {
+      overflow: hidden;
 
       .swiper-pagination {
         top: calc(100% - 1.5rem) !important;
