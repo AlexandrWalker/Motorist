@@ -1,6 +1,7 @@
 @use './../mixins' as *;
 
 .press-inner {
+  overflow-x: clip;
 
   &__inner {
     display: grid;
@@ -18,6 +19,16 @@
     flex-direction: column;
     gap: 3rem;
     max-width: 46.8rem;
+    height: fit-content;
+
+    @include domd {
+      position: sticky;
+      top: 17.5rem;
+
+      .header-fixed & {
+        top: 14.5rem;
+      }
+    }
 
     @include md {
       gap: 2rem;

@@ -1,7 +1,8 @@
 @use './../mixins' as *;
 
 .dropout {
-  padding-top: 2rem;
+  // padding-top: 2rem;
+  padding-top: 1.5rem;
   opacity: 0;
   pointer-events: none;
   min-width: 39.5rem;
