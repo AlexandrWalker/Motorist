@@ -10,7 +10,10 @@
     position: relative;
 
     @include md {
-      padding: 3rem 0 2.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 3rem 0 3rem 0;
     }
   }
 
@@ -33,11 +36,22 @@
     }
   }
 
+  &__title {
+
+    * {
+
+      @include md {
+        line-height: 100%;
+      }
+    }
+  }
+
   &__text {
     max-width: 40rem;
-    
+
     p {
       font-size: 1.6rem;
+      line-height: 140%;
 
       @include md {
         font-size: 1.4rem;
@@ -54,9 +68,12 @@
     right: 0;
 
     @include md {
-      width: calc(100vw/(440/400));
-      height: calc(100vw/(440/304.5));
-      margin: 0 1rem;
+      // width: calc(100vw/(440/400));
+      width: calc(100vw/(440/285));
+      // height: calc(100vw/(440/304.5));
+      height: calc(100vw/(440/217));
+      // margin: 0 1rem;
+      margin: 0;
 
       position: relative;
       top: unset;
@@ -75,8 +92,10 @@
         bottom: 0;
 
         @include md {
-          width: calc(100vw/(440/315));
-          height: calc(100vw/(440/304.5));
+          // width: calc(100vw/(440/315));
+          width: calc(100vw/(440/224));
+          // height: calc(100vw/(440/304.5));
+          height: calc(100vw/(440/217));
         }
       }
 
@@ -89,11 +108,15 @@
         left: 0;
 
         @include md {
-          width: calc(100vw/(440/118));
-          height: calc(100vw/(440/124));
+          // width: calc(100vw/(440/118));
+          width: calc(100vw/(440/84));
+          // height: calc(100vw/(440/124));
+          height: calc(100vw/(440/88));
 
-          bottom: 2.1rem;
-          left: 1rem;
+          // bottom: 2.1rem;
+          bottom: 1.4rem;
+          // left: 1rem;
+          left: 0rem;
         }
       }
 
@@ -106,11 +129,15 @@
         left: 1.9rem;
 
         @include md {
-          width: calc(100vw/(440/84));
-          height: calc(100vw/(440/81));
+          // width: calc(100vw/(440/84));
+          width: calc(100vw/(440/60));
+          // height: calc(100vw/(440/81));
+          height: calc(100vw/(440/58));
 
-          top: 3.25rem;
-          left: 1.3rem;
+          // top: 3.25rem;
+          top: 2.3rem;
+          // left: 1.3rem;
+          left: 0.9rem;
         }
       }
     }

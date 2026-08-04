@@ -317,6 +317,10 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
+
+        @include md {
+          gap: 0.5rem;
+        }
       }
     }
 
@@ -624,6 +628,7 @@
         @include md {
           position: sticky;
           bottom: 3rem;
+          z-index: 1;
         }
 
         @include sm {

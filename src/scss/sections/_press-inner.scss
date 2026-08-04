@@ -95,5 +95,14 @@
     @include md {
       gap: 1.5rem;
     }
+
+    p {
+      line-height: 140%;
+      letter-spacing: 0.02em;
+
+      @include domd {
+        font-size: 1.6rem;
+      }
+    }
   }
 }

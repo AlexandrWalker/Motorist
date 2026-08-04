@@ -1,7 +1,7 @@
 @use './../mixins' as *;
 
 .catalog {
-  overflow-x: clip;
+  overflow-x: visible;
 
   .category {
 

@@ -19,12 +19,12 @@
 
     .sample {
 
-      &__inner {
-        max-width: 103.2rem;
-      }
-    }
+      p {
 
-    .sample {
+        @include domd {
+          font-size: 1.6rem;
+        }
+      }
 
       &__inner {
         max-width: 103.2rem;
@@ -154,5 +154,4 @@
       padding: 2rem 1.5rem;
     }
   }
-
 }
