@@ -162,6 +162,30 @@ img {
 }
 
 @font-face {
+  font-family: HelveticaNeue;
+  font-display: swap;
+  src: url("../fonts/HelveticaNeue-Regilar.woff2") format("woff2"), url("../fonts/HelveticaNeue-Regilar.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: HelveticaNeue;
+  font-display: swap;
+  src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: HelveticaNeue;
+  font-display: swap;
+  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
   font-family: Inter;
   font-display: swap;
   src: url("../fonts/Inter-Black.woff2") format("woff2"), url("../fonts/Inter-Black.woff") format("woff");
@@ -306,18 +330,10 @@ img {
 }
 
 @font-face {
-  font-family: HelveticaNeue;
+  font-family: OpenSans;
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: HelveticaNeue;
-  font-display: swap;
-  src: url("../fonts/HelveticaNeue-Regilar.woff2") format("woff2"), url("../fonts/HelveticaNeue-Regilar.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/OpenSans-Bold.woff2") format("woff2"), url("../fonts/OpenSans-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -354,26 +370,10 @@ img {
 }
 
 @font-face {
-  font-family: HelveticaNeue;
-  font-display: swap;
-  src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
   font-family: OpenSans;
   font-display: swap;
   src: url("../fonts/OpenSans-SemiBold.woff2") format("woff2"), url("../fonts/OpenSans-SemiBold.woff") format("woff");
   font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: OpenSans;
-  font-display: swap;
-  src: url("../fonts/OpenSans-Bold.woff2") format("woff2"), url("../fonts/OpenSans-Bold.woff") format("woff");
-  font-weight: 700;
   font-style: normal;
 }
 
@@ -9648,6 +9648,39 @@ p {
   position: relative;
 }
 
+.privacy p {
+  margin-bottom: 2rem;
+  color: var(--gray);
+}
+
+.privacy p:has(+ ul):not(:has(b)) {
+  margin-bottom: 0;
+}
+
+.privacy p b {
+  color: var(--black);
+}
+
+.privacy a {
+  font-weight: 700;
+  color: var(--blue);
+}
+
+.privacy ul {
+  padding-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+.privacy ul:has(+ p):not(:has(+ p b)) {
+  margin-bottom: 0;
+}
+
+.privacy ul li {
+  list-style: disc;
+  font-size: 1.2rem;
+  color: var(--gray);
+}
+
 .product {
   overflow-x: visible;
 }
@@ -11044,6 +11077,10 @@ p {
 
   .press-inner__content p {
     font-size: 1.6rem;
+  }
+
+  .privacy a:hover {
+    text-decoration: underline;
   }
 
   .block .search .catalog__block .card__item {
