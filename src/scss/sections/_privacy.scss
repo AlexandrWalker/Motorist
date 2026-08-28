@@ -1,0 +1,45 @@
+@use './../mixins' as *;
+
+.privacy {
+
+  p {
+    margin-bottom: 2rem;
+
+    color: var(--gray);
+
+    &:has(+ ul):not(:has(b)) {
+      margin-bottom: 0;
+    }
+
+    b {
+      color: var(--black);
+    }
+  }
+
+  a {
+    font-weight: 700;
+    color: var(--blue);
+
+    &:hover {
+
+      @include domd {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  ul {
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+
+    &:has(+ p):not(:has(+ p b)) {
+      margin-bottom: 0;
+    }
+
+    li {
+      list-style: disc;
+      font-size: 1.2rem;
+      color: var(--gray);
+    }
+  }
+}
