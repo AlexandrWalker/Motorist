@@ -353,9 +353,11 @@
       gap: 1rem;
 
       a {
+        height: fit-content;
         border-radius: 50%;
         border: 0.1rem solid var(--black);
         background: linear-gradient(180deg, rgba(0, 64, 102, 0.7) 0%, rgba(4, 29, 44, 0.7) 100%), #718595;
+        flex-shrink: 0;
 
         &:hover {
 
