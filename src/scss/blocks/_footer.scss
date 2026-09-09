@@ -67,8 +67,7 @@
 
   &__items {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(5, 1fr);
     gap: 5rem;
 
     @include md {
@@ -79,6 +78,9 @@
   }
 
   &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 
     @include md {
       display: flex;
@@ -98,12 +100,12 @@
       align-items: center;
       gap: 0 2rem;
 
-      @include domd {
-        display: none;
-      }
-
       i {
         --font-size: 0.6rem;
+
+        @include dosm {
+          display: none;
+        }
 
         .accordion-active & {
           transform: rotate(180deg);
@@ -116,6 +118,12 @@
       font-weight: 400;
       font-size: 1.4rem;
       line-height: 120%;
+
+      @include dosm {
+        font-weight: 700;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+      }
     }
 
     &-body {
@@ -136,15 +144,22 @@
     ul {
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1rem;
 
       @include md {
         overflow: hidden;
       }
+
+      li {
+        line-height: 120%;
+      }
     }
 
     a {
+      // font-size: 1.2rem;
+      font-weight: 400;
       font-size: 1.2rem;
+      line-height: 140%;
     }
   }
 
