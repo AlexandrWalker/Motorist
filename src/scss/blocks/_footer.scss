@@ -103,7 +103,7 @@
       i {
         --font-size: 0.6rem;
 
-        @include dosm {
+        @include domd {
           display: none;
         }
 
@@ -156,7 +156,6 @@
     }
 
     a {
-      // font-size: 1.2rem;
       font-weight: 400;
       font-size: 1.2rem;
       line-height: 140%;
