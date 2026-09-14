@@ -2620,4 +2620,38 @@ document.addEventListener('DOMContentLoaded', () => {
   //   });
   // })();
 
+  /**
+   * УВЕДОМЛЕНИЕ О COOKIE                     
+   *    
+   * Показывает плашку если cookie COOKIE_ACCEPT ≠ '1'.            
+   * checkCookies() вызывается из HTML при клике на кнопку.         
+   */
+  const cookieAccepted =
+    ('; ' + document.cookie).split(`; COOKIE_ACCEPT=`).pop().split(';')[0] === '1';
+
+  if (!cookieAccepted) {
+    const cookiesNotify = document.getElementById('cookie');
+    if (cookiesNotify) {
+      setTimeout(() => {
+        cookiesNotify.classList.add('cookie--active');
+      }, 500);
+    }
+  }
+
 });
+
+/**
+ * Принимает cookie и скрывает плашку уведомления.
+ *
+ * Устанавливает COOKIE_ACCEPT=1 сроком на 1 год.
+ */
+function checkCookies() {
+  const expires = new Date(Date.now() + 86400e3 * 365).toUTCString();
+  document.cookie = `COOKIE_ACCEPT=1;path=/;expires=${expires}`;
+
+  const cookie = document.getElementById('cookie');
+  if (!cookie) return;
+  cookie.classList.remove('cookie--active');
+
+  setTimeout(() => cookie.remove(), 5000);
+}

@@ -436,9 +436,20 @@
         display: none;
       }
 
-      &.filled+.header__search-block {
-        opacity: 1;
-        pointer-events: all;
+      &:focus,
+      &:active,
+      &:checked {
+        color: var(--white);
+      }
+
+      &.filled,
+      &.filled:not(:focus, :active) {
+        color: var(--white);
+
+        &+.header__search-block {
+          opacity: 1;
+          pointer-events: all;
+        }
       }
     }
 

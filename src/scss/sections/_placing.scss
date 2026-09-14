@@ -498,6 +498,24 @@
       line-height: 120%;
       color: var(--red);
     }
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding-top: 2rem;
+
+      color: var(--gray);
+
+      @include sm {
+        padding-top: 1.5rem;
+      }
+    }
+
+    &-suptitle {
+      font-weight: 700;
+      color: var(--blue);
+    }
   }
 
   &__info {
@@ -662,5 +680,45 @@
     .placing__info-text {
       padding: 0 1.5rem;
     }
+  }
+
+  .cdek-mfqq2r[data-v-8f7e4e68] {
+    color: var(--white) !important;
+    box-shadow: none !important;
+    background-color: var(--blue) !important;
+  }
+
+  .cdek-fshz91[data-v-8f7e4e68] {
+    background-color: var(--white) !important;
+    margin: 0 !important;
+  }
+
+  .cdek-xvnk8x[data-v-8f7e4e68] {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.75rem !important;
+    border-radius: 0.8rem !important;
+    background-color: #ECEEF0 !important;
+    padding: 0.5rem !important;
+
+    font-family: var(--font-family) !important;
+    font-weight: 700 !important;
+    font-size: 1.2rem !important;
+    line-height: 100% !important;
+
+    @include md {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  .cdek-luckad[data-v-8f7e4e68] {
+    border-radius: 0.6rem !important;
+  }
+
+  .cdek-2yvgu6[data-v-287a28bc] {
+    margin-bottom: 1rem !important;
+  }
+
+  .cdek-pdfvml[data-v-8f7e4e68] {
+    padding: 0.5rem !important;
   }
 }
